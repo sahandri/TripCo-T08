@@ -1,3 +1,4 @@
 # t08 - The Absentees
 
 * Ryan Cox, rcox725, Rcox725, MIA
+* Michael Gaffney, mjgaffne, mjgaffne, Rookie
