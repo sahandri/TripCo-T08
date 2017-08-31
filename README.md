@@ -1,1 +1,3 @@
-# DTR-08
+# t08 - The Absentees
+
+* Ryan Cox, rcox725, Rcox725, MIA
