@@ -1,6 +1,7 @@
-Michael Gaffney
-ISFJ
-Teamwork Questionnaire
+* Michael Gaffney
+* ISFJ
+* Teamwork Questionnaire
+
   1. Is it generally easier to reach you by text, email, vmail or something else? What hours?
     Texting is generally the easiest way to reach me anytime between 8am and 6pm. Email is
     the second best communication especially if larger amounts of information need to be
