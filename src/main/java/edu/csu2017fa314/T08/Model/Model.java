@@ -1,4 +1,4 @@
-//package edu.csu2017fa314.T08.Model;
+package edu.csu2017fa314.T08.Model;
 import java.io.*;
 import java.util.ArrayList;
 public class Model
