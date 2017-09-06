@@ -3,10 +3,18 @@ import Dropzone from 'react-dropzone'
 
 class Home extends React.Component {
     render() {
-        let total = 0; //update the total here
+		let total; //Initalize
+		if(this.props.pairs == ""){ //If no json file
+			total = 0;
+		}
+		else{ //after json call
+			total = this.props.pairs[this.props.pairs.length - 1].props.tot;
+		}
         return <div className="home-container">
             <div className="inner">
-                <h3>Itinerary</h3>
+				<h2>T08 - The Absintees</h2>
+                <h3>Itinerary</h3>	
+				
                 <Dropzone className="dropzone-style" onDrop={this.drop.bind(this)}>
                     <button>Open JSON File</button>
                 </Dropzone>
@@ -14,7 +22,7 @@ class Home extends React.Component {
                     {this.props.pairs}
                     <tbody>
                         <tr>
-                            <td colSpan="2">Total:</td>
+                            <td colSpan="3">Total:</td>
                             <td>{total}</td>
                         </tr>
                     </tbody>
