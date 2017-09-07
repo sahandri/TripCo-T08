@@ -44,9 +44,9 @@ public class Itinerary {
         leg.put("end", end);
 
         // XXX needs implementation
-        // double dist = Model.CalculateDistance(start, end);
+        double dist = edu.csu2017fa314.T08.Model.Itinerary.distance(start, end);
 
-        leg.put("distance", "nill" /* dist */);
+        leg.put("distance", dist);
         return leg;
     }
 }
