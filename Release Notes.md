@@ -23,5 +23,5 @@ None
 [include any dependencies]
 
 ### References
-React
+React, Eclipse, JSON-Simple, Java
 
