@@ -48,9 +48,11 @@ public class Destination {
 			   String[] firstLine = line.split(",");
 			   setOrder(firstLine);
 			   while ((line = br.readLine()) != null) {
-				   line = line.replaceAll(", ", ",");
-				   String[] data = line.split(",");
-				   list.add(data);
+				   if(!line.equals("")) {
+					   line = line.replaceAll(", ", ",");
+					   String[] data = line.split(",");
+					   list.add(data);
+				   }
 			   }
 		   }catch (IOException e) {
 			   e.printStackTrace();
@@ -137,6 +139,11 @@ public class Destination {
 		   setIndex(ID);
 		   return list.get(index)[ElevationFt];
 	   }
+	   
+	   public int getTotal() {
+		   return list.size();
+	   }
+
 
 
 }
