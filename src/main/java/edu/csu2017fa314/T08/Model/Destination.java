@@ -11,10 +11,9 @@ public class Destination {
 
 	   public Destination() 
 	   {
-	      csvfile = "C:\\Users\\Sahand\\eclipse-workspace-2\\Tripco\\brews3.csv";
+	      csvfile = "brews.csv";
 	      line = "";
 	   }
-	   
 	   
 	   //sets the order of input file and initializes index of string[]
 	   public void setOrder(String[] firstLine) {
@@ -43,7 +42,8 @@ public class Destination {
 	   //read brews.csv file and stores it in an Arraylis of arrays of string
 	   public void readFile() {
 		   try {
-			   br = new BufferedReader(new FileReader(csvfile));
+               InputStream is = Destination.class.getResourceAsStream(csvfile);
+			   br = new BufferedReader(new InputStreamReader(is));
 			   line = br.readLine();
 			   String[] firstLine = line.split(",");
 			   setOrder(firstLine);
