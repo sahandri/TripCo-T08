@@ -34,6 +34,16 @@ public class Itinerary {
     // Creates a JSONArray of trip legs, i.e. the itinerary
     public JSONArray CreateItinerary() {
         JSONArray arr = new JSONArray();
+
+        String[] stops = ["stop1", "stop2", "stop3"];
+
+        int it = stops.length() - 1;
+
+        for(int i = 0; i < it; i++)
+        {
+            arr.add(CreateLeg(stops[i], stops[i-1]);
+        }
+
         return arr;
     }
 
