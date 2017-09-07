@@ -13,7 +13,7 @@ public class Itinerary {
 		return distance;
 	}
 	
-	//Method Used In Order T Calculate Greatest Circle Distance		
+	//Method Used In Order To Calculate Greatest Circle Distance		
 	public static double calcGCD(double phi_1, double lambda_1, double phi_2, double lambda_2) {
 		//Setting Up Variables Within Equation
 		double delta_phi = Math.abs(phi_1 - phi_2);
@@ -32,15 +32,18 @@ public class Itinerary {
 		return r_earth_km * centralAngle;
 	}
 	
+	//Method Used to Convert Degree Format To Radians
 	public static double degreesToRadians(String coordinates) {
 		return decimalToRadians(degreesToDecimal(coordinates));
 	}
 	
+	//Method Used to Convert a Decimal Value Representing Degrees to Radians
 	public static double decimalToRadians(double decimal) {
 		//Convert from degrees (decimal) to radians
 		return decimal * (Math.PI / 180);
 	}
 	
+	//Method Used to Convert a String Representing Either Latitude or Longitude Into a Decimal 
 	public static double degreesToDecimal(String coordinate) {
 		//Takes coordinate in form of a String -> 40° 42' 51.6708" N
 		int numStart = 0;
