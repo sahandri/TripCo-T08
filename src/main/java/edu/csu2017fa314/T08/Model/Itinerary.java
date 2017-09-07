@@ -1,4 +1,4 @@
-//package edu.csu2017fa314.T08.Model;
+package edu.csu2017fa314.T08.Model;
 import java.lang.Math;
 
 public class Itinerary {
@@ -42,7 +42,7 @@ public class Itinerary {
 	}
 	
 	public static double degreesToDecimal(String coordinate) {
-		//Takes coordinate in form of a String -> 40° 42' 51.6708" N
+		//Takes coordinate in form of a String -> 40Â° 42' 51.6708" N
 		int numStart = 0;
 		int numEnd = 0;
 		int newInt = 0;
