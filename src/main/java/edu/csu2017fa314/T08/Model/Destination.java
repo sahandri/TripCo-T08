@@ -2,11 +2,11 @@ package edu.csu2017fa314.T08.Model;
 import java.io.*;
 import java.util.ArrayList;
 public class Destination {
-	   String csvfile;
-	   int index;		//to use in getters by ID input
-	   BufferedReader br;
-	   String line;
-	   ArrayList<String[]> list = new ArrayList<String[]>();
+	   static String csvfile;
+	   static int index;		//to use in getters by ID input
+	   static BufferedReader br;
+	   static String line;
+	   static ArrayList<String[]> list = new ArrayList<String[]>();
 	   static int ID,Name,City,Latitude,Longitude,ElevationFt;  //index of string[]
 
 	   public Destination() 
@@ -16,7 +16,7 @@ public class Destination {
 	   }
 	   
 	   //sets the order of input file and initializes index of string[]
-	   public void setOrder(String[] firstLine) {
+	   public static void setOrder(String[] firstLine) {
 		   for(int i=0;i<firstLine.length;i++) {
 			   String order = firstLine[i];
 			   order = order.replaceAll(" ", "");
@@ -40,7 +40,7 @@ public class Destination {
 	   }
 	   
 	   //read brews.csv file and stores it in an Arraylis of arrays of string
-	   public void readFile() {
+	   public static void readFile() {
 		   try {
                InputStream is = Destination.class.getResourceAsStream(csvfile);
 			   br = new BufferedReader(new InputStreamReader(is));
@@ -70,7 +70,7 @@ public class Destination {
 	   
 	   
 	   
-	   public void print() {
+	   public static void print() {
 		   for(int i=0;i< list.size();i++) {
 			   String[] temp = list.get(i);
 			   for(int j=0;j<temp.length;j++) {
@@ -81,32 +81,32 @@ public class Destination {
 		   }
 	   }
 	   
-	   public String getID(int index) {
+	   public static String getID(int index) {
 		   return list.get(index)[ID];
 	   }
 	   
-	   public String getName(int index) {
+	   public static String getName(int index) {
 		   return list.get(index)[Name];
 	   }
 	   
-	   public String getCity(int index) {
+	   public static String getCity(int index) {
 		   return list.get(index)[City];
 	   }
 	   
-	   public String getLatit(int index) {
+	   public static String getLatit(int index) {
 		   return list.get(index)[Latitude];
 	   }
 	   
-	   public String getLongit(int index) {
+	   public static String getLongit(int index) {
 		   return list.get(index)[Longitude];
 	   }
 	   
-	   public String getElevation(int index) {
+	   public static String getElevation(int index) {
 		   return list.get(index)[ElevationFt];
 	   }
 	   
 	   //find the index of an ID
-	   public void setIndex(String ID) {
+	   public static void setIndex(String ID) {
 		   for(int i=0; i<list.size();i++) {
 			   if(ID.equalsIgnoreCase(getID(i))) {
 				   index = i;
@@ -115,32 +115,32 @@ public class Destination {
 	   }
 	   
 	   
-	   public String getName(String ID) {
+	   public static String getName(String ID) {
 		   setIndex(ID);
 		   return list.get(index)[Name];
 	   }
 	   
-	   public String getCity(String ID) {
+	   public static String getCity(String ID) {
 		   setIndex(ID);
 		   return list.get(index)[City];
 	   }
 	   
-	   public String getLatit(String ID) {
+	   public static String getLatit(String ID) {
 		   setIndex(ID);
 		   return list.get(index)[Latitude];
 	   }
 	   
-	   public String getLongit(String ID) {
+	   public static String getLongit(String ID) {
 		   setIndex(ID);
 		   return list.get(index)[Longitude];
 	   }
 	   
-	   public String getElevation(String ID) {
+	   public static String getElevation(String ID) {
 		   setIndex(ID);
 		   return list.get(index)[ElevationFt];
 	   }
 	   
-	   public int getTotal() {
+	   public static int getTotal() {
 		   return list.size();
 	   }
 
