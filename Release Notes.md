@@ -20,7 +20,8 @@ None
 [describe how to install and run this version]
 
 ### Dependencies
-[include any dependencies]
+server side: Listed in pom
+Cliente side: package.json
 
 ### References
 React, Eclipse, JSON-Simple, Java
