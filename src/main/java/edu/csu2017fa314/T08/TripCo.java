@@ -1,5 +1,6 @@
 package edu.csu2017fa314.T08;
 import edu.csu2017fa314.T08.Model.Destination;
+import edu.csu2017fa314.T08.View.Itinerary;
 public class TripCo
 {
 
@@ -29,6 +30,8 @@ public class TripCo
 
     public static void main(String[] args) {
         System.out.println("Welcome to TripCo");
+        Destination.readFile();
+        Itinerary.createJSON();
     }
 
 }

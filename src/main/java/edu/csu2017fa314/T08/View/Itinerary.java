@@ -10,12 +10,12 @@ import edu.csu2017fa314.T08.Model.Destination;
 /* Itinerary: Produces a JSON file containing a travel itinerary given a set of location IDs.
  */
 public class Itinerary {
-    private String path = ""; // Path to output the JSON file
+    private static String path = ""; // Path to output the JSON file
 
     // TODO: Handle i/o exceptions(?)
 
     // Writes the JSON itinerary to file.
-    public void CreateJSON() throws IOException {
+    public static void CreateJSON() throws IOException {
         JSONArray arr = CreateItinerary();
         StringWriter os = new StringWriter();
         arr.writeJSONString(os);
@@ -23,7 +23,7 @@ public class Itinerary {
     }
 
     // Prints the JSON to stdout for debugging purposes
-    public void PrintJSON() throws IOException {
+    public static void PrintJSON() throws IOException {
         JSONArray arr = CreateItinerary();
         StringWriter os = new StringWriter();
 
@@ -34,13 +34,13 @@ public class Itinerary {
     }
 
     // Creates a JSONArray of trip legs, i.e. the itinerary
-    public JSONArray CreateItinerary() {
+    public static JSONArray CreateItinerary() {
         JSONArray arr = new JSONArray();
 
         for(int i = 0; i < 3; i++)
         {
-            String start = Destination.getID(i);
-            String end = Destination.getID(i+1);
+            String start = dests.getID(i);
+            String end = dests.getID(i+1);
 
             arr.add(CreateLeg(start, end));
         }
@@ -49,7 +49,7 @@ public class Itinerary {
     }
 
     // Creates a JSONObject for a single leg of the trip from start to end
-    public JSONObject CreateLeg(String start, String end) {
+    public static JSONObject CreateLeg(String start, String end) {
         JSONObject leg = new JSONObject();
         leg.put("start", start);
         leg.put("end", end);
