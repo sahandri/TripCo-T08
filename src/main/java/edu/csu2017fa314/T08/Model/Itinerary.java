@@ -8,13 +8,16 @@ public class Itinerary {
 	static double r_earth_mi = 3958.7613; //miles
 	
 	//Method Used To Create JSON
-	public static double distance(String id_1, String id_2) {
-		double distance  = 0;
-		return distance;
+	public static int distance(String id_1, String id_2) {
+		double latitude1 = degreesToRadians((Destination.getLatit(id_1));
+		double longitude1 = degreesToRadians((Destination.getLongit(id_1));
+		double latitude2 = degreesToRadians((Destination.getLatit(id_2));
+		double longitude2 = degreesToRadians((Destination.getLongit(id_2));
+		return calcGCD(latitude1,longitude1,latitude2,longitude2);
 	}
 	
 	//Method Used In Order To Calculate Greatest Circle Distance		
-	public static double calcGCD(double phi_1, double lambda_1, double phi_2, double lambda_2) {
+	public static int calcGCD(double phi_1, double lambda_1, double phi_2, double lambda_2) {
 		//Setting Up Variables Within Equation
 		double delta_phi = Math.abs(phi_1 - phi_2);
 		double delta_lambda = Math.abs(lambda_1 - lambda_2);
@@ -29,7 +32,7 @@ public class Itinerary {
 		double bottom = (sinPhi_1 * sinPhi_2) + (cosPhi_1 * cosPhi_2 * cosDeltaLambda);
 		double centralAngle = Math.atan2(top, bottom);
 		//Final Distance Computation
-		return r_earth_km * centralAngle;
+		return Math.round(Math.round(r_earth_km * centralAngle));
 	}
 	
 	//Method Used to Convert Degree Format To Radians
