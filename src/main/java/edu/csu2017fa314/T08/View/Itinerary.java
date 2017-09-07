@@ -5,6 +5,8 @@ import java.io.IOException;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 
+import edu.csu2017fa314.T08.Model.Destination;
+
 /* Itinerary: Produces a JSON file containing a travel itinerary given a set of location IDs.
  */
 public class Itinerary {
@@ -35,13 +37,12 @@ public class Itinerary {
     public JSONArray CreateItinerary() {
         JSONArray arr = new JSONArray();
 
-        String[] stops = ["stop1", "stop2", "stop3"];
-
-        int it = stops.length() - 1;
-
-        for(int i = 0; i < it; i++)
+        for(int i = 0; i < 3; i++)
         {
-            arr.add(CreateLeg(stops[i], stops[i-1]);
+            String start = Destination.getID(i);
+            String end = Destination.getID(i+1);
+
+            arr.add(CreateLeg(start, end));
         }
 
         return arr;
