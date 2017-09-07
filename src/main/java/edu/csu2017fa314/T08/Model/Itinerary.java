@@ -9,10 +9,10 @@ public class Itinerary {
 	
 	//Method Used To Create JSON
 	public static int distance(String id_1, String id_2) {
-		double latitude1 = degreesToRadians((Destination.getLatit(id_1));
-		double longitude1 = degreesToRadians((Destination.getLongit(id_1));
-		double latitude2 = degreesToRadians((Destination.getLatit(id_2));
-		double longitude2 = degreesToRadians((Destination.getLongit(id_2));
+		double latitude1 = degreesToRadians((Destination.getLatit(id_1)));
+		double longitude1 = degreesToRadians((Destination.getLongit(id_1)));
+		double latitude2 = degreesToRadians((Destination.getLatit(id_2)));
+		double longitude2 = degreesToRadians((Destination.getLongit(id_2)));
 		return calcGCD(latitude1,longitude1,latitude2,longitude2);
 	}
 	
