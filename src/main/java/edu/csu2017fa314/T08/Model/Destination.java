@@ -3,6 +3,7 @@ import java.io.*;
 import java.util.ArrayList;
 public class Destination {
 	   String csvfile;
+	   int index;		//to use in getters by ID input
 	   BufferedReader br;
 	   String line;
 	   ArrayList<String[]> list = new ArrayList<String[]>();
@@ -64,6 +65,9 @@ public class Destination {
 		   
 	   }
 	   
+	   
+	   
+	   
 	   public void print() {
 		   for(int i=0;i< list.size();i++) {
 			   String[] temp = list.get(i);
@@ -96,6 +100,41 @@ public class Destination {
 	   }
 	   
 	   public String getElevation(int index) {
+		   return list.get(index)[ElevationFt];
+	   }
+	   
+	   //find the index of an ID
+	   public void setIndex(String ID) {
+		   for(int i=0; i<list.size();i++) {
+			   if(ID.equalsIgnoreCase(getID(i))) {
+				   index = i;
+			   }
+		   }
+	   }
+	   
+	   
+	   public String getName(String ID) {
+		   setIndex(ID);
+		   return list.get(index)[Name];
+	   }
+	   
+	   public String getCity(String ID) {
+		   setIndex(ID);
+		   return list.get(index)[City];
+	   }
+	   
+	   public String getLatit(String ID) {
+		   setIndex(ID);
+		   return list.get(index)[Latitude];
+	   }
+	   
+	   public String getLongit(String ID) {
+		   setIndex(ID);
+		   return list.get(index)[Longitude];
+	   }
+	   
+	   public String getElevation(String ID) {
+		   setIndex(ID);
 		   return list.get(index)[ElevationFt];
 	   }
 
