@@ -26,6 +26,9 @@
                                                       <manifest>
                                                                <addClasspath>true</addClasspath>
                                                                <mainClass>edu.csu2017fa314.T08</mainClass>
+                                                               <manifestEntries>
+                                                                   <Class-Path>data/</Class-Path>
+                                                               </manifestEntries>
                                                       </manifest>
                                              </archive>
                                     </configuration>
