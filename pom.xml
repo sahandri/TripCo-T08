@@ -12,7 +12,7 @@
          <groupId>edu.csu2017fa314.T08</groupId>
          <artifactId>T08</artifactId>
          <packaging>jar</packaging>
-         <version>0.0.1-SNAPSHOT</version>
+         <version>1.0</version>
          <name>T08</name>
          <url>https://github.com/csu2017fa314/T08/</url>
          <build>
