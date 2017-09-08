@@ -2,10 +2,11 @@ package edu.csu2017fa314.T08.View;
 
 import edu.csu2017fa314.T08.Model.Destination;
 
-import java.io.StringWriter;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
-import org.json.simple.JSONObject;
-import org.json.simple.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONArray;
 
 /* Itinerary: Produces a JSON file containing a travel itinerary given a set of location IDs.
  */
@@ -15,35 +16,29 @@ public class Itinerary {
     // TODO: Handle i/o exceptions(?)
 
     // Writes the JSON itinerary to file.
-    public static void createJSON() throws IOException {
+    public static void createJSON(String fileName) throws IOException {
         JSONArray arr = createItinerary();
-        StringWriter os = new StringWriter();
-        arr.writeJSONString(os);
+        BufferedWriter ob = new BufferedWriter(new FileWriter(fileName));
+        ob.write(arr.toString(4));
+        ob.close();
     }
 
     // Prints the JSON to stdout for debugging purposes
     public static void printJSON() throws IOException {
         JSONArray arr = createItinerary();
-        StringWriter os = new StringWriter();
-        System.out.println("Creating JSON");
-
-        arr.writeJSONString(os);
-        String json = os.toString();
-
-        System.out.println(json);
+        System.out.println(arr.toString(4));
     }
 
     // Creates a JSONArray of trip legs, i.e. the itinerary
     public static JSONArray createItinerary() {
         JSONArray arr = new JSONArray();
 
-        System.out.println("Iterating dests: total " + Destination.getTotal());
-        for(int i = 0; i < Destination.getTotal(); i++)
+        for(int i = 0; i < Destination.getTotal()-1; i++)
         {
             String start = Destination.getID(i);
             String end = Destination.getID(i+1);
 
-            arr.add(createLeg(start, end));
+            arr.put(createLeg(start, end));
         }
 
         return arr;

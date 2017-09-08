@@ -31,11 +31,11 @@ public class TripCo
     }
 
     public static void main(String[] args) {
-        System.out.println("Unwelcome to TripCo");
+        System.out.println("Welcome to TripCo");
 
         try {
             Destination.readFile(args[0]);
-//            Itinerary.createJSON();
+            Itinerary.createJSON(args[1]);
             Itinerary.printJSON();
         }
         catch(IOException e) {

@@ -1,7 +1,7 @@
 package edu.csu2017fa314.T08.View;
 import static org.junit.Assert.*;
 
-import org.json.simple.JSONObject;
+import org.json.JSONObject;
 
 import org.junit.Before;
 import org.junit.Test;
