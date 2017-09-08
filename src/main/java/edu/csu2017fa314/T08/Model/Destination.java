@@ -40,10 +40,9 @@ public class Destination {
 	   }
 	   
 	   //read brews.csv file and stores it in an Arraylis of arrays of string
-	   public static void readFile() {
+	   public static void readFile(String filename) {
 		   try {
-               InputStream is = Destination.class.getResourceAsStream(csvfile);
-			   br = new BufferedReader(new InputStreamReader(is));
+			   br = new BufferedReader(new FileReader(filename));
 			   line = br.readLine();
 			   String[] firstLine = line.split(",");
 			   setOrder(firstLine);
@@ -56,12 +55,17 @@ public class Destination {
 			   }
 		   }catch (IOException e) {
 			   e.printStackTrace();
-		   }finally {
+		   }catch(NullPointerException e) {
+				   e.printStackTrace();
+           }finally {
 			   try {
 				   br.close();
 			   }catch(IOException e) {
 				   e.printStackTrace();
+			   }catch(NullPointerException e) {
+				   e.printStackTrace();
 			   }
+
 			   
 		   }
 		   

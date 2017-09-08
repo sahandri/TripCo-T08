@@ -32,7 +32,7 @@ public class Itinerary {
 		double bottom = (sinPhi_1 * sinPhi_2) + (cosPhi_1 * cosPhi_2 * cosDeltaLambda);
 		double centralAngle = Math.atan2(top, bottom);
 		//Final Distance Computation
-		return Math.round(Math.round(r_earth_km * centralAngle));
+		return Math.round(Math.round(r_earth_mi * centralAngle));
 	}
 	
 	//Method Used to Convert Degree Format To Radians
