@@ -56,12 +56,17 @@ public class Destination {
 			   }
 		   }catch (IOException e) {
 			   e.printStackTrace();
-		   }finally {
+		   }catch(NullPointerException e) {
+				   e.printStackTrace();
+           }finally {
 			   try {
 				   br.close();
 			   }catch(IOException e) {
 				   e.printStackTrace();
+			   }catch(NullPointerException e) {
+				   e.printStackTrace();
 			   }
+
 			   
 		   }
 		   

@@ -15,17 +15,17 @@ public class Itinerary {
     // TODO: Handle i/o exceptions(?)
 
     // Writes the JSON itinerary to file.
-    public static void CreateJSON() throws IOException {
-        JSONArray arr = CreateItinerary();
+    public static void createJSON() throws IOException {
+        JSONArray arr = createItinerary();
         StringWriter os = new StringWriter();
         arr.writeJSONString(os);
-
     }
 
     // Prints the JSON to stdout for debugging purposes
-    public static void PrintJSON() throws IOException {
-        JSONArray arr = CreateItinerary();
+    public static void printJSON() throws IOException {
+        JSONArray arr = createItinerary();
         StringWriter os = new StringWriter();
+        System.out.println("Creating JSON");
 
         arr.writeJSONString(os);
         String json = os.toString();
@@ -34,22 +34,23 @@ public class Itinerary {
     }
 
     // Creates a JSONArray of trip legs, i.e. the itinerary
-    public static JSONArray CreateItinerary() {
+    public static JSONArray createItinerary() {
         JSONArray arr = new JSONArray();
 
-        for(int i = 0; i < 3; i++)
+        System.out.println("Iterating dests: total " + Destination.getTotal());
+        for(int i = 0; i < Destination.getTotal(); i++)
         {
-            String start = dests.getID(i);
-            String end = dests.getID(i+1);
+            String start = Destination.getID(i);
+            String end = Destination.getID(i+1);
 
-            arr.add(CreateLeg(start, end));
+            arr.add(createLeg(start, end));
         }
 
         return arr;
     }
 
     // Creates a JSONObject for a single leg of the trip from start to end
-    public static JSONObject CreateLeg(String start, String end) {
+    public static JSONObject createLeg(String start, String end) {
         JSONObject leg = new JSONObject();
         leg.put("start", start);
         leg.put("end", end);
