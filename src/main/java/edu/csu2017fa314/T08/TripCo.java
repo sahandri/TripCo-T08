@@ -34,7 +34,7 @@ public class TripCo
         System.out.println("Unwelcome to TripCo");
 
         try {
-            Destination.readFile();
+            Destination.readFile(args[0]);
 //            Itinerary.createJSON();
             Itinerary.printJSON();
         }

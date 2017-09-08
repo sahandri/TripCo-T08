@@ -1,11 +1,11 @@
 package edu.csu2017fa314.T08.View;
 
+import edu.csu2017fa314.T08.Model.Destination;
+
 import java.io.StringWriter;
 import java.io.IOException;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
-
-import edu.csu2017fa314.T08.Model.Destination;
 
 /* Itinerary: Produces a JSON file containing a travel itinerary given a set of location IDs.
  */
