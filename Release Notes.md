@@ -17,7 +17,18 @@ None
 None
 
 ### Installation and Deployment
-[describe how to install and run this version]
+Prerequisites: Maven, Node.js
+Download and unpack the source code from the release page and`cd` into the project folder.
+
+To run the server:
+
+    mvn package
+    java -cp target/T08-1.0.jar edu.csu2017fa314.T08.TripCo <CSV_FILENAME> <OUTPUT_FILENAME>
+    
+To run the web app, first cd into `web/` and then run:
+
+    npm install
+    npm run dev
 
 ### Dependencies
 server side: Listed in pom
