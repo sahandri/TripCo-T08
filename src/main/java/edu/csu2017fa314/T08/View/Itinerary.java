@@ -18,7 +18,9 @@ public class Itinerary {
     // Writes the JSON itinerary to file.
     public static void createJSON(String fileName) throws IOException {
         JSONArray arr = createItinerary();
+
         BufferedWriter ob = new BufferedWriter(new FileWriter(fileName));
+        // Write the JSON to a file, pretty-printed using 4-space indentation
         ob.write(arr.toString(4));
         ob.close();
     }
@@ -26,6 +28,8 @@ public class Itinerary {
     // Prints the JSON to stdout for debugging purposes
     public static void printJSON() throws IOException {
         JSONArray arr = createItinerary();
+        
+        // Write the JSON to stdout, pretty-printed using 4-space indentation
         System.out.println(arr.toString(4));
     }
 
@@ -33,11 +37,14 @@ public class Itinerary {
     public static JSONArray createItinerary() {
         JSONArray arr = new JSONArray();
 
+        // Iterate through destinations, calculating the distance of each leg.
         for(int i = 0; i < Destination.getTotal()-1; i++)
         {
             String start = Destination.getID(i);
             String end = Destination.getID(i+1);
 
+            // Creates a JSON object with start, end, and the distance between them
+            // and appends it to the end of the itinerary JSON array.
             arr.put(createLeg(start, end));
         }
 
@@ -50,7 +57,7 @@ public class Itinerary {
         leg.put("start", start);
         leg.put("end", end);
 
-        // XXX needs implementation
+        // Calculates the distance between start and end
         double dist = edu.csu2017fa314.T08.Model.Itinerary.distance(start, end);
 
         leg.put("distance", dist);
