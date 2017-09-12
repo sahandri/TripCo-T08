@@ -41,7 +41,7 @@ class Home extends React.Component {
                 return function (e) {
                     let JsonObj = JSON.parse(e.target.result);
                     console.log(JsonObj); //Output Json object
-                    this.props.browseFile(JsonObj); //Calls Browsefile in another jsx file
+                    this.props.browseFile(JsonObj); //Calls Browsefile in ap.js file
                 };
             })(file).bind(this); //?
 
