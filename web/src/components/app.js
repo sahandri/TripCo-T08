@@ -4,23 +4,23 @@ import Pair from './Home/Pair/Pair.jsx';
 
 
 export default class App extends React.Component {
-    constructor(props) {
+    constructor(props) {  //construct from prop.jsx
         super(props);
         this.state = {
-            allPairs: [],
+            allPairs: [], //creates an array for pairs
             sysFile: []
         }
     };
 
     render() {
-        let pairs = this.state.allPairs;
-        let ps = pairs.map((pp) => {
-            return <Pair {...pp}/>;
+        let pairs = this.state.allPairs; //sets the array as pairs
+        let ps = pairs.map((pp) => { //pair map
+            return <Pair {...pp}/>; //?
         });
         return (
             <div className="app-container">
                 <Home
-                    browseFile={this.browseFile.bind(this)}
+                    browseFile={this.browseFile.bind(this)} //?
                     pairs={ps}
                 />
             </div>
