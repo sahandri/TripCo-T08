@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
-let Pair = ({start, end, dist, tot}) => <tbody
-    className="pair">
-    <tr>
-        <td>
+let Pair = ({start, end, dist, tot}) => <tbody //Pair react with Start, End, Dist, Tot
+    className="pair"> //classname for CSS
+    <tr> //Row
+        <td> // Columns
             <h5>{start}</h5>
         </td>
         <td>
