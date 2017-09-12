@@ -96,9 +96,9 @@ public class Destination {
 		   return list.get(index)[Name];
 	   }
 	   
-	   //get Name by index of arraylist
+	   //get City by index of arraylist
 	   public static String getCity(int index) {
-		   return list.get(index)[Name];
+		   return list.get(index)[City];
 	   }
 	   
 	   //get Latitude by index of arraylist
