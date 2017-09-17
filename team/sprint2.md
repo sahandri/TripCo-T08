@@ -25,15 +25,14 @@
 
 ## Plan 
 
-User stories (epics) in the Sprint Backlog: *#8, #9, #10, #12, #11, #14*.  
+User stories (epics) in the Sprint Backlog: *#97, #98, #100, #101, #102, #103*.
 
-Total planned tasks / issues in the Sprint Backlog: *99* 
+Total planned tasks / issues in the Sprint Backlog: *15* 
 
 ## Daily Scrums
 
 Date | Tasks done this time | Tasks done next time | Impediments | Confidence
 :--- | :--- | :--- | :--- | :---
-*Sep 14* | Dave *#27, #28* | Dave *#30* | *None* | *High*
  | | | | 
  | | | | 
 
