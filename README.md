@@ -9,7 +9,7 @@
 Sprint # | Model - Data | Model - Itinerary | View - Server | View - Client
 -------- | ------------ | ----------------- | ------------- | -------------
  1 | Sahand | Michael | Adam | Ryan ||
- 2 ||||||
+ 2 | Ryan | Sahand | Michael | Adam ||
  3 ||||||
  4 ||||||   
  5 |||||| 
