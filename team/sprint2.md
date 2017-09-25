@@ -33,8 +33,8 @@ Total planned tasks / issues in the Sprint Backlog: *15*
 
 Date | Tasks done this time | Tasks done next time | Impediments | Confidence
 :--- | :--- | :--- | :--- | :---
- 9/18/2017|Started to fix grading issues from previous grades, setup ZenHub, Created Sprint2.md |Complete Junit tests for Sprint 1 files, Review Study materials for Midterm| Associate tasks with issues | High 
- | | | | 
+9/18/2017|Started to fix grading issues from previous grades, setup ZenHub, Created Sprint2.md |Complete Junit tests for Sprint 1 files, Review Study materials for Midterm| Associate tasks with issues | High 
+9/25/2017|With finished midterm, start working with each other to build the correct website,  finish up json commands | Time with team | Medium | 
 
 ## Review
 
