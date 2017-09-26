@@ -1,16 +1,12 @@
-public class MakeSVG {
 
+public class makeSvg {
 	public static void main(String[] args) {
-		String svgFile = xmlDec();
-		svgFile += svgSizeTag();
-		svgFile += "\n" + gTag1();
-		svgFile += "\n" + titleTag("Title");
-		svgFile += "\n" + commentTag("Comments go Here!");
-		svgFile += "\n" + drawLine("north", 50, 50, 1230, 50, 5, "#6666");
-		svgFile += "\n" + gTag2();
-		svgFile += "\n" + svgTag();
-		System.out.println(svgFile);
-
+		//Import array of destinations ids
+		//Pass array of destination ids into constructLineSVG
+		//SVG file looks up coordinate data for each destination
+		//constructLineSVG calls coordinate converter from Lat/Long to local coordinates in file
+		//constructSVG inserts line for each leg of trip and outputs svg file with total trip
+		System.out.println(constructLineSVG());	
 	}
 	
 	public static String xmlDec() {
@@ -45,7 +41,17 @@ public class MakeSVG {
 		return "<line id=\"" + id + "\" y2=\"" + y2 + "\" x2=\"" + x2 + "\" y1=\"" + y1 + "\" x1=\"" + x1 + "\" stroke-width=\"" + strokeWidth + "\" stroke=\""+ color + "\"/>";
 	}
 	
-	public static String drawAllLines(){
-		return "";
+	public static String constructLineSVG() {
+		String svgFile = "";
+		for(int i = 0; i <= 4; i++) {
+			svgFile = svgFile + "\n" + drawLine("north", 50, 50, 1230, 50, 5, "#6666");
+		}
+		svgFile = "\n" + commentTag("Comments go Here!") + svgFile;
+		svgFile = "\n" + titleTag("Title") + svgFile;
+		svgFile = "\n" + gTag1() + svgFile + "\n" + gTag2();
+		svgFile = "\n" + svgSizeTag() + svgFile + "\n" + svgTag();
+		svgFile = xmlDec() + svgFile;
+		return svgFile;
 	}
+	
 }
