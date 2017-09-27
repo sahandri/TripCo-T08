@@ -3,12 +3,14 @@ import Home from './Home/Home.jsx';
 import Pair from './Home/Pair/Pair.jsx';
 
 
+
 export default class App extends React.Component {
     constructor(props) {  //construct from prop.jsx
         super(props);
         this.state = {
             allPairs: [], //creates an array for pairs
-            sysFile: []
+            sysFile: [],
+            sysFile2: []
         }
     };
 
@@ -29,13 +31,23 @@ export default class App extends React.Component {
 
     async browseFile(file) {
         console.log("Got file:", file);
+        this.setState({
+            allPairs: pairs,
+            sysFile: file,
+            sysFile2: file2
+
+        });
+        this.compute.bind(file)
+    }
+
+    async compute(f){
         //For loop that goes through all pairs,
         let pairs = [];
         let tot = 0; //start total
-        for (let i = 0; i < Object.values(file).length; i++) {
-            let start = file[i].start; //get start from file i
-            let end = file[i].end; //get end from file i
-            let dist = file[i].distance;
+        for (let i = 0; i < Object.values(f).length; i++) {
+            let start = f[i].start; //get start from file i
+            let end = f[i].end; //get end from file i
+            let dist = f[i].distance;
             tot = tot + dist; //current total
             let p = { //create object with start, end, and dist variable
                 start: start,
@@ -49,9 +61,5 @@ export default class App extends React.Component {
 
         //Here we will update the state of app.
         // Anything component (i.e. pairs) referencing it will be re-rendered
-        this.setState({
-            allPairs: pairs,
-            sysFile: file
-        });
     }
 }
