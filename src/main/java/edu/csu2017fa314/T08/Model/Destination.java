@@ -36,11 +36,16 @@ public class Destination {
 			   line = br.readLine();
 			   ArrayList<String> firstLine = new ArrayList<String>(Arrays.asList(line.split(",")));
 			   setOrder(firstLine);
+
 			   while ((line = br.readLine()) != null) {
+
 				   if(!line.equals("")) {  // if line is not empty stores it, otherwise ignores it
 					   line = line.replaceAll(", ", ","); //if input data has space after comma, removes space
+
                        ArrayList<String> data = new ArrayList<String>(Arrays.asList(line.split(",")));
 					   list.add(data);
+                       System.out.println("\n\nCURRENT DATA: **********\n");
+                       print();
 				   }
 			   }
 		   }catch (IOException e) {
@@ -164,9 +169,14 @@ public class Destination {
 	   //find the index of an ID
 	   public static void setIndex(String ID) {
 		   for(int i=0; i<list.size();i++) {
-			   if(ID.equalsIgnoreCase(getID(i))) {
+               String tgt = getID(i);
+			   if(ID.equalsIgnoreCase(tgt)) {
 				   index = i;
+                   System.out.println(tgt + " ==  " + ID);
 			   }
+               else {
+                   System.out.println(tgt + " =/= " + ID);
+               }
 		   }
 	   }
 	   
@@ -183,11 +193,11 @@ public class Destination {
 		   }
 	   }
 
-    public static ArrayList getList() {
+    public static ArrayList<ArrayList<String>> getList() {
         return list;
     }
 
-    public static ArrayList getFirstLine() {
+    public static ArrayList<String> getFirstLine() {
         return firstLine;
     }
 
