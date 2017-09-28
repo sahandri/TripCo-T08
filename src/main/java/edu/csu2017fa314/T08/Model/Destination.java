@@ -86,14 +86,6 @@ public class Destination {
 		   }
 	   }
 	   
-	   
-       /**
-        * Returns a list of all the destination IDs in the data file.
-        */
-       public static List<String> getIDs() {
-           return Arrays.asList(list.get(index));
-       }
-
 	   //get ID by index of arraylist
 	   public static String getID(int index) {
 		   return list.get(index)[ID];
