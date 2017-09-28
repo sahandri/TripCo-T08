@@ -1,6 +1,6 @@
 package edu.csu2017fa314.T08.View;
 
-import edu.csu2017fa314.T08.Model.Itinerary;
+import edu.csu2017fa314.T08.Model.Distance;
 import edu.csu2017fa314.T08.Model.Destination;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -80,18 +80,18 @@ public class makeSvg {
 			ob.write(commentTag("\nDrawing the trip path!"));
 			//Test Conversions
 			//ob.write("\n" + drawStartPoint(convertLongitude(-105.5), convertLatitude(39), 5, "red", "transparent", 20));
-			//ob.write("\n" + drawStartPoint((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(1))) * -1, edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(1)), 5, "red", "transparent", 20));
-			//ob.write("\n" + drawStartPoint(convertLongitude((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(1))) * -1), convertLatitude(edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(1))), 5, "red", "transparent", 20));
+			//ob.write("\n" + drawStartPoint((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(1))) * -1, edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(1)), 5, "red", "transparent", 20));
+			//ob.write("\n" + drawStartPoint(convertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(1))) * -1), convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(1))), 5, "red", "transparent", 20));
 			double startX = 0;
 			double startY = 0;
 			double finishX = 0;
 			double finishY = 0;
 			for(int i = 0; i < Destination.getTotal()-1; i++) {
 				if(i == 0) {
-					startX = convertLongitude((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(i))) * -1);
-					startY = convertLatitude(edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(i)));
-					finishX = convertLongitude((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(Destination.getTotal() - 1))) * -1);
-					finishY = convertLatitude(edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(Destination.getTotal() - 1)));
+					startX = convertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(i))) * -1);
+					startY = convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(i)));
+					finishX = convertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(Destination.getTotal() - 1))) * -1);
+					finishY = convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(Destination.getTotal() - 1)));
 					ob.write("\n" + drawStartPoint(startX, startY, 5, "red", "transparent", 20));
 					ob.write("\n" + drawLine("north", startX, startY, finishX, finishY, 5, "#000000"));
 					ob.write("\n" + addText(startX, startY + 50, "sans-serif", "20px", "red", "Start/End"));
@@ -99,8 +99,8 @@ public class makeSvg {
 				else {
 					finishX = startX;
 					finishY = startY;
-					startX = convertLongitude((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(i))) * -1);
-					startY = convertLatitude(edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(i)));
+					startX = convertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(i))) * -1);
+					startY = convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(i)));
 					ob.write("\n" + drawStartPoint(startX, startY, 5, "blue", "transparent", 10));
 					ob.write("\n" + drawLine("north", startX, startY, finishX, finishY, 5, "#000000"));
 				}

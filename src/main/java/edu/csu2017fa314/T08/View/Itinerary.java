@@ -2,6 +2,7 @@ package edu.csu2017fa314.T08.View;
 
 import edu.csu2017fa314.T08.Model.Destination;
 import edu.csu2017fa314.T08.Model.Model;
+import edu.csu2017fa314.T08.Model.Distance;
 
 import java.util.ArrayList;
 import java.io.BufferedWriter;
@@ -63,11 +64,11 @@ public class Itinerary {
         leg.put("end", end);
 
         // Calculates the distance between start and end
-        double distm = edu.csu2017fa314.T08.Model.Itinerary.distanceMi(start, end);
-        double distk = edu.csu2017fa314.T08.Model.Itinerary.distanceKm(start, end);
+        double distm = Distance.distanceMi(start, end);
+        //double distk = Distance.distanceKm(start, end);
 
-        leg.put("distanceMi", distm);
-        leg.put("distanceKm", distk);
+        leg.put("distance", distm); //Change to DistanceMi for next sprint
+        //leg.put("distanceKm", distk);
         return leg;
     }
 }

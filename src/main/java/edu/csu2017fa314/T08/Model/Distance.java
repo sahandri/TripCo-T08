@@ -1,7 +1,7 @@
 package edu.csu2017fa314.T08.Model;
 import java.lang.Math;
 
-public class Itinerary {
+public class Distance {
 	
 	//Static Global Variables 
 	

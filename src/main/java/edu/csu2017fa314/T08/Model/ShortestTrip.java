@@ -40,7 +40,7 @@ public class ShortestTrip {
             for(int j = 0; j < destTtl; j++) {
             String d_j = Destination.getID(j);
 
-                distLookUp[i][j] = Itinerary.distanceMi(d_i,d_j);
+                distLookUp[i][j] = Distance.distanceMi(d_i,d_j);
             }
         }
     }
