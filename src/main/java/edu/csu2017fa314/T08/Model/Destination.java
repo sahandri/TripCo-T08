@@ -89,8 +89,6 @@ public class Destination {
 		   }
 	   }
 	   
-	   
-	   
 	   //get ID by index of arraylist
 	   public static String getID(int index) {
 		   return list.get(index).get(ID);
