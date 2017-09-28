@@ -51,7 +51,7 @@ public class Itinerary {
 
             // Creates a JSON object with start, end, and the distance between them
             // and appends it to the end of the itinerary JSON array.
-            arr.put(createLeg(start, end));
+            arr.put(createLeg(Destination.getName(start), Destination.getName(end)));
         }
 
         return arr;
