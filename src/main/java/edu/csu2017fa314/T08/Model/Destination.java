@@ -15,7 +15,7 @@ public class Destination {
 	   static String line;
 	   static ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>(); //arraylist to store arrays
 	   static int ID,Name,City,Latitude,Longitude,ElevationFt;  //index of string[]
-     	   static ArrayList<String> firstLine;
+       static ArrayList<String> firstLine;
 
 	   //constructor
 	   public Destination() 
@@ -120,6 +120,10 @@ public class Destination {
 	   }
 	   
 	   
+	   public static int getIndex(String ID) {
+		   setIndex(ID);
+		   return index;
+	   }
 
 	   //get Name by ID
 	   public static String getName(String ID) {

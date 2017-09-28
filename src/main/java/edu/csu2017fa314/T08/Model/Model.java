@@ -7,9 +7,7 @@ public class Model
    public static ArrayList<String> shortestTrip() {
        ArrayList<String> order = new ArrayList<String>();
 
-       for(int i = 0; i < Destination.getTotal(); i++) {
-           order.add(Destination.getID(i));
-       }
+       order = ShortestTrip.getShortestTrip();
 
        return order;
    }
