@@ -6,24 +6,25 @@ import java.util.Collections;
 public class ShortestTrip {
 
     private static int[][] distLookUp;
-    private static ArrayList<String> stops;
+    private static ArrayList<String> stops = new ArrayList<String>();
     private static ArrayList<String> tripCandidate;
 
     public static ArrayList<String> getShortestTrip() {
 
-        buildDistLookUp();
-
         int tripLength = -1;
-        for(int i = 0; i < Destination.getTotal(); i++) {
-            // Get the shortest possible trip from i
-            int currTrip = shortestTripLength(i);
+        if(stops.size() == 0) {
+            buildDistLookUp();
 
-            // Save that trip if it's the shortest we've found.
-            if(currTrip < tripLength || tripLength < 0) {
-                tripLength = currTrip;
-                stops = tripCandidate;
+            for(int i = 0; i < Destination.getTotal(); i++) {
+                // Get the shortest possible trip from i
+                int currTrip = shortestTripLength(i);
+
+                // Save that trip if it's the shortest we've found.
+                if(currTrip < tripLength || tripLength < 0) {
+                    tripLength = currTrip;
+                    stops = tripCandidate;
+                }
             }
-
         }
 
         System.out.println("Shortest Trip: " + Integer.toString(tripLength));
