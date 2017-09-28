@@ -12,6 +12,7 @@ public class Destination {
 	   static String line;
 	   static ArrayList<String[]> list = new ArrayList<String[]>(); //arraylist to store arrays
 	   static int ID,Name,City,Latitude,Longitude,ElevationFt;  //index of string[]
+	   static String[] firstLine;
 
 	   //constructor
 	   public Destination() 
@@ -30,7 +31,7 @@ public class Destination {
 		   try {
 			   br = new BufferedReader(new FileReader(filename));
 			   line = br.readLine();
-			   String[] firstLine = line.split(",");
+			   firstLine = line.split(",");
 			   setOrder(firstLine);
 			   while ((line = br.readLine()) != null) {
 				   if(!line.equals("")) {  // if line is not empty stores it, otherwise ignores it
@@ -174,6 +175,14 @@ public class Destination {
 			   }
 			   System.out.print("\n");
 		   }
+	   }
+	   
+	   public static ArrayList getList() {
+			return list;
+	   }
+	   
+	   public static String[] getFirstLine() {
+			return firstLine;
 	   }
 
 
