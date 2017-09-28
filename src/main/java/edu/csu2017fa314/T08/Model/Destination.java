@@ -5,7 +5,9 @@ import java.io.*;
 * we will have all the data in arraylist of array.
 * to access the data there are getters by ID or index
 */
+import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.List;
 public class Destination {
 	   static int index;		//to use in getters by ID input
 	   static BufferedReader br;
@@ -83,8 +85,6 @@ public class Destination {
 			   }
 		   }
 	   }
-	   
-	   
 	   
 	   //get ID by index of arraylist
 	   public static String getID(int index) {
