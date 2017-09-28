@@ -40,8 +40,8 @@ public class Itinerary {
         // Iterate through destinations, calculating the distance of each leg.
         for(int i = 0; i < Destination.getTotal()-1; i++)
         {
-            String start = Destination.getName(i);
-            String end = Destination.getName(i+1);
+            String start = Destination.getID(i);
+            String end = Destination.getID(i+1);
 
             // Creates a JSON object with start, end, and the distance between them
             // and appends it to the end of the itinerary JSON array.
@@ -58,9 +58,11 @@ public class Itinerary {
         leg.put("end", end);
 
         // Calculates the distance between start and end
-        double dist = edu.csu2017fa314.T08.Model.Itinerary.distanceMi(start, end);
+        double distm = edu.csu2017fa314.T08.Model.Itinerary.distanceMi(start, end);
+        double distk = edu.csu2017fa314.T08.Model.Itinerary.distanceKm(start, end);
 
-        leg.put("distance", dist);
+        leg.put("distanceMi", distm);
+        leg.put("distanceKm", distk);
         return leg;
     }
 }
