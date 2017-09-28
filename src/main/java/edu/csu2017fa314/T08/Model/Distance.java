@@ -80,6 +80,7 @@ public class Distance {
 		String deg = "0";
 		String min = "0";
 		String sec = "0";
+		int neg = 1;
 		//For loop used to run through entire coordinate string and extract values
 		for(int i = 0; i < coordinate.length(); i++) {
 			//System.out.println("i = " + i + " char: " + coordinate.charAt(i));
@@ -92,6 +93,10 @@ public class Distance {
 				}
 				//Change newInt to 1 to show that the next value is not the start of an int
 				newInt = 1;
+			}
+			else if((coordinate.charAt(i) == 'S') | (coordinate.charAt(i) == 'W')){
+				neg = -1;
+				System.out.println("The coordinate is either West or South so negs value is: " + neg);
 			}
 			//If the char is not between zero and nine, a deciaml, or a minus then we have reached the end of a value, store value into either degree, minute, or second
 			else { 
@@ -113,6 +118,7 @@ public class Distance {
 		//System.out.println("Degrees: " + deg + ", Minutes: " + min + ", Seconds: " + sec );
 		
 		//Return the computation of decimal degrees by parsing each string to a double and using the formula below
-		return Double.parseDouble(deg) + (Double.parseDouble(min)/60) + (Double.parseDouble(sec)/(60*60)) ;
+		System.out.println("The converted coordinate is: " + ((Double.parseDouble(deg) + (Double.parseDouble(min)/60) + (Double.parseDouble(sec)/(60*60))) * neg));
+		return ((Double.parseDouble(deg) + (Double.parseDouble(min)/60) + (Double.parseDouble(sec)/(60*60))) * neg);
 	}
 }
