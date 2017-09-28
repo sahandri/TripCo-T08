@@ -1,0 +1,77 @@
+[
+    {
+        "distance": 66,
+        "start": "1",
+        "end": "2"
+    },
+    {
+        "distance": 91,
+        "start": "2",
+        "end": "3"
+    },
+    {
+        "distance": 85,
+        "start": "3",
+        "end": "4"
+    },
+    {
+        "distance": 19,
+        "start": "4",
+        "end": "5"
+    },
+    {
+        "distance": 99,
+        "start": "5",
+        "end": "6"
+    },
+    {
+        "distance": 65,
+        "start": "6",
+        "end": "7"
+    },
+    {
+        "distance": 71,
+        "start": "7",
+        "end": "8"
+    },
+    {
+        "distance": 30,
+        "start": "8",
+        "end": "9"
+    },
+    {
+        "distance": 20,
+        "start": "9",
+        "end": "10"
+    },
+    {
+        "distance": 21,
+        "start": "10",
+        "end": "11"
+    },
+    {
+        "distance": 31,
+        "start": "11",
+        "end": "12"
+    },
+    {
+        "distance": 86,
+        "start": "12",
+        "end": "13"
+    },
+    {
+        "distance": 68,
+        "start": "13",
+        "end": "14"
+    },
+    {
+        "distance": 24,
+        "start": "14",
+        "end": "15"
+    },
+    {
+        "distance": 10,
+        "start": "15",
+        "end": "16"
+    }
+]

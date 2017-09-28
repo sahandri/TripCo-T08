@@ -52,7 +52,7 @@ public class makeSvg {
 		return "<text x=\"" + x + "\" y=\"" + y + "\" font-family=\"" + fontFamily + "\" font-size=\"" + size + "\" fill=\"" + color + "\">" + actualText + "</text>";
 	}
 	
-	public static void createTripFile() {
+	public static void createTripFile(String filename) {
 		try{
 		//Create and open a writer for a new .svg file
 			BufferedWriter ob = new BufferedWriter(new FileWriter(filename));
