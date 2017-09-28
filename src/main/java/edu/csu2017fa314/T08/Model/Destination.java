@@ -189,11 +189,11 @@ public class Destination {
 		   }
 	   }
 
-    public static ArrayList getList() {
+    public static ArrayList<ArrayList<String>> getList() {
         return list;
     }
 
-    public static ArrayList getFirstLine() {
+    public static ArrayList<String> getFirstLine() {
         return firstLine;
     }
 
