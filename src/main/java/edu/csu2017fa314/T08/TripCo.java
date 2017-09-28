@@ -3,6 +3,7 @@ package edu.csu2017fa314.T08;
 import java.io.IOException;
 import edu.csu2017fa314.T08.Model.Destination;
 import edu.csu2017fa314.T08.View.Itinerary;
+import edu.csu2017fa314.T08.View.makeSvg;
 import edu.csu2017fa314.T08.View.CSV;
 public class TripCo
 {
@@ -40,6 +41,7 @@ public class TripCo
             Itinerary.printJSON();
             CSV.createJSON(args[2]);
             CSV.printJSON();
+            makeSvg.createTripFile(args[3]);
         }
         catch(IOException e) {
             System.err.println("Failed to generate JSON, caught IOException: " + e.getMessage());
