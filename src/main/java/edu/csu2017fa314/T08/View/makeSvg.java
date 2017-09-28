@@ -88,11 +88,16 @@ public class makeSvg {
 			double finishY = 0;
 			for(int i = 0; i < Destination.getTotal()-1; i++) {
 				if(i == 0) {
+					//Sets first destination in trip to the destination at i = 0
 					startX = convertLongitude((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(i))) * -1);
 					startY = convertLatitude(edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(i)));
+					//For this part of the loop, sets the finish destination to the very last destination of the trip at i = Destination.getTotal() - 1					
 					finishX = convertLongitude((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(Destination.getTotal() - 1))) * -1);
 					finishY = convertLatitude(edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(Destination.getTotal() - 1)));
+					System.out.println("For this part, The final destination is at: Longitude: " + finishX + " Latitude: " + finishY);
+					//Draws the starting point given start data					
 					ob.write("\n" + drawStartPoint(startX, startY, 5, "red", "transparent", 20));
+					//Draws the line from the starting point to the very last destination					
 					ob.write("\n" + drawLine("north", startX, startY, finishX, finishY, 5, "#000000"));
 					ob.write("\n" + addText(startX, startY + 50, "sans-serif", "20px", "red", "Start/End"));
 				}

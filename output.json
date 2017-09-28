@@ -1,0 +1,98 @@
+[
+    {
+        "start": "7",
+        "distanceKm": 128,
+        "end": "2",
+        "distanceMi": 80
+    },
+    {
+        "start": "2",
+        "distanceKm": 17,
+        "end": "4",
+        "distanceMi": 10
+    },
+    {
+        "start": "4",
+        "distanceKm": 31,
+        "end": "5",
+        "distanceMi": 19
+    },
+    {
+        "start": "5",
+        "distanceKm": 92,
+        "end": "1",
+        "distanceMi": 57
+    },
+    {
+        "start": "1",
+        "distanceKm": 123,
+        "end": "3",
+        "distanceMi": 76
+    },
+    {
+        "start": "3",
+        "distanceKm": 70,
+        "end": "6",
+        "distanceMi": 43
+    },
+    {
+        "start": "6",
+        "distanceKm": 35,
+        "end": "8",
+        "distanceMi": 22
+    },
+    {
+        "start": "8",
+        "distanceKm": 49,
+        "end": "9",
+        "distanceMi": 30
+    },
+    {
+        "start": "9",
+        "distanceKm": 26,
+        "end": "11",
+        "distanceMi": 16
+    },
+    {
+        "start": "11",
+        "distanceKm": 34,
+        "end": "10",
+        "distanceMi": 21
+    },
+    {
+        "start": "10",
+        "distanceKm": 59,
+        "end": "16",
+        "distanceMi": 37
+    },
+    {
+        "start": "16",
+        "distanceKm": 16,
+        "end": "15",
+        "distanceMi": 10
+    },
+    {
+        "start": "15",
+        "distanceKm": 29,
+        "end": "12",
+        "distanceMi": 18
+    },
+    {
+        "start": "12",
+        "distanceKm": 66,
+        "end": "14",
+        "distanceMi": 41
+    },
+    {
+        "start": "14",
+        "distanceKm": 109,
+        "end": "13",
+        "distanceMi": 68
+    },
+    {
+        "start": "13",
+        "distanceKm": 192,
+        "end": "7",
+        "distanceMi": 120
+    }
+]
