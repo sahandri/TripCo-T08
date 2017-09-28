@@ -58,7 +58,7 @@ public class CSV {
     // Creates a JSONObject for a single leg of the trip from start to end
     public static JSONObject createLeg(ArrayList<String> line, ArrayList<String> firstLine) {
         JSONObject leg = new JSONObject();
-        for(int i = 0; i < line.size(); ++i) {
+        for(int i = 0; i < line.size()-1; ++i) {
 			leg.put(firstLine.get(i), line.get(i));
 		}
         return leg;
