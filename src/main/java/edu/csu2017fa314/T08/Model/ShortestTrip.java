@@ -11,10 +11,10 @@ public class ShortestTrip {
 
     public static ArrayList<String> getShortestTrip() {
 
+        int tripLength = -1;
         if(stops.size() == 0) {
             buildDistLookUp();
 
-            int tripLength = -1;
             for(int i = 0; i < Destination.getTotal(); i++) {
                 // Get the shortest possible trip from i
                 int currTrip = shortestTripLength(i);
