@@ -35,7 +35,6 @@ public class Destination {
 			   br = new BufferedReader(new FileReader(filename));
 			   line = br.readLine();
 			   ArrayList<String> firstLine = new ArrayList<String>(Arrays.asList(line.split(",")));
-
 			   setOrder(firstLine);
 			   while ((line = br.readLine()) != null) {
 				   if(!line.equals("")) {  // if line is not empty stores it, otherwise ignores it
@@ -179,20 +178,12 @@ public class Destination {
 			   System.out.print("\n");
 		   }
 	   }
-	   
-	   public static ArrayList getList() {
-			return list;
-	   }
-	   
-	   public static String[] getFirstLine() {
-			return firstLine;
-	   }
 
-    public static ArrayList getList() {
+    public static ArrayList<ArrayList<String>> getList() {
         return list;
     }
 
-    public static ArrayList getFirstLine() {
+    public static ArrayList<String> getFirstLine() {
         return firstLine;
     }
 
