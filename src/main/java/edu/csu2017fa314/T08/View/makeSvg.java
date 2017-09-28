@@ -1,10 +1,12 @@
 package edu.csu2017fa314.T08.View;
 
+import edu.csu2017fa314.T08.Model.Model;
 import edu.csu2017fa314.T08.Model.Distance;
 import edu.csu2017fa314.T08.Model.Destination;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class makeSvg {
 	//Import array of destinations ids
@@ -71,11 +73,16 @@ public class makeSvg {
 	        ob.write("\n" + gTag1());
 	        ob.write("\n" + titleTag("Title"));
 	        ob.write(commentTag("\nDrawing the state borders!"));
+		//Create Key
+		ob.write("\n" + drawStartPoint(30, 30, 5, "red", "red", 8));
+		ob.write("\n" + drawStartPoint(200, 30, 5, "blue", "blue", 1));
+		ob.write("\n" + addText(40, 35, "sans-serif", "20px", "red", " = Start/End"));
+		ob.write("\n" + addText(210, 35, "sans-serif", "20px", "blue", " = Other Destinations Along The Way"));
 	        //Draw State Borders
-	        ob.write("\n" + drawLine("north", 50, 50, 1230, 50, 5, "#666666"));
-	        ob.write("\n" + drawLine("north", 1230, 50, 1230, 974, 5, "#666666"));
-	        ob.write("\n" + drawLine("north", 1230, 974, 50, 974, 5, "#666666"));
-	        ob.write("\n" + drawLine("north", 50, 974, 50, 50, 5, "#666666"));
+	        ob.write("\n" + drawLine("north", 50, 50, 1230, 50, 5, "#000000"));
+	        ob.write("\n" + drawLine("north", 1230, 50, 1230, 974, 5, "#000000"));
+	        ob.write("\n" + drawLine("north", 1230, 974, 50, 974, 5, "#000000"));
+	        ob.write("\n" + drawLine("north", 50, 974, 50, 50, 5, "#000000"));
 	        //Draw trip
 			ob.write(commentTag("\nDrawing the trip path!"));
 			//Test Conversions
@@ -86,28 +93,31 @@ public class makeSvg {
 			double startY = 0;
 			double finishX = 0;
 			double finishY = 0;
-			for(int i = 0; i < Destination.getTotal()-1; i++) {
+			ArrayList<String> order = Model.shortestTrip();
+			for(int i = 0; i < order.size(); i++) {
 				if(i == 0) {
 					//Sets first destination in trip to the destination at i = 0
-					startX = convertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(i))) * -1);
-					startY = convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(i)));
+					startX = convertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(order.get(i)))));
+					startY = convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(order.get(i))));
+					System.out.println("Getting For ID: " + order.get(i) + " Longitude = " + startX + " Latitude = " + startY);
 					//For this part of the loop, sets the finish destination to the very last destination of the trip at i = Destination.getTotal() - 1					
-					finishX = convertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(Destination.getTotal() - 1))) * -1);
-					finishY = convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(Destination.getTotal() - 1)));
-					System.out.println("For this part, The final destination is at: Longitude: " + finishX + " Latitude: " + finishY);
+					//finishX = convertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(order.size() - 1))) * -1);
+					//finishY = convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(order.size() - 1)));
+
 					//Draws the starting point given start data					
-					ob.write("\n" + drawStartPoint(startX, startY, 5, "red", "transparent", 20));
+					ob.write("\n" + drawStartPoint(startX, startY, 5, "red", "red", 8));
 					//Draws the line from the starting point to the very last destination					
-					ob.write("\n" + drawLine("north", startX, startY, finishX, finishY, 5, "#000000"));
-					ob.write("\n" + addText(startX, startY + 50, "sans-serif", "20px", "red", "Start/End"));
+					//ob.write("\n" + drawLine("north", startX, startY, finishX, finishY, 5, "#000000"));
 				}
 				else {
 					finishX = startX;
 					finishY = startY;
-					startX = convertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(i))) * -1);
-					startY = convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(i)));
-					ob.write("\n" + drawStartPoint(startX, startY, 5, "blue", "transparent", 10));
-					ob.write("\n" + drawLine("north", startX, startY, finishX, finishY, 5, "#000000"));
+					startX = convertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(order.get(i)))));
+					startY = convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(order.get(i))));
+					System.out.println("Getting For ID: " + order.get(i) + " Longitude = " + startX + " Latitude = " + startY);
+					ob.write("\n" + drawStartPoint(startX, startY, 5, "blue", "blue", 1));
+					ob.write("\n" + drawLine("path", startX, startY, finishX, finishY, 2, "#000000"));
+					//ob.write("\n" + addText(startX, startY - 5, "sans-serif", "20px", "red", "" + i));
 				}
 			}
 			ob.write("\n" + gTag2());
