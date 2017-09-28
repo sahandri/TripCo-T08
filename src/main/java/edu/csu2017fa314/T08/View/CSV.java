@@ -39,14 +39,13 @@ public class CSV {
     public static JSONArray createCSV() {
         JSONArray arr = new JSONArray();
 		
-		String[] firstLine = Destination.getFirstLine();
-		ArrayList<String[]> list = Destination.getList();
+		ArrayList<String> firstLine = Destination.getFirstLine();
+		ArrayList<ArrayList<String>> list = Destination.getList();
 		
         // Iterate through destinations, calculating the distance of each leg.
         for(int i = 0; i < Destination.getTotal()-1; i++)
         {
-            String[] line = new String[line[i].length];
-            System.arraycopy(line[i],0,line,0,line[i].length);
+            ArrayList<String> line = line[i];
             
             // Creates a JSON object with start, end, and the distance between them
             // and appends it to the end of the itinerary JSON array.
