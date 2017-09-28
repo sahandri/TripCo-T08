@@ -1,7 +1,9 @@
 package edu.csu2017fa314.T08.View;
 
 import edu.csu2017fa314.T08.Model.Destination;
+import edu.csu2017fa314.T08.Model.Model;
 
+import java.util.ArrayList;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -37,11 +39,14 @@ public class Itinerary {
     public static JSONArray createItinerary() {
         JSONArray arr = new JSONArray();
 
+        ArrayList<String> stops = Model.shortestTrip();
+
+        String end = stops.get(0);
         // Iterate through destinations, calculating the distance of each leg.
-        for(int i = 0; i < Destination.getTotal()-1; i++)
+        for(int i = 1; i < stops.size(); i++)
         {
-            String start = Destination.getID(i);
-            String end = Destination.getID(i+1);
+            String start = end;
+            end = stops.get(i);;
 
             // Creates a JSON object with start, end, and the distance between them
             // and appends it to the end of the itinerary JSON array.

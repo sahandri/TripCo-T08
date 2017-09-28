@@ -125,6 +125,10 @@ public class Destination {
 	   }
 	   
 	   
+	   public static int getIndex(String ID) {
+		   setIndex(ID);
+		   return index;
+	   }
 
 	   //get Name by ID
 	   public static String getName(String ID) {
