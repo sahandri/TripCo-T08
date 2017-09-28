@@ -45,7 +45,7 @@ public class CSV {
         // Iterate through destinations, calculating the distance of each leg.
         for(int i = 0; i < Destination.getTotal()-1; i++)
         {
-            ArrayList<String> line = line[i];
+            ArrayList<String> line = list.get(i);
             
             // Creates a JSON object with start, end, and the distance between them
             // and appends it to the end of the itinerary JSON array.
@@ -56,10 +56,10 @@ public class CSV {
     }
 
     // Creates a JSONObject for a single leg of the trip from start to end
-    public static JSONObject createLeg(String[] line, String[] firstLine) {
+    public static JSONObject createLeg(ArrayList<String> line, ArrayList<String> firstLine) {
         JSONObject leg = new JSONObject();
-        for(int i = 0; i < line.length; ++i) {
-			leg.put(firstLine[i], line[i]);
+        for(int i = 0; i < line.size(); ++i) {
+			leg.put(firstLine.get(i), line.get(i));
 		}
         return leg;
     }
