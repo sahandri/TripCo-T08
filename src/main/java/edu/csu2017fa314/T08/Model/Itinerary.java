@@ -33,9 +33,6 @@ public class Itinerary {
 		double latitude2 = degreesToRadians(lat2);
 		double longitude2 = degreesToRadians(lon2);
 
-        System.out.println(lat1+" "+lon1+" "+id_1);
-        System.out.println(lat2+" "+lon2+" "+id_2);
-
 		
 		//Use given latitude and longitudes in order to compute Greatest Circle Distance between two points
 		return calcGCD(latitude1,longitude1,latitude2,longitude2);
