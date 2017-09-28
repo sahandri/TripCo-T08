@@ -58,7 +58,7 @@ public class Itinerary {
         leg.put("end", end);
 
         // Calculates the distance between start and end
-        double dist = edu.csu2017fa314.T08.Model.Itinerary.distance(start, end);
+        double dist = edu.csu2017fa314.T08.Model.Itinerary.distanceMi(start, end);
 
         leg.put("distance", dist);
         return leg;

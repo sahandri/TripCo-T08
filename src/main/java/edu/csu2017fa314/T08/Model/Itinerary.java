@@ -8,6 +8,17 @@ public class Itinerary {
 	//Radius of the Earth
 	static double r_earth_km = 6371.0088; //kilometers
 	static double r_earth_mi = 3958.7613; //miles
+    static double radius = 0.0;
+
+    public static int distanceKm(String id_1, String id_2) {
+        radius = r_earth_km;
+        return distance(id_1, id_2);
+    }
+
+    public static int distanceMi(String id_1, String id_2) {
+        radius = r_earth_mi;
+        return distance(id_1, id_2);
+    }
 	
 	//Method Used To Create JSON
 	public static int distance(String id_1, String id_2) {
@@ -37,7 +48,7 @@ public class Itinerary {
 		double bottom = (sinPhi_1 * sinPhi_2) + (cosPhi_1 * cosPhi_2 * cosDeltaLambda);
 		double centralAngle = Math.atan2(top, bottom);
 		//Final Distance Computation (rounds from double to float, and then from float to int)
-		return Math.round(Math.round(r_earth_mi * centralAngle));
+		return Math.round(Math.round(radius * centralAngle));
 	}
 	
 	//Method Used to Convert Degree Format To Radians
