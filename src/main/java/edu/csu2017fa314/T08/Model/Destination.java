@@ -183,7 +183,7 @@ public class Destination {
         return list;
     }
 
-    public static String[] getFirstLine() {
+    public static ArrayList getFirstLine() {
         return firstLine;
     }
 
