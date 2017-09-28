@@ -3,27 +3,41 @@
 <g>
 <title>Title</title><!-- 
 Drawing the state borders!-->
-<line id="north" y2="50" x2="1230" y1="50" x1="50" stroke-width="5" stroke="#666666"/>
-<line id="north" y2="974" x2="1230" y1="50" x1="1230" stroke-width="5" stroke="#666666"/>
-<line id="north" y2="974" x2="50" y1="974" x1="1230" stroke-width="5" stroke="#666666"/>
-<line id="north" y2="50" x2="50" y1="974" x1="50" stroke-width="5" stroke="#666666"/><!-- 
+<line id="north" y2="50.0" x2="1230.0" y1="50.0" x1="50.0" stroke-width="5.0" stroke="#666666"/>
+<line id="north" y2="974.0" x2="1230.0" y1="50.0" x1="1230.0" stroke-width="5.0" stroke="#666666"/>
+<line id="north" y2="974.0" x2="50.0" y1="974.0" x1="1230.0" stroke-width="5.0" stroke="#666666"/>
+<line id="north" y2="50.0" x2="50.0" y1="974.0" x1="50.0" stroke-width="5.0" stroke="#666666"/><!-- 
 Drawing the trip path!-->
-<circle cx="422.0371428571418" cy="864.9295000000001" r="5" stroke="red" fill="transparent" stroke-width="20"/>
+<circle cx="422.0371428571418" cy="864.9295000000001" r="5.0" stroke="red" fill="transparent" stroke-width="20.0"/>
+<line id="north" y2="307.06450000000024" x2="596.087142857144" y1="864.9295000000001" x1="422.0371428571418" stroke-width="5.0" stroke="#000000"/>
 <text x="422.0371428571418" y="914.9295000000001" font-family="sans-serif" font-size="20px" fill="red">Start/End</text>
-<circle cx="422.0371428571418" cy="864.9295000000001" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
-<circle cx="244.50333333333418" cy="757.7070000000008" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
-<circle cx="499.66428571428634" cy="624.4199999999995" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
-<circle cx="274.67761904761784" cy="769.8729999999991" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
-<circle cx="249.84142857142933" cy="828.3930000000001" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
-<circle cx="393.09904761904653" cy="535.3694999999994" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
-<circle cx="193.62285714285778" cy="496.9850000000005" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
-<circle cx="415.8842857142864" cy="467.64799999999997" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
-<circle cx="504.7214285714294" cy="428.7244999999996" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
-<circle cx="492.6404761904761" cy="364.15999999999985" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
-<circle cx="549.252380952382" cy="400.81200000000035" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
-<circle cx="636.4880952380961" cy="353.9574999999993" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
-<circle cx="420.09857142857066" cy="176.1644999999995" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
-<circle cx="634.0438095238106" cy="216.1274999999999" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
-<circle cx="626.0928571428578" cy="295.2450000000002" r="5" stroke="blue" fill="transparent" stroke-width="10"/>
+<circle cx="244.50333333333418" cy="757.7070000000008" r="5.0" stroke="blue" fill="transparent" stroke-width="10.0"/>
+<line id="north" y2="864.9295000000001" x2="422.0371428571418" y1="757.7070000000008" x1="244.50333333333418" stroke-width="5.0" stroke="#000000"/>
+<circle cx="499.66428571428634" cy="624.4199999999995" r="5.0" stroke="blue" fill="transparent" stroke-width="10.0"/>
+<line id="north" y2="757.7070000000008" x2="244.50333333333418" y1="624.4199999999995" x1="499.66428571428634" stroke-width="5.0" stroke="#000000"/>
+<circle cx="274.67761904761784" cy="769.8729999999991" r="5.0" stroke="blue" fill="transparent" stroke-width="10.0"/>
+<line id="north" y2="624.4199999999995" x2="499.66428571428634" y1="769.8729999999991" x1="274.67761904761784" stroke-width="5.0" stroke="#000000"/>
+<circle cx="249.84142857142933" cy="828.3930000000001" r="5.0" stroke="blue" fill="transparent" stroke-width="10.0"/>
+<line id="north" y2="769.8729999999991" x2="274.67761904761784" y1="828.3930000000001" x1="249.84142857142933" stroke-width="5.0" stroke="#000000"/>
+<circle cx="393.09904761904653" cy="535.3694999999994" r="5.0" stroke="blue" fill="transparent" stroke-width="10.0"/>
+<line id="north" y2="828.3930000000001" x2="249.84142857142933" y1="535.3694999999994" x1="393.09904761904653" stroke-width="5.0" stroke="#000000"/>
+<circle cx="193.62285714285778" cy="496.9850000000005" r="5.0" stroke="blue" fill="transparent" stroke-width="10.0"/>
+<line id="north" y2="535.3694999999994" x2="393.09904761904653" y1="496.9850000000005" x1="193.62285714285778" stroke-width="5.0" stroke="#000000"/>
+<circle cx="415.8842857142864" cy="467.64799999999997" r="5.0" stroke="blue" fill="transparent" stroke-width="10.0"/>
+<line id="north" y2="496.9850000000005" x2="193.62285714285778" y1="467.64799999999997" x1="415.8842857142864" stroke-width="5.0" stroke="#000000"/>
+<circle cx="504.7214285714294" cy="428.7244999999996" r="5.0" stroke="blue" fill="transparent" stroke-width="10.0"/>
+<line id="north" y2="467.64799999999997" x2="415.8842857142864" y1="428.7244999999996" x1="504.7214285714294" stroke-width="5.0" stroke="#000000"/>
+<circle cx="492.6404761904761" cy="364.15999999999985" r="5.0" stroke="blue" fill="transparent" stroke-width="10.0"/>
+<line id="north" y2="428.7244999999996" x2="504.7214285714294" y1="364.15999999999985" x1="492.6404761904761" stroke-width="5.0" stroke="#000000"/>
+<circle cx="549.252380952382" cy="400.81200000000035" r="5.0" stroke="blue" fill="transparent" stroke-width="10.0"/>
+<line id="north" y2="364.15999999999985" x2="492.6404761904761" y1="400.81200000000035" x1="549.252380952382" stroke-width="5.0" stroke="#000000"/>
+<circle cx="636.4880952380961" cy="353.9574999999993" r="5.0" stroke="blue" fill="transparent" stroke-width="10.0"/>
+<line id="north" y2="400.81200000000035" x2="549.252380952382" y1="353.9574999999993" x1="636.4880952380961" stroke-width="5.0" stroke="#000000"/>
+<circle cx="420.09857142857066" cy="176.1644999999995" r="5.0" stroke="blue" fill="transparent" stroke-width="10.0"/>
+<line id="north" y2="353.9574999999993" x2="636.4880952380961" y1="176.1644999999995" x1="420.09857142857066" stroke-width="5.0" stroke="#000000"/>
+<circle cx="634.0438095238106" cy="216.1274999999999" r="5.0" stroke="blue" fill="transparent" stroke-width="10.0"/>
+<line id="north" y2="176.1644999999995" x2="420.09857142857066" y1="216.1274999999999" x1="634.0438095238106" stroke-width="5.0" stroke="#000000"/>
+<circle cx="626.0928571428578" cy="295.2450000000002" r="5.0" stroke="blue" fill="transparent" stroke-width="10.0"/>
+<line id="north" y2="216.1274999999999" x2="634.0438095238106" y1="295.2450000000002" x1="626.0928571428578" stroke-width="5.0" stroke="#000000"/>
 </g>
 </svg>

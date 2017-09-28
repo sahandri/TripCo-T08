@@ -41,11 +41,11 @@ public class makeSvg {
 		return "<!-- " + comment + "-->";
 	}
 	
-	public static String drawLine(String id, int x1, int y1, int x2, int y2, int strokeWidth, String color) {
+	public static String drawLine(String id, double x1, double y1, double x2, double y2, double strokeWidth, String color) {
 		return "<line id=\"" + id + "\" y2=\"" + y2 + "\" x2=\"" + x2 + "\" y1=\"" + y1 + "\" x1=\"" + x1 + "\" stroke-width=\"" + strokeWidth + "\" stroke=\""+ color + "\"/>";
 	}
 	
-	public static String drawStartPoint(double cx, double cy, int r, String strokeColor, String fill, int strokeWidth) {
+	public static String drawStartPoint(double cx, double cy, double r, String strokeColor, String fill, double strokeWidth) {
 		return "<circle cx=\"" + cx + "\" cy=\"" + cy + "\" r=\"" + r + "\" stroke=\"" + strokeColor + "\" fill=\"" + fill + "\" stroke-width=\"" + strokeWidth + "\"/>";
 	}
 	
@@ -82,13 +82,28 @@ public class makeSvg {
 			//ob.write("\n" + drawStartPoint(convertLongitude(-105.5), convertLatitude(39), 5, "red", "transparent", 20));
 			//ob.write("\n" + drawStartPoint((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(1))) * -1, edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(1)), 5, "red", "transparent", 20));
 			//ob.write("\n" + drawStartPoint(convertLongitude((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(1))) * -1), convertLatitude(edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(1))), 5, "red", "transparent", 20));
+			double startX = 0;
+			double startY = 0;
+			double finishX = 0;
+			double finishY = 0;
 			for(int i = 0; i < Destination.getTotal()-1; i++) {
 				if(i == 0) {
-					ob.write("\n" + drawStartPoint(convertLongitude((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(i))) * -1), convertLatitude(edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(i))), 5, "red", "transparent", 20));
-					ob.write("\n" + addText(convertLongitude((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(i))) * -1), convertLatitude(edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(i))) + 50, "sans-serif", "20px", "red", "Start/End"));
+					startX = convertLongitude((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(i))) * -1);
+					startY = convertLatitude(edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(i)));
+					finishX = convertLongitude((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(Destination.getTotal() - 1))) * -1);
+					finishY = convertLatitude(edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(Destination.getTotal() - 1)));
+					ob.write("\n" + drawStartPoint(startX, startY, 5, "red", "transparent", 20));
+					ob.write("\n" + drawLine("north", startX, startY, finishX, finishY, 5, "#000000"));
+					ob.write("\n" + addText(startX, startY + 50, "sans-serif", "20px", "red", "Start/End"));
 				}
-				ob.write("\n" + drawStartPoint(convertLongitude((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(i))) * -1), convertLatitude(edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(i))), 5, "blue", "transparent", 10));
-				//ob.write("\n" + drawLine("north", 1, 1, 1000, 1000, 5, "#000000"));
+				else {
+					finishX = startX;
+					finishY = startY;
+					startX = convertLongitude((edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLongit(i))) * -1);
+					startY = convertLatitude(edu.csu2017fa314.T08.Model.Itinerary.degreesToDecimal(Destination.getLatit(i)));
+					ob.write("\n" + drawStartPoint(startX, startY, 5, "blue", "transparent", 10));
+					ob.write("\n" + drawLine("north", startX, startY, finishX, finishY, 5, "#000000"));
+				}
 			}
 			ob.write("\n" + gTag2());
 			ob.write("\n" + svgTag());
