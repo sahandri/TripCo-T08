@@ -1,37 +1,23 @@
 import React, {Component} from 'react';
 
-class Pair extends React.Component{
 
-    constructor(props){
-        super(props);
-        this.state = {
-            Pair:{}
-
-        }
-    };
-
-    render(){
-        Pair:{this.props.start, this.props.end, this.props.dist, this.props.tot }
-        return(
-            <tbody className="pair">
-                <tr> {/*Row*/}
-                    <td> {/* Columns*/}
-                        <h5>{this.props.start}</h5>
-                    </td>
-                    <td>
-                        <h5>{this.props.end}</h5>
-                    </td>
-                    <td>
-                        <h5>{this.props.dist}</h5>
-                    </td>
-                    <td>
-                        <h5>{this.props.tot}</h5>
-                    </td>
-                </tr>
-            </tbody>
-        )
-    }
-}
-
+let Pair = ({start, end, dist, tot, startInfo, endInfo }) => <tbody className="pair"> {/*classname for CSS*/} {/*Pair react with Start, End, Dist, Tot*/}
+<tr> {/*Row*/}
+    <td> {/* Columns*/}
+        <h5>{start}</h5>
+        <p> {startInfo} </p>
+    </td>
+    <td>
+        <h5>{end}</h5>
+        <p> {endInfo} </p>
+    </td>
+    <td>
+        <h5>{dist}</h5>
+    </td>
+    <td>
+        <h5>{tot}</h5>
+    </td>
+</tr>
+</tbody>;
 
 export default Pair;

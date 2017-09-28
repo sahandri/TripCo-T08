@@ -34,6 +34,10 @@ class Home extends React.Component {
                     </Dropzone>
                 </modal>
 
+                <Dropzone className="dropzone-style" onDrop={this.drop_svg.bind(this)}> {/*How to open the JSON file*/}
+                    <button>Open SVG File</button>
+                </Dropzone>
+
                 <form>
                     <label>
                         name
@@ -80,6 +84,7 @@ class Home extends React.Component {
             fr.onload = (function () {
                 return function (e) {
                     let JsonObj = JSON.parse(e.target.result);
+
                     console.log(JsonObj); {/*Output Json object*/}
                     this.props.browseFile(JsonObj); {/*Calls Browsefile in ap.js file*/}
                 };
@@ -99,11 +104,29 @@ class Home extends React.Component {
                 return function (e) {
                     let JsonObj = JSON.parse(e.target.result);
                     console.log(JsonObj); {/*Output Json object*/}
-                    this.props.browseFile(JsonObj); {/*Calls Browsefile in ap.js file*/}
+                    this.props.browseFile2(JsonObj); {/*Calls Browsefile in ap.js file*/}
                 };
             })(file2).bind(this);
 
             fr.readAsText(file2);
+        });
+    }
+
+
+    drop_svg(acceptedFiles){
+        console.log("Accepting drop");
+        acceptedFiles.forEach(file => { {/*for each file accepted*/}
+            console.log("Filename:", file.name, "File:", file); {/*output filename*/}
+            console.log(JSON.stringify(file)); {/*output file as a string*/}
+            let fr = new FileReader();
+            fr.onload = (function () {
+                return function (e) {
+                    var url = e.target.result;
+                    this.props.HandleImage(url);
+                };
+            })(file).bind(this);
+
+            fr.readAsDataURL(file);
         });
     }
 }
