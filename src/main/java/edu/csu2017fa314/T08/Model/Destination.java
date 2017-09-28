@@ -34,7 +34,7 @@ public class Destination {
 		   try {
 			   br = new BufferedReader(new FileReader(filename));
 			   line = br.readLine();
-			   ArrayList<String> firstLine = new ArrayList<String>(Arrays.asList(line.split(",")));
+			   firstLine = new ArrayList<String>(Arrays.asList(line.split(",")));
 			   setOrder(firstLine);
 
 			   while ((line = br.readLine()) != null) {
@@ -44,8 +44,6 @@ public class Destination {
 
                        ArrayList<String> data = new ArrayList<String>(Arrays.asList(line.split(",")));
 					   list.add(data);
-                       System.out.println("\n\nCURRENT DATA: **********\n");
-                       print();
 				   }
 			   }
 		   }catch (IOException e) {
@@ -172,11 +170,7 @@ public class Destination {
                String tgt = getID(i);
 			   if(ID.equalsIgnoreCase(tgt)) {
 				   index = i;
-                   System.out.println(tgt + " ==  " + ID);
 			   }
-               else {
-                   System.out.println(tgt + " =/= " + ID);
-               }
 		   }
 	   }
 	   
