@@ -26,6 +26,8 @@ public class ShortestTrip {
 
         }
 
+        System.out.println("Shortest Trip: " + Integer.toString(tripLength));
+
         return stops;
     }
 
@@ -55,28 +57,37 @@ public class ShortestTrip {
 
         int len = 0;
         // Iterate through tripCandidate to sort into shortest trip
-        for(int i = 1; i < tripCandidate.size(); i++) {
+        for(int i = 1; i < tripCandidate.size()-1; i++) {
 
-            int nn = -1; // index of distance to nearest neighbor of i
             int idxi = Destination.getIndex(tripCandidate.get(i));
+            int idxn = idxi; // index of distance to nearest neighbor of i
+            int nn = i;
 
             // Iterate remainder of trip to find next closest location
             for(int j=i+1; j < tripCandidate.size(); j++) {
                 int idxj = Destination.getIndex(tripCandidate.get(j));
 
-                if(distLookUp[idxi][idxj] < distLookUp[idxi][nn] || nn==-1) {
-                    nn = idxj;
+                if(distLookUp[idxi][idxj] < distLookUp[idxi][idxn] || idxn==idxi) {
+                    idxn = idxj;
+                    nn = j;
                 }
             }
 
-            if(nn != -1) {
+            if(nn != i) {
                 // Add the closest distance
-                len += distLookUp[idxi][nn];
+                len += distLookUp[idxi][idxn];
 
                 // Swap the array entries
                 Collections.swap(tripCandidate,i+1,nn);
             }
         }
+
+        int idx1 = Destination.getIndex(tripCandidate.get(tripCandidate.size()-1));
+        int idx2 = Destination.getIndex(tripCandidate.get(0));
+
+        tripCandidate.add(tripCandidate.get(0));
+
+        len += distLookUp[idx1][idx2];
 
         return len;
     }
