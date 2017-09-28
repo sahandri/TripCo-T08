@@ -8,14 +8,34 @@ public class Itinerary {
 	//Radius of the Earth
 	static double r_earth_km = 6371.0088; //kilometers
 	static double r_earth_mi = 3958.7613; //miles
+    static double radius = 0.0;
+
+    public static int distanceKm(String id_1, String id_2) {
+        radius = r_earth_km;
+        return distance(id_1, id_2);
+    }
+
+    public static int distanceMi(String id_1, String id_2) {
+        radius = r_earth_mi;
+        return distance(id_1, id_2);
+    }
 	
 	//Method Used To Create JSON
 	public static int distance(String id_1, String id_2) {
 		//Create doubles for latitude and longitude given each ID
-		double latitude1 = degreesToRadians((Destination.getLatit(id_1)));
-		double longitude1 = degreesToRadians((Destination.getLongit(id_1)));
-		double latitude2 = degreesToRadians((Destination.getLatit(id_2)));
-		double longitude2 = degreesToRadians((Destination.getLongit(id_2)));
+        String lat1 = Destination.getLatit(id_1);
+        String lon1 = Destination.getLongit(id_1);
+        String lat2 = Destination.getLatit(id_2);
+        String lon2 = Destination.getLongit(id_2);
+
+		double latitude1 = degreesToRadians(lat1);
+		double longitude1 = degreesToRadians(lon1);
+		double latitude2 = degreesToRadians(lat2);
+		double longitude2 = degreesToRadians(lon2);
+
+        System.out.println(lat1+" "+lon1+" "+id_1);
+        System.out.println(lat2+" "+lon2+" "+id_2);
+
 		
 		//Use given latitude and longitudes in order to compute Greatest Circle Distance between two points
 		return calcGCD(latitude1,longitude1,latitude2,longitude2);
@@ -37,7 +57,7 @@ public class Itinerary {
 		double bottom = (sinPhi_1 * sinPhi_2) + (cosPhi_1 * cosPhi_2 * cosDeltaLambda);
 		double centralAngle = Math.atan2(top, bottom);
 		//Final Distance Computation (rounds from double to float, and then from float to int)
-		return Math.round(Math.round(r_earth_mi * centralAngle));
+		return Math.round(Math.round(radius * centralAngle));
 	}
 	
 	//Method Used to Convert Degree Format To Radians

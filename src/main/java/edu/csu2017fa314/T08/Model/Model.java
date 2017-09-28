@@ -1,16 +1,16 @@
 package edu.csu2017fa314.T08.Model;
+
+import java.util.ArrayList;
+
 public class Model
 {
-   private int[] numbers;
+   public static ArrayList<String> shortestTrip() {
+       ArrayList<String> order = new ArrayList<String>();
 
-   public Model () 
-   {
-      numbers = new int[] {0, 1, 2, 3, 4, 5};
+       for(int i = 0; i < Destination.getTotal(); i++) {
+           order.add(Destination.getID(i));
+       }
+
+       return order;
    }
-
-   public int[] getNumbers() 
-   {
-      return numbers;
-   }
-
 }

@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import Dropzone from 'react-dropzone'
 
 class Home extends React.Component {
-    render() { //Start of the HTML side of react
-		let total; //Initalize
-		if(this.props.pairs == ""){ //If no json file
+    render() { {/*Start of the HTML side of react*/}
+		let total; {/*Initalize*/}
+		if(this.props.pairs == ""){ {/*If no json file*/}
 			total = 0;
 		}
-		else{ //after json call
+		else{ {/*after json call*/}
 			total = this.props.pairs[this.props.pairs.length - 1].props.tot;
 		}
         return <div className="home-container">
@@ -31,21 +31,21 @@ class Home extends React.Component {
         </div>
     }
 
-    drop(acceptedFiles) { //Calls Drop which takes the JSON file
+    drop(acceptedFiles) { {/*Calls Drop which takes the JSON file*/}
         console.log("Accepting drop");
-        acceptedFiles.forEach(file => { //for each file accepted
-            console.log("Filename:", file.name, "File:", file); //output filename
-            console.log(JSON.stringify(file)); //output file as a string
+        acceptedFiles.forEach(file => { {/*for each file accepted*/}
+            console.log("Filename:", file.name, "File:", file); {/*output filename*/}
+            console.log(JSON.stringify(file)); {/*output file as a string*/}
             let fr = new FileReader();
             fr.onload = (function () {
                 return function (e) {
                     let JsonObj = JSON.parse(e.target.result);
-                    console.log(JsonObj); //Output Json object
-                    this.props.browseFile(JsonObj); //Calls Browsefile in ap.js file
+                    console.log(JsonObj); {/*Output Json object*/}
+                    this.props.browseFile(JsonObj); {/*Calls Browsefile in ap.js file*/}
                 };
-            })(file).bind(this); //?
+            })(file).bind(this); 
 
-            fr.readAsText(file); //?
+            fr.readAsText(file); 
         });
     }
 }
