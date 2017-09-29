@@ -3,72 +3,87 @@ import Dropzone from 'react-dropzone'
 import ReactModal from 'react-modal';
 
 class Home extends React.Component {
-
-
-    handleChange(event) {
-        alert('hi');
+    constructor(props) {
+        super(props);
+        this.state = {file: '',imagePreviewUrl: ''};
+    }
+    handleImageChange(e) {
+        e.preventDefault();
+        let reader = new FileReader();
+        let file = e.target.files[0];
+        reader.onloadend = () => {
+            this.setState({
+                file: file,
+                imagePreviewUrl: reader.result
+            });
+        }
+        reader.readAsDataURL(file)
     }
 
 
 
+
     render() { {/*Start of the HTML side of react*/}
-		let total; {/*Initalize*/}
-		if(this.props.pairs == ""){ {/*If no json file*/}
-			total = 0;
-		}
-		else{ {/*after json call*/}
-			total = this.props.pairs[this.props.pairs.length - 1].props.tot;
-		}
+        {/*for image*/}
+        let {imagePreviewUrl} = this.state;
+        let $imagePreview = null;
+        if (imagePreviewUrl) {
+            $imagePreview = (<img src={imagePreviewUrl} />);
+        } else {
+            $imagePreview = (<div className="previewText">Please select a csv file for Preview</div>);
+        }
+
+
+        let total; {/*Initalize*/}
+        let keys;
+        if(this.props.pairs == ""){ {/*If no json file*/}
+            total = 0;
+        }
+        else{ {/*after json call*/}
+            total = this.props.pairs[this.props.pairs.length - 1].props.tot;
+            keys =  this.props.pairs[this.props.pairs.length - 1].props.keys;
+        }
         return <div className="home-container">
             <div className="inner">
-				<h2>T08 - The Absentees</h2>
+                <h2>T08 - The Absentees</h2>
                 <h3>Itinerary</h3>
+                <img src={this.props.pairs.url}/>
 
 
                 <modal>
                     <Dropzone className="dropzone-style" onDrop={this.drop.bind(this)}> {/*How to open the JSON file*/}
-                        <button>Open JSON File 1</button>
+                        <button>Short trips</button>
                     </Dropzone>
                     <Dropzone className="dropzone-style" onDrop={this.drop2.bind(this)}> {/*How to open the JSON file*/}
-                        <button>Open JSON File 2</button>
+                        <button>Full csv</button>
                     </Dropzone>
                 </modal>
 
-                <Dropzone className="dropzone-style" onDrop={this.drop_svg.bind(this)}> {/*How to open the JSON file*/}
-                    <button>Open SVG File</button>
-                </Dropzone>
 
-                <form>
-                    <label>
-                        name
-                        <input
-                            name="name"
-                            type="checkbox"
-                            onChange={this.handleChange}/>
-                    </label>
-                    <label>
-                        last name
-                        <input
-                            name="lastName"
-                            type="checkbox"/>
-                    </label>
-                    <label>
-                        other
-                        <input
-                            name="other"
-                            type="checkbox"/>
-                    </label>
-                </form>
+
+
+                {/*for image*/}
+                <div className="previewComponent">
+
+                    <input className="CSV file Input"
+                           type="file"
+                           onChange={(e)=>this.handleImageChange(e)} />
+                    <div className="imgPreview">
+                        {$imagePreview}
+                    </div>
+                </div>
+
+
 
 
 
                 <table className="pair-table"> {/*For CSS*/}
                     {this.props.pairs} {/*Calls Pair.jsx for HTML script*/}
                     <tbody>
-                        <tr>
-                            <td colSpan="3">Total:</td>
-                            <td>{total}</td> {/*Displays Total*/}
-                        </tr>
+                    <tr>
+                        <td colSpan="3">Total:</td>
+                        <td>{total}</td> {/*Displays Total*/}
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -78,7 +93,7 @@ class Home extends React.Component {
     drop(acceptedFiles) { {/*Calls Drop which takes the JSON file*/}
         console.log("Accepting drop");
         acceptedFiles.forEach(file => { {/*for each file accepted*/}
-            console.log("Filename:", file.name, "File:", file); {/*output filename*/}
+            console.log("Filename:", file.Name, "File:", file); {/*output filename*/}
             console.log(JSON.stringify(file)); {/*output file as a string*/}
             let fr = new FileReader();
             fr.onload = (function () {
@@ -97,7 +112,7 @@ class Home extends React.Component {
     drop2(acceptedFiles) { {/*Calls Drop which takes the JSON file*/}
         console.log("Accepting drop");
         acceptedFiles.forEach(file2 => { {/*for each file accepted*/}
-            console.log("Filename:", file2.name, "File:", file2); {/*output filename*/}
+            console.log("Filename:", file2.Name, "File:", file2); {/*output filename*/}
             console.log(JSON.stringify(file2)); {/*output file as a string*/}
             let fr = new FileReader();
             fr.onload = (function () {
@@ -112,23 +127,7 @@ class Home extends React.Component {
         });
     }
 
-
-    drop_svg(acceptedFiles){
-        console.log("Accepting drop");
-        acceptedFiles.forEach(file => { {/*for each file accepted*/}
-            console.log("Filename:", file.name, "File:", file); {/*output filename*/}
-            console.log(JSON.stringify(file)); {/*output file as a string*/}
-            let fr = new FileReader();
-            fr.onload = (function () {
-                return function (e) {
-                    var url = e.target.result;
-                    this.props.HandleImage(url);
-                };
-            })(file).bind(this);
-
-            fr.readAsDataURL(file);
-        });
-    }
 }
+
 
 export default Home

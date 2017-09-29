@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './Home/Home.jsx';
 import Pair from './Home/Pair/Pair.jsx';
+import ReactSVG from 'react-svg'
 
 
 
@@ -17,7 +18,7 @@ export default class App extends React.Component {
     };
 
     render() {
-        let pairs = this.state.allInfo; //sets the array as pairs
+        let pairs = this.state.all; //sets the array as pairs
         let ps = pairs.map((pp) => { //pair map
             return <Pair {...pp}/>; //?
         });
@@ -26,18 +27,10 @@ export default class App extends React.Component {
                 <Home
                     browseFile={this.browseFile.bind(this)} //?
                     browseFile2={this.browseFile2.bind(this)} //?
-                    HandleImage={this.HandleImage(this)}
                     pairs={ps}
                 />
             </div>
         )
-    }
-
-    async HandleImage(url){
-        return (
-            <img src={url}/>,
-                document.getElementById('root')
-        );
     }
 
     async browseFile(file) {
@@ -82,11 +75,12 @@ export default class App extends React.Component {
         //let lineArray =[]
         //let infoArray =[];
         for(let i=0; i<Object.values(file2).length; i++){
-            let name = file2[i].name;
-            let id = file2[i].id;
+            let Name = file2[i].Name;
+            let ID = file2[i].ID;
+
             let p = {
-                id : id,
-                name : name
+                ID : ID,
+                Name : Name
             };
             pairs.push(p)
         }
@@ -96,60 +90,70 @@ export default class App extends React.Component {
             sysFile2: file2
             //allInfo: infoArray
         });
-        this.run.bind(this.state.sysFile,this.state.sysFile2);
+        console.log("allPair:", this.state.allPairs);
+        console.log("allInfo:", this.state.allInfo);
+        //this.run.bind(this.state.allPairs,this.state.allInfo);
 
-    }
-
- //async useInfo(){
-   //     this.state.allInfo
- //}
-
-
-    async run(file1, file2){
-        //For loop that goes through all pairs,
-        let pairs = [];
-        let tot = 0; //start total
-        for (let i = 0; i < Object.values(file1).length; i++) {
-            let start;
-            let end;
-            let startIndex = file1[i].start; //get start from file i
-            let endIndex = file1[i].end; //get end from file i
-            let dist = file1[i].distance;
+        let pairs2 = [];
+        for (let i = 0; i < Object.values(this.state.allPairs).length; i++) {
+            let start=[];
+            let end=[];
+            let startIndex = this.state.allPairs[i].start; //get start from file i
+            let endIndex = this.state.allPairs[i].end; //get end from file i
+            let dist = this.state.allPairs[i].dist;
+            let tot = this.state.allPairs[i].tot
             let startArrayFound = false;
             let endArrayFound = false;
-            tot = tot + dist; //current total
-            for(let j=0; j<Object.values(file2).length; j++){
-                if (file2[j].id === startIndex) {
-                    start = file2[j];
+            for(let j=0; j<Object.values(this.state.allInfo).length; j++) {
+                console.log("file2[j].Name: ", file2[j].Name);
+                console.log("startIndex: ", startIndex);
+                if (file2[j].Name === startIndex) {
+                    start = this.state.allInfo[j];
+                    console.log("start: ", start);
                     startArrayFound = true;
+                    console.log("in loop: allinfo.Name=", this.state.allInfo[j].Name);
                 }
-                if (file2[j].id === endIndex) {
-                    end = file2[j];
+
+
+                if (this.state.allInfo[j].Name === endIndex) {
+                    end = this.state.allInfo[j];
                     endArrayFound = true;
+                    console.log("in loop: in if: end=", end)
                 }
                 if (startArrayFound && endArrayFound) {
                     break;
                 }
+
+
             }
             let p = { //create object with start, end, and dist variable
-                start : startIndex,
-                end : endIndex,
+                start: startIndex,
+                end: endIndex,
                 dist: dist,
                 tot: tot, // print total
                 startInfo: start,
                 endInfo: end,
+                keys: Object.keys(startIndex),
+                values: Object.values(startIndex)
             };
-            pairs.push(p); //add object to pairs array
-            console.log("Pushing pair: ", p); //log to console
+
+            pairs2.push(p); //add object to pairs array
+            console.log("Pushing pair in run: ", p); //log to console
+
         }
         this.setState({
-            all: pairs,
+            all: pairs2,
             //allInfo: infoArray
         });
 
-        //Here we will update the state of app.
-        // Anything component (i.e. pairs) referencing it will be re-rendered
+
+
     }
+
+    //async useInfo(){
+    //     this.state.allInfo
+    //}
+
 
 
 }
