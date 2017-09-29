@@ -62,6 +62,6 @@ Completed *99* tasks / issues associated with these user stories.
 Topic | Teamwork | Process | Tools
 :--- | :--- | :--- | :---
 What we will change this time |  |  | 
-What we did well |  |  | 
-What we need to work on |  |  |
-What we will change next time |  |  | 
+What we did well | Communication and swarming when help needed |  | 
+What we need to work on | Procrastination | Release verification and unit testing | Running project on our own machines
+What we will change next time | Early planning/prototyping push | Unit tests & features completed before merge | 
