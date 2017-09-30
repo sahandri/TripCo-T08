@@ -15,10 +15,4 @@ public class TestModel
         m = new Model();
     }
 
-    @Test 
-    public void testGetNumbers() 
-    {
-        assertArrayEquals(m.getNumbers(), new int[] {0, 1, 2, 3, 4, 5});
-    }
-
 }
