@@ -1,7 +1,6 @@
 import React from 'react';
 import Home from './Home/Home.jsx';
 import Pair from './Home/Pair/Pair.jsx';
-import ReactSVG from 'react-svg'
 
 
 
@@ -27,11 +26,13 @@ export default class App extends React.Component {
                 <Home
                     browseFile={this.browseFile.bind(this)} //?
                     browseFile2={this.browseFile2.bind(this)} //?
+                    //run={this.run(this,this)}
                     pairs={ps}
                 />
             </div>
         )
     }
+
 
     async browseFile(file) {
         console.log("Got file:", file);
@@ -75,12 +76,12 @@ export default class App extends React.Component {
         //let lineArray =[]
         //let infoArray =[];
         for(let i=0; i<Object.values(file2).length; i++){
-            let Name = file2[i].Name;
-            let ID = file2[i].ID;
+            let name = file2[i].name;
+            let id = file2[i].id;
 
             let p = {
-                ID : ID,
-                Name : Name
+                id : id,
+                name : name
             };
             pairs.push(p)
         }
@@ -95,9 +96,10 @@ export default class App extends React.Component {
         //this.run.bind(this.state.allPairs,this.state.allInfo);
 
         let pairs2 = [];
+        console.log("in run : file1:", this.state.allPairs);
         for (let i = 0; i < Object.values(this.state.allPairs).length; i++) {
-            let start=[];
-            let end=[];
+            let start;
+            let end;
             let startIndex = this.state.allPairs[i].start; //get start from file i
             let endIndex = this.state.allPairs[i].end; //get end from file i
             let dist = this.state.allPairs[i].dist;
@@ -105,17 +107,15 @@ export default class App extends React.Component {
             let startArrayFound = false;
             let endArrayFound = false;
             for(let j=0; j<Object.values(this.state.allInfo).length; j++) {
-                console.log("file2[j].Name: ", file2[j].Name);
-                console.log("startIndex: ", startIndex);
-                if (file2[j].Name === startIndex) {
+                console.log("file2[j].id", file2[j].id);
+                console.log("startIndex", startIndex);
+                if (file2[j].name == startIndex) {
                     start = this.state.allInfo[j];
-                    console.log("start: ", start);
                     startArrayFound = true;
-                    console.log("in loop: allinfo.Name=", this.state.allInfo[j].Name);
                 }
 
-
-                if (this.state.allInfo[j].Name === endIndex) {
+                console.log("in loop: endIndex=", endIndex)
+                if (this.state.allInfo[j].name == endIndex) {
                     end = this.state.allInfo[j];
                     endArrayFound = true;
                     console.log("in loop: in if: end=", end)
@@ -133,8 +133,7 @@ export default class App extends React.Component {
                 tot: tot, // print total
                 startInfo: start,
                 endInfo: end,
-                keys: Object.keys(startIndex),
-                values: Object.values(startIndex)
+                keys: Object.keys(startIndex)
             };
 
             pairs2.push(p); //add object to pairs array
