@@ -5,10 +5,13 @@ let Pair = ({start, end, dist, tot, startInfo, endInfo, keys, values }) => <tbod
 <tr> {/*Row*/}
     <td> {/* Columns*/}
         <h5>{start}</h5>
+        {/*<p>{Object.values(startInfo)}</p>*/}
+        {/*<p> {startInfo.name} </p>*/}
+        {/*<p> {Object.keys(startInfo)} </p>*/}
     </td>
     <td>
         <h5>{end}</h5>
-
+        {/*<p>{Object.values(endInfo)}</p>*/}
     </td>
     <td>
         <h5>{dist}</h5>
