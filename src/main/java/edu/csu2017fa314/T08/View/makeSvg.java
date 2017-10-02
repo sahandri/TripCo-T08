@@ -175,8 +175,7 @@ public class makeSvg {
 				if(i == 0) {
 					//Sets first destination in trip to the destination at i = 0
 					startX = convertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(order.get(i)))));
-					startY = convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(order.get(i))));
-					System.out.println("Getting For ID: " + order.get(i) + " Longitude = " + startX + " Latitude = " + startY);					
+					startY = convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(order.get(i))));				
 					//Draws the starting point given start data					
 					ob.write("\n" + drawStartPoint(startX, startY, 5, "red", "red", 8));					
 				}
@@ -185,7 +184,6 @@ public class makeSvg {
 					finishY = startY;
 					startX = convertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(order.get(i)))));
 					startY = convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(order.get(i))));
-					System.out.println("Getting For ID: " + order.get(i) + " Longitude = " + startX + " Latitude = " + startY);
 					ob.write("\n" + drawStartPoint(startX, startY, 5, "blue", "blue", 1));
 					ob.write("\n" + drawLine("path", startX, startY, finishX, finishY, 2, "#000000"));
 				}
