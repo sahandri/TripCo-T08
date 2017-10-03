@@ -10,7 +10,6 @@ export default class App extends React.Component {
         this.state = {
             allPairs: [], //creates an array for pairs
             sysFile: [],
-            sysFile2: [],
             allInfo: [],
             all: []
         }
@@ -60,46 +59,46 @@ export default class App extends React.Component {
             allPairs: pairs,
             sysFile: file
         });
-        //sysFile2: file2
 
         //iterate over allInfo global variable using a for loop
         //match start, end variables to each element in allInfo
         //build a string that has all info corresponding to the matching id
         //build a pair object and associate all info string with the object
 
-        //this.compute.bind(file, file2)
     }
 
     async browseFile2(file2) {
         console.log("Got file:", file2);
+        let nameIndex;
         let pairs = [];
-        //let lineArray =[]
-        //let infoArray =[];
+        var keys = [];
+        for(var k in file2[0]) keys.push(k);
+        for(let i=0; i<keys.length; i++){
+            if(keys[i].toUpperCase()=="NAME"){
+                nameIndex = keys[i];
+            }
+        }
         for(let i=0; i<Object.values(file2).length; i++){
-            let name = file2[i].name;
-            let id = file2[i].id;
+
+            let name = file2[i][nameIndex];
+            console.log("file2[i][nameIndex]: ", file2[i][nameIndex]);
+            //let id = file2[i].id;
 
             let p = {
-                id : id,
+                //id : id,
                 name : name
             };
             pairs.push(p)
         }
-        //create array for column/value pairs. call it infoArray
         this.setState({
-            allInfo: pairs,
-            sysFile2: file2
+            allInfo: pairs
             //allInfo: infoArray
         });
-        console.log("allPair:", this.state.allPairs);
-        console.log("allInfo:", this.state.allInfo);
-        //this.run.bind(this.state.allPairs,this.state.allInfo);
 
         let pairs2 = [];
-        console.log("in run : file1:", this.state.allPairs);
         for (let i = 0; i < Object.values(this.state.allPairs).length; i++) {
-            let start;
-            let end;
+            let start=[];
+            let end=[];
             let startIndex = this.state.allPairs[i].start; //get start from file i
             let endIndex = this.state.allPairs[i].end; //get end from file i
             let dist = this.state.allPairs[i].dist;
@@ -107,18 +106,13 @@ export default class App extends React.Component {
             let startArrayFound = false;
             let endArrayFound = false;
             for(let j=0; j<Object.values(this.state.allInfo).length; j++) {
-                console.log("file2[j].id", file2[j].id);
-                console.log("startIndex", startIndex);
-                if (file2[j].name == startIndex) {
-                    start = this.state.allInfo[j];
+                if (this.state.allInfo[j].name == startIndex) {
+                    start = file2[j];
                     startArrayFound = true;
                 }
-
-                console.log("in loop: endIndex=", endIndex)
                 if (this.state.allInfo[j].name == endIndex) {
-                    end = this.state.allInfo[j];
+                    end = file2[j];
                     endArrayFound = true;
-                    console.log("in loop: in if: end=", end)
                 }
                 if (startArrayFound && endArrayFound) {
                     break;
@@ -132,8 +126,7 @@ export default class App extends React.Component {
                 dist: dist,
                 tot: tot, // print total
                 startInfo: start,
-                endInfo: end,
-                keys: Object.keys(startIndex)
+                endInfo: end
             };
 
             pairs2.push(p); //add object to pairs array
@@ -142,17 +135,10 @@ export default class App extends React.Component {
         }
         this.setState({
             all: pairs2,
-            //allInfo: infoArray
         });
 
 
 
     }
-
-    //async useInfo(){
-    //     this.state.allInfo
-    //}
-
-
 
 }

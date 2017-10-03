@@ -51,7 +51,7 @@ public class Itinerary {
 
             // Creates a JSON object with start, end, and the distance between them
             // and appends it to the end of the itinerary JSON array.
-            arr.put(createLeg(start, end));
+            arr.put(createLeg(start,end));
         }
 
         return arr;
@@ -60,8 +60,8 @@ public class Itinerary {
     // Creates a JSONObject for a single leg of the trip from start to end
     public static JSONObject createLeg(String start, String end) {
         JSONObject leg = new JSONObject();
-        leg.put("start", start);
-        leg.put("end", end);
+        leg.put("start", Destination.getName(start));
+        leg.put("end", Destination.getName(end));
 
         // Calculates the distance between start and end
         double distm = Distance.distanceMi(start, end);

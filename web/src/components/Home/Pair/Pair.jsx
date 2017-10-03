@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
 
-let Pair = ({start, end, dist, tot, startInfo, endInfo, keys, values }) => <tbody className="pair"> {/*classname for CSS*/} {/*Pair react with Start, End, Dist, Tot*/}
+let Pair = ({start, end, dist, tot, startInfo, endInfo }) => <tbody className="pair"> {/*classname for CSS*/} {/*Pair react with Start, End, Dist, Tot*/}
 <tr> {/*Row*/}
     <td> {/* Columns*/}
         <h5>{start}</h5>
         <p>{Object.values(startInfo)}</p>
-        {/*<p> {startInfo.name} </p>*/}
+        {/*<p> {values} </p>*/}
         {/*<p> {Object.keys(startInfo)} </p>*/}
     </td>
     <td>
