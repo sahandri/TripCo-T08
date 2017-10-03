@@ -17,11 +17,11 @@ public class TestDistance {
         i = new Itinerary();
     }
     
-    public static int distanceKm(String id_1, String id_2) {
+    public void TestdistanceKm(String id_1, String id_2) {
         
     }
 
-    public static int distanceMi(String id_1, String id_2) {
+    public void testDistanceMi(String id_1, String id_2) {
         
     }
 	
