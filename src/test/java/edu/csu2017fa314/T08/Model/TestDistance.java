@@ -1,4 +1,4 @@
-package edu.csu2017fa314.T08.View;
+package edu.csu2017fa314.T08.Model;
 import static org.junit.Assert.*;
 
 import org.json.JSONObject;
@@ -9,12 +9,12 @@ import org.junit.Ignore;
 
 public class TestDistance {
 
-    private Itinerary i;
+    private Distance d;
 
     @Before
     public void setUp() throws Exception 
     {
-        i = new Itinerary();
+        d = new Distance();
     }
     
     @Test
