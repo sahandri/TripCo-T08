@@ -17,23 +17,28 @@ public class TestDistance {
         i = new Itinerary();
     }
     
-    public void TestdistanceKm(String id_1, String id_2) {
-        
-    }
-
-    public void testDistanceMi(String id_1, String id_2) {
+    @Test
+    public void testDistanceKm() {
         
     }
 	
-	//Method Used To Create JSON
-	public static int distance(String id_1, String id_2) {
+    @Test
+    public void testDistanceMi() {
+        
     }
-		
-		//Use given latitude and longitudes in order to compute Greatest Circle Distance between two points
-		return calcGCD(latitude1,longitude1,latitude2,longitude2);
-	}
 	
-	//Method Used In Order To Calculate Greatest Circle Distance		
-	public static int calcGCD(double phi_1, double lambda_1, double phi_2, double lambda_2) {
+    @Test
+    //Method Used To Create JSON
+    public void testDistance() {
+    }
+	
+    @Test
+    //Use given latitude and longitudes in order to compute Greatest Circle Distance between two points
 		
-	}
+    }
+	
+    @Test
+    //Method Used In Order To Calculate Greatest Circle Distance		
+    public void testCalcGCD() {
+		
+    }
