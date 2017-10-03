@@ -33,12 +33,25 @@ public class TestDistance {
     }
 	
     @Test
-    //Use given latitude and longitudes in order to compute Greatest Circle Distance between two points
-		
-    }
-	
-    @Test
     //Method Used In Order To Calculate Greatest Circle Distance		
     public void testCalcGCD() {
 		
     }
+	
+    @Test
+    public static double degreesToRadians(String coordinates) {
+		
+    }
+	
+    @Test
+    //Method Used to Convert a Decimal Value Representing Degrees to Radians
+    public void testDecimalToRadians(double decimal) {
+		
+    }
+	
+    //Method Used to Convert a String Representing Either Latitude or Longitude Into a Decimal 
+    @Test
+    public void testDegreesToDecimal() {
+		
+    }
+}
