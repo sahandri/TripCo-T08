@@ -5,12 +5,14 @@ import java.util.Collections;
 
 public class ShortestTrip {
 
-    private static int[][] distLookUp;
-    private static ArrayList<String> stops = new ArrayList<String>();
-    private static ArrayList<String> tripCandidate;
+    private static int[][] distLookUp; // Lookup table of all distances between two locations
+    private static ArrayList<String> stops = new ArrayList<String>(); // Itinerary of shortest trip
+    private static ArrayList<String> tripCandidate; // Intermediate variable for storing the current shortest trip during calculations.
 
+    /*
+     * Returns an ArrayList<String> containing the itinerary
+     */
     public static ArrayList<String> getShortestTrip() {
-
         int tripLength = -1;
         if(stops.size() == 0) {
             buildDistLookUp();
@@ -25,27 +27,32 @@ public class ShortestTrip {
                     stops = tripCandidate;
                 }
             }
+            System.out.println("Shortest Trip: " + Integer.toString(tripLength));
         }
 
-        System.out.println("Shortest Trip: " + Integer.toString(tripLength));
 
         return stops;
     }
 
+    /*
+     * Populates the distLookUp table by calculating the distance between every point.
+     */
     private static void buildDistLookUp() {
         int destTtl = Destination.getTotal();
         distLookUp = new int[destTtl][destTtl];
 
         for(int i = 0; i < destTtl; i++) {
             String d_i = Destination.getID(i);
-            for(int j = 0; j < destTtl; j++) {
-            String d_j = Destination.getID(j);
-
+            for(int j = i; j < destTtl; j++) {
+                String d_j = Destination.getID(j);
                 distLookUp[i][j] = Distance.distanceMi(d_i,d_j);
             }
         }
     }
 
+    /*
+     * Calculates the length of the shortest trip given the index of a starting point.
+     */
     private static int shortestTripLength(int start) {
         tripCandidate = new ArrayList<String>(); // TODO: Delete old ones XXX
 
@@ -83,11 +90,10 @@ public class ShortestTrip {
             }
         }
 
+        // Add the start location to the end of the list to complete the trip
         int idx1 = Destination.getIndex(tripCandidate.get(tripCandidate.size()-1));
         int idx2 = Destination.getIndex(tripCandidate.get(0));
-
         tripCandidate.add(tripCandidate.get(0));
-
         len += distLookUp[idx1][idx2];
 
         return len;
