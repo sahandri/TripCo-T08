@@ -6,7 +6,8 @@ let Pair = ({start, end, dist, tot, startInfo, endInfo }) => <tbody className="p
     <td> {/* Columns*/}
         <h5>{start}</h5>
         <p>{Object.values(startInfo)}</p>
-        {/*<p> {values} </p>*/}
+        {/*<p>{Object.keys(startInfo)[0]}</p>*/}
+        {/*<p>{startInfo.City}</p>*/}
         {/*<p> {Object.keys(startInfo)} </p>*/}
     </td>
     <td>
