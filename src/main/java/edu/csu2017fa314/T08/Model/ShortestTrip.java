@@ -9,6 +9,12 @@ public class ShortestTrip {
     private static ArrayList<String> stops = new ArrayList<String>(); // Itinerary of shortest trip
     private static ArrayList<String> tripCandidate; // Intermediate variable for storing the current shortest trip during calculations.
 
+    public static void printTrip() {
+        for(int i = 0; i < stops.size(); i++) {
+            System.out.println(stops.get(i));
+        }
+    }
+
     /*
      * Returns an ArrayList<String> containing the itinerary
      */
@@ -24,13 +30,11 @@ public class ShortestTrip {
                 // Save that trip if it's the shortest we've found.
                 if(currTrip < tripLength || tripLength < 0) {
                     tripLength = currTrip;
-                    stops = tripCandidate;
+                    stops = new ArrayList<String>(tripCandidate);
                 }
             }
-            System.out.println("Shortest Trip: " + Integer.toString(tripLength));
         }
-
-
+        
         return stops;
     }
 
@@ -39,13 +43,24 @@ public class ShortestTrip {
      */
     private static void buildDistLookUp() {
         int destTtl = Destination.getTotal();
-        distLookUp = new int[destTtl][destTtl];
+        distLookUp = new int[destTtl][];
 
         for(int i = 0; i < destTtl; i++) {
+            distLookUp[i] = new int[destTtl - i];
             String d_i = Destination.getID(i);
-            for(int j = i; j < destTtl; j++) {
-                String d_j = Destination.getID(j);
+
+            for(int j = 0; j < destTtl-i-1; j++) {
+                String d_j = Destination.getID(i+j+1);
                 distLookUp[i][j] = Distance.distanceMi(d_i,d_j);
+            }
+        }
+    }
+
+    private static void printDistLookUp() {
+        int destTtl = Destination.getTotal();
+        for(int i = 0; i < destTtl; i++) {
+            for(int j = 0; j < destTtl-i-1; j++) {
+                System.out.println(Destination.getID(i) + "->" + Destination.getID(i+j+1) + "=" + distLookUp[i][j]);
             }
         }
     }
@@ -54,7 +69,7 @@ public class ShortestTrip {
      * Calculates the length of the shortest trip given the index of a starting point.
      */
     private static int shortestTripLength(int start) {
-        tripCandidate = new ArrayList<String>(); // TODO: Delete old ones XXX
+        tripCandidate = new ArrayList<String>(); // TODO: This is bad XXX
 
         for(int i = 0; i < Destination.getTotal(); i++) {
             tripCandidate.add(Destination.getID(i));
@@ -65,7 +80,7 @@ public class ShortestTrip {
 
         int len = 0;
         // Iterate through tripCandidate to sort into shortest trip
-        for(int i = 1; i < tripCandidate.size()-1; i++) {
+        for(int i = 0; i < tripCandidate.size()-1; i++) {
 
             int idxi = Destination.getIndex(tripCandidate.get(i));
             int idxn = idxi; // index of distance to nearest neighbor of i
@@ -75,27 +90,37 @@ public class ShortestTrip {
             for(int j=i+1; j < tripCandidate.size(); j++) {
                 int idxj = Destination.getIndex(tripCandidate.get(j));
 
-                if(distLookUp[idxi][idxj] < distLookUp[idxi][idxn] || idxn==idxi) {
+                if(getDist(idxi,idxj) < getDist(idxi,idxn) || idxn==idxi) {
                     idxn = idxj;
                     nn = j;
                 }
             }
 
-            if(nn != i) {
-                // Add the closest distance
-                len += distLookUp[idxi][idxn];
+            // Add the closest distance
+            len += getDist(idxi,idxn);
 
-                // Swap the array entries
-                Collections.swap(tripCandidate,i+1,nn);
-            }
+            // Swap the array entries
+            Collections.swap(tripCandidate,i+1,nn);
         }
 
         // Add the start location to the end of the list to complete the trip
         int idx1 = Destination.getIndex(tripCandidate.get(tripCandidate.size()-1));
         int idx2 = Destination.getIndex(tripCandidate.get(0));
         tripCandidate.add(tripCandidate.get(0));
-        len += distLookUp[idx1][idx2];
+        len += getDist(idx1,idx2);
 
         return len;
+    }
+
+    /*
+     * The distLookUp indices are a little different from the csv indices, so some math
+     * is done to get them correct. Each row i in the lookup table has n-i entries, n being
+     * the size of the dataset. The distance to a destination j is the entry j-i-1 when i<j
+     * because the distance from i to destinations 0..i-1 is already stored in the previous rows.
+     */
+    private static int getDist(int i, int j) {
+        if(i < j) { return distLookUp[i][j-i-1]; }
+        else if(j < i) { return distLookUp[j][i-j-1]; }
+        else { return distLookUp[i][0]; }
     }
 }
