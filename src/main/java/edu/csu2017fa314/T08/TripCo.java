@@ -40,7 +40,7 @@ public class TripCo
             Itinerary.createJSON(args[1]);
             Itinerary.printJSON();
             CSV.createJSON(args[2]);
-            CSV.printJSON();
+            //CSV.printJSON();
             makeSvg.createTripFile(args[3]);
         }
         catch(IOException e) {
