@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-
-
 let Pair = ({start, end, dist, tot, startInfo, endInfo }) => <tbody className="pair"> {/*classname for CSS*/} {/*Pair react with Start, End, Dist, Tot*/}
 <tr> {/*Row*/}
     <td> {/* Columns*/}
@@ -22,5 +20,4 @@ let Pair = ({start, end, dist, tot, startInfo, endInfo }) => <tbody className="p
     </td>
 </tr>
 </tbody>;
-
 export default Pair;
