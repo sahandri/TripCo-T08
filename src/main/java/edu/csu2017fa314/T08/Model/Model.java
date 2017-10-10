@@ -5,10 +5,7 @@ import java.util.ArrayList;
 public class Model
 {
    public static ArrayList<String> shortestTrip() {
-       ArrayList<String> order = new ArrayList<String>();
-
-       order = ShortestTrip.getShortestTrip();
-
-       return order;
+       ShortestTrip trip = new ShortestTrip();
+       return trip.getShortestTrip();
    }
 }

@@ -5,11 +5,11 @@ import java.util.Collections;
 
 public class ShortestTrip {
 
-    private static int[][] distLookUp; // Lookup table of all distances between two locations
-    private static ArrayList<String> stops = new ArrayList<String>(); // Itinerary of shortest trip
-    private static ArrayList<String> tripCandidate; // Intermediate variable for storing the current shortest trip during calculations.
+    private int[][] distLookUp; // Lookup table of all distances between two locations
+    private ArrayList<String> stops = new ArrayList<String>(); // Itinerary of shortest trip
+    private ArrayList<String> tripCandidate; // Intermediate variable for storing the current shortest trip during calculations.
 
-    public static void printTrip() {
+    public void printTrip() {
         for(int i = 0; i < stops.size(); i++) {
             System.out.println(stops.get(i));
         }
@@ -18,7 +18,7 @@ public class ShortestTrip {
     /*
      * Returns an ArrayList<String> containing the itinerary
      */
-    public static ArrayList<String> getShortestTrip() {
+    public ArrayList<String> getShortestTrip() {
         int tripLength = -1;
         if(stops.size() == 0) {
             buildDistLookUp();
@@ -41,7 +41,7 @@ public class ShortestTrip {
     /*
      * Populates the distLookUp table by calculating the distance between every point.
      */
-    private static void buildDistLookUp() {
+    private void buildDistLookUp() {
         int destTtl = Destination.getTotal();
         distLookUp = new int[destTtl][];
 
@@ -56,7 +56,7 @@ public class ShortestTrip {
         }
     }
 
-    private static void printDistLookUp() {
+    private void printDistLookUp() {
         int destTtl = Destination.getTotal();
         for(int i = 0; i < destTtl; i++) {
             for(int j = 0; j < destTtl-i-1; j++) {
@@ -68,7 +68,7 @@ public class ShortestTrip {
     /*
      * Calculates the length of the shortest trip given the index of a starting point.
      */
-    private static int shortestTripLength(int start) {
+    private int shortestTripLength(int start) {
         tripCandidate = new ArrayList<String>(); // TODO: This is bad XXX
 
         for(int i = 0; i < Destination.getTotal(); i++) {
@@ -118,7 +118,7 @@ public class ShortestTrip {
      * the size of the dataset. The distance to a destination j is the entry j-i-1 when i<j
      * because the distance from i to destinations 0..i-1 is already stored in the previous rows.
      */
-    private static int getDist(int i, int j) {
+    private int getDist(int i, int j) {
         if(i < j) { return distLookUp[i][j-i-1]; }
         else if(j < i) { return distLookUp[j][i-j-1]; }
         else { return distLookUp[i][0]; }
