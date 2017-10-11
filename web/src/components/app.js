@@ -10,7 +10,6 @@ export default class App extends React.Component {
         this.state = {
             allPairs: [], //creates an array for pairs
             sysFile: [],
-            allInfo: [],
             all: []
         }
     };
@@ -25,7 +24,6 @@ export default class App extends React.Component {
                 <Home
                     browseFile={this.browseFile.bind(this)} //?
                     browseFile2={this.browseFile2.bind(this)} //?
-                    //run={this.run(this,this)}
                     pairs={ps}
                 />
             </div>
@@ -70,31 +68,15 @@ export default class App extends React.Component {
     async browseFile2(file2) {
         console.log("Got file:", file2);
         let nameIndex;
-        let pairs = [];
         var keys = [];
+        //check the keys in json file
         for(var k in file2[0]) keys.push(k);
         for(let i=0; i<keys.length; i++){
             if(keys[i].toUpperCase()=="NAME"){
                 nameIndex = keys[i];
             }
         }
-        for(let i=0; i<Object.values(file2).length; i++){
-
-            let name = file2[i][nameIndex];
-            console.log("file2[i][nameIndex]: ", file2[i][nameIndex]);
-            //let id = file2[i].id;
-
-            let p = {
-                //id : id,
-                name : name
-            };
-            pairs.push(p)
-        }
-        this.setState({
-            allInfo: pairs
-            //allInfo: infoArray
-        });
-
+        //search the name key in json file and store all it's information
         let pairs2 = [];
         for (let i = 0; i < Object.values(this.state.allPairs).length; i++) {
             let start=[];
@@ -105,20 +87,18 @@ export default class App extends React.Component {
             let tot = this.state.allPairs[i].tot
             let startArrayFound = false;
             let endArrayFound = false;
-            for(let j=0; j<Object.values(this.state.allInfo).length; j++) {
-                if (this.state.allInfo[j].name == startIndex) {
+            for(let j=0; j<Object.values(file2).length; j++) {
+                if (file2[j][nameIndex] == startIndex) {
                     start = file2[j];
                     startArrayFound = true;
                 }
-                if (this.state.allInfo[j].name == endIndex) {
+                if (file2[j][nameIndex] == endIndex) {
                     end = file2[j];
                     endArrayFound = true;
                 }
                 if (startArrayFound && endArrayFound) {
                     break;
                 }
-
-
             }
             let p = { //create object with start, end, and dist variable
                 start: startIndex,
@@ -128,10 +108,8 @@ export default class App extends React.Component {
                 startInfo: start,
                 endInfo: end
             };
-
             pairs2.push(p); //add object to pairs array
             console.log("Pushing pair in run: ", p); //log to console
-
         }
         this.setState({
             all: pairs2,

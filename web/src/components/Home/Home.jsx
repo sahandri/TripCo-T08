@@ -35,13 +35,13 @@ class Home extends React.Component {
 
 
         let total; {/*Initalize*/}
-        let keys;
+        //let keys;
         if(this.props.pairs == ""){ {/*If no json file*/}
             total = 0;
         }
         else{ {/*after json call*/}
             total = this.props.pairs[this.props.pairs.length - 1].props.tot;
-            keys =  this.props.pairs[this.props.pairs.length - 1].props.keys;
+            //keys =  this.props.pairs[this.props.pairs.length - 1].props.Object.keys(startInfo);
         }
         return <div className="home-container">
             <div className="inner">
