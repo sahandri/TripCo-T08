@@ -1,9 +1,11 @@
+package edu.csu2017fa314.T08.Model;
+
 import java.sql.Connection; // https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html
 import java.sql.DriverManager; // https://www.tutorialspoint.com/jdbc/
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
-public class Sprint3Example1 {
+public class DataBase {
 public static void main(String[] args){ // command line args contain username and password
 String myDriver = "com.mysql.jdbc.Driver"; // add dependencies in pom.xml
 String myUrl = "jdbc:mysql://faure.cs.colostate.edu/cs314";
