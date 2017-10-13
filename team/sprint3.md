@@ -36,6 +36,7 @@ Date | Tasks done this time | Tasks done next time | Impediments | Confidence
 :--- | :--- | :--- | :--- | :---
 10/06/17 | web page shows extra info | write test files for sprint2 | meeting | Medium
  10/07/17 | write test files for sprint2 | finishing refactoring | schedule for sprint3 | Medium
+ 10/13/17 | Progress made on refactor | Refactor & test backlog complete | demands from other classes | Medium
  
 
 ## Review
