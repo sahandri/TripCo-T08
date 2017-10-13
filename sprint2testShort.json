@@ -1,15 +1,5 @@
 [
     {
-        "distance": 69,
-        "start": "Elevation Beer Company",
-        "end": "Mad Jacks Mountain Brewery"
-    },
-    {
-        "distance": 42,
-        "start": "Mad Jacks Mountain Brewery",
-        "end": "Two22 Brew"
-    },
-    {
         "distance": 34,
         "start": "Two22 Brew",
         "end": "Echo Brewing Company"
@@ -20,8 +10,18 @@
         "end": "Equinox Brewing"
     },
     {
-        "distance": 152,
+        "distance": 85,
         "start": "Equinox Brewing",
+        "end": "Mad Jacks Mountain Brewery"
+    },
+    {
+        "distance": 69,
+        "start": "Mad Jacks Mountain Brewery",
         "end": "Elevation Beer Company"
+    },
+    {
+        "distance": 104,
+        "start": "Elevation Beer Company",
+        "end": "Two22 Brew"
     }
 ]

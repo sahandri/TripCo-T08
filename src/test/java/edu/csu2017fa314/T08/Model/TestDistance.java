@@ -19,17 +19,18 @@ public class TestDistance {
     
     @Test
     public void testDistanceKm() {
-        
+        assertEquals(d.distanceKm("50° 03' 59\" N", "5° 42' 53\" W", "58° 38' 38\" N", "3° 4' 12\" W"), 969, 0.000001);	
     }
 	
     @Test
     public void testDistanceMi() {
-        
+        assertEquals(d.distanceMi("50° 03' 59\" N", "5° 42' 53\" W", "58° 38' 38\" N", "3° 4' 12\" W"), 602, 0.000001);
     }
 	
     @Test
     //Method Used To Create JSON
     public void testDistance() {
+	 
     }
 	
     @Test
