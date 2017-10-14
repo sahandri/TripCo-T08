@@ -8,4 +8,8 @@ public class Model
        ShortestTrip trip = new ShortestTrip();
        return trip.getShortestTrip();
    }
+
+   public static int getDistance(String id1, String id2, boolean useKm) {
+        return 0;
+   }
 }
