@@ -10,28 +10,29 @@ public class Distance {
 	static double r_earth_mi = 3958.7613; //miles
     static double radius = 0.0;
 
-    public static int distanceKm(String id_1, String id_2) {
+    public static int distanceKm(String lat1, String long1, String lat2, String long2) {
         radius = r_earth_km;
-        return distance(id_1, id_2);
+        return distance(lat1, long1, lat2, long2);
     }
 
-    public static int distanceMi(String id_1, String id_2) {
+    public static int distanceMi(String lat1, String long1, String lat2, String long2) {
         radius = r_earth_mi;
-        return distance(id_1, id_2);
+	System.out.println("The distance is:" +  distance(lat1, long1, lat2, long2));
+        return distance(lat1, long1, lat2, long2);
     }
 	
 	//Method Used To Create JSON
-	public static int distance(String id_1, String id_2) {
+	public static int distance(String lat1, String long1, String lat2, String long2) {
 		//Create doubles for latitude and longitude given each ID
-        String lat1 = Destination.getLatit(id_1);
-        String lon1 = Destination.getLongit(id_1);
-        String lat2 = Destination.getLatit(id_2);
-        String lon2 = Destination.getLongit(id_2);
+        //String lat1 = Destination.getLatit(id_1);
+        //String lon1 = Destination.getLongit(id_1);
+        //String lat2 = Destination.getLatit(id_2);
+        //String lon2 = Destination.getLongit(id_2);
 
 		double latitude1 = degreesToRadians(lat1);
-		double longitude1 = degreesToRadians(lon1);
+		double longitude1 = degreesToRadians(long1);
 		double latitude2 = degreesToRadians(lat2);
-		double longitude2 = degreesToRadians(lon2);
+		double longitude2 = degreesToRadians(long2);
 
 		
 		//Use given latitude and longitudes in order to compute Greatest Circle Distance between two points

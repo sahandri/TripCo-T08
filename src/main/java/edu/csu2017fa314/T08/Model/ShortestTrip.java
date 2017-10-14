@@ -45,13 +45,21 @@ public class ShortestTrip {
         int destTtl = Destination.getTotal();
         distLookUp = new int[destTtl][];
 
+	String lat1 = "";
+	String long1 = "";
+	String lat2 = "";
+	String long2 = "";
         for(int i = 0; i < destTtl; i++) {
             distLookUp[i] = new int[destTtl - i];
             String d_i = Destination.getID(i);
 
             for(int j = 0; j < destTtl-i-1; j++) {
                 String d_j = Destination.getID(i+j+1);
-                distLookUp[i][j] = Distance.distanceMi(d_i,d_j);
+                lat1 = Destination.getLatit(d_i);
+        	long1 = Destination.getLongit(d_i);
+        	lat2 = Destination.getLatit(d_j);
+        	long2 = Destination.getLongit(d_j);
+                distLookUp[i][j] = Distance.distanceMi(lat1, long1, lat2, long2);
             }
         }
     }
