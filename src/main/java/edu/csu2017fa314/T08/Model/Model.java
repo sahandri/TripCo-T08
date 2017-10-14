@@ -10,6 +10,10 @@ public class Model
    }
 
    public static int getDistance(String id1, String id2, boolean useKm) {
-        return 0;
+       String lat1 = Destination.getLatit(id1);
+       String lon1 = Destination.getLongit(id1);
+       String lat2 = Destination.getLatit(id2);
+       String lon2 = Destination.getLongit(id2);
+       return 0;
    }
 }
