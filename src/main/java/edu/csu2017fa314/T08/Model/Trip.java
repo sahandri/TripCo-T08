@@ -6,26 +6,27 @@ public class Trip {
     private ArrayList<String> _stops;
     private int _length = 0;
 
-    public Trip() {
-        _stops = new ArrayList<String>();
+    Trip() {
+        _stops = new ArrayList<>();
     }
 
     public Trip(ArrayList<String> stops) {
     }
 
-    public void addStop(String id) {
+    void addStop(String id) {
         _stops.add(id);
         if(_stops.size() > 1) {
+            _length += 1;
         }
     }
 
-    public int length() {
+    int length() {
         return _length;
     }
 
-    public int size() { return _stops.size(); }
+    int size() { return _stops.size(); }
 
-    public String get(int i) {
+    String get(int i) {
         return _stops.get(i);
     }
 

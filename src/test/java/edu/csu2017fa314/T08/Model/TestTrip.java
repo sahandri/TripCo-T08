@@ -30,7 +30,8 @@ public class TestTrip {
     @Ignore("Need to figure out what setup is needed.")
     @Test
     public void testSingleLeg() {
-
+        t.addStop("KDRI");
+        t.addStop("KDNR");
     }
 
     @Ignore("Need to figure out what setup is needed.")
