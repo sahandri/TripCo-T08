@@ -166,10 +166,10 @@ public class makeSvg {
 			}
 			//Writing to file...
 			bw.write(commentTag("\nEditing the File!"));
-			bw.write("\n" + drawStartPoint(-146.5, 177.5, 1, "red", "red", 1));
+			/*bw.write("\n" + drawStartPoint(-146.5, 177.5, 1, "red", "red", 1));
 			bw.write("\n" + drawStartPoint(-146.5, 886, 1, "red", "red", 1));
 			bw.write("\n" + drawStartPoint(845, 177.5, 1, "red", "red", 1));
-			bw.write("\n" + drawStartPoint(845, 886, 1, "red", "red", 1));
+			bw.write("\n" + drawStartPoint(845, 886, 1, "red", "red", 1));*/
 			//Create Border Reference Points (specific to .svg)
 			double x1 = -146.5;
 			double x2 = 845;
