@@ -16,9 +16,9 @@ public class TripCo
         return name;
     }
 
-    public String getMessage()
+    String getMessage()
     {
-        if (name == "")
+        if (name.equals(""))
         {
             return "Hello!";
         }
@@ -38,7 +38,6 @@ public class TripCo
 
         try {
             Destination.readFile(args[0]);
-            Model.init();
             Itinerary.createJSON(args[1]);
             Itinerary.printJSON();
             CSV.createJSON(args[2]);

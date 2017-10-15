@@ -5,16 +5,16 @@ import java.util.ArrayList;
 public class Model {
     private static int[][] distLookUp;
 
-    public static void init() {
+    static {
         buildDistLookUp();
     }
 
-    public static Trip shortestTrip() {
-        return TripManager.shortest();
+    public static ArrayList<String> shortestTrip() {
+        return TripManager.shortest().stops();
     }
 
-    public static Trip shortestTrip(String id) {
-        return TripManager.get(id);
+    public static ArrayList<String> shortestTrip(String id) {
+        return TripManager.get(id).stops();
     }
 
     public static int getDistance(String id1, String id2, boolean useKm) {

@@ -6,13 +6,12 @@ import java.util.Collections;
 
 public class TripManager {
     private static ArrayList<Trip> trips;
-    private static ArrayList<String> locations; // Hack
 
     static {
         buildTripList();
     }
 
-    public static Trip shortest() {
+    static Trip shortest() {
         return trips.get(0);
     }
 
@@ -27,20 +26,57 @@ public class TripManager {
     }
 
     private static void buildTripList() {
-
+        trips = new ArrayList<>();
         for(int i = 0; i < Destination.getTotal(); i++) {
-            locations.add(Destination.getID(i));
-        }
-        for(String s: locations) {
-            trips.add(buildTrip(s));
+            trips.add(buildTrip(i));
         }
         Collections.sort(trips);
     }
 
-    private static Trip buildTrip(String start) {
-        ArrayList<String> locs = new ArrayList<>(locations);
+    private static Trip buildTrip(int idx) {
+        int len = Destination.getTotal(); // Number of locations
+        int[] order = new int[len];
+
+        order[0] = idx;
+
+        for(int i = 1; i < len; i++) {
+            order[i] = i;
+        }
+
+        order[idx] = 0;
+
+        for(int i = 0; i < len-1; i++) {
+            // For each location, find the nearest neighbor
+            int nn = i+1;
+            int d1;
+            int d2;
+
+            for(int j = i+2; j < len; j++) {
+
+                String idi = Destination.getID(order[i]);
+                String idn = Destination.getID(order[nn]);
+                String idj = Destination.getID(order[j]);
+
+                d1 = Model.getDistance(idi, idn, false);
+                d2 = Model.getDistance(idi, idj, false);
+
+                // If j is closer than nn, nn becomes j
+                if(d2 < d1) {
+                    nn = j;
+                }
+            }
+
+            // Swap nn w/ i+1
+            int tmp = order[i+1];
+            order[i+1] = order[nn];
+            order[nn] = tmp;
+        }
+
         Trip t = new Trip();
-        t.add(start);
+        for(int i : order) {
+            t.add(Destination.getID(i));
+        }
+        t.add(Destination.getID(order[0]));
 
         return t;
     }

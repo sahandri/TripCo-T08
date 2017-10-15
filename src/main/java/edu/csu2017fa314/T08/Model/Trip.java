@@ -34,6 +34,8 @@ public class Trip implements Comparable<Trip> {
         return _stops.get(i);
     }
 
+    ArrayList<String> stops() { return _stops; }
+
     @Override
     public int compareTo(Trip t) {
         return(_length - t.length());
