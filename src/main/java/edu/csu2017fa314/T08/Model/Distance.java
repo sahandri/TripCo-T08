@@ -17,7 +17,7 @@ public class Distance {
 
     public static int distanceMi(String lat1, String long1, String lat2, String long2) {
         radius = r_earth_mi;
-	System.out.println("The distance is:" +  distance(lat1, long1, lat2, long2));
+	//System.out.println("The distance is:" +  distance(lat1, long1, lat2, long2));
         return distance(lat1, long1, lat2, long2);
     }
 	
