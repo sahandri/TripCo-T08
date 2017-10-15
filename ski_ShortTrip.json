@@ -1,0 +1,82 @@
+[
+    {
+        "distance": 10,
+        "start": "Telluride",
+        "end": "Silverton"
+    },
+    {
+        "distance": 19,
+        "start": "Silverton",
+        "end": "Purgatory"
+    },
+    {
+        "distance": 57,
+        "start": "Purgatory",
+        "end": "Wolf Creek"
+    },
+    {
+        "distance": 76,
+        "start": "Wolf Creek",
+        "end": "Monarch"
+    },
+    {
+        "distance": 43,
+        "start": "Monarch",
+        "end": "Crested Butte"
+    },
+    {
+        "distance": 22,
+        "start": "Crested Butte",
+        "end": "Aspen mountain"
+    },
+    {
+        "distance": 30,
+        "start": "Aspen mountain",
+        "end": "Ski Cooper"
+    },
+    {
+        "distance": 16,
+        "start": "Ski Cooper",
+        "end": "Breckenridge"
+    },
+    {
+        "distance": 21,
+        "start": "Breckenridge",
+        "end": "Vail"
+    },
+    {
+        "distance": 37,
+        "start": "Vail",
+        "end": "Winter Park"
+    },
+    {
+        "distance": 10,
+        "start": "Winter Park",
+        "end": "Eldora Mountain"
+    },
+    {
+        "distance": 18,
+        "start": "Eldora Mountain",
+        "end": "Echo Mountain"
+    },
+    {
+        "distance": 41,
+        "start": "Echo Mountain",
+        "end": "Estes Valley"
+    },
+    {
+        "distance": 68,
+        "start": "Estes Valley",
+        "end": "Steamboat"
+    },
+    {
+        "distance": 120,
+        "start": "Steamboat",
+        "end": "Powderhorn"
+    },
+    {
+        "distance": 80,
+        "start": "Powderhorn",
+        "end": "Telluride"
+    }
+]
