@@ -2,6 +2,7 @@ package edu.csu2017fa314.T08;
 
 import java.io.IOException;
 import edu.csu2017fa314.T08.Model.Destination;
+import edu.csu2017fa314.T08.Model.Model;
 import edu.csu2017fa314.T08.View.Itinerary;
 import edu.csu2017fa314.T08.View.makeSvg;
 import edu.csu2017fa314.T08.View.CSV;
@@ -37,6 +38,7 @@ public class TripCo
 
         try {
             Destination.readFile(args[0]);
+            Model.init();
             Itinerary.createJSON(args[1]);
             Itinerary.printJSON();
             CSV.createJSON(args[2]);
