@@ -5,8 +5,11 @@ import edu.csu2017fa314.T08.Model.Distance;
 import edu.csu2017fa314.T08.Model.Destination;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+
 
 public class makeSvg {
 	//Import array of destinations ids
@@ -74,19 +77,24 @@ public class makeSvg {
 		return ((1230 - 50) * ((-109 - longitude) / (-109 + 102))) + 50;
 	}
 
-	//Method used to convert global latitude to local latitude on previous SVG
-	public static double convertLatitude2(double latitude){
-		return ((974 - 50) * ((41 - latitude) / (41 - 37))) + 50;
+	//New Method used to convert global latitude to local latitude on previous SVG
+	public static double newConvertLatitude(double latitude, double y1, double y2){
+		return ((y2 - y1) * ((41 - latitude) / (41 - 37))) + y1;
 	}
 	
-	//Method used to convert global longitude to local longitude on previous SVG
-	public static double convertLongitude2(double longitude){
-		return ((1230 - 50) * ((-109 - longitude) / (-109 + 102))) + 50;
+	//New Method used to convert global longitude to local longitude on previous SVG
+	public static double newConvertLongitude(double longitude, double x1, double x2){
+		return ((x2 - x1) * ((-109 - longitude) / (-109 + 102))) + x1;
 	}
 	
 	//Method to create a new SVG based on the selected ShortestTrip	
 	public static void createTripFile(String filename) {
 		try{
+			//Create Border Reference Points (specific to .svg)
+			int x1 = 50;
+			int x2 = 1230;
+			int y1 = 50;
+			int y2 = 974;			
 			//Create and open a writer for a new .svg file
 			BufferedWriter ob = new BufferedWriter(new FileWriter(filename));
 			//Writing to file...
@@ -145,27 +153,37 @@ public class makeSvg {
 	}
 	//Method to modify premade SVG of Colorado (NOT FUNCTIONING YET)
 	public static void addTripFile(String filename) {
+		BufferedReader br = null;
+		BufferedWriter bw = null;		
 		try{
 		//Create and open a writer for current .svg file
-			BufferedWriter ob = new BufferedWriter(new FileWriter(filename, true));
+			br = new BufferedReader(new FileReader("data/USA_Colorado_location_map.svg"));
+			bw = new BufferedWriter(new FileWriter(filename));
+			//Copying File...
+			int c;
+			while((c = br.read()) != -1) {
+				bw.write(c);
+			}
 			//Writing to file...
-		ob.write(commentTag("\nEditing the File!"));
-	        //ob.write("\n" + titleTag("Title"));
-	        //ob.write(commentTag("\nDrawing the state borders!"));
-		//Create Key
-		ob.write("\n" + drawStartPoint(0, 0, 5, "red", "red", 8));
-		ob.write("\n" + drawStartPoint(200, 30, 5, "blue", "blue", 1));
-		ob.write("\n" + addText(40, 35, "sans-serif", "20px", "red", " = Start/End"));
-		ob.write("\n" + addText(210, 35, "sans-serif", "20px", "blue", " = Other Destinations Along The Way"));
-		//Draw Title
-		ob.write("\n" + addText(50, 35, "sans-serif", "50px", "black", "Showing Your Colorado Trip!"));
-	        //Draw State Borders
-	        ob.write("\n" + drawLine("north", 50, 50, 1230, 50, 5, "#000000"));
-	        ob.write("\n" + drawLine("east", 1230, 50, 1230, 974, 5, "#000000"));
-	        ob.write("\n" + drawLine("south", 1230, 974, 50, 974, 5, "#000000"));
-	        ob.write("\n" + drawLine("west", 50, 974, 50, 50, 5, "#000000"));
-	        //Draw trip
-			ob.write(commentTag("\nDrawing the trip path!"));
+			bw.write(commentTag("\nEditing the File!"));
+			/*bw.write("\n" + drawStartPoint(-146.5, 177.5, 1, "red", "red", 1));
+			bw.write("\n" + drawStartPoint(-146.5, 886, 1, "red", "red", 1));
+			bw.write("\n" + drawStartPoint(845, 177.5, 1, "red", "red", 1));
+			bw.write("\n" + drawStartPoint(845, 886, 1, "red", "red", 1));*/
+			//Create Border Reference Points (specific to .svg)
+			double x1 = -146.5;
+			double x2 = 845;
+			double y1 = 177.5;
+			double y2 = 886;
+			//Create Key
+			bw.write("\n" + drawStartPoint(-146.5, 160, 5, "red", "red", 8));
+			bw.write("\n" + drawStartPoint(180, 160, 5, "blue", "blue", 1));
+			bw.write("\n" + addText(-130.5, 166, "sans-serif", "20px", "red", " = Start/End"));
+			bw.write("\n" + addText(190, 166, "sans-serif", "20px", "blue", " = Other Destinations Along The Way"));
+			//Draw Title
+			bw.write("\n" + addText(0, 915, "sans-serif", "30px", "black", "Showing Your Colorado Trip, " + filename.substring(0,filename.length() - 4) + "!"));
+	        	//Draw trip
+			bw.write(commentTag("\nDrawing the trip path!"));
 			double startX = 0;
 			double startY = 0;
 			double finishX = 0;
@@ -174,23 +192,24 @@ public class makeSvg {
 			for(int i = 0; i < order.size(); i++) {
 				if(i == 0) {
 					//Sets first destination in trip to the destination at i = 0
-					startX = convertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(order.get(i)))));
-					startY = convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(order.get(i))));				
+					startX = newConvertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(order.get(i)))),x1,x2);
+					startY = newConvertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(order.get(i))),y1,y2);				
 					//Draws the starting point given start data					
-					ob.write("\n" + drawStartPoint(startX, startY, 5, "red", "red", 8));					
+					bw.write("\n" + drawStartPoint(startX, startY, 5, "red", "red", 8));					
 				}
 				else {
 					finishX = startX;
 					finishY = startY;
-					startX = convertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(order.get(i)))));
-					startY = convertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(order.get(i))));
-					ob.write("\n" + drawStartPoint(startX, startY, 5, "blue", "blue", 1));
-					ob.write("\n" + drawLine("path", startX, startY, finishX, finishY, 2, "#000000"));
+					startX = newConvertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(order.get(i)))),x1,x2);
+					startY = newConvertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(order.get(i))),y1,y2);
+					bw.write("\n" + drawStartPoint(startX, startY, 5, "blue", "blue", 1));
+					bw.write("\n" + drawLine("path", startX, startY, finishX, finishY, 2, "#000000"));
 				}
 			}
-			ob.write("\n" + gTag2());
-			ob.write("\n" + svgTag());
-	        ob.close();
+			bw.write("\n" + gTag2());
+			bw.write("\n" + svgTag());
+	        	bw.close();
+			br.close();
 		} catch (IOException e) {
 		   // do something
 		}
