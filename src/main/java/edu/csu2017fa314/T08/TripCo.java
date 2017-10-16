@@ -2,6 +2,7 @@ package edu.csu2017fa314.T08;
 
 import java.io.IOException;
 import edu.csu2017fa314.T08.Model.Destination;
+import edu.csu2017fa314.T08.Model.Model;
 import edu.csu2017fa314.T08.View.Itinerary;
 import edu.csu2017fa314.T08.View.makeSvg;
 import edu.csu2017fa314.T08.View.CSV;
@@ -15,9 +16,9 @@ public class TripCo
         return name;
     }
 
-    public String getMessage()
+    String getMessage()
     {
-        if (name == "")
+        if (name.equals(""))
         {
             return "Hello!";
         }
