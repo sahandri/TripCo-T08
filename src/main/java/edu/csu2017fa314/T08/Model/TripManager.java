@@ -29,7 +29,7 @@ public class TripManager {
         total = new AtomicInteger(Destination.getTotal());
         System.out.printf("Generating %d trips", total.get());
         trips = new ArrayList<>();
-        ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(1);
+        ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
         ArrayList<Future<Trip>> results = new ArrayList<>();
 
         stops = new String[total.get()];
