@@ -32,11 +32,11 @@ public class TripWorker implements Callable<Trip> {
             int d1;
             int d2;
 
-            d1 = Model.getDistance(i, nn, false);
+            d1 = Model.getDistance(order[i], order[nn], false);
 
             for(int j = i+2; j < len; j++) {
 
-                d2 = Model.getDistance(i, j, false);
+                d2 = Model.getDistance(order[i], order[j], false);
 
                 // If j is closer than nn, nn becomes j
                 if(d2 < d1) {
