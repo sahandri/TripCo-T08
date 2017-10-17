@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
+import java.util.HashMap;
 
 public class DataBase {
     private static String myDriver = "com.mysql.jdbc.Driver";
@@ -46,6 +47,8 @@ public class DataBase {
             System.err.println(e.getMessage());
         }
     }
+
+
 
 
     public static String getID(int index) {
@@ -111,6 +114,22 @@ public class DataBase {
     }
 
 
+    public static String getName(String id){
+        String name = "";
+        String query = "SELECT name FROM airports WHERE id LIKE '" + id+ "' LIMIT 10";
+        try {
+            rs = st.executeQuery(query);
+            // iterate through the query results and print selected columns
+            rs.next();
+            name = rs.getString("name");
+        } catch (Exception e) { // catches all exceptions in the nested try's
+            System.err.printf("Exception: ");
+            System.err.println(e.getMessage());
+        }
+        return name;
+    }
+
+
     public static String getLongit(String id) {
         String longit = "";
         String query = "SELECT longitude FROM airports WHERE id LIKE '" + id + "' LIMIT 10";
@@ -125,6 +144,31 @@ public class DataBase {
         }
         return longit;
     }
+
+//returns a pair of all data in a row
+    public static  HashMap<String,String> getInfo(String id) {
+        HashMap<String,String> info = new HashMap<String, String>();
+        String query = "SELECT * FROM airports WHERE id LIKE '" + id + "' LIMIT 10";
+        try {
+            rs = st.executeQuery(query);
+            // iterate through the query results and print selected columns
+            rs.next();
+            info.put("id",rs.getString("id"));
+            info.put("name",rs.getString("name"));
+            info.put("latitude",rs.getString("latitude"));
+            info.put("longitude",rs.getString("longitude"));
+            info.put("elevation",rs.getString("elevation"));
+            info.put("municipality",rs.getString("municipality"));
+            info.put("home_link",rs.getString("home_link"));
+            info.put("wikipedia_link",rs.getString("wikipedia_link"));
+        } catch (Exception e) { // catches all exceptions in the nested try's
+            System.err.printf("Exception: ");
+            System.err.println(e.getMessage());
+        }
+        return info;
+    }
+
+
 
 
     public static void print() {
@@ -146,6 +190,7 @@ public class DataBase {
     public static void main(String[] args) {
         ArrayList<String> list;
 
+
         connect();
 
         print();
@@ -159,7 +204,11 @@ public class DataBase {
         System.out.printf("%s\n", getLongit("KBJC"));
         System.out.printf("%s\n", getID(0));
         System.out.printf("%s\n", getIndex("KDEN"));
+        System.out.printf("%s\n", getName("KDEN"));
         System.out.printf("%s\n", getTotal());
+        System.out.printf("get name of id: %s\n", getInfo("KDEN").get("name"));
+        System.out.printf("get elevation of id: %s\n", getInfo("KDEN").get("elevation"));
+
 
         disconnect();
     }

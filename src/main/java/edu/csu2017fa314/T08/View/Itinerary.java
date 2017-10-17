@@ -64,7 +64,11 @@ public class Itinerary {
         leg.put("end", Destination.getName(end));
 
         // Calculates the distance between start and end
-        double distm = Distance.distanceMi(start, end);
+	String lat1 = Destination.getLatit(start);
+        String long1 = Destination.getLongit(start);
+        String lat2 = Destination.getLatit(end);
+        String long2 = Destination.getLongit(end);
+        double distm = Distance.distanceMi(lat1, long1, lat2, long2);
         //double distk = Distance.distanceKm(start, end);
 
         leg.put("distance", distm); //Change to DistanceMi for next sprint
