@@ -27,7 +27,6 @@ public class TripManager {
 
     public static void buildTripList() {
         total = new AtomicInteger(Destination.getTotal());
-        System.out.printf("Generating %d trips", total.get());
         trips = new ArrayList<>();
         ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
         ArrayList<Future<Trip>> results = new ArrayList<>();
@@ -57,9 +56,6 @@ public class TripManager {
             e.printStackTrace();
         }
         Collections.sort(trips);
-        for(Trip t: trips) {
-            System.out.printf("Trip: %s\tLength: %d\n", t.get(0), t.length());
-        }
     }
 
 }

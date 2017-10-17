@@ -34,7 +34,7 @@ public class TripWorker implements Callable<Trip> {
 
             d1 = Model.getDistance(order[i], order[nn], false);
 
-            for(int j = i+2; j < len; j++) {
+            for(int j = i+1; j < len; j++) {
 
                 d2 = Model.getDistance(order[i], order[j], false);
 
@@ -55,7 +55,7 @@ public class TripWorker implements Callable<Trip> {
 
         tripLength += Model.getDistance(order[len], order[len-1], false);
         Trip t = new Trip();
-        for(int i = 0; i < len; i++) {
+        for(int i = 0; i < len+1; i++) {
             t.add(TripManager.stops[order[i]]);
         }
         t.setLength(tripLength);
