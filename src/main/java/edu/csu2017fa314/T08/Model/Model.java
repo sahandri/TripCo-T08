@@ -17,6 +17,10 @@ public class Model {
         return TripManager.get(id).stops();
     }
 
+    public static ArrayList<String> getRow(String id) {
+        return Destination.getRow(id);
+    }
+
     public static int getDistance(String id1, String id2, boolean useKm) {
         String lat1 = Destination.getLatit(id1);
         String lon1 = Destination.getLongit(id1);

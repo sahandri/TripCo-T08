@@ -15,6 +15,7 @@ import org.json.JSONArray;
  */
 public class Itinerary {
     private static String path = ""; // Path to output the JSON file
+    private static ArrayList<String> columns;
 
     // TODO: Handle i/o exceptions(?)
 
@@ -42,36 +43,35 @@ public class Itinerary {
 
         ArrayList<String> stops = Model.shortestTrip();
 
-        String end = stops.get(0);
         // Iterate through destinations, calculating the distance of each leg.
-        for(int i = 1; i < stops.size(); i++)
+        columns = Destination.getFirstLine();
+        ArrayList<ArrayList<String>> list = Destination.getList();
+
+        // Iterate through destinations, calculating the distance of each leg.
+        for(int i = 0; i < Destination.getTotal(); i++)
         {
-            String start = end;
-            end = stops.get(i);;
+            ArrayList<String> line = list.get(i);
 
             // Creates a JSON object with start, end, and the distance between them
             // and appends it to the end of the itinerary JSON array.
-            arr.put(createLeg(start,end));
+            int dist = Model.getDistance(stops.get(i), stops.get(i+1), false);
+            arr.put(createLeg(line, dist));
         }
 
         return arr;
+
+
     }
 
     // Creates a JSONObject for a single leg of the trip from start to end
-    public static JSONObject createLeg(String start, String end) {
+    public static JSONObject createLeg(ArrayList<String> line, int dist) {
         JSONObject leg = new JSONObject();
-        leg.put("start", Destination.getName(start));
-        leg.put("end", Destination.getName(end));
 
-        // Calculates the distance between start and end
-	String lat1 = Destination.getLatit(start);
-        String long1 = Destination.getLongit(start);
-        String lat2 = Destination.getLatit(end);
-        String long2 = Destination.getLongit(end);
-        double distm = Distance.distanceMi(lat1, long1, lat2, long2);
-        //double distk = Distance.distanceKm(start, end);
+        for(int i = 0; i < line.size(); ++i) {
+            leg.put(columns.get(i), line.get(i));
+        }
 
-        leg.put("distance", distm); //Change to DistanceMi for next sprint
+        leg.put("distance", dist); //Change to DistanceMi for next sprint
         //leg.put("distanceKm", distk);
         return leg;
     }
