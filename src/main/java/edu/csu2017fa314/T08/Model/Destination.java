@@ -191,6 +191,11 @@ public class Destination {
         return list;
     }
 
+    public static ArrayList<String> getRow(String id) {
+        setIndex(id);
+        return list.get(index);
+    }
+
     public static ArrayList<String> getFirstLine() {
         return firstLine;
     }
