@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class Model {
     private static int[][] distLookUp;
 
-    static {
+    public static void setUp() {
         buildDistLookUp();
+        TripManager.buildTripList();
     }
-
     public static ArrayList<String> shortestTrip() {
         return TripManager.shortest().stops();
     }
@@ -22,20 +22,25 @@ public class Model {
     }
 
     public static int getDistance(String id1, String id2, boolean useKm) {
-        String lat1 = Destination.getLatit(id1);
-        String lon1 = Destination.getLongit(id1);
-        String lat2 = Destination.getLatit(id2);
-        String lon2 = Destination.getLongit(id2);
+        //String lat1 = Destination.getLatit(id1);
+        //String lon1 = Destination.getLongit(id1);
+        //String lat2 = Destination.getLatit(id2);
+        //String lon2 = Destination.getLongit(id2);
 
         int distance;
 
-        if (useKm) {
-            distance = Distance.distanceKm(lat1, lon1, lat2, lon2);
-        } else {
-            distance = getDist(Destination.getIndex(id1), Destination.getIndex(id2));
-        }
+        distance = getDist(Destination.getIndex(id1), Destination.getIndex(id2));
 
         return distance;
+    }
+
+    public static int getDistance(int idx1, int idx2, boolean useKm) {
+        int distance;
+
+        distance = getDist(idx1, idx2);
+
+        return distance;
+
     }
 
     /*
