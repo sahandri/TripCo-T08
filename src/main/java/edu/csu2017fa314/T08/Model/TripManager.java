@@ -2,7 +2,10 @@ package edu.csu2017fa314.T08.Model;
 
 import java.util.ArrayList;
 import java.util.Collections;
+<<<<<<< HEAD
 
+=======
+>>>>>>> fa9939f4e67520f2e29c4ad5ddbda256eb96e41f
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -11,6 +14,10 @@ public class TripManager {
     public static ArrayList<Trip> trips;
     public static AtomicInteger total;
     public static String[] stops;
+<<<<<<< HEAD
+=======
+
+>>>>>>> fa9939f4e67520f2e29c4ad5ddbda256eb96e41f
     static Trip shortest() {
         return trips.get(0);
     }
@@ -25,7 +32,10 @@ public class TripManager {
         return trips.get(0);
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fa9939f4e67520f2e29c4ad5ddbda256eb96e41f
     public static void buildTripList() {
         total = new AtomicInteger(Destination.getTotal());
         trips = new ArrayList<>();

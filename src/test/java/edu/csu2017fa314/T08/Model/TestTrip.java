@@ -10,9 +10,13 @@ import org.junit.Test;
 import java.net.URL;
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 
 @Ignore
 
+=======
+@Ignore
+>>>>>>> fa9939f4e67520f2e29c4ad5ddbda256eb96e41f
 public class TestTrip {
     private Trip t;
     private static Destination d;
@@ -73,7 +77,10 @@ public class TestTrip {
         testArr.add("sahandri");
         testArr.add("acwatson");
         testArr.add("rcox");
+<<<<<<< HEAD
 
+=======
+>>>>>>> fa9939f4e67520f2e29c4ad5ddbda256eb96e41f
 
         assertEquals("rcox", testArr.get(0));
         assertEquals("mjgaffne", testArr.get(1));

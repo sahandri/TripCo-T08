@@ -22,6 +22,7 @@ public class Model {
         return Destination.getRow(id);
     }
 
+
     public static int getDistance(String id1, String id2, boolean useKm) {
         //String lat1 = Destination.getLatit(id1);
         //String lon1 = Destination.getLongit(id1);
@@ -42,7 +43,10 @@ public class Model {
 
         return distance;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fa9939f4e67520f2e29c4ad5ddbda256eb96e41f
     }
 
     /*
