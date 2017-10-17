@@ -43,10 +43,6 @@ public class Model {
 
         return distance;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> fa9939f4e67520f2e29c4ad5ddbda256eb96e41f
     }
 
     /*
