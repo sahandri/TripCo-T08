@@ -3,17 +3,13 @@ package edu.csu2017fa314.T08.Model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class TripManager {
     public static ArrayList<Trip> trips;
-    public static final int total = Destination.getTotal();
+    public static AtomicInteger total;
     public static String[] stops;
-
-    static {
-
-        buildTripList();
-    }
 
     static Trip shortest() {
         return trips.get(0);
@@ -29,23 +25,41 @@ public class TripManager {
         return trips.get(0);
     }
 
-    private static void buildTripList() {
-        System.out.printf("Generating %d trips", total);
-        trips = new ArrayList<>(total);
-        ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
-        stops = new String[total];
+    public static void buildTripList() {
+        total = new AtomicInteger(Destination.getTotal());
+        System.out.printf("Generating %d trips", total.get());
+        trips = new ArrayList<>();
+        ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(1);
+        ArrayList<Future<Trip>> results = new ArrayList<>();
 
-        for(int i = 0; i < total; i++) {
+        stops = new String[total.get()];
+
+        for(int i = 0; i < total.get(); i++) {
             stops[i] = Destination.getID(i);
         }
 
-        for(int i = 0; i < total; i++) {
+        for(int i = 0; i < total.get(); i++) {
             TripWorker tw = new TripWorker(i);
-            pool.execute(tw);
+            Future<Trip> res = pool.submit(tw);
+            results.add(res);
+
         }
         pool.shutdown();
         while(!pool.isTerminated()) { }
+
+        try {
+            for(Future<Trip> ft : results) {
+                    trips.add(ft.get());
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
         Collections.sort(trips);
+        for(Trip t: trips) {
+            System.out.printf("Trip: %s\tLength: %d\n", t.get(0), t.length());
+        }
     }
 
 }

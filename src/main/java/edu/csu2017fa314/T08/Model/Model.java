@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class Model {
     private static int[][] distLookUp;
 
-    static {
+    public static void setUp() {
         buildDistLookUp();
+        TripManager.buildTripList();
     }
-
     public static ArrayList<String> shortestTrip() {
         return TripManager.shortest().stops();
     }

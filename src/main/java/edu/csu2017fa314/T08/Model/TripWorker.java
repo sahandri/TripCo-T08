@@ -3,7 +3,7 @@ package edu.csu2017fa314.T08.Model;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 
-public class TripWorker implements Runnable {
+public class TripWorker implements Callable<Trip> {
 
     private int _idx;
 
@@ -12,23 +12,19 @@ public class TripWorker implements Runnable {
     }
 
     @Override
-    public void run() {
-        buildTrip(_idx);
-    }
-
-    private void buildTrip(int idx) {
-        int len = TripManager.total; // Number of locations
+    public Trip call() {
+        int len = TripManager.total.get(); // Number of locations
         int tripLength = 0;
-        int[] order = new int[len];
-        System.out.printf("Thread %d: Generating trip...", _idx);
+        int[] order = new int[len+1];
 
-        order[0] = idx;
+        order[0] = _idx;
+        order[len] = _idx;
 
         for(int i = 1; i < len; i++) {
             order[i] = i;
         }
 
-        order[idx] = 0;
+        order[_idx] = 0;
 
         for(int i = 0; i < len-1; i++) {
             // For each location, find the nearest neighbor
@@ -57,12 +53,13 @@ public class TripWorker implements Runnable {
             tripLength += d1;
         }
 
-
-        System.out.printf("Thread %d: Calculated trip of length %d.", _idx, tripLength);
-
+        tripLength += Model.getDistance(order[len], order[len-1], false);
+        Trip t = new Trip();
         for(int i = 0; i < len; i++) {
-            TripManager.trips.get(_idx).set(i , TripManager.stops[order[i]]);
+            t.add(TripManager.stops[order[i]]);
         }
-        TripManager.trips.get(_idx).setLength(tripLength);
+        t.setLength(tripLength);
+        return t;
     }
+
 }
