@@ -48,7 +48,7 @@ public class Itinerary {
         ArrayList<ArrayList<String>> list = Destination.getList();
 
         // Iterate through destinations, calculating the distance of each leg.
-        for(int i = 0; i < Destination.getTotal(); i++)
+        for(int i = 0; i < Destination.getTotal()-1; i++)
         {
             ArrayList<String> line = list.get(i);
 

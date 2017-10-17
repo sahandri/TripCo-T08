@@ -2,14 +2,14 @@ package edu.csu2017fa314.T08.Model;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class TripManager {
-    private static ArrayList<Trip> trips;
-
-    static {
-        buildTripList();
-    }
+    public static ArrayList<Trip> trips;
+    public static AtomicInteger total;
+    public static String[] stops;
 
     static Trip shortest() {
         return trips.get(0);
@@ -25,59 +25,37 @@ public class TripManager {
         return trips.get(0);
     }
 
-    private static void buildTripList() {
+    public static void buildTripList() {
+        total = new AtomicInteger(Destination.getTotal());
         trips = new ArrayList<>();
-        for(int i = 0; i < Destination.getTotal(); i++) {
-            trips.add(buildTrip(i));
+        ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
+        ArrayList<Future<Trip>> results = new ArrayList<>();
+
+        stops = new String[total.get()];
+
+        for(int i = 0; i < total.get(); i++) {
+            stops[i] = Destination.getID(i);
+        }
+
+        for(int i = 0; i < total.get(); i++) {
+            TripWorker tw = new TripWorker(i);
+            Future<Trip> res = pool.submit(tw);
+            results.add(res);
+
+        }
+        pool.shutdown();
+        while(!pool.isTerminated()) { }
+
+        try {
+            for(Future<Trip> ft : results) {
+                    trips.add(ft.get());
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
         }
         Collections.sort(trips);
     }
 
-    private static Trip buildTrip(int idx) {
-        int len = Destination.getTotal(); // Number of locations
-        int[] order = new int[len];
-
-        order[0] = idx;
-
-        for(int i = 1; i < len; i++) {
-            order[i] = i;
-        }
-
-        order[idx] = 0;
-
-        for(int i = 0; i < len-1; i++) {
-            // For each location, find the nearest neighbor
-            int nn = i+1;
-            int d1;
-            int d2;
-
-            for(int j = i+2; j < len; j++) {
-
-                String idi = Destination.getID(order[i]);
-                String idn = Destination.getID(order[nn]);
-                String idj = Destination.getID(order[j]);
-
-                d1 = Model.getDistance(idi, idn, false);
-                d2 = Model.getDistance(idi, idj, false);
-
-                // If j is closer than nn, nn becomes j
-                if(d2 < d1) {
-                    nn = j;
-                }
-            }
-
-            // Swap nn w/ i+1
-            int tmp = order[i+1];
-            order[i+1] = order[nn];
-            order[nn] = tmp;
-        }
-
-        Trip t = new Trip();
-        for(int i : order) {
-            t.add(Destination.getID(i));
-        }
-        t.add(Destination.getID(order[0]));
-
-        return t;
-    }
 }
