@@ -9,20 +9,19 @@ public class Trip implements Comparable<Trip> {
     Trip() {
         _stops = new ArrayList<>();
     }
+    Trip(int len) { _stops = new ArrayList<>(len); }
 
-    public Trip(ArrayList<String> stops) {
-        _stops = new ArrayList<>();
-        for(String stop : stops) {
-            add(stop);
-        }
+    public Trip(ArrayList<String> stops, int length) {
+        _stops = stops;
+        _length = length;
     }
 
-    void add(String id) {
-        _stops.add(id);
-        if(_stops.size() > 1) {
-            _length += Model.getDistance(_stops.get(size()-2), _stops.get(size()-1), false);
-        }
+    public void set(int i, String s) { _stops.set(i, s); }
+    public void add(String s) {
+        _stops.add(s);
     }
+
+    public void setLength(int length) { _length = length; }
 
     int length() {
         return _length;

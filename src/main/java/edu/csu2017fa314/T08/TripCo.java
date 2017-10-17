@@ -35,12 +35,11 @@ public class TripCo
 
     public static void main(String[] args) {
         System.out.println("Welcome to TripCo");
-
         try {
             Destination.readFile(args[0]);
             //Itinerary.createJSON(args[1]);
 	    Itinerary.createJSON(args[0].substring(5,args[0].length()-4) + "_ShortTrip.json");
-            Itinerary.printJSON();
+          //  Itinerary.printJSON();
             //CSV.createJSON(args[2]);
 	    CSV.createJSON(args[0].substring(5,args[0].length()-4) + "_Csv.json");
             //CSV.printJSON();
