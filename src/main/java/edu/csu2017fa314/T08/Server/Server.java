@@ -3,7 +3,7 @@ package edu.csu2017fa314.T08.Server;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import edu.csu2017fa314.T08.Model.Database.QueryBuilder;
+import edu.csu2017fa314.T08.Model.DataBase.QueryBuilder;
 import spark.Request;
 import spark.Response;
 
