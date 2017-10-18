@@ -1,0 +1,2412 @@
+[
+    {
+        "latitude": "40.10829926",
+        "elevation_ft": "4150",
+        "name": "Koenig Airport",
+        "id": "8CO8",
+        "type": "small_airport",
+        "longitude": "-102.7279968"
+    },
+    {
+        "latitude": "40.10419846",
+        "elevation_ft": "4136",
+        "name": "Yuma Municipal Airport",
+        "id": "K2V6",
+        "type": "small_airport",
+        "longitude": "-102.7129974"
+    },
+    {
+        "latitude": "40.19440079",
+        "elevation_ft": "4075",
+        "name": "Jackson Airfield",
+        "id": "CD05",
+        "type": "small_airport",
+        "longitude": "-102.697998"
+    },
+    {
+        "latitude": "38.88610077",
+        "elevation_ft": "6320",
+        "name": "Tranquila Airport",
+        "id": "88CO",
+        "type": "small_airport",
+        "longitude": "-104.2490005"
+    },
+    {
+        "latitude": "38.65250015",
+        "elevation_ft": "5800",
+        "name": "Foxx Valley Airport",
+        "id": "0CD2",
+        "type": "small_airport",
+        "longitude": "-104.2340012"
+    },
+    {
+        "latitude": "38.92499924",
+        "elevation_ft": "6370",
+        "name": "Peakview Airport",
+        "id": "97CO",
+        "type": "small_airport",
+        "longitude": "-104.1589966"
+    },
+    {
+        "latitude": "40.10029984",
+        "elevation_ft": "3667",
+        "name": "Wray Municipal Airport",
+        "id": "K2V5",
+        "type": "small_airport",
+        "longitude": "-102.2409973"
+    },
+    {
+        "latitude": "40.25279999",
+        "elevation_ft": "4480",
+        "name": "Kent Airport",
+        "id": "8CO0",
+        "type": "small_airport",
+        "longitude": "-104.0029984"
+    },
+    {
+        "latitude": "40.23889923",
+        "elevation_ft": "4480",
+        "name": "Vallery Airport",
+        "id": "89CO",
+        "type": "small_airport",
+        "longitude": "-103.9919968"
+    },
+    {
+        "latitude": "38.04579926",
+        "elevation_ft": "8300",
+        "name": "Geary Ranch Airport",
+        "id": "CO65",
+        "type": "small_airport",
+        "longitude": "-105.4710007"
+    },
+    {
+        "latitude": "38.01110077",
+        "elevation_ft": "8290",
+        "name": "Silver West Airport",
+        "id": "KC08",
+        "type": "small_airport",
+        "longitude": "-105.3730011"
+    },
+    {
+        "latitude": "40.80469894",
+        "elevation_ft": "5545",
+        "name": "Owl Canyon Gliderport",
+        "id": "4CO2",
+        "type": "small_airport",
+        "longitude": "-104.9850006"
+    },
+    {
+        "latitude": "40.78139877",
+        "elevation_ft": "5615",
+        "name": "Burnham Field",
+        "id": "6CO1",
+        "type": "small_airport",
+        "longitude": "-104.9169998"
+    },
+    {
+        "latitude": "39.69609833",
+        "elevation_ft": "5400",
+        "name": "Van Slyke Field",
+        "id": "9CO2",
+        "type": "small_airport",
+        "longitude": "-104.4759979"
+    },
+    {
+        "latitude": "37.39170074",
+        "elevation_ft": "3964",
+        "name": "Griffin Field",
+        "id": "4CO3",
+        "type": "small_airport",
+        "longitude": "-102.2799988"
+    },
+    {
+        "latitude": "37.69660187",
+        "elevation_ft": "6047",
+        "name": "Spanish Peaks Airfield",
+        "id": "K4V1",
+        "type": "small_airport",
+        "longitude": "-104.7839966"
+    },
+    {
+        "latitude": "37.755556",
+        "elevation_ft": "5950",
+        "name": "Cholla Airport",
+        "id": "64CO",
+        "type": "small_airport",
+        "longitude": "-104.756389"
+    },
+    {
+        "latitude": "37.78639984",
+        "elevation_ft": "5827",
+        "name": "Cuchara Ranch Airport",
+        "id": "CD48",
+        "type": "small_airport",
+        "longitude": "-104.5940018"
+    },
+    {
+        "latitude": "40.75040054",
+        "elevation_ft": "8153",
+        "name": "Walden Jackson County Airport",
+        "id": "K33V",
+        "type": "small_airport",
+        "longitude": "-106.2710037"
+    },
+    {
+        "latitude": "37.55310059",
+        "elevation_ft": "4096",
+        "name": "Rons Field",
+        "id": "53CO",
+        "type": "small_airport",
+        "longitude": "-102.3919983"
+    },
+    {
+        "latitude": "37.25939941",
+        "elevation_ft": "5762",
+        "home_link": "",
+        "name": "Perry Stokes Airport",
+        "municipality": "Trinidad",
+        "id": "KTAD",
+        "type": "small_airport",
+        "longitude": "-104.3410034"
+    },
+    {
+        "latitude": "37.4905014",
+        "elevation_ft": "5686",
+        "name": "Pinon Canyon Airport",
+        "id": "0CD5",
+        "type": "small_airport",
+        "longitude": "-104.1439972"
+    },
+    {
+        "latitude": "38.05279922",
+        "elevation_ft": "9580",
+        "name": "Wilson Ranch Airport",
+        "id": "CO95",
+        "type": "small_airport",
+        "longitude": "-107.9800034"
+    },
+    {
+        "latitude": "37.9538002",
+        "elevation_ft": "9070",
+        "name": "Telluride Regional Airport",
+        "id": "KTEX",
+        "type": "small_airport",
+        "longitude": "-107.9079971"
+    },
+    {
+        "latitude": "38.05559921",
+        "elevation_ft": "4180",
+        "name": "Cottonwood Field",
+        "id": "09CO",
+        "type": "small_airport",
+        "longitude": "-103.6529999"
+    },
+    {
+        "latitude": "38.45280075",
+        "elevation_ft": "4570",
+        "name": "Sand Arroya Airport",
+        "id": "US-0077",
+        "type": "small_airport",
+        "longitude": "-103.5299988"
+    },
+    {
+        "latitude": "39.72079849",
+        "elevation_ft": "5435",
+        "name": "Comanche Springs Ranch Airport",
+        "id": "CO97",
+        "type": "small_airport",
+        "longitude": "-104.322998"
+    },
+    {
+        "latitude": "39.83330154",
+        "elevation_ft": "5230",
+        "name": "Comanche Livestock Airport",
+        "id": "59CO",
+        "type": "small_airport",
+        "longitude": "-104.3170013"
+    },
+    {
+        "latitude": "39.74720001",
+        "elevation_ft": "5350",
+        "name": "Comanche Airfield Llc Airport",
+        "id": "CO38",
+        "type": "small_airport",
+        "longitude": "-104.3130035"
+    },
+    {
+        "latitude": "37.07089996",
+        "elevation_ft": "7957",
+        "name": "Tercio Ranch Airstrip",
+        "id": "3CO4",
+        "type": "small_airport",
+        "longitude": "-105.0189972"
+    },
+    {
+        "latitude": "40.61750031",
+        "elevation_ft": "4192",
+        "name": "Mertens Airport",
+        "id": "3CO2",
+        "type": "small_airport",
+        "longitude": "-103.3330002"
+    },
+    {
+        "latitude": "40.61529922",
+        "elevation_ft": "4040",
+        "name": "Sterling Municipal Airport",
+        "municipality": "Sterling",
+        "id": "KSTK",
+        "type": "small_airport",
+        "longitude": "-103.2649994"
+    },
+    {
+        "latitude": "40.75799942",
+        "elevation_ft": "8200",
+        "name": "Skyote Airport",
+        "id": "CD02",
+        "type": "small_airport",
+        "longitude": "-106.9720001"
+    },
+    {
+        "latitude": "40.5163002",
+        "elevation_ft": "6882",
+        "home_link": "",
+        "name": "Steamboat Springs Bob Adams Field",
+        "municipality": "Steamboat Springs",
+        "id": "KSBS",
+        "type": "small_airport",
+        "longitude": "-106.8659973"
+    },
+    {
+        "latitude": "40.35829926",
+        "elevation_ft": "7000",
+        "name": "Lucky L Ranch Airport",
+        "id": "CD99",
+        "type": "small_airport",
+        "longitude": "-106.8300018"
+    },
+    {
+        "latitude": "40.40610123",
+        "elevation_ft": "7000",
+        "name": "Mesa 1 Airport",
+        "id": "81CO",
+        "type": "small_airport",
+        "longitude": "-106.8209991"
+    },
+    {
+        "latitude": "40.50930023",
+        "elevation_ft": "6600",
+        "name": "Eagle Soaring Airport",
+        "id": "1CD4",
+        "type": "small_airport",
+        "longitude": "-106.9430008"
+    },
+    {
+        "latitude": "37.45869827",
+        "elevation_ft": "4390",
+        "name": "Springfield Municipal Airport",
+        "id": "K8V7",
+        "type": "small_airport",
+        "longitude": "-102.6179962"
+    },
+    {
+        "latitude": "37.67499924",
+        "elevation_ft": "8100",
+        "name": "Chapman Field",
+        "id": "CD10",
+        "type": "small_airport",
+        "longitude": "-106.5559998"
+    },
+    {
+        "latitude": "37.74029922",
+        "elevation_ft": "8300",
+        "name": "Morning Shadows Ranch Airport",
+        "id": "CD69",
+        "type": "small_airport",
+        "longitude": "-106.526001"
+    },
+    {
+        "latitude": "39.29639816",
+        "elevation_ft": "5870",
+        "name": "Schantz Airstrip",
+        "id": "CD15",
+        "type": "small_airport",
+        "longitude": "-104.125"
+    },
+    {
+        "latitude": "37.06499863",
+        "elevation_ft": "8820",
+        "name": "Melby Ranch Airstrip",
+        "id": "33CO",
+        "type": "small_airport",
+        "longitude": "-105.4639969"
+    },
+    {
+        "latitude": "38.41609955",
+        "elevation_ft": "9000",
+        "name": "Granite Mountain Lodge Airport",
+        "id": "CO11",
+        "type": "small_airport",
+        "longitude": "-106.0579987"
+    },
+    {
+        "latitude": "38.53829956",
+        "elevation_ft": "7523",
+        "home_link": "http://cityofsalida.com/departments/harriet-alexander-field-airport/",
+        "name": "Harriet Alexander Field",
+        "municipality": "Salida",
+        "id": "KANK",
+        "type": "small_airport",
+        "longitude": "-106.0490036"
+    },
+    {
+        "latitude": "38.55139923",
+        "elevation_ft": "7480",
+        "name": "Dodsworth Airport",
+        "id": "1CO7",
+        "type": "small_airport",
+        "longitude": "-105.9919968"
+    },
+    {
+        "latitude": "38.0990833",
+        "elevation_ft": "7826",
+        "name": "Saguache Municipal Airport",
+        "id": "04V",
+        "type": "small_airport",
+        "longitude": "-106.1743889"
+    },
+    {
+        "latitude": "37.86849976",
+        "elevation_ft": "6000",
+        "name": "Mann Ranch Airport",
+        "id": "95CO",
+        "type": "small_airport",
+        "longitude": "-104.8359985"
+    },
+    {
+        "latitude": "38.83570099",
+        "elevation_ft": "6365",
+        "name": "Cable's Corner Airport",
+        "id": "US-0022",
+        "type": "small_airport",
+        "longitude": "-104.1350021"
+    },
+    {
+        "latitude": "38.760278",
+        "elevation_ft": "5780",
+        "name": "Vantage View Airport",
+        "id": "7CO6",
+        "type": "small_airport",
+        "longitude": "-104.101389"
+    },
+    {
+        "latitude": "38.73249817",
+        "elevation_ft": "5600",
+        "name": "Terra Firma Airport",
+        "id": "08CO",
+        "type": "small_airport",
+        "longitude": "-104.0410004"
+    },
+    {
+        "latitude": "38.84389877",
+        "elevation_ft": "6000",
+        "name": "High Mesa Airport",
+        "id": "23CO",
+        "type": "small_airport",
+        "longitude": "-103.9899979"
+    },
+    {
+        "latitude": "40.09329987",
+        "elevation_ft": "4780",
+        "name": "Air Dusters Inc Airport",
+        "id": "49CO",
+        "type": "small_airport",
+        "longitude": "-104.375"
+    },
+    {
+        "latitude": "40.11660004",
+        "elevation_ft": "4820",
+        "name": "Reid Ranches Airport",
+        "id": "US-0078",
+        "type": "small_airport",
+        "longitude": "-104.3170013"
+    },
+    {
+        "latitude": "40.04719925",
+        "elevation_ft": "4857",
+        "name": "Westberg-Rosling Farms Airport",
+        "id": "74CO",
+        "type": "small_airport",
+        "longitude": "-104.2089996"
+    },
+    {
+        "latitude": "38.01530075",
+        "elevation_ft": "4260",
+        "name": "Melon Field",
+        "id": "1CO5",
+        "type": "small_airport",
+        "longitude": "-103.6989975"
+    },
+    {
+        "latitude": "39.52629852",
+        "elevation_ft": "5548",
+        "home_link": "http://www.rifleairport.com/",
+        "name": "Garfield County Regional Airport",
+        "municipality": "Rifle",
+        "id": "KRIL",
+        "type": "medium_airport",
+        "longitude": "-107.7269974"
+    },
+    {
+        "latitude": "40.85160065",
+        "elevation_ft": "8440",
+        "name": "Crystal Lakes Airport",
+        "id": "25CO",
+        "type": "small_airport",
+        "longitude": "-105.6330032"
+    },
+    {
+        "latitude": "40.09400177",
+        "elevation_ft": "5275",
+        "name": "Rangely Airport",
+        "id": "K4V0",
+        "type": "small_airport",
+        "longitude": "-108.7630005"
+    },
+    {
+        "latitude": "38.88199997",
+        "elevation_ft": "5525",
+        "name": "Lone Tree Ranch Airport",
+        "id": "35CO",
+        "type": "small_airport",
+        "longitude": "-103.8089981"
+    },
+    {
+        "latitude": "38.36330032",
+        "elevation_ft": "5135",
+        "name": "West Pueblo Airport",
+        "id": "7CO8",
+        "type": "small_airport",
+        "longitude": "-104.737999"
+    },
+    {
+        "latitude": "38.13639832",
+        "elevation_ft": "5660",
+        "name": "Rock Creek Airport",
+        "id": "99CO",
+        "type": "small_airport",
+        "longitude": "-104.8150024"
+    },
+    {
+        "latitude": "38.15169907",
+        "elevation_ft": "5130",
+        "name": "Simonson Field",
+        "id": "80CO",
+        "type": "small_airport",
+        "longitude": "-104.7060013"
+    },
+    {
+        "latitude": "38.34719849",
+        "elevation_ft": "4970",
+        "name": "Edenway Airport",
+        "id": "2CO5",
+        "type": "small_airport",
+        "longitude": "-104.6320038"
+    },
+    {
+        "latitude": "38.28910065",
+        "elevation_ft": "4726",
+        "home_link": "",
+        "name": "Pueblo Memorial Airport",
+        "municipality": "Pueblo",
+        "id": "KPUB",
+        "type": "small_airport",
+        "longitude": "-104.4970016"
+    },
+    {
+        "latitude": "38.09999847",
+        "elevation_ft": "4790",
+        "name": "Huerfano Agricultural Airport",
+        "id": "46CO",
+        "type": "small_airport",
+        "longitude": "-104.4260025"
+    },
+    {
+        "latitude": "38.54029846",
+        "elevation_ft": "7872",
+        "name": "CMRS Airdrome Airport",
+        "id": "2CO2",
+        "type": "small_airport",
+        "longitude": "-106.1050034"
+    },
+    {
+        "latitude": "40.16719818",
+        "elevation_ft": "4925",
+        "name": "Tonga Airport",
+        "id": "1CD2",
+        "type": "small_airport",
+        "longitude": "-104.7929993"
+    },
+    {
+        "latitude": "40.21250153",
+        "elevation_ft": "4950",
+        "name": "Kugel-Strong Airport",
+        "id": "03CO",
+        "type": "small_airport",
+        "longitude": "-104.7440033"
+    },
+    {
+        "latitude": "39.11050034",
+        "elevation_ft": "7240",
+        "name": "Cherokee Trail Ranch Airport",
+        "id": "2CO1",
+        "type": "small_airport",
+        "longitude": "-104.5839996"
+    },
+    {
+        "latitude": "39.10609818",
+        "elevation_ft": "7100",
+        "name": "Fat Chance Airport",
+        "id": "36CO",
+        "type": "small_airport",
+        "longitude": "-104.5439987"
+    },
+    {
+        "latitude": "39.119472",
+        "elevation_ft": "6600",
+        "name": "Bijou Springs Ranch Airport",
+        "id": "2CD3",
+        "type": "small_airport",
+        "longitude": "-104.431806"
+    },
+    {
+        "latitude": "38.45529938",
+        "elevation_ft": "5543",
+        "name": "Braun Airport",
+        "id": "32CO",
+        "type": "small_airport",
+        "longitude": "-105.0839996"
+    },
+    {
+        "latitude": "39.52920151",
+        "elevation_ft": "6295",
+        "name": "Everitt Airport",
+        "id": "1CO8",
+        "type": "small_airport",
+        "longitude": "-104.6579971"
+    },
+    {
+        "latitude": "39.40995",
+        "elevation_ft": "5331",
+        "name": "Dry Pen Airport",
+        "id": "16CO",
+        "type": "small_airport",
+        "longitude": "-108.085667"
+    },
+    {
+        "latitude": "38.83169937",
+        "elevation_ft": "5798",
+        "name": "North Fork Valley Airport",
+        "id": "K7V2",
+        "type": "small_airport",
+        "longitude": "-107.6460037"
+    },
+    {
+        "latitude": "37.28630066",
+        "elevation_ft": "7664",
+        "home_link": "http://www.stevensfield.com/",
+        "name": "Stevens Field",
+        "municipality": "Pagosa Springs",
+        "id": "KPSO",
+        "type": "small_airport",
+        "longitude": "-107.0559998"
+    },
+    {
+        "latitude": "40.29999924",
+        "elevation_ft": "4461",
+        "name": "Yocam Ranch Airport",
+        "id": "7CO5",
+        "type": "small_airport",
+        "longitude": "-104.2300034"
+    },
+    {
+        "latitude": "38.57500076",
+        "elevation_ft": "5560",
+        "name": "Clifford Field",
+        "id": "1CO4",
+        "type": "small_airport",
+        "longitude": "-107.9589996"
+    },
+    {
+        "latitude": "40.34140015",
+        "elevation_ft": "7120",
+        "name": "Pleasant Valley Airport",
+        "id": "5CO8",
+        "type": "small_airport",
+        "longitude": "-106.848999"
+    },
+    {
+        "latitude": "40.69029999",
+        "elevation_ft": "5350",
+        "name": "Reed Airport",
+        "id": "1CD1",
+        "type": "small_airport",
+        "longitude": "-104.8669968"
+    },
+    {
+        "latitude": "40.70410156",
+        "elevation_ft": "5225",
+        "name": "Bellmore Farms Airport",
+        "id": "1CO3",
+        "type": "small_airport",
+        "longitude": "-104.7979965"
+    },
+    {
+        "latitude": "40.72159958",
+        "elevation_ft": "5235",
+        "name": "Shaull Farm Airstrip",
+        "id": "48CO",
+        "type": "small_airport",
+        "longitude": "-104.7779999"
+    },
+    {
+        "latitude": "38.23880005",
+        "elevation_ft": "5940",
+        "name": "Hopkins Field",
+        "municipality": "Nucla",
+        "id": "KAIB",
+        "type": "small_airport",
+        "longitude": "-108.5630035"
+    },
+    {
+        "latitude": "38.16249847",
+        "elevation_ft": "6842",
+        "name": "Williams Ranch Airport",
+        "id": "1CO2",
+        "type": "small_airport",
+        "longitude": "-108.3399963"
+    },
+    {
+        "latitude": "38.2193985",
+        "elevation_ft": "8000",
+        "name": "Flying M & M Ranch Airport",
+        "id": "0CO6",
+        "type": "small_airport",
+        "longitude": "-108.2129974"
+    },
+    {
+        "latitude": "40.12250137",
+        "elevation_ft": "5069",
+        "name": "Colorado Antique Field",
+        "id": "8CO7",
+        "type": "small_airport",
+        "longitude": "-105.1719971"
+    },
+    {
+        "latitude": "40.90000153",
+        "elevation_ft": "5270",
+        "name": "Mile Hi Airport",
+        "id": "47CO",
+        "type": "small_airport",
+        "longitude": "-104.8339996"
+    },
+    {
+        "latitude": "40.60419846",
+        "elevation_ft": "4860",
+        "name": "Williams Ranch Airport",
+        "id": "7CO4",
+        "type": "small_airport",
+        "longitude": "-103.939003"
+    },
+    {
+        "latitude": "40.5135994",
+        "elevation_ft": "4881",
+        "name": "Wirth Field",
+        "id": "CO06",
+        "type": "small_airport",
+        "longitude": "-103.9120026"
+    },
+    {
+        "latitude": "39.10969925",
+        "elevation_ft": "7500",
+        "name": "Mountain View Ranch Airport",
+        "id": "52CO",
+        "type": "small_airport",
+        "longitude": "-104.6539993"
+    },
+    {
+        "latitude": "38.41669846",
+        "elevation_ft": "6200",
+        "name": "Happy Canyon Aero Ranch Airport",
+        "id": "US-0072",
+        "type": "small_airport",
+        "longitude": "-107.901001"
+    },
+    {
+        "latitude": "38.50979996",
+        "elevation_ft": "5759",
+        "name": "Montrose Regional Airport",
+        "id": "KMTJ",
+        "type": "medium_airport",
+        "longitude": "-107.8939972"
+    },
+    {
+        "latitude": "38.38890076",
+        "elevation_ft": "6120",
+        "name": "Woods STOLport",
+        "id": "73CO",
+        "type": "small_airport",
+        "longitude": "-107.822998"
+    },
+    {
+        "latitude": "38.48799896",
+        "elevation_ft": "7200",
+        "name": "Flying M Ranch Airport",
+        "id": "39CO",
+        "type": "small_airport",
+        "longitude": "-107.6740036"
+    },
+    {
+        "latitude": "37.52730179",
+        "elevation_ft": "7611",
+        "name": "Monte Vista Municipal Airport",
+        "id": "KMVI",
+        "type": "small_airport",
+        "longitude": "-106.0479965"
+    },
+    {
+        "latitude": "37.6432991",
+        "elevation_ft": "7615",
+        "name": "Mc Cullough Airport",
+        "id": "02CO",
+        "type": "small_airport",
+        "longitude": "-106.0469971"
+    },
+    {
+        "latitude": "37.65829849",
+        "elevation_ft": "7613",
+        "name": "Van Treese Airport",
+        "id": "0CO9",
+        "type": "small_airport",
+        "longitude": "-106.0339966"
+    },
+    {
+        "latitude": "40.375",
+        "elevation_ft": "5000",
+        "name": "Jackrabbit Strip",
+        "id": "2CO3",
+        "type": "small_airport",
+        "longitude": "-104.8730011"
+    },
+    {
+        "latitude": "39.1291008",
+        "elevation_ft": "6585",
+        "name": "Phylcon Ranch Airport",
+        "id": "9CO9",
+        "type": "small_airport",
+        "longitude": "-108.1419983"
+    },
+    {
+        "latitude": "40.04880142",
+        "elevation_ft": "6421",
+        "name": "Meeker Airport",
+        "id": "KEEO",
+        "type": "small_airport",
+        "longitude": "-107.8860016"
+    },
+    {
+        "latitude": "39.971111",
+        "elevation_ft": "7020",
+        "name": "Flying Dog Ranch Airstrip",
+        "id": "41CO",
+        "type": "small_airport",
+        "longitude": "-107.611111"
+    },
+    {
+        "latitude": "40.20830154",
+        "elevation_ft": "5010",
+        "name": "Cartwheel Airport",
+        "id": "0CO8",
+        "type": "small_airport",
+        "longitude": "-105.0130005"
+    },
+    {
+        "latitude": "40.2149839",
+        "elevation_ft": "4978",
+        "name": "Rancho De Aereo Airport",
+        "id": "05CO",
+        "type": "small_airport",
+        "longitude": "-104.9844228"
+    },
+    {
+        "latitude": "40.21250153",
+        "elevation_ft": "4979",
+        "name": "Frontier Airstrip",
+        "id": "US-0076",
+        "type": "small_airport",
+        "longitude": "-104.9820023"
+    },
+    {
+        "latitude": "40.21659851",
+        "elevation_ft": "4965",
+        "name": "Carrera Airpark",
+        "id": "US-0029",
+        "type": "small_airport",
+        "longitude": "-104.9509964"
+    },
+    {
+        "latitude": "39.26720047",
+        "elevation_ft": "4724",
+        "name": "Mack Mesa Airport",
+        "id": "C07",
+        "type": "small_airport",
+        "longitude": "-108.8639984"
+    },
+    {
+        "latitude": "40.47499847",
+        "elevation_ft": "5603",
+        "name": "Sprague Airport",
+        "id": "CD20",
+        "type": "small_airport",
+        "longitude": "-105.2200012"
+    },
+    {
+        "latitude": "40.03329849",
+        "elevation_ft": "5170",
+        "name": "Dave's Airport",
+        "id": "0CO1",
+        "type": "small_airport",
+        "longitude": "-105.1240005"
+    },
+    {
+        "latitude": "40.1637001",
+        "elevation_ft": "5055",
+        "name": "Vance Brand Airport",
+        "id": "KLMO",
+        "type": "small_airport",
+        "longitude": "-105.163002"
+    },
+    {
+        "latitude": "39.54999924",
+        "elevation_ft": "5450",
+        "name": "Bowen Farms Nr 1 Airport",
+        "id": "CO98",
+        "type": "small_airport",
+        "longitude": "-105.0339966"
+    },
+    {
+        "latitude": "39.70690155",
+        "elevation_ft": "5050",
+        "name": "Decker Farms Airport",
+        "id": "CO94",
+        "type": "small_airport",
+        "longitude": "-103.3519974"
+    },
+    {
+        "latitude": "39.27479935",
+        "elevation_ft": "5374",
+        "name": "Limon Municipal Airport",
+        "id": "KLIC",
+        "type": "small_airport",
+        "longitude": "-103.6660004"
+    },
+    {
+        "latitude": "39.22029877",
+        "elevation_ft": "9927",
+        "home_link": "http://www.lxvairport.com/home.html",
+        "name": "Lake County Airport",
+        "municipality": "Leadville",
+        "id": "KLXV",
+        "type": "small_airport",
+        "longitude": "-106.3170013"
+    },
+    {
+        "latitude": "39.64170074",
+        "elevation_ft": "5000",
+        "name": "Frasier Ranch Airport",
+        "id": "CO92",
+        "type": "small_airport",
+        "longitude": "-103.6449966"
+    },
+    {
+        "latitude": "39.83330154",
+        "elevation_ft": "4697",
+        "name": "Chenoweth Airport",
+        "id": "0CO5",
+        "type": "small_airport",
+        "longitude": "-103.5899963"
+    },
+    {
+        "latitude": "38.05279922",
+        "elevation_ft": "3915",
+        "name": "City of Las Animas Bent County Airport",
+        "id": "K7V9",
+        "type": "small_airport",
+        "longitude": "-103.2369995"
+    },
+    {
+        "latitude": "39.25",
+        "elevation_ft": "6700",
+        "name": "Perry Park Airport",
+        "id": "CO93",
+        "type": "small_airport",
+        "longitude": "-104.8909988"
+    },
+    {
+        "latitude": "40.6814",
+        "elevation_ft": "5180",
+        "name": "Kellogg Airstrip",
+        "id": "2CD9",
+        "type": "small_airport",
+        "longitude": "-105.13855"
+    },
+    {
+        "latitude": "38.06969833",
+        "elevation_ft": "3706",
+        "home_link": "http://www.ci.lamar.co.us/index.asp?Type=B_BASIC&SEC={C91FC3CC-5A83-4F9C-9AF7-A96F374C2EE5}&DE=",
+        "name": "Lamar Municipal Airport",
+        "municipality": "Lamar",
+        "id": "KLAA",
+        "type": "small_airport",
+        "longitude": "-102.6880035"
+    },
+    {
+        "latitude": "38.19900131",
+        "elevation_ft": "3850",
+        "name": "Tinnes Airport",
+        "id": "CD03",
+        "type": "small_airport",
+        "longitude": "-102.572998"
+    },
+    {
+        "latitude": "39.02331924",
+        "elevation_ft": "8700",
+        "name": "Antelope Airpark",
+        "id": "93CO",
+        "type": "small_airport",
+        "longitude": "-105.6149979"
+    },
+    {
+        "latitude": "37.90919876",
+        "elevation_ft": "9300",
+        "name": "Castle Lakes Airport",
+        "id": "CD32",
+        "type": "small_airport",
+        "longitude": "-107.3499985"
+    },
+    {
+        "latitude": "40.00469971",
+        "elevation_ft": "5135",
+        "name": "Fox Hole Airport",
+        "id": "0CD7",
+        "type": "small_airport",
+        "longitude": "-105.0719986"
+    },
+    {
+        "latitude": "37.5237999",
+        "elevation_ft": "7153",
+        "name": "Cuchara Valley At La Veta Airport",
+        "id": "K07V",
+        "type": "small_airport",
+        "longitude": "-105.0090027"
+    },
+    {
+        "latitude": "37.63639832",
+        "elevation_ft": "4708",
+        "name": "Wine Glass International Airport",
+        "id": "6CO3",
+        "type": "small_airport",
+        "longitude": "-103.6579971"
+    },
+    {
+        "latitude": "38.04970169",
+        "elevation_ft": "4229",
+        "name": "La Junta Municipal Airport",
+        "id": "KLHX",
+        "type": "small_airport",
+        "longitude": "-103.5090027"
+    },
+    {
+        "latitude": "40.05369949",
+        "elevation_ft": "7411",
+        "name": "Mc Elroy Airfield",
+        "id": "K20V",
+        "type": "small_airport",
+        "longitude": "-106.3690033"
+    },
+    {
+        "latitude": "39.6794014",
+        "elevation_ft": "4200",
+        "name": "Idler Bro's Airport",
+        "id": "72CO",
+        "type": "small_airport",
+        "longitude": "-102.5910034"
+    },
+    {
+        "latitude": "39.60829926",
+        "elevation_ft": "4159",
+        "name": "Idlers Field",
+        "id": "CO84",
+        "type": "small_airport",
+        "longitude": "-102.5410004"
+    },
+    {
+        "latitude": "39.2635994",
+        "elevation_ft": "6620",
+        "name": "Comanche Creek Airport",
+        "id": "07CO",
+        "type": "small_airport",
+        "longitude": "-104.427002"
+    },
+    {
+        "latitude": "39.2793",
+        "elevation_ft": "6000",
+        "name": "Herrick Airport",
+        "id": "9CO8",
+        "type": "small_airport",
+        "longitude": "-104.34315"
+    },
+    {
+        "latitude": "39.4640007",
+        "elevation_ft": "5930",
+        "name": "Chaparral Airport",
+        "id": "CO18",
+        "type": "small_airport",
+        "longitude": "-104.2580032"
+    },
+    {
+        "latitude": "40.34059906",
+        "elevation_ft": "4770",
+        "name": "Beaugh Airport",
+        "id": "9CO7",
+        "type": "small_airport",
+        "longitude": "-104.572998"
+    },
+    {
+        "latitude": "40.09579849",
+        "elevation_ft": "5000",
+        "name": "Land Airport",
+        "id": "CO82",
+        "type": "small_airport",
+        "longitude": "-104.5889969"
+    },
+    {
+        "latitude": "39.96409988",
+        "elevation_ft": "5075",
+        "name": "Jjs Airport",
+        "id": "CO56",
+        "type": "small_airport",
+        "longitude": "-104.4629974"
+    },
+    {
+        "latitude": "40.10829926",
+        "elevation_ft": "4800",
+        "name": "Horseshoe Landings Airport",
+        "id": "CO60",
+        "type": "small_airport",
+        "longitude": "-104.4309998"
+    },
+    {
+        "latitude": "40.09830093",
+        "elevation_ft": "4820",
+        "name": "The Farm Airport",
+        "id": "62CO",
+        "type": "small_airport",
+        "longitude": "-104.4250031"
+    },
+    {
+        "latitude": "40.97079849",
+        "elevation_ft": "3495",
+        "name": "Julesburg Municipal Airport",
+        "id": "K7V8",
+        "type": "small_airport",
+        "longitude": "-102.3150024"
+    },
+    {
+        "latitude": "39.62080002",
+        "elevation_ft": "4345",
+        "name": "Hill Airport",
+        "id": "CO81",
+        "type": "small_airport",
+        "longitude": "-102.7440033"
+    },
+    {
+        "latitude": "39.40829849",
+        "elevation_ft": "9869",
+        "name": "Heckendorf Ranches-Georgia Pass Ranch Airport",
+        "id": "US-0044",
+        "type": "small_airport",
+        "longitude": "-105.836998"
+    },
+    {
+        "latitude": "39.64390182",
+        "elevation_ft": "7360",
+        "name": "Tall Timber Airport",
+        "id": "CD28",
+        "type": "small_airport",
+        "longitude": "-105.2679977"
+    },
+    {
+        "latitude": "40.09999847",
+        "elevation_ft": "4965",
+        "home_link": "",
+        "name": "Platte Valley Airpark",
+        "municipality": "Hudson",
+        "id": "K18V",
+        "type": "small_airport",
+        "longitude": "-104.7009964"
+    },
+    {
+        "latitude": "39.96670151",
+        "elevation_ft": "5180",
+        "name": "Stevens Airport",
+        "id": "60CO",
+        "type": "small_airport",
+        "longitude": "-104.651001"
+    },
+    {
+        "latitude": "40.03889847",
+        "elevation_ft": "5040",
+        "name": "Lindys Airpark",
+        "id": "7CO3",
+        "type": "small_airport",
+        "longitude": "-104.6240005"
+    },
+    {
+        "latitude": "39.97859955",
+        "elevation_ft": "5128",
+        "name": "Horth Strip",
+        "id": "CO77",
+        "type": "small_airport",
+        "longitude": "-104.5940018"
+    },
+    {
+        "latitude": "38.83390045",
+        "elevation_ft": "6020",
+        "name": "Widner Airport",
+        "id": "8CO5",
+        "type": "small_airport",
+        "longitude": "-107.8919983"
+    },
+    {
+        "latitude": "38.84159851",
+        "elevation_ft": "6200",
+        "name": "Hawkins Ranch Airport",
+        "id": "7CO2",
+        "type": "small_airport",
+        "longitude": "-107.8759995"
+    },
+    {
+        "latitude": "38.83639908",
+        "elevation_ft": "6150",
+        "name": "Eden Ranch Airport",
+        "id": "CO76",
+        "type": "small_airport",
+        "longitude": "-107.8659973"
+    },
+    {
+        "latitude": "38.84830093",
+        "elevation_ft": "6460",
+        "name": "Cridler Field",
+        "id": "3CO1",
+        "type": "small_airport",
+        "longitude": "-107.8330002"
+    },
+    {
+        "latitude": "38.83549881",
+        "elevation_ft": "6409",
+        "name": "Omega 1 STOLport",
+        "id": "12CO",
+        "type": "small_airport",
+        "longitude": "-107.8150024"
+    },
+    {
+        "latitude": "38.88560104",
+        "elevation_ft": "7105",
+        "name": "Flying W No.2 Airport",
+        "id": "51CO",
+        "type": "small_airport",
+        "longitude": "-107.8040009"
+    },
+    {
+        "latitude": "38.83670044",
+        "elevation_ft": "6100",
+        "name": "Redlands Airport",
+        "id": "44CO",
+        "type": "small_airport",
+        "longitude": "-107.7929993"
+    },
+    {
+        "latitude": "38.80559921",
+        "elevation_ft": "5750",
+        "name": "Montemadeira Ii Airport",
+        "id": "CD97",
+        "type": "small_airport",
+        "longitude": "-107.7740021"
+    },
+    {
+        "latitude": "40.56940079",
+        "elevation_ft": "3730",
+        "name": "Holyoke Airport",
+        "id": "KHEQ",
+        "type": "small_airport",
+        "longitude": "-102.2730026"
+    },
+    {
+        "latitude": "38.03329849",
+        "elevation_ft": "3390",
+        "name": "Holly Airport",
+        "id": "K08",
+        "type": "small_airport",
+        "longitude": "-102.1169968"
+    },
+    {
+        "latitude": "38.29169846",
+        "elevation_ft": "7200",
+        "name": "Lake Creek Ranch Airport",
+        "id": "92CO",
+        "type": "small_airport",
+        "longitude": "-105.6110001"
+    },
+    {
+        "latitude": "39.91669846",
+        "elevation_ft": "5015",
+        "name": "Henderson Airport",
+        "id": "US-0074",
+        "type": "small_airport",
+        "longitude": "-104.8669968"
+    },
+    {
+        "latitude": "40.48120117",
+        "elevation_ft": "6606",
+        "home_link": "",
+        "name": "Yampa Valley Airport",
+        "municipality": "Hayden",
+        "id": "KHDN",
+        "type": "small_airport",
+        "longitude": "-107.2180023"
+    },
+    {
+        "latitude": "40.625",
+        "elevation_ft": "4035",
+        "name": "Haxtun Municipal Airport",
+        "id": "K17V",
+        "type": "small_airport",
+        "longitude": "-102.6029968"
+    },
+    {
+        "latitude": "39.152333",
+        "elevation_ft": "9300",
+        "name": "Lux Field",
+        "id": "25CD",
+        "type": "small_airport",
+        "longitude": "-105.720167"
+    },
+    {
+        "latitude": "38.09999847",
+        "elevation_ft": "3610",
+        "name": "Air-Sprayers Nr 2 Airport",
+        "id": "CO73",
+        "type": "small_airport",
+        "longitude": "-102.2170029"
+    },
+    {
+        "latitude": "39.59999847",
+        "elevation_ft": "6720",
+        "name": "Gypsum Creek Ranch Airport",
+        "id": "CO47",
+        "type": "small_airport",
+        "longitude": "-106.973999"
+    },
+    {
+        "latitude": "38.53390121",
+        "elevation_ft": "7680",
+        "home_link": "",
+        "name": "Gunnison Crested Butte Regional Airport",
+        "municipality": "Gunnison",
+        "id": "KGUC",
+        "type": "small_airport",
+        "longitude": "-106.9329987"
+    },
+    {
+        "latitude": "38.75970078",
+        "elevation_ft": "8400",
+        "name": "Dave Nash Ranch Airport",
+        "id": "7CO1",
+        "type": "small_airport",
+        "longitude": "-105.3840027"
+    },
+    {
+        "latitude": "38.67250061",
+        "elevation_ft": "8030",
+        "name": "Coyote Creek Ranch Airport",
+        "id": "30CO",
+        "type": "small_airport",
+        "longitude": "-105.3359985"
+    },
+    {
+        "latitude": "40.43740082",
+        "elevation_ft": "4697",
+        "home_link": "http://www.gxy.net/",
+        "name": "Greeley Weld County Airport",
+        "municipality": "Greeley",
+        "id": "KGXY",
+        "type": "small_airport",
+        "longitude": "-104.6330032"
+    },
+    {
+        "latitude": "40.33050156",
+        "elevation_ft": "4820",
+        "name": "Easton/Valley View Airport",
+        "id": "K11V",
+        "type": "small_airport",
+        "longitude": "-104.6090012"
+    },
+    {
+        "latitude": "39.12239838",
+        "elevation_ft": "4858",
+        "home_link": "http://www.gjairport.com/",
+        "name": "Grand Junction Regional Airport",
+        "municipality": "Grand Junction",
+        "id": "KGJT",
+        "type": "medium_airport",
+        "longitude": "-108.5270004"
+    },
+    {
+        "latitude": "40.04859924",
+        "elevation_ft": "8110",
+        "name": "Granby Sports Park Ultralightport",
+        "id": "CO86",
+        "type": "small_airport",
+        "longitude": "-105.9380035"
+    },
+    {
+        "latitude": "40.08969879",
+        "elevation_ft": "8203",
+        "name": "Granby Grand County Airport",
+        "id": "KGNB",
+        "type": "small_airport",
+        "longitude": "-105.9169998"
+    },
+    {
+        "latitude": "39.50830078",
+        "elevation_ft": "5916",
+        "name": "Glenwood Springs Municipal Airport",
+        "municipality": "Glenwood Springs",
+        "id": "KGWS",
+        "type": "small_airport",
+        "longitude": "-107.310997"
+    },
+    {
+        "latitude": "39.00279999",
+        "elevation_ft": "6980",
+        "name": "Pinyon Airport",
+        "id": "CO43",
+        "type": "small_airport",
+        "longitude": "-108.7099991"
+    },
+    {
+        "latitude": "38.68330002",
+        "elevation_ft": "4670",
+        "name": "Hubbard Airport",
+        "id": "9CO3",
+        "type": "small_airport",
+        "longitude": "-108.9840012"
+    },
+    {
+        "latitude": "38.70550156",
+        "elevation_ft": "4820",
+        "name": "Hendricks Field At West Creek Ranch Airport",
+        "id": "63CO",
+        "type": "small_airport",
+        "longitude": "-108.9369965"
+    },
+    {
+        "latitude": "37.84220123",
+        "elevation_ft": "7710",
+        "name": "Golden Field (Yellow Hat) Airport",
+        "id": "CO61",
+        "type": "small_airport",
+        "longitude": "-105.2139969"
+    },
+    {
+        "latitude": "40.54579926",
+        "elevation_ft": "4840",
+        "name": "Hay Fever Farm Airport",
+        "id": "CO59",
+        "type": "small_airport",
+        "longitude": "-104.564003"
+    },
+    {
+        "latitude": "39.37170029",
+        "elevation_ft": "6200",
+        "name": "Reed Hollow Ranch Airport",
+        "id": "CO96",
+        "type": "small_airport",
+        "longitude": "-104.7429962"
+    },
+    {
+        "latitude": "39.36669922",
+        "elevation_ft": "6700",
+        "name": "Kostroski Airport",
+        "id": "43CO",
+        "type": "small_airport",
+        "longitude": "-104.6780014"
+    },
+    {
+        "latitude": "38.07249832",
+        "elevation_ft": "4428",
+        "name": "Fowler Airport",
+        "id": "CO80",
+        "type": "small_airport",
+        "longitude": "-104.0459976"
+    },
+    {
+        "latitude": "40.33359909",
+        "elevation_ft": "4569",
+        "name": "Fort Morgan Municipal Airport",
+        "id": "KFMM",
+        "type": "small_airport",
+        "longitude": "-103.8040009"
+    },
+    {
+        "latitude": "40.4518013",
+        "elevation_ft": "5016",
+        "home_link": "http://fortloveair.com",
+        "name": "Fort Collins Loveland Municipal Airport",
+        "municipality": "Fort Collins/Loveland",
+        "id": "KFNL",
+        "type": "small_airport",
+        "longitude": "-105.0110016"
+    },
+    {
+        "latitude": "40.59719849",
+        "elevation_ft": "5160",
+        "name": "Christman Field",
+        "id": "CO55",
+        "type": "small_airport",
+        "longitude": "-105.1439972"
+    },
+    {
+        "latitude": "40.51029968",
+        "elevation_ft": "4885",
+        "name": "Hat-Field STOLport",
+        "id": "6CO4",
+        "type": "small_airport",
+        "longitude": "-105.0009995"
+    },
+    {
+        "latitude": "40.63470078",
+        "elevation_ft": "5050",
+        "name": "Yankee Field",
+        "id": "CO53",
+        "type": "small_airport",
+        "longitude": "-104.9909973"
+    },
+    {
+        "latitude": "40.52080154",
+        "elevation_ft": "4840",
+        "name": "Wkr Airport",
+        "id": "65CO",
+        "type": "small_airport",
+        "longitude": "-104.9670029"
+    },
+    {
+        "latitude": "38.67839813",
+        "elevation_ft": "5838",
+        "name": "Butts AAF (Fort Carson) Air Field",
+        "id": "KFCS",
+        "type": "medium_airport",
+        "longitude": "-104.7570038"
+    },
+    {
+        "latitude": "39.27999878",
+        "elevation_ft": "4945",
+        "name": "Flagler Aerial Spraying Inc Airport",
+        "id": "CO00",
+        "type": "small_airport",
+        "longitude": "-103.0670013"
+    },
+    {
+        "latitude": "40.10580063",
+        "elevation_ft": "5000",
+        "name": "Wings N Things Airpark & Museum Airport",
+        "id": "CO58",
+        "type": "small_airport",
+        "longitude": "-104.9550018"
+    },
+    {
+        "latitude": "38.98329926",
+        "elevation_ft": "7260",
+        "name": "G W Flanders Ranch Strip",
+        "id": "CO54",
+        "type": "small_airport",
+        "longitude": "-104.6340027"
+    },
+    {
+        "latitude": "39.58330154",
+        "elevation_ft": "7700",
+        "name": "Marshdale STOLport",
+        "id": "CO52",
+        "type": "small_airport",
+        "longitude": "-105.3030014"
+    },
+    {
+        "latitude": "40.0102005",
+        "elevation_ft": "5130",
+        "home_link": "https://www.erieco.gov/93/Airport",
+        "name": "Erie Municipal Airport",
+        "municipality": "Erie",
+        "id": "KEIK",
+        "type": "small_airport",
+        "longitude": "-105.0479965"
+    },
+    {
+        "latitude": "40.07170105",
+        "elevation_ft": "5050",
+        "name": "Parkland Airport",
+        "id": "7CO0",
+        "type": "small_airport",
+        "longitude": "-105.0339966"
+    },
+    {
+        "latitude": "38.87440109",
+        "elevation_ft": "6145",
+        "name": "Colorado Springs East Airport",
+        "id": "KA50",
+        "type": "small_airport",
+        "longitude": "-104.4100037"
+    },
+    {
+        "latitude": "38.75830078",
+        "elevation_ft": "6036",
+        "name": "Usaf Academy Bullseye Aux Airstrip",
+        "id": "CO90",
+        "type": "small_airport",
+        "longitude": "-104.3069992"
+    },
+    {
+        "latitude": "39.3443985",
+        "elevation_ft": "6572",
+        "name": "Pine View Airport",
+        "id": "8CO9",
+        "type": "small_airport",
+        "longitude": "-104.5810013"
+    },
+    {
+        "latitude": "39.28129959",
+        "elevation_ft": "6752",
+        "name": "D Bar D Airport",
+        "id": "9CO6",
+        "type": "small_airport",
+        "longitude": "-104.572998"
+    },
+    {
+        "latitude": "39.32329941",
+        "elevation_ft": "6720",
+        "name": "Flyin' B Ranch Airport",
+        "id": "CD45",
+        "type": "small_airport",
+        "longitude": "-104.572998"
+    },
+    {
+        "latitude": "39.33250046",
+        "elevation_ft": "6780",
+        "name": "Dietrichs Airport",
+        "id": "3CO7",
+        "type": "small_airport",
+        "longitude": "-104.5660019"
+    },
+    {
+        "latitude": "39.39485",
+        "elevation_ft": "6510",
+        "name": "Safer Airport",
+        "id": "2CD6",
+        "type": "small_airport",
+        "longitude": "-104.547033"
+    },
+    {
+        "latitude": "39.33470154",
+        "elevation_ft": "6650",
+        "name": "Circle 8 Ranch Airport",
+        "id": "CO42",
+        "type": "small_airport",
+        "longitude": "-104.5459976"
+    },
+    {
+        "latitude": "39.21780014",
+        "elevation_ft": "7028",
+        "name": "Ambrosich Field",
+        "id": "4CO7",
+        "type": "small_airport",
+        "longitude": "-104.6800003"
+    },
+    {
+        "latitude": "39.22470093",
+        "elevation_ft": "7040",
+        "name": "Kelly Air Park",
+        "id": "CO15",
+        "type": "small_airport",
+        "longitude": "-104.6399994"
+    },
+    {
+        "latitude": "39.16249847",
+        "elevation_ft": "6910",
+        "name": "Flying Lazy D Ranch Airport",
+        "id": "CO49",
+        "type": "small_airport",
+        "longitude": "-104.5350037"
+    },
+    {
+        "latitude": "38.85279846",
+        "elevation_ft": "5680",
+        "name": "Doctors Mesa Airport",
+        "id": "6CO0",
+        "type": "small_airport",
+        "longitude": "-108.0169983"
+    },
+    {
+        "latitude": "40.51250076",
+        "elevation_ft": "4800",
+        "name": "Crop Air Inc Airport",
+        "id": "CO48",
+        "type": "small_airport",
+        "longitude": "-104.6520004"
+    },
+    {
+        "latitude": "39.64260101",
+        "elevation_ft": "6548",
+        "home_link": "http://www.eaglecounty.us/airport/",
+        "name": "Eagle County Regional Airport",
+        "municipality": "Eagle",
+        "id": "KEGE",
+        "type": "medium_airport",
+        "longitude": "-106.9179993"
+    },
+    {
+        "latitude": "38.47510147",
+        "elevation_ft": "4245",
+        "name": "Eads Municipal Airport",
+        "id": "K9V7",
+        "type": "small_airport",
+        "longitude": "-102.810997"
+    },
+    {
+        "latitude": "37.20320129",
+        "elevation_ft": "6684",
+        "home_link": "http://www.websmart66.net/cgi-bin/p/w66p-airportinfo.cgi?d=greggs-flying-service",
+        "name": "Animas Air Park",
+        "municipality": "Durango",
+        "id": "K00C",
+        "type": "small_airport",
+        "longitude": "-107.8690033"
+    },
+    {
+        "latitude": "37.33779907",
+        "elevation_ft": "6548",
+        "name": "Val Air Airport",
+        "id": "CD82",
+        "type": "small_airport",
+        "longitude": "-107.8519974"
+    },
+    {
+        "latitude": "37.1515007",
+        "elevation_ft": "6685",
+        "home_link": "http://www.durangogov.org/airport/index.cfm",
+        "name": "Durango La Plata County Airport",
+        "municipality": "Durango",
+        "id": "KDRO",
+        "type": "small_airport",
+        "longitude": "-107.7539978"
+    },
+    {
+        "latitude": "37.76390076",
+        "elevation_ft": "6975",
+        "name": "Dove Creek Airport",
+        "id": "8V6",
+        "type": "small_airport",
+        "longitude": "-108.8889999"
+    },
+    {
+        "latitude": "39.90879822",
+        "elevation_ft": "5673",
+        "home_link": "",
+        "name": "Rocky Mountain Metropolitan Airport",
+        "municipality": "Denver",
+        "id": "KBJC",
+        "type": "medium_airport",
+        "longitude": "-105.1169968"
+    },
+    {
+        "latitude": "39.57009888",
+        "elevation_ft": "5885",
+        "home_link": "",
+        "name": "Centennial Airport",
+        "municipality": "Denver",
+        "id": "KAPA",
+        "type": "medium_airport",
+        "longitude": "-104.848999"
+    },
+    {
+        "latitude": "39.86169815",
+        "elevation_ft": "5431",
+        "home_link": "http://www.flydenver.com/",
+        "name": "Denver International Airport",
+        "municipality": "Denver",
+        "id": "KDEN",
+        "type": "large_airport",
+        "longitude": "-104.6729965"
+    },
+    {
+        "latitude": "39.78530121",
+        "elevation_ft": "5512",
+        "name": "Front Range Airport",
+        "id": "KFTG",
+        "type": "small_airport",
+        "longitude": "-104.5429993"
+    },
+    {
+        "latitude": "38.75749969",
+        "elevation_ft": "5000",
+        "name": "Westwinds Airport",
+        "id": "KD17",
+        "type": "small_airport",
+        "longitude": "-108.1480026"
+    },
+    {
+        "latitude": "38.72600174",
+        "elevation_ft": "4900",
+        "name": "Roubideau Airport",
+        "id": "27CO",
+        "type": "small_airport",
+        "longitude": "-108.1289978"
+    },
+    {
+        "latitude": "38.78639984",
+        "elevation_ft": "5193",
+        "name": "Blake Field",
+        "id": "KAJZ",
+        "type": "small_airport",
+        "longitude": "-108.064003"
+    },
+    {
+        "latitude": "38.77280045",
+        "elevation_ft": "5050",
+        "name": "Barber Field",
+        "id": "CO89",
+        "type": "small_airport",
+        "longitude": "-108.0439987"
+    },
+    {
+        "latitude": "38.73749924",
+        "elevation_ft": "5300",
+        "name": "Sky Island Ranch Airport",
+        "id": "3CO0",
+        "type": "small_airport",
+        "longitude": "-108.0059967"
+    },
+    {
+        "latitude": "37.71360016",
+        "elevation_ft": "7949",
+        "name": "Astronaut Kent Rominger Airport",
+        "municipality": "Del Norte",
+        "id": "K8V1",
+        "type": "small_airport",
+        "longitude": "-106.3539963"
+    },
+    {
+        "latitude": "39.83509827",
+        "elevation_ft": "4750",
+        "name": "Morris Airport",
+        "id": "CD13",
+        "type": "small_airport",
+        "longitude": "-103.7360001"
+    },
+    {
+        "latitude": "38.85189819",
+        "elevation_ft": "8980",
+        "name": "Buckhorn Ranch Airport",
+        "id": "0CO2",
+        "type": "small_airport",
+        "longitude": "-106.93282"
+    },
+    {
+        "latitude": "37.82080078",
+        "elevation_ft": "8680",
+        "name": "Mineral County Memorial Airport",
+        "municipality": "Creede",
+        "id": "KC24",
+        "type": "small_airport",
+        "longitude": "-106.9309998"
+    },
+    {
+        "latitude": "38.70420074",
+        "elevation_ft": "6470",
+        "name": "Crawford Airport",
+        "id": "K99V",
+        "type": "small_airport",
+        "longitude": "-107.6439972"
+    },
+    {
+        "latitude": "40.77500153",
+        "elevation_ft": "6978",
+        "name": "Mesa View Ranch Airport",
+        "id": "5CO7",
+        "type": "small_airport",
+        "longitude": "-107.5339966"
+    },
+    {
+        "latitude": "40.49520111",
+        "elevation_ft": "6193",
+        "home_link": "http://www.colorado.gov/cs/Satellite/CNTY-Moffat/CBON/1251574649681",
+        "name": "Craig Moffat Airport",
+        "municipality": "Craig",
+        "id": "KCAG",
+        "type": "small_airport",
+        "longitude": "-107.5220032"
+    },
+    {
+        "latitude": "38.39830017",
+        "elevation_ft": "6200",
+        "name": "Lowe Airstrip",
+        "id": "CD01",
+        "type": "small_airport",
+        "longitude": "-105.6200027"
+    },
+    {
+        "latitude": "37.46780014",
+        "elevation_ft": "6640",
+        "name": "Tanner Field",
+        "id": "CO27",
+        "type": "small_airport",
+        "longitude": "-108.6650009"
+    },
+    {
+        "latitude": "37.3030014",
+        "elevation_ft": "5918",
+        "home_link": "http://www.cityofcortez.com/index.aspx?NID=113",
+        "name": "Cortez Municipal Airport",
+        "municipality": "Cortez",
+        "id": "KCEZ",
+        "type": "small_airport",
+        "longitude": "-108.6279984"
+    },
+    {
+        "latitude": "39.54999924",
+        "elevation_ft": "8000",
+        "name": "Meyer Ranch Airport",
+        "id": "5CO6",
+        "type": "small_airport",
+        "longitude": "-105.2839966"
+    },
+    {
+        "latitude": "39.29169846",
+        "elevation_ft": "9600",
+        "name": "Silver Heels Airport",
+        "id": "US-0075",
+        "type": "small_airport",
+        "longitude": "-105.875"
+    },
+    {
+        "latitude": "38.96969986",
+        "elevation_ft": "6572",
+        "name": "USAF Academy Airfield",
+        "id": "KAFF",
+        "type": "small_airport",
+        "longitude": "-104.8130035"
+    },
+    {
+        "latitude": "38.80580139",
+        "elevation_ft": "6187",
+        "home_link": "https://flycos.coloradosprings.gov/",
+        "name": "City of Colorado Springs Municipal Airport",
+        "municipality": "Colorado Springs",
+        "id": "KCOS",
+        "type": "large_airport",
+        "longitude": "-104.7009964"
+    },
+    {
+        "latitude": "38.94580078",
+        "elevation_ft": "6874",
+        "home_link": "http://www.2mla.com/",
+        "name": "Meadow Lake Airport",
+        "municipality": "Colorado Springs",
+        "id": "K00V",
+        "type": "small_airport",
+        "longitude": "-104.5699997"
+    },
+    {
+        "latitude": "38.81669998",
+        "elevation_ft": "4184",
+        "name": "Cheyenne Wells Municipal Airport",
+        "id": "5CO0",
+        "type": "small_airport",
+        "longitude": "-102.3059998"
+    },
+    {
+        "latitude": "37.78469849",
+        "elevation_ft": "7598",
+        "name": "Leach Airport",
+        "id": "K1V8",
+        "type": "small_airport",
+        "longitude": "-106.038002"
+    },
+    {
+        "latitude": "38.96110153",
+        "elevation_ft": "7200",
+        "name": "Mesawood Airpark",
+        "id": "6CO2",
+        "type": "small_airport",
+        "longitude": "-107.9580002"
+    },
+    {
+        "latitude": "38.86249924",
+        "elevation_ft": "6885",
+        "name": "Flying W Ranch Airport",
+        "id": "CO20",
+        "type": "small_airport",
+        "longitude": "-107.8209991"
+    },
+    {
+        "latitude": "39.30690002",
+        "elevation_ft": "6800",
+        "name": "Kelgun Airport",
+        "id": "4CO8",
+        "type": "small_airport",
+        "longitude": "-104.8160019"
+    },
+    {
+        "latitude": "40.764462",
+        "elevation_ft": "5600",
+        "name": "Big View Airport",
+        "id": "US-0336",
+        "type": "small_airport",
+        "longitude": "-104.928654"
+    },
+    {
+        "latitude": "39.38890076",
+        "elevation_ft": "6835",
+        "name": "Glen-Aspen Airport",
+        "id": "4CO0",
+        "type": "small_airport",
+        "longitude": "-107.1600037"
+    },
+    {
+        "latitude": "38.41080093",
+        "elevation_ft": "6280",
+        "name": "Tezak Airport",
+        "id": "CO19",
+        "type": "small_airport",
+        "longitude": "-105.6039963"
+    },
+    {
+        "latitude": "39.19829941",
+        "elevation_ft": "6300",
+        "name": "Aero Bear Field",
+        "id": "CD23",
+        "type": "small_airport",
+        "longitude": "-104.3290024"
+    },
+    {
+        "latitude": "39.04779816",
+        "elevation_ft": "6450",
+        "name": "Calhan Airport",
+        "id": "5V4",
+        "type": "small_airport",
+        "longitude": "-104.2919998"
+    },
+    {
+        "latitude": "38.4280014",
+        "elevation_ft": "5439",
+        "name": "Fremont County Airport",
+        "municipality": "Canon City",
+        "id": "K1V6",
+        "type": "small_airport",
+        "longitude": "-105.1060028"
+    },
+    {
+        "latitude": "39.70000076",
+        "elevation_ft": "5320",
+        "name": "Spickard Farm Airport",
+        "id": "5CO4",
+        "type": "small_airport",
+        "longitude": "-104.2509995"
+    },
+    {
+        "latitude": "39.71360016",
+        "elevation_ft": "5215",
+        "name": "Sky Haven Airport",
+        "id": "CO17",
+        "type": "small_airport",
+        "longitude": "-104.1940002"
+    },
+    {
+        "latitude": "39.87220001",
+        "elevation_ft": "4940",
+        "name": "Singleton Ranch Airport",
+        "id": "68CO",
+        "type": "small_airport",
+        "longitude": "-104.1529999"
+    },
+    {
+        "latitude": "39.67050171",
+        "elevation_ft": "5250",
+        "name": "East Moore Field",
+        "id": "8CO4",
+        "type": "small_airport",
+        "longitude": "-104.1360016"
+    },
+    {
+        "latitude": "39.90829849",
+        "elevation_ft": "4885",
+        "name": "Bijou Basin Airport",
+        "id": "CD17",
+        "type": "small_airport",
+        "longitude": "-104.1259995"
+    },
+    {
+        "latitude": "39.29945",
+        "elevation_ft": "4210",
+        "name": "Aviation Acres Airport",
+        "id": "23CD",
+        "type": "small_airport",
+        "longitude": "-102.321817"
+    },
+    {
+        "latitude": "39.24250031",
+        "elevation_ft": "4219",
+        "name": "Kit Carson County Airport",
+        "id": "KITR",
+        "type": "small_airport",
+        "longitude": "-102.2850037"
+    },
+    {
+        "latitude": "39.45470047",
+        "elevation_ft": "4000",
+        "name": "Silkman Farms Inc. Airport",
+        "id": "10CO",
+        "type": "small_airport",
+        "longitude": "-102.2129974"
+    },
+    {
+        "latitude": "38.81420135",
+        "elevation_ft": "7946",
+        "name": "Central Colorado Regional Airport",
+        "id": "KAEJ",
+        "type": "small_airport",
+        "longitude": "-106.1210022"
+    },
+    {
+        "latitude": "40.26390076",
+        "elevation_ft": "4280",
+        "name": "Brush Municipal Airport",
+        "id": "K7V5",
+        "type": "small_airport",
+        "longitude": "-103.5810013"
+    },
+    {
+        "latitude": "39.91669846",
+        "elevation_ft": "5100",
+        "name": "Reasoner Airport",
+        "id": "CO14",
+        "type": "small_airport",
+        "longitude": "-104.8050003"
+    },
+    {
+        "latitude": "39.9632988",
+        "elevation_ft": "5060",
+        "name": "Heckendorf Ranches Airport",
+        "id": "CO13",
+        "type": "small_airport",
+        "longitude": "-104.7490005"
+    },
+    {
+        "latitude": "39.98300171",
+        "elevation_ft": "5055",
+        "name": "Brighton Van-Aire Estates Airport",
+        "id": "CO12",
+        "type": "small_airport",
+        "longitude": "-104.7050018"
+    },
+    {
+        "latitude": "39.9580574",
+        "elevation_ft": "5100",
+        "name": "Flying E Airport",
+        "id": "22CO",
+        "type": "small_airport",
+        "longitude": "-104.4855576"
+    },
+    {
+        "latitude": "40.62220001",
+        "elevation_ft": "4830",
+        "name": "Cass Field",
+        "id": "00CO",
+        "type": "small_airport",
+        "longitude": "-104.3440018"
+    },
+    {
+        "latitude": "40.67079926",
+        "elevation_ft": "4950",
+        "name": "William Leon Schawo Airport",
+        "id": "8CO2",
+        "type": "small_airport",
+        "longitude": "-104.2080002"
+    },
+    {
+        "latitude": "37.38750076",
+        "elevation_ft": "5100",
+        "name": "Jecan Airport",
+        "id": "06CO",
+        "type": "small_airport",
+        "longitude": "-103.6910019"
+    },
+    {
+        "latitude": "38.5766983",
+        "elevation_ft": "4126",
+        "name": "Scherler Private Airstrip",
+        "id": "9CO5",
+        "type": "small_airport",
+        "longitude": "-102.4369965"
+    },
+    {
+        "latitude": "40.4715004",
+        "elevation_ft": "4745",
+        "name": "Highline Farm Airstrip",
+        "id": "67CO",
+        "type": "small_airport",
+        "longitude": "-104.8130035"
+    },
+    {
+        "latitude": "40.03939819",
+        "elevation_ft": "5288",
+        "home_link": "http://www.bouldercolorado.gov/index.php?option=com_content&view=article&id=201&Itemid=740",
+        "name": "Boulder Municipal Airport",
+        "municipality": "Boulder",
+        "id": "KBDU",
+        "type": "small_airport",
+        "longitude": "-105.2259979"
+    },
+    {
+        "latitude": "39.99470139",
+        "elevation_ft": "5230",
+        "name": "Lemons Private Strip",
+        "id": "CO10",
+        "type": "small_airport",
+        "longitude": "-105.223999"
+    },
+    {
+        "latitude": "38.26670074",
+        "elevation_ft": "4500",
+        "name": "Youtsey Airport",
+        "id": "CO09",
+        "type": "small_airport",
+        "longitude": "-104.2839966"
+    },
+    {
+        "latitude": "37.41109848",
+        "elevation_ft": "7720",
+        "name": "Blanca Airport",
+        "id": "05V",
+        "type": "small_airport",
+        "longitude": "-105.552002"
+    },
+    {
+        "latitude": "39.85419846",
+        "elevation_ft": "8900",
+        "name": "Athanasiou Valley Airport",
+        "id": "CO07",
+        "type": "small_airport",
+        "longitude": "-105.4710007"
+    },
+    {
+        "latitude": "38.09719849",
+        "elevation_ft": "6000",
+        "name": "Good Pasture Airport",
+        "id": "14CO",
+        "type": "small_airport",
+        "longitude": "-104.9100037"
+    },
+    {
+        "latitude": "39.27916718",
+        "elevation_ft": "4300",
+        "name": "Hildebrandt Airport",
+        "id": "CO22",
+        "type": "small_airport",
+        "longitude": "-102.4749985"
+    },
+    {
+        "latitude": "40.311886",
+        "elevation_ft": "5187",
+        "name": "Skywagon Ranch Airport",
+        "id": "6CO6",
+        "type": "small_airport",
+        "longitude": "-105.145833"
+    },
+    {
+        "latitude": "40.31359863",
+        "elevation_ft": "5200",
+        "name": "Lazy W Airport",
+        "id": "86CO",
+        "type": "small_airport",
+        "longitude": "-105.1449966"
+    },
+    {
+        "latitude": "40.26499939",
+        "elevation_ft": "5050",
+        "name": "Pond's Field",
+        "id": "CD39",
+        "type": "small_airport",
+        "longitude": "-105.137001"
+    },
+    {
+        "latitude": "40.272258",
+        "elevation_ft": "5000",
+        "name": "Skylane Ranch Airport",
+        "id": "17CO",
+        "type": "small_airport",
+        "longitude": "-105.032625"
+    },
+    {
+        "latitude": "39.88940048",
+        "elevation_ft": "5373",
+        "name": "Greggs Nr 1 Airport",
+        "id": "0CO3",
+        "type": "small_airport",
+        "longitude": "-104.5449982"
+    },
+    {
+        "latitude": "39.82889938",
+        "elevation_ft": "5320",
+        "name": "J & S Airport",
+        "id": "CD14",
+        "type": "small_airport",
+        "longitude": "-104.4369965"
+    },
+    {
+        "latitude": "39.83580017",
+        "elevation_ft": "5310",
+        "name": "Hoy Airstrip",
+        "id": "76CO",
+        "type": "small_airport",
+        "longitude": "-104.4219971"
+    },
+    {
+        "latitude": "39.69110107",
+        "elevation_ft": "5650",
+        "name": "Young's Strip",
+        "id": "87CO",
+        "type": "small_airport",
+        "longitude": "-104.4160004"
+    },
+    {
+        "latitude": "39.81969833",
+        "elevation_ft": "5345",
+        "name": "Yoder Airstrip",
+        "id": "CD09",
+        "type": "small_airport",
+        "longitude": "-104.4089966"
+    },
+    {
+        "latitude": "39.62969971",
+        "elevation_ft": "5975",
+        "name": "Harrington Ranch Airport",
+        "id": "CO02",
+        "type": "small_airport",
+        "longitude": "-104.5189972"
+    },
+    {
+        "latitude": "39.85639954",
+        "elevation_ft": "5300",
+        "name": "Logan Airport",
+        "id": "96CO",
+        "type": "small_airport",
+        "longitude": "-104.3960037"
+    },
+    {
+        "latitude": "38.83330154",
+        "elevation_ft": "6200",
+        "name": "Shipman Ranch Airport",
+        "id": "5CO1",
+        "type": "small_airport",
+        "longitude": "-107.8590012"
+    },
+    {
+        "latitude": "39.7016983",
+        "elevation_ft": "5662",
+        "home_link": "",
+        "name": "Buckley Air Force Base",
+        "municipality": "Aurora",
+        "id": "KBKF",
+        "type": "medium_airport",
+        "longitude": "-104.7519989"
+    },
+    {
+        "latitude": "39.71640015",
+        "elevation_ft": "5525",
+        "name": "Simons Airport",
+        "id": "34CO",
+        "type": "small_airport",
+        "longitude": "-104.7320023"
+    },
+    {
+        "latitude": "39.25999832",
+        "elevation_ft": "8440",
+        "name": "Aspen Gliderport",
+        "id": "CO03",
+        "type": "small_airport",
+        "longitude": "-106.9120026"
+    },
+    {
+        "latitude": "39.22320175",
+        "elevation_ft": "7820",
+        "home_link": "http://aspenairport.com/",
+        "name": "Aspen-Pitkin Co/Sardy Field",
+        "municipality": "Aspen",
+        "id": "KASE",
+        "type": "medium_airport",
+        "longitude": "-106.8690033"
+    },
+    {
+        "latitude": "40.262683",
+        "elevation_ft": "7900",
+        "name": "Elk Park Ranch Airport",
+        "id": "34CD",
+        "type": "small_airport",
+        "longitude": "-105.448011"
+    },
+    {
+        "latitude": "37.434898",
+        "elevation_ft": "7539",
+        "home_link": "",
+        "name": "San Luis Valley Regional Bergman Field",
+        "municipality": "Alamosa",
+        "id": "KALS",
+        "type": "medium_airport",
+        "longitude": "-105.866997"
+    },
+    {
+        "latitude": "40.17559814",
+        "elevation_ft": "4714",
+        "home_link": "http://www.co.washington.co.us/airport.htm",
+        "name": "Colorado Plains Regional Airport",
+        "municipality": "Akron",
+        "id": "KAKO",
+        "type": "small_airport",
+        "longitude": "-103.2220001"
+    },
+    {
+        "latitude": "40.24440002",
+        "elevation_ft": "4509",
+        "name": "Gebauer Airport",
+        "id": "5V6",
+        "type": "small_airport",
+        "longitude": "-103.0940018"
+    },
+    {
+        "latitude": "39.49610138",
+        "elevation_ft": "5240",
+        "name": "Metrogro Farm Airport",
+        "id": "CO25",
+        "type": "small_airport",
+        "longitude": "-103.723999"
+    }
+]
