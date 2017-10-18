@@ -23,6 +23,7 @@ public class Trip implements Comparable<Trip> {
 
     public void setLength(int length) { _length = length; }
 
+
     int length() {
         return _length;
     }
