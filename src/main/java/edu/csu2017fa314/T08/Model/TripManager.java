@@ -10,7 +10,6 @@ public class TripManager {
     public static ArrayList<Trip> trips;
     public static AtomicInteger total;
     public static String[] stops;
-
     static Trip shortest() {
         return trips.get(0);
     }

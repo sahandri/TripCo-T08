@@ -66,7 +66,6 @@ public class Itinerary {
     // Creates a JSONObject for a single leg of the trip from start to end
     public static JSONObject createLeg(ArrayList<String> line, int dist) {
         JSONObject leg = new JSONObject();
-
         for(int i = 0; i < line.size(); ++i) {
             leg.put(columns.get(i), line.get(i));
         }
