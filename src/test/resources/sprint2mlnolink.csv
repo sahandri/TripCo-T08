@@ -1,0 +1,13 @@
+id,type,name,latitude,longitude,elevation_ft
+KDEN,large_airport,Denver International Airport,39.86169815,-104.6729965,5431
+KCOS,large_airport,City of Colorado Springs Municipal Airport,38.80580139,-104.7009964,6187
+KRIL,medium_airport,Garfield County Regional Airport,39.52629852,-107.7269974,5548
+KMTJ,medium_airport,Montrose Regional Airport,38.50979996,-107.8939972,5759
+KGJT,medium_airport,Grand Junction Regional Airport,39.12239838,-108.5270004,4858
+KFCS,medium_airport,Butts AAF (Fort Carson) Air Field,38.67839813,-104.7570038,5838
+KEGE,medium_airport,Eagle County Regional Airport,39.64260101,-106.9179993,6548
+KBJC,medium_airport,Rocky Mountain Metropolitan Airport,39.90879822,-105.1169968,5673
+KAPA,medium_airport,Centennial Airport,39.57009888,-104.848999,5885
+KBKF,medium_airport,Buckley Air Force Base,39.7016983,-104.7519989,5662
+KASE,medium_airport,Aspen-Pitkin Co/Sardy Field,39.22320175,-106.8690033,7820
+KALS,medium_airport,San Luis Valley Regional Bergman Field,37.434898,-105.866997,7539

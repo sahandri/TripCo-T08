@@ -35,13 +35,13 @@ class Home extends React.Component {
 
 
         let total; {/*Initalize*/}
-        let keys;
+        //let keys;
         if(this.props.pairs == ""){ {/*If no json file*/}
             total = 0;
         }
         else{ {/*after json call*/}
             total = this.props.pairs[this.props.pairs.length - 1].props.tot;
-            keys =  this.props.pairs[this.props.pairs.length - 1].props.keys;
+            //keys =  this.props.pairs[this.props.pairs.length - 1].props.Object.keys(startInfo);
         }
         return <div className="home-container">
             <div className="inner">
@@ -59,7 +59,7 @@ class Home extends React.Component {
                     </Dropzone>
                 </modal>
 
-
+                <input className="search-button" type="text" placeholder="Enter Keyword" onKeyUp={this.keyUp.bind(this)} autoFocus
 
 
                 {/*for image*/}
@@ -89,6 +89,19 @@ class Home extends React.Component {
             </div>
         </div>
     }
+                    
+    keyUp(event){
+                    if (event.which === 13) {
+                        this.fetch(event.target.value);
+                    }
+                }
+    async fetch(input) {
+           let newMap = {
+             query: input,
+             id: "1",
+           };
+                        
+   }
 
     drop(acceptedFiles) { {/*Calls Drop which takes the JSON file*/}
         console.log("Accepting drop");
