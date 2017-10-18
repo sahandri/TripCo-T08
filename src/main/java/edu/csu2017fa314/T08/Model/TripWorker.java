@@ -1,5 +1,7 @@
 package edu.csu2017fa314.T08.Model;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
+
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 
@@ -60,14 +62,15 @@ public class TripWorker implements Callable<Trip> {
             improved = false;
             for(int i = 0; i <= len-3; i++) {
                 for(int k =i+2; k < len-1; k++) {
-                    int delta = 0; // Calculate delta
+                    int delta = -Model.getDistance(order[i],order[i+1],false)-Model.getDistance(order[k],order[k+1],false)
+                                +Model.getDistance(order[i],order[k],false)+Model.getDistance(order[i+1],order[k+1],false);
                     if (delta < 0) {
                         optSwap(i+1, k);
+                        tripLength += delta;
                         improved = true;
                     }
                 }
             }
-
         }
 
         // Turn the ordering into a trip
