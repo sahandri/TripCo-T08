@@ -21,8 +21,5 @@ public class TestItinerary {
     @Test 
     public void testCreateLeg() 
     {
-        JSONObject leg = i.createLeg("TEST_START", "TEST_END");       
-        System.out.println(leg);
-        assertNotNull(leg);
     }
 }

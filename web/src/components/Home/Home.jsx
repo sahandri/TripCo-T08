@@ -59,7 +59,7 @@ class Home extends React.Component {
                     </Dropzone>
                 </modal>
 
-
+                <input className="search-button" type="text" placeholder="Enter Keyword" onKeyUp={this.keyUp.bind(this)} autoFocus
 
 
                 {/*for image*/}
@@ -89,6 +89,19 @@ class Home extends React.Component {
             </div>
         </div>
     }
+                    
+    keyUp(event){
+                    if (event.which === 13) {
+                        this.fetch(event.target.value);
+                    }
+                }
+    async fetch(input) {
+           let newMap = {
+             query: input,
+             id: "1",
+           };
+                        
+   }
 
     drop(acceptedFiles) { {/*Calls Drop which takes the JSON file*/}
         console.log("Accepting drop");
