@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import edu.csu2017fa314.T08.Model.QueryBuilder;
+import edu.csu2017fa314.T08.View.Itinerary;
 import edu.csu2017fa314.T08.View.makeSvg;
 import spark.Request;
 import spark.Response;
@@ -48,19 +49,19 @@ public class Server {
     // called by testing method if client requests a search
     private JSONObject serveQuery(String searched) {
         //Gson gson = new Gson();
-        QueryBuilder q = new QueryBuilder("user", "pass"); // Create new QueryBuilder instance and pass in credentials //TODO update credentials
-        String queryString = String.format("SELECT * FROM airports WHERE municipality LIKE '%%%s%%' OR name LIKE '%%%s%%' OR type LIKE '%%%s%%' LIMIT 10", searched, searched, searched);
-        ArrayList<Location> queryResults = q.query(queryString);
+        //QueryBuilder q = new QueryBuilder("user", "pass"); // Create new QueryBuilder instance and pass in credentials //TODO update credentials
+        //String queryString = String.format("SELECT * FROM airports WHERE municipality LIKE '%%%s%%' OR name LIKE '%%%s%%' OR type LIKE '%%%s%%' LIMIT 10", searched, searched, searched);
+        //ArrayList<Location> queryResults = q.query(queryString);
+        JSONObject itinerary = Itinerary.createJSON(searched);
 
         // Create object with svg file path and array of matching database entries to return to server
-        ServerQueryResponse sRes = new ServerQueryResponse(queryResults); //TODO update file path to your svg, change to "./testing.png" for a sample image
+        //ServerQueryResponse sRes = new ServerQueryResponse(queryResults); //TODO update file path to your svg, change to "./testing.png" for a sample image
 
-        System.out.println("Sending \"" + sRes.toString() + "\" to server.");
+        //System.out.println("Sending \"" + sRes.toString() + "\" to server.");
 
         //Convert response to json
         //return gson.toJson(sRes, ServerQueryResponse.class);
-	JSONObject trip = new JSONObject();	
-	return trip;
+        return itinerary;
     }
 
     private Object testing(Request rec, Response res) {

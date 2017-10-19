@@ -15,12 +15,14 @@ public class TestTripManager {
     public static void setUp() throws Exception {
     }
 
+    @Ignore
     @Test
     public void testShortest() {
         DataBase.connect();
         System.out.println("Connected to DB");
         Model.setUp();
         System.out.println("Setup Model");
+        TripManager.buildTripList();
         Trip t = TripManager.shortest();
 
         System.out.printf("Distance is: %d\n", t.length());

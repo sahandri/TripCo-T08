@@ -47,9 +47,6 @@ public class DataBase {
         }
     }
 
-
-
-
     public static String getID(int index) {
         return list.get(index);
     }

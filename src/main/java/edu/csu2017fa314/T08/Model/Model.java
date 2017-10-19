@@ -1,5 +1,7 @@
 package edu.csu2017fa314.T08.Model;
 
+import org.eclipse.jetty.server.session.JDBCSessionIdManager;
+
 import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,21 +11,24 @@ import java.util.stream.IntStream;
 
 public class Model {
     private static int[][] distLookUp;
+    private static ArrayList<String> ids;
 
     public static void setUp() {
-        DataBase.getID("");
-        System.out.printf("Got trip IDs: %d\n", DataBase.getTotal());
+        ids = DataBase.getID("");
         buildDistLookUp();
-        System.out.println("Built Distance Table");
-        TripManager.buildTripList();
     }
     public static ArrayList<String> shortestTrip() {
+        TripManager.buildTripList();
         return TripManager.shortest().stops();
     }
 
-    public static ArrayList<String> shortestTrip(String id) {
-        return TripManager.get(id).stops();
+    public static ArrayList<String> shortestTrip(String key) {
+        ids = DataBase.getID(key);
+        TripManager.buildTripList();
+        return TripManager.shortest().stops();
     }
+
+    public static int getNumStops() { return ids.size(); }
 
 
     public static HashMap getInfo(String id) {
@@ -32,14 +37,9 @@ public class Model {
 
 
     public static int getDistance(String id1, String id2, boolean useKm) {
-        String lat1 = DataBase.getLatit(id1);
-        String lon1 = DataBase.getLongit(id1);
-        String lat2 = DataBase.getLatit(id2);
-        String lon2 = DataBase.getLongit(id2);
-
         int distance;
 
-        distance = Distance.distanceMi(lat1,lon1,lat2,lon2);
+        distance = getDist(ids.indexOf(id1),ids.indexOf(id2));
 
         return distance;
     }
@@ -47,6 +47,8 @@ public class Model {
     public static String getID(int idx) {
         return DataBase.getID(idx);
     }
+
+    public static  ArrayList getStops() { return ids; }
 
     public static int getDistance(int idx1, int idx2, boolean useKm) {
         //String id1 = DataBase.getID(idx1);
@@ -71,13 +73,11 @@ public class Model {
         int destTtl = DataBase.getTotal();
         distLookUp = new int[destTtl][];
 
-        ArrayList<String> ids = new ArrayList<>(destTtl);
         ArrayList<String> lats = new ArrayList<>(destTtl);
         ArrayList<String> longs = new ArrayList<>(destTtl);
 
         for (int i = 0; i < destTtl; i++) {
-            String id = DataBase.getID(i);
-            ids.add(id);
+            String id = ids.get(i);
             lats.add(DataBase.getLatit(id));
             longs.add(DataBase.getLongit(id));
         }
