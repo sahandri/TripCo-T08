@@ -28,7 +28,7 @@ public class Server {
         Gson g = new Gson();
 
         post("/testing", (rec, res) -> {
-            return g.toJson(testing(rec, res));
+            return testing(rec, res).toString();
         }); // Create new listener
     }
 
