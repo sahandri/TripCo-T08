@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.Ignore;
 
+@Ignore
 public class TestItinerary {
 
     @Before
@@ -22,6 +23,7 @@ public class TestItinerary {
         System.out.println("Setup Model");
         TripManager.buildTripList();
     }
+
 
     @Test
     public void testItinerary() {
