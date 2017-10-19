@@ -473,38 +473,38 @@ Editing the File!-->
 <text x="190.0" y="166.0" font-family="sans-serif" font-size="20px" fill="blue"> = Other Destinations Along The Way</text>
 <text x="0.0" y="915.0" font-family="sans-serif" font-size="30px" fill="black">Showing Your Colorado Trip, ski!</text><!-- 
 Drawing the trip path!-->
-<circle cx="16.93225000000072" cy="720.1519583333339" r="5.0" stroke="red" fill="red" stroke-width="8.0"/>
-<circle cx="42.2863214285704" cy="729.480541666666" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="720.1519583333339" x2="16.93225000000072" y1="729.480541666666" x1="42.2863214285704" stroke-width="2.0" stroke="#000000"/>
+<circle cx="166.10578571428482" cy="802.3674791666667" r="5.0" stroke="red" fill="red" stroke-width="8.0"/>
 <circle cx="21.417607142857804" cy="774.3522083333335" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="729.480541666666" x2="42.2863214285704" y1="774.3522083333335" x1="21.417607142857804" stroke-width="2.0" stroke="#000000"/>
-<circle cx="166.10578571428482" cy="802.3674791666667" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="774.3522083333335" x2="21.417607142857804" y1="802.3674791666667" x1="166.10578571428482" stroke-width="2.0" stroke="#000000"/>
-<circle cx="231.33232142857196" cy="617.950833333333" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="802.3674791666667" x2="166.10578571428482" y1="617.950833333333" x1="231.33232142857196" stroke-width="2.0" stroke="#000000"/>
-<circle cx="141.79042857142764" cy="549.6691458333329" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="617.950833333333" x2="231.33232142857196" y1="549.6691458333329" x1="141.79042857142764" stroke-width="2.0" stroke="#000000"/>
-<circle cx="160.935821428572" cy="497.74199999999996" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="549.6691458333329" x2="141.79042857142764" y1="497.74199999999996" x1="160.935821428572" stroke-width="2.0" stroke="#000000"/>
-<circle cx="235.58160714285782" cy="467.8964374999997" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="497.74199999999996" x2="160.935821428572" y1="467.8964374999997" x1="235.58160714285782" stroke-width="2.0" stroke="#000000"/>
+<line id="path" y2="802.3674791666667" x2="166.10578571428482" y1="774.3522083333335" x1="21.417607142857804" stroke-width="2.0" stroke="#000000"/>
+<circle cx="42.2863214285704" cy="729.480541666666" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
+<line id="path" y2="774.3522083333335" x2="21.417607142857804" y1="729.480541666666" x1="42.2863214285704" stroke-width="2.0" stroke="#000000"/>
+<circle cx="16.93225000000072" cy="720.1519583333339" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
+<line id="path" y2="729.480541666666" x2="42.2863214285704" y1="720.1519583333339" x1="16.93225000000072" stroke-width="2.0" stroke="#000000"/>
+<circle cx="-25.820285714285177" cy="520.2368750000004" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
+<line id="path" y2="720.1519583333339" x2="16.93225000000072" y1="520.2368750000004" x1="-25.820285714285177" stroke-width="2.0" stroke="#000000"/>
+<circle cx="164.47689285714222" cy="274.23977083333295" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
+<line id="path" y2="520.2368750000004" x2="-25.820285714285177" y1="274.23977083333295" x1="164.47689285714222" stroke-width="2.0" stroke="#000000"/>
+<circle cx="344.24528571428664" cy="304.88239583333325" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
+<line id="path" y2="274.23977083333295" x2="164.47689285714222" y1="304.88239583333325" x1="344.24528571428664" stroke-width="2.0" stroke="#000000"/>
+<circle cx="337.56446428571485" cy="365.5477083333335" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
+<line id="path" y2="304.88239583333325" x2="344.24528571428664" y1="365.5477083333335" x1="337.56446428571485" stroke-width="2.0" stroke="#000000"/>
+<circle cx="312.35203571428667" cy="374.61060416666686" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
+<line id="path" y2="365.5477083333335" x2="337.56446428571485" y1="374.61060416666686" x1="312.35203571428667" stroke-width="2.0" stroke="#000000"/>
+<circle cx="346.2991071428578" cy="410.5669791666661" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
+<line id="path" y2="374.61060416666686" x2="312.35203571428667" y1="410.5669791666661" x1="346.2991071428578" stroke-width="2.0" stroke="#000000"/>
 <circle cx="272.9989285714295" cy="446.4938333333336" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="467.8964374999997" x2="235.58160714285782" y1="446.4938333333336" x1="272.9989285714295" stroke-width="2.0" stroke="#000000"/>
+<line id="path" y2="410.5669791666661" x2="346.2991071428578" y1="446.4938333333336" x1="272.9989285714295" stroke-width="2.0" stroke="#000000"/>
 <circle cx="225.4305357142856" cy="418.3899999999999" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
 <line id="path" y2="446.4938333333336" x2="272.9989285714295" y1="418.3899999999999" x1="225.4305357142856" stroke-width="2.0" stroke="#000000"/>
-<circle cx="312.35203571428667" cy="374.61060416666686" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="418.3899999999999" x2="225.4305357142856" y1="374.61060416666686" x1="312.35203571428667" stroke-width="2.0" stroke="#000000"/>
-<circle cx="337.56446428571485" cy="365.5477083333335" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="374.61060416666686" x2="312.35203571428667" y1="365.5477083333335" x1="337.56446428571485" stroke-width="2.0" stroke="#000000"/>
-<circle cx="346.2991071428578" cy="410.5669791666661" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="365.5477083333335" x2="337.56446428571485" y1="410.5669791666661" x1="346.2991071428578" stroke-width="2.0" stroke="#000000"/>
-<circle cx="344.24528571428664" cy="304.88239583333325" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="410.5669791666661" x2="346.2991071428578" y1="304.88239583333325" x1="344.24528571428664" stroke-width="2.0" stroke="#000000"/>
-<circle cx="164.47689285714222" cy="274.23977083333295" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="304.88239583333325" x2="344.24528571428664" y1="274.23977083333295" x1="164.47689285714222" stroke-width="2.0" stroke="#000000"/>
-<circle cx="-25.820285714285177" cy="520.2368750000004" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="274.23977083333295" x2="164.47689285714222" y1="520.2368750000004" x1="-25.820285714285177" stroke-width="2.0" stroke="#000000"/>
-<circle cx="16.93225000000072" cy="720.1519583333339" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
-<line id="path" y2="520.2368750000004" x2="-25.820285714285177" y1="720.1519583333339" x1="16.93225000000072" stroke-width="2.0" stroke="#000000"/>
+<circle cx="235.58160714285782" cy="467.8964374999997" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
+<line id="path" y2="418.3899999999999" x2="225.4305357142856" y1="467.8964374999997" x1="235.58160714285782" stroke-width="2.0" stroke="#000000"/>
+<circle cx="160.935821428572" cy="497.74199999999996" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
+<line id="path" y2="467.8964374999997" x2="235.58160714285782" y1="497.74199999999996" x1="160.935821428572" stroke-width="2.0" stroke="#000000"/>
+<circle cx="141.79042857142764" cy="549.6691458333329" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
+<line id="path" y2="497.74199999999996" x2="160.935821428572" y1="549.6691458333329" x1="141.79042857142764" stroke-width="2.0" stroke="#000000"/>
+<circle cx="231.33232142857196" cy="617.950833333333" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
+<line id="path" y2="549.6691458333329" x2="141.79042857142764" y1="617.950833333333" x1="231.33232142857196" stroke-width="2.0" stroke="#000000"/>
+<circle cx="166.10578571428482" cy="802.3674791666667" r="5.0" stroke="blue" fill="blue" stroke-width="1.0"/>
+<line id="path" y2="617.950833333333" x2="231.33232142857196" y1="802.3674791666667" x1="166.10578571428482" stroke-width="2.0" stroke="#000000"/>
 </g>
 </svg>
