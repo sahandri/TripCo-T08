@@ -25,7 +25,7 @@ public class TripManager {
     }
 
     public static void buildTripList() {
-        total = new AtomicInteger(Destination.getTotal());
+        total = new AtomicInteger(DataBase.getTotal());
         trips = new ArrayList<>();
         ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
         ArrayList<Future<Trip>> results = new ArrayList<>();
@@ -33,7 +33,7 @@ public class TripManager {
         stops = new String[total.get()];
 
         for(int i = 0; i < total.get(); i++) {
-            stops[i] = Destination.getID(i);
+            stops[i] = Model.getID(i);
         }
 
         for(int i = 0; i < total.get(); i++) {
@@ -54,6 +54,7 @@ public class TripManager {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+
         Collections.sort(trips);
     }
 

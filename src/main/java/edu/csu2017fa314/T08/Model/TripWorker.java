@@ -73,6 +73,7 @@ public class TripWorker implements Callable<Trip> {
             }
         }
 
+
         // Turn the ordering into a trip
         tripLength += Model.getDistance(order[len], order[len-1], false);
         Trip t = new Trip();
@@ -80,6 +81,7 @@ public class TripWorker implements Callable<Trip> {
             t.add(TripManager.stops[order[i]]);
         }
         t.setLength(tripLength);
+
 
         return t;
     }

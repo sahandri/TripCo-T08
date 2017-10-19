@@ -14,8 +14,8 @@ import java.util.HashMap;
 public class DataBase {
     private static String myDriver = "com.mysql.jdbc.Driver";
     private static String myUrl = "jdbc:mysql://faure.cs.colostate.edu/cs314";
-    private static String user = "sahandri";
-    private static String pass = "830564036";
+    private static String user = "acwatson";
+    private static String pass = "830757761";
     private static ResultSet rs;
     private static Statement st;
     private static Connection conn;
@@ -34,6 +34,14 @@ public class DataBase {
         } catch (Exception e) { // catches all exceptions in the nested try's
             System.err.printf("Exception: ");
             System.err.println(e.getMessage());
+        }
+    }
+
+    public static boolean isConnected() {
+        try {
+            return conn.isValid(5);
+        } catch (SQLException e) {
+            return false;
         }
     }
 
@@ -62,7 +70,7 @@ public class DataBase {
         String query = "SELECT id FROM airports WHERE id LIKE '%" + key + "%' OR name LIKE '%" + key + "%' OR" +
                 " type LIKE '%" + key + "%' OR latitude LIKE '%" + key + "%' OR longitude LIKE '%" + key + "%'" +
                 " OR elevation LIKE '%" + key + "%' OR municipality LIKE '%" + key + "%'" +
-                " OR home_link LIKE '%" + key + "%' OR wikipedia_link LIKE '%" + key + "%' LIMIT 10";
+                " OR home_link LIKE '%" + key + "%' OR wikipedia_link LIKE '%" + key + "%'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and print selected columns
