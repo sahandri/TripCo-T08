@@ -3,6 +3,8 @@ package edu.csu2017fa314.T08.Server;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import edu.csu2017fa314.T08.Model.DataBase;
+import edu.csu2017fa314.T08.Model.Model;
 import edu.csu2017fa314.T08.Model.QueryBuilder;
 import edu.csu2017fa314.T08.View.Itinerary;
 import edu.csu2017fa314.T08.View.makeSvg;
@@ -24,6 +26,7 @@ public class Server {
 
     public void serve() {
         Gson g = new Gson();
+
         post("/testing", (rec, res) -> {
             return g.toJson(testing(rec, res));
         }); // Create new listener

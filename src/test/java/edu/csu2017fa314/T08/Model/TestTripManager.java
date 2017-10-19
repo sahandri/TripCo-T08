@@ -15,7 +15,6 @@ public class TestTripManager {
     public static void setUp() throws Exception {
     }
 
-    @Ignore
     @Test
     public void testShortest() {
         DataBase.connect();
