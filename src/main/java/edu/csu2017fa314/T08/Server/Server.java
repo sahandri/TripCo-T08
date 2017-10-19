@@ -50,12 +50,12 @@ public class Server {
     }
 
     // called by testing method if client requests a search
-    private JSONObject serveQuery(String searched) {
+    private JSONArray serveQuery(String searched) {
         //Gson gson = new Gson();
         //QueryBuilder q = new QueryBuilder("user", "pass"); // Create new QueryBuilder instance and pass in credentials //TODO update credentials
         //String queryString = String.format("SELECT * FROM airports WHERE municipality LIKE '%%%s%%' OR name LIKE '%%%s%%' OR type LIKE '%%%s%%' LIMIT 10", searched, searched, searched);
         //ArrayList<Location> queryResults = q.query(queryString);
-        JSONObject itinerary = Itinerary.createJSON(searched);
+        JSONArray itinerary = Itinerary.createJSON(searched);
 
         // Create object with svg file path and array of matching database entries to return to server
         //ServerQueryResponse sRes = new ServerQueryResponse(queryResults); //TODO update file path to your svg, change to "./testing.png" for a sample image
