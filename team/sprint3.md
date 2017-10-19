@@ -35,7 +35,10 @@ Total planned tasks / issues in the Sprint Backlog: *13*
 Date | Tasks done this time | Tasks done next time | Impediments | Confidence
 :--- | :--- | :--- | :--- | :---
 10/06/17 | web page shows extra info | write test files for sprint2 | meeting | Medium
- 10/07/17 | write test files for sprint2 | finishing refactoring | schedule for sprint3 | Medium
+10/07/17 | write test files for sprint2 | finishing refactoring | schedule for sprint3 | Medium
+10/11/17 | None | Refactor | none | Low
+10/13/17 | Progress made on refactor | Refactor & test backlog complete | demands from other classes | Medium
+10/15/17 | Rearchitecture, complete Test 3, complete refactor | fast response, server setup | Low
  
 
 ## Review
