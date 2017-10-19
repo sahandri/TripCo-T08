@@ -3,9 +3,13 @@ package edu.csu2017fa314.T08.Server;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import edu.csu2017fa314.T08.Model.queryBuilder.java;
+import edu.csu2017fa314.T08.Model.QueryBuilder;
+import edu.csu2017fa314.T08.View.makeSvg;
 import spark.Request;
 import spark.Response;
+import java.io.IOException;
+import org.json.JSONObject;
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 
@@ -28,19 +32,22 @@ public class Server {
     private Object serveSvg() {
         Gson gson = new Gson();
         // Instead of writing the SVG to a file, we send it in plaintext back to the client to be rendered inline
-        String sampleSvg =
+        /*String sampleSvg =
                 "<svg width=\"120\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\">" +
                 "  <line id=\"north\" y2=\"100\" x2=\"120\" y1=\"0\" x1=\"0\" stroke-width=\"5\" stroke=\"red\"/>" +
                 "  <line id=\"west\" y2=\"100\" x2=\"0\" y1=\"0\" x1=\"120\" stroke-width=\"5\" stroke=\"blue\"/>" +
                 " </svg>";
-        ServerSvgResponse ssres = new ServerSvgResponse(120, 100, sampleSvg);
+        ServerSvgResponse ssres = new ServerSvgResponse(120, 100, sampleSvg);*/
+	ServerSvgResponse ssres = new ServerSvgResponse(1067, 784, makeSvg.getSvg());
 
         return gson.toJson(ssres, ServerSvgResponse.class);
+	//JSONObject map = new JSONObject();	
+	//return map;
     }
 
     // called by testing method if client requests a search
-    private Object serveQuery(String searched) {
-        Gson gson = new Gson();
+    private JSONObject serveQuery(String searched) {
+        //Gson gson = new Gson();
         QueryBuilder q = new QueryBuilder("user", "pass"); // Create new QueryBuilder instance and pass in credentials //TODO update credentials
         String queryString = String.format("SELECT * FROM airports WHERE municipality LIKE '%%%s%%' OR name LIKE '%%%s%%' OR type LIKE '%%%s%%' LIMIT 10", searched, searched, searched);
         ArrayList<Location> queryResults = q.query(queryString);
@@ -51,7 +58,9 @@ public class Server {
         System.out.println("Sending \"" + sRes.toString() + "\" to server.");
 
         //Convert response to json
-        return gson.toJson(sRes, ServerQueryResponse.class);
+        //return gson.toJson(sRes, ServerQueryResponse.class);
+	JSONObject trip = new JSONObject();	
+	return trip;
     }
 
     private Object testing(Request rec, Response res) {

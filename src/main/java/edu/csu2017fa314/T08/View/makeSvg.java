@@ -214,4 +214,68 @@ public class makeSvg {
 		   // do something
 		}
 	}
+	//Method to modify premade SVG of Colorado (NOT FUNCTIONING YET)
+	public static String getSvg() {
+		BufferedReader br = null;
+		String svg = "";		
+		try{
+		//Create and open a writer for current .svg file
+			br = new BufferedReader(new FileReader("data/USA_Colorado_location_map.svg"));
+			//Copying File...
+			int c;
+			while((c = br.read()) != -1) {
+				svg += "\n" + c;
+			}
+			//Writing to file...
+			svg += "\n" + (commentTag("\nEditing the File!"));
+			/*bw.write("\n" + drawStartPoint(-146.5, 177.5, 1, "red", "red", 1));
+			bw.write("\n" + drawStartPoint(-146.5, 886, 1, "red", "red", 1));
+			bw.write("\n" + drawStartPoint(845, 177.5, 1, "red", "red", 1));
+			bw.write("\n" + drawStartPoint(845, 886, 1, "red", "red", 1));*/
+			//Create Border Reference Points (specific to .svg)
+			double x1 = -146.5;
+			double x2 = 845;
+			double y1 = 177.5;
+			double y2 = 886;
+			//Create Key
+			svg += ("\n" + drawStartPoint(-146.5, 160, 5, "red", "red", 8));
+			svg += ("\n"  + drawStartPoint(180, 160, 5, "blue", "blue", 1));
+			svg += ("\n" + addText(-130.5, 166, "sans-serif", "20px", "red", " = Start/End"));
+			svg += ("\n" + addText(190, 166, "sans-serif", "20px", "blue", " = Other Destinations Along The Way"));
+			//Draw Title
+			svg += ("\n" + addText(0, 915, "sans-serif", "30px", "black", "Showing Your Colorado Trip!"));
+	        	//Draw trip
+			svg += (commentTag("\nDrawing the trip path!"));
+			double startX = 0;
+			double startY = 0;
+			double finishX = 0;
+			double finishY = 0;
+			ArrayList<String> order = Model.shortestTrip();
+			for(int i = 0; i < order.size(); i++) {
+				if(i == 0) {
+					//Sets first destination in trip to the destination at i = 0
+					startX = newConvertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(order.get(i)))),x1,x2);
+					startY = newConvertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(order.get(i))),y1,y2);				
+					//Draws the starting point given start data					
+					svg += ("\n" + drawStartPoint(startX, startY, 5, "red", "red", 8));					
+				}
+				else {
+					finishX = startX;
+					finishY = startY;
+					startX = newConvertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(order.get(i)))),x1,x2);
+					startY = newConvertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(order.get(i))),y1,y2);
+					svg += ("\n" + drawStartPoint(startX, startY, 5, "blue", "blue", 1));
+					svg += ("\n" + drawLine("path", startX, startY, finishX, finishY, 2, "#000000"));
+				}
+			}
+			svg += ("\n" + gTag2());
+			svg += ("\n" + svgTag());
+			br.close();
+		} catch (IOException e) {
+		   // do something
+		}
+	System.out.println("///////////////////////////////////////////////////////"
+ + svg + "///////////////////////////////////////////////////////////////////");
+	return svg;
+	}
 }
