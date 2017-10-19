@@ -37,8 +37,10 @@ Date | Tasks done this time | Tasks done next time | Impediments | Confidence
 10/06/17 | web page shows extra info | write test files for sprint2 | meeting | Medium
 10/07/17 | write test files for sprint2 | finishing refactoring | schedule for sprint3 | Medium
 10/11/17 | None | Refactor | none | Low
-10/13/17 | Progress made on refactor | Refactor & test backlog complete | demands from other classes | Medium
+10/13/17 | #155, #150 | Refactor & test backlog complete | demands from other classes | Medium
 10/15/17 | Rearchitecture, complete Test 3, complete refactor | fast response, server setup | Low
+10/16/17 | #149 | #143, #154 | Time | Medium
+10/18/17 | #143, #154  | #144, #156, #162, #163, #164 | Time | Medium
  
 
 ## Review
