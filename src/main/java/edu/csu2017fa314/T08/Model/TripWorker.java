@@ -78,7 +78,7 @@ public class TripWorker implements Callable<Trip> {
         tripLength += Model.getDistance(order[len], order[len-1], false);
         Trip t = new Trip();
         for(int i = 0; i < len+1; i++) {
-            t.add(TripManager.stops[order[i]]);
+            t.add(Model.getID(order[i]));
         }
         t.setLength(tripLength);
 

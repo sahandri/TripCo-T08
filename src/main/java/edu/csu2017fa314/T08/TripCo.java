@@ -20,7 +20,6 @@ public class TripCo
     public static void main(String[] args) {
         System.out.println("Welcome to TripCo");
         DataBase.connect();
-        DataBase.getID("");
         Model.setUp();
         TripManager.buildTripList();
         JSONObject trip = Itinerary.createJSON("");

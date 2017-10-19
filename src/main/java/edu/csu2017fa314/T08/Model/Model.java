@@ -16,9 +16,9 @@ public class Model {
     public static void setUp() {
         ids = DataBase.getID("");
         buildDistLookUp();
+        TripManager.buildTripList();
     }
     public static ArrayList<String> shortestTrip() {
-        TripManager.buildTripList();
         return TripManager.shortest().stops();
     }
 
