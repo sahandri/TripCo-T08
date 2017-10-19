@@ -1,10 +1,8 @@
 package edu.csu2017fa314.T08.Model;
 
-//import sun.invoke.empty.Empty;
 
 import java.sql.Connection; // https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html
 import java.sql.DriverManager; // https://www.tutorialspoint.com/jdbc/
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -27,10 +25,6 @@ public class DataBase {
             conn = DriverManager.getConnection(myUrl, user, pass);
             // create a statement
             st = conn.createStatement();
-            // submit a query
-            //String query = "SELECT * FROM airports LIMIT 10";
-            //rs = st.executeQuery(query);
-
         } catch (Exception e) { // catches all exceptions in the nested try's
             System.err.printf("Exception: ");
             System.err.println(e.getMessage());
@@ -65,7 +59,7 @@ public class DataBase {
                 " OR home_link LIKE '%" + key + "%' OR wikipedia_link LIKE '%" + key + "%' LIMIT 10";
         try {
             rs = st.executeQuery(query);
-            // iterate through the query results and print selected columns
+            // iterate through the query results and return list of IDs
             while (rs.next()) {
                 list.add(rs.getString("id"));
             }
@@ -119,7 +113,7 @@ public class DataBase {
         String query = "SELECT name FROM airports WHERE id LIKE '" + id+ "' LIMIT 10";
         try {
             rs = st.executeQuery(query);
-            // iterate through the query results and print selected columns
+            // iterate through the query results and get name
             rs.next();
             name = rs.getString("name");
         } catch (Exception e) { // catches all exceptions in the nested try's
@@ -135,7 +129,7 @@ public class DataBase {
         String query = "SELECT longitude FROM airports WHERE id LIKE '" + id + "' LIMIT 10";
         try {
             rs = st.executeQuery(query);
-            // iterate through the query results and print selected columns
+            // iterate through the query results and get longitude
             rs.next();
             longit = rs.getString("longitude");
         } catch (Exception e) { // catches all exceptions in the nested try's
@@ -151,7 +145,7 @@ public class DataBase {
         String query = "SELECT * FROM airports WHERE id LIKE '" + id + "' LIMIT 10";
         try {
             rs = st.executeQuery(query);
-            // iterate through the query results and print selected columns
+            // iterate through the query results and return selected columns
             rs.next();
             info.put("id",rs.getString("id"));
             info.put("name",rs.getString("name"));
