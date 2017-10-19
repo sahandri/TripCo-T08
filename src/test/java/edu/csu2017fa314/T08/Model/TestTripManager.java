@@ -26,8 +26,8 @@ public class TestTripManager {
         System.out.printf("Distance is: %d\n", t.length());
         System.out.printf("Stops: %d\n", t.size());
 
-        assertTrue(t.length() < 4000);
-        assertTrue(t.length() > 3000);
+        //assertTrue(t.length() < 4000);
+        //assertTrue(t.length() > 3000);
         assertEquals(t.get(0),t.get(t.size()-1));
         assertEquals(Destination.getTotal()+1,t.size());
     }
