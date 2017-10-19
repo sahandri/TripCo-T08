@@ -1,40 +1,42 @@
 import React, {Component} from 'react';
 import Dropzone from 'react-dropzone'
-import ReactModal from 'react-modal';
+import InlineSVG from 'svg-inline-react';
 
 class Home extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {file: '',imagePreviewUrl: ''};
-    }
-    handleImageChange(e) {
-        e.preventDefault();
-        let reader = new FileReader();
-        let file = e.target.files[0];
-        reader.onloadend = () => {
-            this.setState({
-                file: file,
-                imagePreviewUrl: reader.result
-            });
-        }
-        reader.readAsDataURL(file)
-    }
+        this.state = {
+			queryResults: [],
+			svgResults: null,
+			input : ""
+		}
+    };
 
 
 
 
     render() { {/*Start of the HTML side of react*/}
-        {/*for image*/}
-        let {imagePreviewUrl} = this.state;
-        let $imagePreview = null;
-        if (imagePreviewUrl) {
-            $imagePreview = (<img src={imagePreviewUrl} />);
-        } else {
-            $imagePreview = (<div className="previewText">Please select a csv file for Preview</div>);
-        }
+        let svg = "sprint2airport.svg";
+		let renderedSvg;
+		let serverLocations;
+		let locs;
+		
+		if (this.state.queryResults) {
+			serverLocations = this.state.queryResults;
+			locs = serverLocations.map((location) => {
+				console.log(location.name);
+				return <li>{location.name}</li>;
+			});
+		}
+		
+		if (this.state.svgResults) {
+			svg = this.state.svgResults;
+			renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
+		}
+		
 
 
-        let total; {/*Initalize*/}
+        let total;
         //let keys;
         if(this.props.pairs == ""){ {/*If no json file*/}
             total = 0;
@@ -47,33 +49,21 @@ class Home extends React.Component {
             <div className="inner">
                 <h2>T08 - The Absentees</h2>
                 <h3>Itinerary</h3>
-                <img src={this.props.pairs.url}/>
 
+				<form onSubmit={this.handleSubmit.bind(this)}>
+				<input size="35" className="search-button" type="text"
+					onKeyUp={this.keyUp.bind(this)} placeholder="Enter Keyword" autoFocus/>
+				<input type="submit" value="Submit" />
+				</form>
+				
+				<button type="button" onClick={this.buttonClicked.bind(this)}>Click here for an SVG</button>
+				
+				
+				<h1>
+					{renderedSvg}
+				</h1>
 
-                <modal>
-                    <Dropzone className="dropzone-style" onDrop={this.drop.bind(this)}> {/*How to open the JSON file*/}
-                        <button>Short trips</button>
-                    </Dropzone>
-                    <Dropzone className="dropzone-style" onDrop={this.drop2.bind(this)}> {/*How to open the JSON file*/}
-                        <button>Full csv</button>
-                    </Dropzone>
-                </modal>
-
-                <input className="search-button" type="text" placeholder="Enter Keyword" onKeyUp={this.keyUp.bind(this)} autoFocus
-
-
-                {/*for image*/}
-                <div className="previewComponent">
-
-                    <input className="CSV file Input"
-                           type="file"
-                           onChange={(e)=>this.handleImageChange(e)} />
-                    <div className="imgPreview">
-                        {$imagePreview}
-                    </div>
-                </div>
-
-
+				
 
 
 
@@ -91,17 +81,63 @@ class Home extends React.Component {
     }
                     
     keyUp(event){
-                    if (event.which === 13) {
-                        this.fetch(event.target.value);
-                    }
-                }
-    async fetch(input) {
-           let newMap = {
-             query: input,
-             id: "1",
-           };
-                        
-   }
+		if (event.which === 13) {
+			this.fetch("query", this.state.value);
+        } else {
+			this.setState({
+				input: event.target.value
+			});
+		}
+    }
+	
+	handleSubmit(event) {
+		this.fetch("query", this.state.input);
+		event.preventDefault();
+	}
+	
+	buttonClicked(event) {
+		this.fetch("svg", event.target.value);
+	}
+	
+    async fetch(type, input) {
+		let clientRequest;
+		if (type === "query") {
+			clientRequest = {
+				request: "query",
+				description: input,
+			};
+		} else {
+			clientRequest = {
+				request: "svg",
+				description: ""
+			}
+		}
+		try {
+			let jsonReturned = await fetch(`http://localhost:8080/testing`,
+			{
+				method: "POST",
+				body: JSON.stringify(clientRequest)
+			});
+			
+			let ret = await jsonReturned.json();
+			let returnedJson = JSON.parse(ret);
+			console.log("Got back ",returnedJson);
+			
+			if(returnedJson.response === "query") {
+				this.setState({
+					queryResults: returnedJson.locations
+				});
+			} else {
+				this.setState({
+					svgResults: JSON.parse(ret)
+				});
+			}
+			
+		} catch (e){
+			console.error("Error talking to server");
+			console.error(e);
+		}
+    }
 
     drop(acceptedFiles) { {/*Calls Drop which takes the JSON file*/}
         console.log("Accepting drop");
