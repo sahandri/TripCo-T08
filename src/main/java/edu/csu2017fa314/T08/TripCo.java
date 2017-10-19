@@ -17,6 +17,7 @@ public class TripCo
             //makeSvg.createTripFile(args[3]);
             //makeSvg.addTripFile(args[3]);
             makeSvg.addTripFile(args[0].substring(5,args[0].length()-4) + ".svg");
+	    String s = makeSvg.getSvg();
         }
         catch(IOException e) {
             System.err.println("Failed to generate JSON, caught IOException: " + e.getMessage());

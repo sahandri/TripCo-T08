@@ -217,14 +217,16 @@ public class makeSvg {
 	//Method to modify premade SVG of Colorado (NOT FUNCTIONING YET)
 	public static String getSvg() {
 		BufferedReader br = null;
+		BufferedWriter bw = null;		
 		String svg = "";		
 		try{
 		//Create and open a writer for current .svg file
 			br = new BufferedReader(new FileReader("data/USA_Colorado_location_map.svg"));
+			bw = new BufferedWriter(new FileWriter("test.svg"));
 			//Copying File...
-			int c;
-			while((c = br.read()) != -1) {
-				svg += "\n" + c;
+			String line = null;
+			while((line = br.readLine()) != null) {
+				svg += line + "\n";
 			}
 			//Writing to file...
 			svg += "\n" + (commentTag("\nEditing the File!"));
@@ -270,12 +272,12 @@ public class makeSvg {
 			}
 			svg += ("\n" + gTag2());
 			svg += ("\n" + svgTag());
+			bw.write(svg);
 			br.close();
+			bw.close();
 		} catch (IOException e) {
 		   // do something
 		}
-	System.out.println("///////////////////////////////////////////////////////"
- + svg + "///////////////////////////////////////////////////////////////////");
 	return svg;
 	}
 }
