@@ -1,10 +1,7 @@
 package edu.csu2017fa314.T08.Model;
 
 
-import java.sql.Connection; // https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html
-import java.sql.DriverManager; // https://www.tutorialspoint.com/jdbc/
-import java.sql.Statement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.HashMap;
@@ -31,6 +28,14 @@ public class DataBase {
         }
     }
 
+    public static boolean isConnected() {
+        try {
+            return conn.isValid(5);
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+
     public static void disconnect() {
         try {
             rs.close();
@@ -41,9 +46,6 @@ public class DataBase {
             System.err.println(e.getMessage());
         }
     }
-
-
-
 
     public static String getID(int index) {
         return list.get(index);
@@ -56,7 +58,7 @@ public class DataBase {
         String query = "SELECT id FROM airports WHERE id LIKE '%" + key + "%' OR name LIKE '%" + key + "%' OR" +
                 " type LIKE '%" + key + "%' OR latitude LIKE '%" + key + "%' OR longitude LIKE '%" + key + "%'" +
                 " OR elevation LIKE '%" + key + "%' OR municipality LIKE '%" + key + "%'" +
-                " OR home_link LIKE '%" + key + "%' OR wikipedia_link LIKE '%" + key + "%' LIMIT 10";
+                " OR home_link LIKE '%" + key + "%' OR wikipedia_link LIKE '%" + key + "%'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and return list of IDs
