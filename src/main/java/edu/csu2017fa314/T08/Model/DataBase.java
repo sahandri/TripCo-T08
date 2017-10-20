@@ -170,8 +170,7 @@ public class DataBase {
     public static void print() {
         String query = "SELECT * FROM airports";
         try {
-            rs = st.execute
-                ry(query);
+            rs = st.executeQuery(query);
             // iterate through the query results and print selected columns
             while (rs.next()) {
                 String id = rs.getString("id");
