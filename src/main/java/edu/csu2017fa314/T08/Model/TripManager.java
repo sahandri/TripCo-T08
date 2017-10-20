@@ -9,7 +9,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TripManager {
     public static ArrayList<Trip> trips;
     public static AtomicInteger total;
-    public static String[] stops;
     static Trip shortest() {
         return trips.get(0);
     }
@@ -25,16 +24,10 @@ public class TripManager {
     }
 
     public static void buildTripList() {
-        total = new AtomicInteger(Destination.getTotal());
+        total = new AtomicInteger(DataBase.getTotal());
         trips = new ArrayList<>();
         ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
         ArrayList<Future<Trip>> results = new ArrayList<>();
-
-        stops = new String[total.get()];
-
-        for(int i = 0; i < total.get(); i++) {
-            stops[i] = Destination.getID(i);
-        }
 
         for(int i = 0; i < total.get(); i++) {
             TripWorker tw = new TripWorker(i);
@@ -54,6 +47,7 @@ public class TripManager {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+
         Collections.sort(trips);
     }
 
