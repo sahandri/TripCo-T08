@@ -96,7 +96,7 @@ public class DataBase {
 
     public static String getLatit(String id) {
         String lotit = "";
-        String query = "SELECT latitude FROM airports WHERE id LIKE '" + id + "' LIMIT 10";
+        String query = "SELECT latitude FROM airports WHERE id LIKE '" + id + "'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and print selected columns
@@ -112,7 +112,7 @@ public class DataBase {
 
     public static String getName(String id){
         String name = "";
-        String query = "SELECT name FROM airports WHERE id LIKE '" + id+ "' LIMIT 10";
+        String query = "SELECT name FROM airports WHERE id LIKE '" + id+ "'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and get name
@@ -128,7 +128,7 @@ public class DataBase {
 
     public static String getLongit(String id) {
         String longit = "";
-        String query = "SELECT longitude FROM airports WHERE id LIKE '" + id + "' LIMIT 10";
+        String query = "SELECT longitude FROM airports WHERE id LIKE '" + id + "'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and get longitude
@@ -144,7 +144,7 @@ public class DataBase {
 //returns a pair of all data in a row
     public static  HashMap<String,String> getInfo(String id) {
         HashMap<String,String> info = new HashMap<String, String>();
-        String query = "SELECT * FROM airports WHERE id LIKE '" + id + "' LIMIT 10";
+        String query = "SELECT * FROM airports WHERE id LIKE '" + id + "'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and return selected columns
@@ -168,9 +168,10 @@ public class DataBase {
 
 
     public static void print() {
-        String query = "SELECT * FROM airports LIMIT 10";
+        String query = "SELECT * FROM airports";
         try {
-            rs = st.executeQuery(query);
+            rs = st.execute
+                ry(query);
             // iterate through the query results and print selected columns
             while (rs.next()) {
                 String id = rs.getString("id");
