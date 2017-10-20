@@ -215,7 +215,7 @@ public class makeSvg {
 		}
 	}
 	//Method to modify premade SVG of Colorado (NOT FUNCTIONING YET)
-	public static String getSvg() {
+	public static String getSvg(String searched) {
 		BufferedReader br = null;
 		BufferedWriter bw = null;		
 		String svg = "";		
@@ -252,7 +252,7 @@ public class makeSvg {
 			double startY = 0;
 			double finishX = 0;
 			double finishY = 0;
-			ArrayList<String> order = Model.shortestTrip();
+			ArrayList<String> order = Model.shortestTrip(searched);
 			for(int i = 0; i < order.size(); i++) {
 				if(i == 0) {
 					//Sets first destination in trip to the destination at i = 0
