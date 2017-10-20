@@ -5,6 +5,7 @@ import edu.csu2017fa314.T08.Model.Model;
 import edu.csu2017fa314.T08.Model.TripManager;
 import edu.csu2017fa314.T08.View.Itinerary;
 import edu.csu2017fa314.T08.View.makeSvg;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import javax.imageio.IIOException;
@@ -22,7 +23,7 @@ public class TripCo
         DataBase.connect();
         Model.setUp();
         TripManager.buildTripList();
-        JSONObject trip = Itinerary.createJSON("");
+        JSONArray trip = Itinerary.createJSON("");
         try {
             BufferedWriter ob = new BufferedWriter(new FileWriter("airport.json"));
             // Write the JSON to a file, pretty-printed using 4-space indentation

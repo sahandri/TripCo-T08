@@ -23,11 +23,9 @@ public class Itinerary {
     // TODO: Handle i/o exceptions(?)
 
     // Writes the JSON itinerary to file.
-    public static JSONObject createJSON(String search) {
+    public static JSONArray createJSON(String search) {
         JSONArray arr = createItinerary(search);
-        JSONObject trip = new JSONObject();
-        trip.put("trip", arr);
-        return trip;
+        return arr;
     }
 
     // Creates a JSONArray of trip legs, i.e. the itinerary
