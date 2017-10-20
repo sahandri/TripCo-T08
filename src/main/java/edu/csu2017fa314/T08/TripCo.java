@@ -21,8 +21,6 @@ public class TripCo
     public static void main(String[] args) {
         System.out.println("Welcome to TripCo");
         DataBase.connect();
-        Model.setUp();
-        TripManager.buildTripList();
         JSONArray trip = Itinerary.createJSON("");
         try {
             BufferedWriter ob = new BufferedWriter(new FileWriter("airport.json"));
@@ -33,8 +31,7 @@ public class TripCo
             System.err.println(e.toString());
             return;
         }
-        makeSvg.addTripFile("airport.svg");
-        String svg = makeSvg.getSvg("airport");
+        String svg = makeSvg.getSvg("");
 
     }
 

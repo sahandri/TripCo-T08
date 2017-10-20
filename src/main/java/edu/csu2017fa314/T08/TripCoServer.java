@@ -9,7 +9,6 @@ public class TripCoServer {
         System.out.println("Welcome to TripCo");
         Server s = new Server();
         DataBase.connect();
-        Model.setUp();
         s.serve();
     }
 }

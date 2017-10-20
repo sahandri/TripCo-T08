@@ -2,6 +2,7 @@ package edu.csu2017fa314.T08.Model;
 
 import static org.junit.Assert.*;
 
+import edu.csu2017fa314.T08.View.makeSvg;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -18,10 +19,7 @@ public class TestTripManager {
     @Test
     public void testShortest() {
         DataBase.connect();
-        System.out.println("Connected to DB");
-        Model.setUp();
-        System.out.println("Setup Model");
-        TripManager.buildTripList();
+        TripManager.buildTripList("denver");
         Trip t = TripManager.shortest();
 
         System.out.printf("Distance is: %d\n", t.length());
@@ -30,7 +28,8 @@ public class TestTripManager {
         //assertTrue(t.length() < 4000);
         //assertTrue(t.length() > 3000);
         assertEquals(t.get(0),t.get(t.size()-1));
-        assertEquals(DataBase.getTotal()+1,t.size());
+        //assertEquals(DataBase.getTotal()+1,t.size());
+        makeSvg.getSvg("denver");
     }
 
 }

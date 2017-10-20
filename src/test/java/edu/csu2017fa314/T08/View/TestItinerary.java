@@ -12,6 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.Ignore;
 
+
 @Ignore
 public class TestItinerary {
 
@@ -20,9 +21,8 @@ public class TestItinerary {
     {
         DataBase.connect();
         System.out.println("Connected to DB");
-        Model.setUp();
         System.out.println("Setup Model");
-        TripManager.buildTripList();
+        TripManager.buildTripList("denver");
     }
 
 
