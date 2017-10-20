@@ -18,15 +18,27 @@ class Home extends React.Component {
     render() { {/*Start of the HTML side of react*/}
         let svg = "sprint2airport.svg";
 		let renderedSvg;
-		let serverLocations;
-		let locs;
+		let information;
+		let output;
+		let total = 0;
 		
 		if (this.state.queryResults) {
-			serverLocations = this.state.queryResults;
-			locs = serverLocations.map((location) => {
-				console.log(location.name);
-				return <li>{location.name}</li>;
-			});
+		
+			information = this.state.queryResults;	
+			output = information.map(info => {
+			total += info.distance;
+		 	return ( 
+		 	<tr>
+		 	<td><h5>{info.name}</h5><p>{info.id},{info.latitude},{info.longitude},{info.elevation},{info.municipality}</p></td>
+		 	<td>{info.distance}</td>
+		 	<td>{total}</td>
+		 	</tr>
+		 	
+		 	);
+		 	})
+			
+			
+		
 		}
 		
 		if (this.state.svgResults) {
@@ -36,16 +48,9 @@ class Home extends React.Component {
 		
 
 
-        let total;
         //let keys;
-        if(this.props.pairs == ""){ {/*If no json file*/}
-            total = 0;
-        }
-        else{ {/*after json call*/}
-            total = this.props.pairs[this.props.pairs.length - 1].props.tot;
-            //keys =  this.props.pairs[this.props.pairs.length - 1].props.Object.keys(startInfo);
-        }
-        return <div className="home-container">
+        
+        return (<div className="home-container">
             <div className="inner">
                 <h2>T08 - The Absentees</h2>
                 <h3>Itinerary</h3>
@@ -62,14 +67,18 @@ class Home extends React.Component {
 				<h1>
 					{renderedSvg}
 				</h1>
+				<div>
+				
+				</div>
 
 				
 
 
 
                 <table className="pair-table"> {/*For CSS*/}
-                    {this.props.pairs} {/*Calls Pair.jsx for HTML script*/}
+                
                     <tbody>
+                    {output}
                     <tr>
                         <td colSpan="3">Total:</td>
                         <td>{total}</td> {/*Displays Total*/}
@@ -78,7 +87,9 @@ class Home extends React.Component {
                 </table>
             </div>
         </div>
+        )
     }
+
                     
     keyUp(event){
 		if (event.which === 13) {
@@ -109,72 +120,34 @@ class Home extends React.Component {
 		} else {
 			clientRequest = {
 				request: "svg",
-				description: ""
+				description: " "
 			}
 		}
+
 		try {
-			let jsonReturned = await fetch(`http://localhost:8080/testing`,
+
+			let jsonReturned = await fetch(`http://localhost:4567/testing`,
 			{
 				method: "POST",
 				body: JSON.stringify(clientRequest)
 			});
 			
 			let ret = await jsonReturned.json();
-			let returnedJson = JSON.parse(ret);
-			console.log("Got back ",returnedJson);
 			
-			if(returnedJson.response === "query") {
-				this.setState({
-					queryResults: returnedJson.locations
-				});
-			} else {
-				this.setState({
-					svgResults: JSON.parse(ret)
-				});
-			}
+			console.log("Got back ",ret);
+
+			this.setState({
+				queryResults: ret
+			});
+			
+
 			
 		} catch (e){
 			console.error("Error talking to server");
 			console.error(e);
 		}
     }
-
-    drop(acceptedFiles) { {/*Calls Drop which takes the JSON file*/}
-        console.log("Accepting drop");
-        acceptedFiles.forEach(file => { {/*for each file accepted*/}
-            console.log("Filename:", file.Name, "File:", file); {/*output filename*/}
-            console.log(JSON.stringify(file)); {/*output file as a string*/}
-            let fr = new FileReader();
-            fr.onload = (function () {
-                return function (e) {
-                    let JsonObj = JSON.parse(e.target.result);
-
-                    console.log(JsonObj); {/*Output Json object*/}
-                    this.props.browseFile(JsonObj); {/*Calls Browsefile in ap.js file*/}
-                };
-            })(file).bind(this);
-
-            fr.readAsText(file);
-        });
-    }
-
-    drop2(acceptedFiles) { {/*Calls Drop which takes the JSON file*/}
-        console.log("Accepting drop");
-        acceptedFiles.forEach(file2 => { {/*for each file accepted*/}
-            console.log("Filename:", file2.Name, "File:", file2); {/*output filename*/}
-            console.log(JSON.stringify(file2)); {/*output file as a string*/}
-            let fr = new FileReader();
-            fr.onload = (function () {
-                return function (e) {
-                    let JsonObj = JSON.parse(e.target.result);
-                    console.log(JsonObj); {/*Output Json object*/}
-                    this.props.browseFile2(JsonObj); {/*Calls Browsefile in ap.js file*/}
-                };
-            })(file2).bind(this);
-
-            fr.readAsText(file2);
-        });
-    }
+    
 
 }
 
