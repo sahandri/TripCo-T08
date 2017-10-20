@@ -102,7 +102,9 @@ class Home extends React.Component {
     }
 	
 	handleSubmit(event) {
-		this.fetch("query", this.state.input);
+		let input = this.state.input;
+		this.fetch("query", input);
+		this.fetch("svg", input);
 		event.preventDefault();
 	}
 	
@@ -120,8 +122,8 @@ class Home extends React.Component {
 		} else {
 			clientRequest = {
 				request: "svg",
-				description: " "
-			}
+				description: input,
+			};
 		}
 
 		try {
@@ -135,10 +137,15 @@ class Home extends React.Component {
 			let ret = await jsonReturned.json();
 			
 			console.log("Got back ",ret);
-
-			this.setState({
-				queryResults: ret
-			});
+			if(type === "query"){
+				this.setState({
+					queryResults: ret
+				});
+			} else {
+				this.setState({
+					svgResults: ret
+				});
+			}
 			
 
 			
@@ -147,6 +154,7 @@ class Home extends React.Component {
 			console.error(e);
 		}
     }
+
     
 
 }
