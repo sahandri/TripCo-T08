@@ -3,6 +3,7 @@ package edu.csu2017fa314.T08.View;
 import edu.csu2017fa314.T08.Model.Model;
 import edu.csu2017fa314.T08.Model.Distance;
 import edu.csu2017fa314.T08.Model.Destination;
+import edu.csu2017fa314.T08.Model.DataBase;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.BufferedReader;
@@ -256,16 +257,16 @@ public class makeSvg {
 			for(int i = 0; i < order.size(); i++) {
 				if(i == 0) {
 					//Sets first destination in trip to the destination at i = 0
-					startX = newConvertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(order.get(i)))),x1,x2);
-					startY = newConvertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(order.get(i))),y1,y2);				
+					startX = newConvertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(DataBase.getLongit(order.get(i)))),x1,x2);
+					startY = newConvertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(DataBase.getLatit(order.get(i))),y1,y2);				
 					//Draws the starting point given start data					
 					svg += ("\n" + drawStartPoint(startX, startY, 5, "red", "red", 8));					
 				}
 				else {
 					finishX = startX;
 					finishY = startY;
-					startX = newConvertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLongit(order.get(i)))),x1,x2);
-					startY = newConvertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(Destination.getLatit(order.get(i))),y1,y2);
+					startX = newConvertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(DataBase.getLongit(order.get(i)))),x1,x2);
+					startY = newConvertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(DataBase.getLatit(order.get(i))),y1,y2);
 					svg += ("\n" + drawStartPoint(startX, startY, 5, "blue", "blue", 1));
 					svg += ("\n" + drawLine("path", startX, startY, finishX, finishY, 2, "#000000"));
 				}
@@ -281,3 +282,4 @@ public class makeSvg {
 	return svg;
 	}
 }
+

@@ -6,6 +6,7 @@ import edu.csu2017fa314.T08.Model.Model;
 import edu.csu2017fa314.T08.Model.Trip;
 import edu.csu2017fa314.T08.Model.TripManager;
 import org.json.JSONObject;
+import org.json.JSONArray;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -27,7 +28,7 @@ public class TestItinerary {
 
     @Test
     public void testItinerary() {
-        JSONObject arr = Itinerary.createJSON("");
+        JSONArray arr = Itinerary.createJSON("");
         System.out.println(arr.toString());
     }
 
