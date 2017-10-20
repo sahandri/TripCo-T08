@@ -10,7 +10,8 @@ public class Model {
     }
 
     public static ArrayList<String> shortestTrip(String key) {
-        TripManager.buildTripList(key);
+        if(TripManager.size() == 0)
+            TripManager.buildTripList(key);
         return TripManager.shortest().stops();
     }
 

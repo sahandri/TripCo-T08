@@ -9,11 +9,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TripManager {
     private static int[][] distLookUp;
     private static ArrayList<String> ids;
-    public static ArrayList<Trip> trips;
+    public static ArrayList<Trip> trips = new ArrayList<>();
     public static AtomicInteger total;
     static Trip shortest() {
         return trips.get(0);
     }
+
+    public static int size() { return trips.size(); }
 
     public static Trip get(String id) {
         for(Trip t: trips) {
@@ -55,9 +57,6 @@ public class TripManager {
         }
 
         Collections.sort(trips);
-        for(Trip t: trips) {
-            System.out.printf("Trip %s: %d\n", t.get(0), t.length());
-        }
     }
 
     private static void buildDistLookUp() {
