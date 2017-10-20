@@ -33,7 +33,7 @@ public class TripCo
             return;
         }
         makeSvg.addTripFile("airport.svg");
-        String svg = makeSvg.getSvg();
+        String svg = makeSvg.getSvg("airport");
 
     }
 

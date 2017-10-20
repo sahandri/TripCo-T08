@@ -33,7 +33,7 @@ public class Server {
     }
 
     // called by testing method if the client requests an svg
-    private Object serveSvg() {
+    private Object serveSvg(String searched) {
         Gson gson = new Gson();
         // Instead of writing the SVG to a file, we send it in plaintext back to the client to be rendered inline
         /*String sampleSvg =
@@ -42,7 +42,7 @@ public class Server {
                 "  <line id=\"west\" y2=\"100\" x2=\"0\" y1=\"0\" x1=\"120\" stroke-width=\"5\" stroke=\"blue\"/>" +
                 " </svg>";
         ServerSvgResponse ssres = new ServerSvgResponse(120, 100, sampleSvg);*/
-	ServerSvgResponse ssres = new ServerSvgResponse(1067, 784, makeSvg.getSvg());
+	ServerSvgResponse ssres = new ServerSvgResponse(1067, 784, makeSvg.getSvg(searched));
 
         return gson.toJson(ssres, ServerSvgResponse.class);
 	//JSONObject map = new JSONObject();	
@@ -94,7 +94,7 @@ public class Server {
             return serveQuery(sRec.getDescription());
         // assume if the request is not "query" it is "svg":
         } else {
-            return serveSvg();
+            return serveSvg(sRec.getDescription());
         }
     }
 
