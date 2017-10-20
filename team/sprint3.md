@@ -46,22 +46,29 @@ Date | Tasks done this time | Tasks done next time | Impediments | Confidence
 ## Review
 
 #### Completed user stories (epics) in Sprint Backlog 
-* *user story*:  *comments*
-* 
-
-Completed *number of issues completed* issues associated with these user stories.
+* Web Server: Complete with need of improvments
+* 2-opt: Completely done
+* Fast Response: Down to seconds
+* Build server requests and responses
+* Create view API for JSON Query
+15 Completed *number of issues completed* issues associated with these user stories.
 
 #### Incomplete user stories / epics in Sprint Backlog 
 * *user story*: *Explanation...*
-*
+* Webpage provides column display options: No capability for display of selected information.
+* Webpage displays selected columns: similar to above, no ability to select and display certain info.
 
 #### What went well
 * *something*
-*
+* Demo went well
+* Communication and planning were good
+* Completed most of required tasks
 
 #### Problems encountered and resolutions
 * *something*
-*
+* Begin making progress earlier despite already having planned, resolved by putting in too much time two days prior to demo
+* Functionality in react
+* Last minute changes
 
 ## Retrospective
 
