@@ -1,51 +1,41 @@
 package edu.csu2017fa314.T08;
 
-import java.io.IOException;
-import edu.csu2017fa314.T08.Model.Destination;
+import edu.csu2017fa314.T08.Model.DataBase;
+import edu.csu2017fa314.T08.Model.Model;
+import edu.csu2017fa314.T08.Model.TripManager;
 import edu.csu2017fa314.T08.View.Itinerary;
 import edu.csu2017fa314.T08.View.makeSvg;
-import edu.csu2017fa314.T08.View.CSV;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import javax.imageio.IIOException;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import static edu.csu2017fa314.T08.View.Itinerary.createJSON;
+
 public class TripCo
+
 {
-
-    private String name = "";
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public String getMessage()
-    {
-        if (name == "")
-        {
-            return "Hello!";
-        }
-        else
-        {
-            return "Hello " + name + "!";
-        }
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
     public static void main(String[] args) {
         System.out.println("Welcome to TripCo");
-
+        DataBase.connect();
+        Model.setUp();
+        TripManager.buildTripList();
+        JSONArray trip = Itinerary.createJSON("");
         try {
-            Destination.readFile(args[0]);
-            Itinerary.createJSON(args[1]);
-            Itinerary.printJSON();
-            CSV.createJSON(args[2]);
-            //CSV.printJSON();
-            makeSvg.createTripFile(args[3]);
+            BufferedWriter ob = new BufferedWriter(new FileWriter("airport.json"));
+            // Write the JSON to a file, pretty-printed using 4-space indentation
+            ob.write(trip.toString(2));
+            ob.close();
+        } catch(IOException e) {
+            System.err.println(e.toString());
+            return;
         }
-        catch(IOException e) {
-            System.err.println("Failed to generate JSON, caught IOException: " + e.getMessage());
-        }
+        makeSvg.addTripFile("airport.svg");
+        String svg = makeSvg.getSvg("airport");
+
     }
 
 }

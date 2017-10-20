@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.json.JSONObject;
 import org.json.JSONArray;
 
@@ -15,59 +18,47 @@ import org.json.JSONArray;
  */
 public class Itinerary {
     private static String path = ""; // Path to output the JSON file
+    private static ArrayList<String> columns;
 
     // TODO: Handle i/o exceptions(?)
 
     // Writes the JSON itinerary to file.
-    public static void createJSON(String fileName) throws IOException {
-        JSONArray arr = createItinerary();
-
-        BufferedWriter ob = new BufferedWriter(new FileWriter(fileName));
-        // Write the JSON to a file, pretty-printed using 4-space indentation
-        ob.write(arr.toString(4));
-        ob.close();
-    }
-
-    // Prints the JSON to stdout for debugging purposes
-    public static void printJSON() throws IOException {
-        JSONArray arr = createItinerary();
-        
-        // Write the JSON to stdout, pretty-printed using 4-space indentation
-        System.out.println(arr.toString(4));
-    }
-
-    // Creates a JSONArray of trip legs, i.e. the itinerary
-    public static JSONArray createItinerary() {
-        JSONArray arr = new JSONArray();
-
-        ArrayList<String> stops = Model.shortestTrip();
-
-        String end = stops.get(0);
-        // Iterate through destinations, calculating the distance of each leg.
-        for(int i = 1; i < stops.size(); i++)
-        {
-            String start = end;
-            end = stops.get(i);;
-
-            // Creates a JSON object with start, end, and the distance between them
-            // and appends it to the end of the itinerary JSON array.
-            arr.put(createLeg(start,end));
-        }
-
+    public static JSONArray createJSON(String search) {
+        JSONArray arr = createItinerary(search);
         return arr;
     }
 
+    // Creates a JSONArray of trip legs, i.e. the itinerary
+    public static JSONArray createItinerary(String search) {
+        JSONArray arr = new JSONArray();
+
+        ArrayList<String> stops = Model.shortestTrip(search);
+
+        // Iterate through destinations, calculating the distance of each leg.
+
+        // Iterate through destinations, calculating the distance of each leg.
+        for(int i = 0; i < stops.size()-1; i++)
+        {
+            // Creates a JSON object with start, end, and the distance between them
+            // and appends it to the end of the itinerary JSON array.
+            int dist = Model.getDistance(stops.get(i), stops.get(i+1), false);
+            arr.put(createLeg(stops.get(i), dist));
+        }
+
+        return arr;
+
+
+    }
+
     // Creates a JSONObject for a single leg of the trip from start to end
-    public static JSONObject createLeg(String start, String end) {
+    public static JSONObject createLeg(String id, int dist) {
         JSONObject leg = new JSONObject();
-        leg.put("start", Destination.getName(start));
-        leg.put("end", Destination.getName(end));
+        HashMap<String,String> info = Model.getInfo(id);
+        for(Map.Entry<String,String> kv: info.entrySet()) {
+            leg.put(kv.getKey(), kv.getValue());
+        }
 
-        // Calculates the distance between start and end
-        double distm = Distance.distanceMi(start, end);
-        //double distk = Distance.distanceKm(start, end);
-
-        leg.put("distance", distm); //Change to DistanceMi for next sprint
+        leg.put("distance", dist); //Change to DistanceMi for next sprint
         //leg.put("distanceKm", distk);
         return leg;
     }
