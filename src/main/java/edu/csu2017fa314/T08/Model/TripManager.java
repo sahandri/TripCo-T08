@@ -71,8 +71,7 @@ public class TripManager {
         ArrayList<String> lats = new ArrayList<>(destTtl);
         ArrayList<String> longs = new ArrayList<>(destTtl);
 
-        for (int i = 0; i < destTtl; i++) {
-            String id = ids.get(i);
+        for (String id : ids) {
             lats.add(DataBase.getLatit(id));
             longs.add(DataBase.getLongit(id));
         }
