@@ -6,7 +6,7 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-			queryResults: [],
+            results: null,
 			svgResults: null,
 			input : ""
 		}
@@ -22,9 +22,9 @@ class Home extends React.Component {
 		let output;
 		let total = 0;
 		
-		if (this.state.queryResults) {
+		if (this.state.results) {
 		
-			information = this.state.queryResults;	
+			information = this.state.results.itinerary;
 			output = information.map(info => {
 			total += info.distance;
 		 	return ( 
@@ -37,12 +37,7 @@ class Home extends React.Component {
 		 	);
 		 	})
 			
-			
-		
-		}
-		
-		if (this.state.svgResults) {
-			svg = this.state.svgResults;
+			svg = this.state.results.svg;
 			renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
 		}
 		
@@ -60,9 +55,6 @@ class Home extends React.Component {
 					onKeyUp={this.keyUp.bind(this)} placeholder="Enter Keyword" autoFocus/>
 				<input type="submit" value="Submit" />
 				</form>
-				
-				<button type="button" onClick={this.buttonClicked.bind(this)}>Click here for an SVG</button>
-				
 				
 				<h1>
 					{renderedSvg}
@@ -93,7 +85,7 @@ class Home extends React.Component {
                     
     keyUp(event){
 		if (event.which === 13) {
-			this.fetch("query", this.state.value);
+			this.fetch(this.state.value);
         } else {
 			this.setState({
 				input: event.target.value
@@ -103,28 +95,15 @@ class Home extends React.Component {
 	
 	handleSubmit(event) {
 		let input = this.state.input;
-		this.fetch("query", input);
-		this.fetch("svg", input);
+		this.fetch(input);
 		event.preventDefault();
 	}
 	
-	buttonClicked(event) {
-		this.fetch("svg", event.target.value);
-	}
-	
-    async fetch(type, input) {
+    async fetch(input) {
 		let clientRequest;
-		if (type === "query") {
-			clientRequest = {
-				request: "query",
-				description: input,
-			};
-		} else {
-			clientRequest = {
-				request: "svg",
-				description: input,
-			};
-		}
+        clientRequest = {
+            description: input,
+        };
 
 		try {
 
@@ -137,18 +116,10 @@ class Home extends React.Component {
 			let ret = await jsonReturned.json();
 			
 			console.log("Got back ",ret);
-			if(type === "query"){
-				this.setState({
-					queryResults: ret
-				});
-			} else {
-				this.setState({
-					svgResults: ret
-				});
-			}
-			
+			this.setState({
+			    results: ret
+			});
 
-			
 		} catch (e){
 			console.error("Error talking to server");
 			console.error(e);

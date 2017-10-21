@@ -57,7 +57,6 @@ public class TripWorker implements Callable<Trip> {
 
         tripLength += TripManager.getDist(order[len], order[len-1]);
 
-        String id = TripManager.getID(_idx);
         // 2-opt
         boolean improved = true;
         while(improved) {
@@ -79,7 +78,7 @@ public class TripWorker implements Callable<Trip> {
         // Turn the ordering into a trip
         Trip t = new Trip();
         for(int i = 0; i < len+1; i++) {
-            t.add(TripManager.getID(order[i]));
+            t.add(DataBase.getID(order[i]));
         }
         t.setLength(tripLength);
 

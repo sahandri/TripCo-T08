@@ -2,6 +2,7 @@ package edu.csu2017fa314.T08.Model;
 
 import static org.junit.Assert.*;
 
+import edu.csu2017fa314.T08.View.Itinerary;
 import edu.csu2017fa314.T08.View.makeSvg;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -30,6 +31,7 @@ public class TestTripManager {
         assertEquals(t.get(0),t.get(t.size()-1));
         //assertEquals(DataBase.getTotal()+1,t.size());
         makeSvg.getSvg("denver");
+        Itinerary.createJSON("denver");
     }
 
 }
