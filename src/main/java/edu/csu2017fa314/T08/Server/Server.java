@@ -67,6 +67,20 @@ public class Server {
         return itinerary;
     }
 
+    private JSONObject serveResponse(String search) {
+        JSONArray itinerary = Itinerary.createJSON(search);
+
+        JSONObject svg = new JSONObject();
+        svg.put("width", 1067);
+        svg.put("height", 784);
+        svg.put("contents", makeSvg.getSvg(search));
+
+        JSONObject response = new JSONObject();
+        response.put("itinerary", itinerary);
+        response.put("svg",svg);
+        return response;
+    }
+
     private Object testing(Request rec, Response res) {
         // Set the return headers
         setHeaders(res);
@@ -90,12 +104,14 @@ public class Server {
 
         // Because both possible requests from the client have the same format, 
         // we can check the "type" of request we've received: either "query" or "svg"
-        if (sRec.getRequest().equals("query")) {
-            return serveQuery(sRec.getDescription());
-        // assume if the request is not "query" it is "svg":
-        } else {
-            return serveSvg(sRec.getDescription());
-        }
+//        if (sRec.getRequest().equals("query")) {
+//            return serveQuery(sRec.getDescription());
+//        // assume if the request is not "query" it is "svg":
+//        } else {
+//            return serveSvg(sRec.getDescription());
+//        }
+
+        return serveResponse(sRec.getDescription());
     }
 
     private void setHeaders(Response res) {
