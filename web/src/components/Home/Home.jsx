@@ -56,9 +56,6 @@ class Home extends React.Component {
 				<input type="submit" value="Submit" />
 				</form>
 				
-				<button type="button" onClick={this.buttonClicked.bind(this)}>Click here for an SVG</button>
-				
-				
 				<h1>
 					{renderedSvg}
 				</h1>
@@ -100,10 +97,6 @@ class Home extends React.Component {
 		let input = this.state.input;
 		this.fetch(input);
 		event.preventDefault();
-	}
-	
-	buttonClicked(event) {
-		this.fetch("svg", event.target.value);
 	}
 	
     async fetch(input) {
