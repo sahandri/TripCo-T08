@@ -77,7 +77,6 @@ public class DataBase {
     public static int getIndex(String ID){
         int index = 0;
         for(int i=0; i<list.size();i++) {
-            System.out.printf("%s\n",getID(i));
             String tgt = getID(i);
             if(ID.equalsIgnoreCase(tgt)) {
                 index = i;
@@ -198,7 +197,7 @@ public class DataBase {
 
         System.out.printf("%s\n", getLatit("KBJC"));
         System.out.printf("%s\n", getLongit("KBJC"));
-        System.out.printf("%s\n", getID(0));
+        System.out.printf("%s\n", getID(1));
         System.out.printf("%s\n", getIndex("KDEN"));
         System.out.printf("%s\n", getName("KDEN"));
         System.out.printf("%s\n", getTotal());
