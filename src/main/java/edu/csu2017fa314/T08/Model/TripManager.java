@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class TripManager {
     private static int[][] distLookUp;
-    private static ArrayList<String> ids;
+    private static String _key = "";
     public static ArrayList<Trip> trips = new ArrayList<>();
     public static AtomicInteger total;
     static Trip shortest() {
@@ -28,7 +28,9 @@ public class TripManager {
     }
 
     public static void buildTripList(String key) {
-        ids = DataBase.getID(key);
+        if(key.equals(_key) && trips.size() > 0) { return; }
+        _key = key;
+        DataBase.getID(key);
         total = new AtomicInteger(DataBase.getTotal());
         trips = new ArrayList<>();
 
@@ -77,9 +79,6 @@ public class TripManager {
             for(int j = 0; j < destTtl-i-1; j++) {
                 distLookUp[i][j] = Distance.distanceMi( lats.get(i), longs.get(i),
                                                     lats.get(j+i+1), longs.get(j+i+1));
-                if(distLookUp[i][j]==0) {
-                    System.out.printf("Got 0 distance for %d,%d\n",i,j);
-                }
             }
         }
     }
@@ -95,6 +94,4 @@ public class TripManager {
         else if(j < i) { return distLookUp[j][i-j-1]; }
         else { return distLookUp[i][0]; }
     }
-
-    static String getID(int idx) { return ids.get(idx); }
 }

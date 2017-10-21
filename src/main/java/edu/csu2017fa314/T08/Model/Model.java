@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Model {
-
     public static ArrayList<String> shortestTrip() {
+        if(TripManager.size() == 0) {
+            TripManager.buildTripList("");
+        }
         return TripManager.shortest().stops();
     }
 
     public static ArrayList<String> shortestTrip(String key) {
-        if(TripManager.size() == 0)
-            TripManager.buildTripList(key);
+        TripManager.buildTripList(key);
         return TripManager.shortest().stops();
     }
 
