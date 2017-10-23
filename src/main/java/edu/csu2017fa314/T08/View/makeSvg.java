@@ -80,12 +80,12 @@ public class makeSvg {
 
 	//New Method used to convert global latitude to local latitude on previous SVG
 	public static double newConvertLatitude(double latitude, double y1, double y2){
-		return ((y2 - y1) * ((41 - latitude) / (41 - 37))) + y1;
+		return ((y2 - y1) * ((85 - latitude) / (85 - (-85)))) + y1;
 	}
 	
 	//New Method used to convert global longitude to local longitude on previous SVG
 	public static double newConvertLongitude(double longitude, double x1, double x2){
-		return ((x2 - x1) * ((-109 - longitude) / (-109 + 102))) + x1;
+		return ((x2 - x1) * ((-180 - longitude) / (-180 - 180))) + x1;
 	}
 	
 	//Method to create a new SVG based on the selected ShortestTrip	
@@ -172,10 +172,10 @@ public class makeSvg {
 			bw.write("\n" + drawStartPoint(845, 177.5, 1, "red", "red", 1));
 			bw.write("\n" + drawStartPoint(845, 886, 1, "red", "red", 1));*/
 			//Create Border Reference Points (specific to .svg)
-			double x1 = -146.5;
-			double x2 = 845;
-			double y1 = 177.5;
-			double y2 = 886;
+			double x1 = 0;
+			double x2 = 800;
+			double y1 = 0;
+			double y2 = 400;
 			//Create Key
 			bw.write("\n" + drawStartPoint(-146.5, 160, 5, "red", "red", 8));
 			bw.write("\n" + drawStartPoint(180, 160, 5, "blue", "blue", 1));
@@ -215,14 +215,14 @@ public class makeSvg {
 		   // do something
 		}
 	}
-	//Method to modify premade SVG of Colorado (NOT FUNCTIONING YET)
+	//Method to modify premade SVG of Colorado 
 	public static String getSvg(String searched) {
 		BufferedReader br = null;
 		BufferedWriter bw = null;		
 		String svg = "";		
 		try{
 		//Create and open a writer for current .svg file
-			br = new BufferedReader(new FileReader("data/USA_Colorado_location_map.svg"));
+			br = new BufferedReader(new FileReader("data/World_location_map.svg"));
 			bw = new BufferedWriter(new FileWriter("test.svg"));
 			//Copying File...
 			String line = null;
@@ -236,17 +236,17 @@ public class makeSvg {
 			bw.write("\n" + drawStartPoint(845, 177.5, 1, "red", "red", 1));
 			bw.write("\n" + drawStartPoint(845, 886, 1, "red", "red", 1));*/
 			//Create Border Reference Points (specific to .svg)
-			double x1 = -146.5;
-			double x2 = 845;
-			double y1 = 177.5;
-			double y2 = 886;
+			double x1 = 0;
+			double x2 = 800;
+			double y1 = 0;
+			double y2 = 400;
 			//Create Key
-			svg += ("\n" + drawStartPoint(-146.5, 160, 5, "red", "red", 8));
-			svg += ("\n"  + drawStartPoint(180, 160, 5, "blue", "blue", 1));
-			svg += ("\n" + addText(-130.5, 166, "sans-serif", "20px", "red", " = Start/End"));
-			svg += ("\n" + addText(190, 166, "sans-serif", "20px", "blue", " = Other Destinations Along The Way"));
+			svg += ("\n" + drawStartPoint(80, 380, 5, "red", "red", 8));
+			svg += ("\n"  + drawStartPoint(265, 382, 5, "blue", "blue", 1));
+			svg += ("\n" + addText(90, 390, "sans-serif", "20px", "red", " = Start/End"));
+			svg += ("\n" + addText(270, 390, "sans-serif", "20px", "blue", " = Other Destinations Along The Way"));
 			//Draw Title
-			svg += ("\n" + addText(0, 915, "sans-serif", "30px", "black", "Showing Your Colorado Trip!"));
+			svg += ("\n" + addText(180, 360, "sans-serif", "30px", "black", "Showing Your World Trip!"));
 	        	//Draw trip
 			svg += (commentTag("\nDrawing the trip path!"));
 			double startX = 0;
@@ -267,8 +267,8 @@ public class makeSvg {
 					finishY = startY;
 					startX = newConvertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(DataBase.getLongit(order.get(i)))),x1,x2);
 					startY = newConvertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(DataBase.getLatit(order.get(i))),y1,y2);
-					svg += ("\n" + drawStartPoint(startX, startY, 5, "blue", "blue", 1));
-					svg += ("\n" + drawLine("path", startX, startY, finishX, finishY, 2, "#000000"));
+					svg += ("\n" + drawStartPoint(startX, startY, 1, "blue", "blue", 1));
+					svg += ("\n" + drawLine("path", startX, startY, finishX, finishY, 1, "#000000"));
 				}
 			}
 			svg += ("\n" + gTag2());
