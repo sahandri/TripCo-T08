@@ -43,7 +43,7 @@ public class TripManager {
 
 
         for(int i = 0; i < total.get(); i++) {
-            TripWorker tw = new TripWorker(i);
+            TripWorker tw = new TripWorker(i,2);
             Future<Trip> res = pool.submit(tw);
             results.add(res);
 
