@@ -16,6 +16,12 @@ public class Model {
         return TripManager.shortest().stops();
     }
 
+    public static ArrayList<String> shortestTrip(String key, int optLevel) {
+        TripManager.setOptLevel(optLevel);
+        TripManager.buildTripList(key);
+        return TripManager.shortest().stops();
+    }
+
     public static HashMap getInfo(String id) {
         return DataBase.getInfo(id);
     }

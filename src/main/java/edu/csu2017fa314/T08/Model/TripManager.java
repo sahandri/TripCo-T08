@@ -8,6 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class TripManager {
     private static int[][] distLookUp;
+    private static int _optLevel = 0;
     private static String _key = "";
     public static ArrayList<String> ids = new ArrayList<>();
     public static ArrayList<Trip> trips = new ArrayList<>();
@@ -28,6 +29,10 @@ public class TripManager {
         return trips.get(0);
     }
 
+    public static void setOptLevel(int level) {
+        _optLevel = level;
+    }
+
     public static void buildTripList(String key) {
         if(key.equals(_key) && trips.size() > 0) { return; }
         _key = key;
@@ -43,7 +48,7 @@ public class TripManager {
 
 
         for(int i = 0; i < total.get(); i++) {
-            TripWorker tw = new TripWorker(i,2);
+            TripWorker tw = new TripWorker(i, _optLevel);
             Future<Trip> res = pool.submit(tw);
             results.add(res);
 
