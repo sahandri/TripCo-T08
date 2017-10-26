@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class TripManager {
     private static int[][] distLookUp;
-    private static int _optLevel = 0;
+    private static int _optLevel = 1;
     private static String _key = "";
     public static ArrayList<String> ids = new ArrayList<>();
     public static ArrayList<Trip> trips = new ArrayList<>();
