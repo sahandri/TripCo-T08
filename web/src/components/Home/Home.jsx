@@ -1,85 +1,76 @@
 import React, {Component} from 'react';
 import Dropzone from 'react-dropzone'
-import ReactModal from 'react-modal';
+import InlineSVG from 'svg-inline-react';
 
 class Home extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {file: '',imagePreviewUrl: ''};
-    }
-    handleImageChange(e) {
-        e.preventDefault();
-        let reader = new FileReader();
-        let file = e.target.files[0];
-        reader.onloadend = () => {
-            this.setState({
-                file: file,
-                imagePreviewUrl: reader.result
-            });
-        }
-        reader.readAsDataURL(file)
-    }
+        this.state = {
+            results: null,
+			svgResults: null,
+			input : ""
+		}
+    };
 
 
 
 
     render() { {/*Start of the HTML side of react*/}
-        {/*for image*/}
-        let {imagePreviewUrl} = this.state;
-        let $imagePreview = null;
-        if (imagePreviewUrl) {
-            $imagePreview = (<img src={imagePreviewUrl} />);
-        } else {
-            $imagePreview = (<div className="previewText">Please select a csv file for Preview</div>);
-        }
+        let svg = "sprint2airport.svg";
+		let renderedSvg;
+		let information;
+		let output;
+		let total = 0;
+		
+		if (this.state.results) {
+		
+			information = this.state.results.itinerary;
+			output = information.map(info => {
+			total += info.distance;
+		 	return ( 
+		 	<tr>
+		 	<td><h5>{info.name}</h5><p>{info.id},{info.latitude},{info.longitude},{info.elevation},{info.municipality}</p></td>
+		 	<td>{info.distance}</td>
+		 	<td>{total}</td>
+		 	</tr>
+		 	
+		 	);
+		 	})
+			
+			svg = this.state.results.svg;
+			renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
+		}
+		
 
 
-        let total; {/*Initalize*/}
         //let keys;
-        if(this.props.pairs == ""){ {/*If no json file*/}
-            total = 0;
-        }
-        else{ {/*after json call*/}
-            total = this.props.pairs[this.props.pairs.length - 1].props.tot;
-            //keys =  this.props.pairs[this.props.pairs.length - 1].props.Object.keys(startInfo);
-        }
-        return <div className="home-container">
+        
+        return (<div className="home-container">
             <div className="inner">
                 <h2>T08 - The Absentees</h2>
                 <h3>Itinerary</h3>
-                <img src={this.props.pairs.url}/>
 
+				<form onSubmit={this.handleSubmit.bind(this)}>
+				<input size="35" className="search-button" type="text"
+					onKeyUp={this.keyUp.bind(this)} placeholder="Enter Keyword" autoFocus/>
+				<input type="submit" value="Submit" />
+				</form>
+				
+				<h1>
+					{renderedSvg}
+				</h1>
+				<div>
+				
+				</div>
 
-                <modal>
-                    <Dropzone className="dropzone-style" onDrop={this.drop.bind(this)}> {/*How to open the JSON file*/}
-                        <button>Short trips</button>
-                    </Dropzone>
-                    <Dropzone className="dropzone-style" onDrop={this.drop2.bind(this)}> {/*How to open the JSON file*/}
-                        <button>Full csv</button>
-                    </Dropzone>
-                </modal>
-
-                <input className="search-button" type="text" placeholder="Enter Keyword" onKeyUp={this.keyUp.bind(this)} autoFocus
-
-
-                {/*for image*/}
-                <div className="previewComponent">
-
-                    <input className="CSV file Input"
-                           type="file"
-                           onChange={(e)=>this.handleImageChange(e)} />
-                    <div className="imgPreview">
-                        {$imagePreview}
-                    </div>
-                </div>
-
-
+				
 
 
 
                 <table className="pair-table"> {/*For CSS*/}
-                    {this.props.pairs} {/*Calls Pair.jsx for HTML script*/}
+                
                     <tbody>
+                    {output}
                     <tr>
                         <td colSpan="3">Total:</td>
                         <td>{total}</td> {/*Displays Total*/}
@@ -88,57 +79,54 @@ class Home extends React.Component {
                 </table>
             </div>
         </div>
+        )
     }
+
                     
     keyUp(event){
-                    if (event.which === 13) {
-                        this.fetch(event.target.value);
-                    }
-                }
+		if (event.which === 13) {
+			this.fetch(this.state.value);
+        } else {
+			this.setState({
+				input: event.target.value
+			});
+		}
+    }
+	
+	handleSubmit(event) {
+		let input = this.state.input;
+		this.fetch(input);
+		event.preventDefault();
+	}
+	
     async fetch(input) {
-           let newMap = {
-             query: input,
-             id: "1",
-           };
-                        
-   }
+		let clientRequest;
+        clientRequest = {
+            description: input,
+        };
 
-    drop(acceptedFiles) { {/*Calls Drop which takes the JSON file*/}
-        console.log("Accepting drop");
-        acceptedFiles.forEach(file => { {/*for each file accepted*/}
-            console.log("Filename:", file.Name, "File:", file); {/*output filename*/}
-            console.log(JSON.stringify(file)); {/*output file as a string*/}
-            let fr = new FileReader();
-            fr.onload = (function () {
-                return function (e) {
-                    let JsonObj = JSON.parse(e.target.result);
+		try {
 
-                    console.log(JsonObj); {/*Output Json object*/}
-                    this.props.browseFile(JsonObj); {/*Calls Browsefile in ap.js file*/}
-                };
-            })(file).bind(this);
+			let jsonReturned = await fetch(`http://localhost:4567/testing`,
+			{
+				method: "POST",
+				body: JSON.stringify(clientRequest)
+			});
+			
+			let ret = await jsonReturned.json();
+			
+			console.log("Got back ",ret);
+			this.setState({
+			    results: ret
+			});
 
-            fr.readAsText(file);
-        });
+		} catch (e){
+			console.error("Error talking to server");
+			console.error(e);
+		}
     }
 
-    drop2(acceptedFiles) { {/*Calls Drop which takes the JSON file*/}
-        console.log("Accepting drop");
-        acceptedFiles.forEach(file2 => { {/*for each file accepted*/}
-            console.log("Filename:", file2.Name, "File:", file2); {/*output filename*/}
-            console.log(JSON.stringify(file2)); {/*output file as a string*/}
-            let fr = new FileReader();
-            fr.onload = (function () {
-                return function (e) {
-                    let JsonObj = JSON.parse(e.target.result);
-                    console.log(JsonObj); {/*Output Json object*/}
-                    this.props.browseFile2(JsonObj); {/*Calls Browsefile in ap.js file*/}
-                };
-            })(file2).bind(this);
-
-            fr.readAsText(file2);
-        });
-    }
+    
 
 }
 

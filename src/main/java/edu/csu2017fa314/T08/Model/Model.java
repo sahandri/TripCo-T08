@@ -1,85 +1,42 @@
 package edu.csu2017fa314.T08.Model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Model {
-    private static int[][] distLookUp;
-
-    public static void setUp() {
-        buildDistLookUp();
-        TripManager.buildTripList();
-    }
     public static ArrayList<String> shortestTrip() {
+        if(TripManager.size() == 0) {
+            TripManager.buildTripList("");
+        }
         return TripManager.shortest().stops();
     }
 
-    public static ArrayList<String> shortestTrip(String id) {
-        return TripManager.get(id).stops();
+    public static ArrayList<String> shortestTrip(String key) {
+        TripManager.buildTripList(key);
+        return TripManager.shortest().stops();
     }
 
-
-    public static ArrayList<String> getRow(String id) {
-        return Destination.getRow(id);
+    public static HashMap getInfo(String id) {
+        return DataBase.getInfo(id);
     }
-
 
     public static int getDistance(String id1, String id2, boolean useKm) {
-        //String lat1 = Destination.getLatit(id1);
-        //String lon1 = Destination.getLongit(id1);
-        //String lat2 = Destination.getLatit(id2);
-        //String lon2 = Destination.getLongit(id2);
-
         int distance;
+        String lat1 = DataBase.getLatit(id1);
+        String lon1 = DataBase.getLongit(id1);
+        String lat2 = DataBase.getLatit(id2);
+        String lon2 = DataBase.getLongit(id2);
 
-        distance = getDist(Destination.getIndex(id1), Destination.getIndex(id2));
+        distance = Distance.distanceMi(lat1,lon1,lat2,lon2);
 
         return distance;
     }
 
-    public static int getDistance(int idx1, int idx2, boolean useKm) {
-        int distance;
-
-        distance = getDist(idx1, idx2);
-
-        return distance;
-
+    public static String getID(int idx) {
+        return DataBase.getID(idx);
     }
 
     /*
     * Populates the distLookUp table by calculating the distance between every point.
     */
-    private static void buildDistLookUp() {
-        int destTtl = Destination.getTotal();
-        distLookUp = new int[destTtl][];
-
-        String lat1 = "";
-        String long1 = "";
-        String lat2 = "";
-        String long2 = "";
-        for (int i = 0; i < destTtl; i++) {
-            distLookUp[i] = new int[destTtl - i];
-            String d_i = Destination.getID(i);
-
-            for (int j = 0; j < destTtl - i - 1; j++) {
-                String d_j = Destination.getID(i + j + 1);
-                lat1 = Destination.getLatit(d_i);
-                long1 = Destination.getLongit(d_i);
-                lat2 = Destination.getLatit(d_j);
-                long2 = Destination.getLongit(d_j);
-                distLookUp[i][j] = Distance.distanceMi(lat1, long1, lat2, long2);
-            }
-        }
-    }
-
-    /*
-     * The distLookUp indices are a little different from the csv indices, so some math
-     * is done to get them correct. Each row i in the lookup table has n-i entries, n being
-     * the size of the dataset. The distance to a destination j is the entry j-i-1 when i<j
-     * because the distance from i to destinations 0..i-1 is already stored in the previous rows.
-     */
-    private static int getDist(int i, int j) {
-        if(i < j) { return distLookUp[i][j-i-1]; }
-        else if(j < i) { return distLookUp[j][i-j-1]; }
-        else { return distLookUp[i][0]; }
-    }
 }

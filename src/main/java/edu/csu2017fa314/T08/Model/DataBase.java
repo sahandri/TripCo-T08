@@ -1,12 +1,7 @@
 package edu.csu2017fa314.T08.Model;
 
-//import sun.invoke.empty.Empty;
 
-import java.sql.Connection; // https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html
-import java.sql.DriverManager; // https://www.tutorialspoint.com/jdbc/
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.HashMap;
@@ -27,13 +22,17 @@ public class DataBase {
             conn = DriverManager.getConnection(myUrl, user, pass);
             // create a statement
             st = conn.createStatement();
-            // submit a query
-            //String query = "SELECT * FROM airports LIMIT 10";
-            //rs = st.executeQuery(query);
-
         } catch (Exception e) { // catches all exceptions in the nested try's
             System.err.printf("Exception: ");
             System.err.println(e.getMessage());
+        }
+    }
+
+    public static boolean isConnected() {
+        try {
+            return conn.isValid(5);
+        } catch (SQLException e) {
+            return false;
         }
     }
 
@@ -48,9 +47,6 @@ public class DataBase {
         }
     }
 
-
-
-
     public static String getID(int index) {
         return list.get(index);
     }
@@ -62,10 +58,10 @@ public class DataBase {
         String query = "SELECT id FROM airports WHERE id LIKE '%" + key + "%' OR name LIKE '%" + key + "%' OR" +
                 " type LIKE '%" + key + "%' OR latitude LIKE '%" + key + "%' OR longitude LIKE '%" + key + "%'" +
                 " OR elevation LIKE '%" + key + "%' OR municipality LIKE '%" + key + "%'" +
-                " OR home_link LIKE '%" + key + "%' OR wikipedia_link LIKE '%" + key + "%' LIMIT 10";
+                " OR home_link LIKE '%" + key + "%' OR wikipedia_link LIKE '%" + key + "%'";
         try {
             rs = st.executeQuery(query);
-            // iterate through the query results and print selected columns
+            // iterate through the query results and return list of IDs
             while (rs.next()) {
                 list.add(rs.getString("id"));
             }
@@ -81,7 +77,6 @@ public class DataBase {
     public static int getIndex(String ID){
         int index = 0;
         for(int i=0; i<list.size();i++) {
-            System.out.printf("%s\n",getID(i));
             String tgt = getID(i);
             if(ID.equalsIgnoreCase(tgt)) {
                 index = i;
@@ -100,7 +95,7 @@ public class DataBase {
 
     public static String getLatit(String id) {
         String lotit = "";
-        String query = "SELECT latitude FROM airports WHERE id LIKE '" + id + "' LIMIT 10";
+        String query = "SELECT latitude FROM airports WHERE id LIKE '" + id + "'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and print selected columns
@@ -116,10 +111,10 @@ public class DataBase {
 
     public static String getName(String id){
         String name = "";
-        String query = "SELECT name FROM airports WHERE id LIKE '" + id+ "' LIMIT 10";
+        String query = "SELECT name FROM airports WHERE id LIKE '" + id+ "'";
         try {
             rs = st.executeQuery(query);
-            // iterate through the query results and print selected columns
+            // iterate through the query results and get name
             rs.next();
             name = rs.getString("name");
         } catch (Exception e) { // catches all exceptions in the nested try's
@@ -132,10 +127,10 @@ public class DataBase {
 
     public static String getLongit(String id) {
         String longit = "";
-        String query = "SELECT longitude FROM airports WHERE id LIKE '" + id + "' LIMIT 10";
+        String query = "SELECT longitude FROM airports WHERE id LIKE '" + id + "'";
         try {
             rs = st.executeQuery(query);
-            // iterate through the query results and print selected columns
+            // iterate through the query results and get longitude
             rs.next();
             longit = rs.getString("longitude");
         } catch (Exception e) { // catches all exceptions in the nested try's
@@ -148,10 +143,10 @@ public class DataBase {
 //returns a pair of all data in a row
     public static  HashMap<String,String> getInfo(String id) {
         HashMap<String,String> info = new HashMap<String, String>();
-        String query = "SELECT * FROM airports WHERE id LIKE '" + id + "' LIMIT 10";
+        String query = "SELECT * FROM airports WHERE id LIKE '" + id + "'";
         try {
             rs = st.executeQuery(query);
-            // iterate through the query results and print selected columns
+            // iterate through the query results and return selected columns
             rs.next();
             info.put("id",rs.getString("id"));
             info.put("name",rs.getString("name"));
@@ -172,7 +167,7 @@ public class DataBase {
 
 
     public static void print() {
-        String query = "SELECT * FROM airports LIMIT 10";
+        String query = "SELECT * FROM airports";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and print selected columns
@@ -202,7 +197,7 @@ public class DataBase {
 
         System.out.printf("%s\n", getLatit("KBJC"));
         System.out.printf("%s\n", getLongit("KBJC"));
-        System.out.printf("%s\n", getID(0));
+        System.out.printf("%s\n", getID(1));
         System.out.printf("%s\n", getIndex("KDEN"));
         System.out.printf("%s\n", getName("KDEN"));
         System.out.printf("%s\n", getTotal());
