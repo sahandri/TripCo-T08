@@ -9,14 +9,31 @@ Checklist | *reference, URL, etc.*
 ### Roles
 Name | Role | Preparation Time
 ---- | ---- | ----
-Michael | Developer | ----
-Ryan | Developer | ----
-Sahand | Developer | ----
-Adam | Developer | ----
+Michael | Developer | 1.5 hr
+Ryan | Developer | 1.25 hr
+Sahand | Developer | 1.5 hr
+Adam | Developer | 1 hr
 
 ### Log
 file:line | defect | h/m/l | github# | who
 --- | --- |:---:|:---:| ---
- | | | |
- | | | |
+TripWorker.java 9,10,18,33,34,35,66 | Variables are not descriptive| l | #223 | Michael,Adam
+TripWorker.java 14 | Variable is not properly initialized | m |  | Sahand
+TripWorker.java 17 | Method not named descriptively | l |  | Michael,Adam
+TripWorker.java all | Only 2 methods, could break apart | m | #224 | Michael
+TripWorker.java 88 | Method parameters not checked for value | m | #225 | Adam
+TripWorker.java all | More comments could be used throughout | m | #226 | Michael,Adam,Ryan,Sahand
+TripWorker.java all | Consider optimization | m | | Michael,Adam
+TripWorker.java 51 | For array order reference: Is not the value certain to be non-null | m | | Sahand
+TripManager.java 11,12,13,14 | Variables are not descriptive | l | | Michael,Adam
+TripManager.java 94 | Method not named descriptively | l | | Michael,Adam
+TripManager.java all | Little to no comments throughout | m | #226 | Michael,Adam,Ryan,Sahand
+TripManager.java all | Consider making methods and variables nonstatic | l | | Michael
+TripManager.java all | All methods are public, do they need to be? | l | | Michael
+TripManager.java 15 | Need to check and see if trips has been created | m | | Adam
+TripManager.java 22 | Check to see if NULL before command is run | m | | Ryan
+TripManager.java 82 | Does not check for invalid returns of distance lates | m | | Ryan
+TripManager.java 94 | Does not check if i and j are NULL or Invalid | m | | Ryan
+
+
  
