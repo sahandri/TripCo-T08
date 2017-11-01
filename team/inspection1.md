@@ -24,16 +24,16 @@ TripWorker.java all | Only 2 methods, could break apart | m | #224 | Michael
 TripWorker.java 88 | Method parameters not checked for value | m | #225 | Adam
 TripWorker.java all | More comments could be used throughout | m | #226 | Michael,Adam,Ryan,Sahand
 TripWorker.java all | Consider optimization | m | #228 | Michael,Adam
-TripWorker.java 51 | For array order reference: Is not the value certain to be non-null | m | | Sahand
-TripManager.java 11,12,13,14 | Variables are not descriptive | l | | Michael,Adam
-TripManager.java 94 | Method not named descriptively | l | | Michael,Adam
+TripWorker.java 51 | For array order reference: Is not the value certain to be non-null | m | #229 | Sahand
+TripManager.java 11,12,13,14 | Variables are not descriptive | l | #223 | Michael,Adam
+TripManager.java 94 | Method not named descriptively | l | #223 | Michael,Adam
 TripManager.java all | Little to no comments throughout | m | #226 | Michael,Adam,Ryan,Sahand
-TripManager.java all | Consider making methods and variables nonstatic | l | | Michael
-TripManager.java all | All methods are public, do they need to be? | l | | Michael
-TripManager.java 15 | Need to check and see if trips has been created | m | | Adam
-TripManager.java 22 | Check to see if NULL before command is run | m | | Ryan
-TripManager.java 82 | Does not check for invalid returns of distance lates | m | | Ryan
-TripManager.java 94 | Does not check if i and j are NULL or Invalid | m | | Ryan
+TripManager.java all | Consider making methods and variables nonstatic | l | #230 | Michael
+TripManager.java all | All methods are public, do they need to be? | l | #231 | Michael
+TripManager.java 15 | Need to check and see if trips has been created | m | #232 | Adam
+TripManager.java 22 | Check to see if NULL before command is run | m | #233 | Ryan
+TripManager.java 82 | Does not check for invalid returns of distance lates | m | #234 | Ryan
+TripManager.java 94 | Does not check if i and j are NULL or Invalid | m | #235 | Ryan
 
 
  
