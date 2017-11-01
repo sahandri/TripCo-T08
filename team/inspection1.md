@@ -18,12 +18,12 @@ Adam | Developer | 1 hr
 file:line | defect | h/m/l | github# | who
 --- | --- |:---:|:---:| ---
 TripWorker.java 9,10,18,33,34,35,66 | Variables are not descriptive| l | #223 | Michael,Adam
-TripWorker.java 14 | Variable is not properly initialized | m |  | Sahand
-TripWorker.java 17 | Method not named descriptively | l |  | Michael,Adam
+TripWorker.java 14 | Variable is not properly initialized | m | #227 | Sahand
+TripWorker.java 17 | Method not named descriptively | l | #223 | Michael,Adam
 TripWorker.java all | Only 2 methods, could break apart | m | #224 | Michael
 TripWorker.java 88 | Method parameters not checked for value | m | #225 | Adam
 TripWorker.java all | More comments could be used throughout | m | #226 | Michael,Adam,Ryan,Sahand
-TripWorker.java all | Consider optimization | m | | Michael,Adam
+TripWorker.java all | Consider optimization | m | #228 | Michael,Adam
 TripWorker.java 51 | For array order reference: Is not the value certain to be non-null | m | | Sahand
 TripManager.java 11,12,13,14 | Variables are not descriptive | l | | Michael,Adam
 TripManager.java 94 | Method not named descriptively | l | | Michael,Adam
