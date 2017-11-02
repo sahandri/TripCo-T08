@@ -188,21 +188,21 @@ public class DataBase {
 
         connect();
 
-        print();
+        //print();
 
         list = getID("denver");
         for (int i = 0; i < list.size(); i++) {
             System.out.printf("%s\n", list.get(i));
         }
 
-        System.out.printf("%s\n", getLatit("KBJC"));
-        System.out.printf("%s\n", getLongit("KBJC"));
+        System.out.printf("%s\n", getLatit("7704"));
+        System.out.printf("%s\n", getLongit("7704"));
         System.out.printf("%s\n", getID(1));
-        System.out.printf("%s\n", getIndex("KDEN"));
-        System.out.printf("%s\n", getName("KDEN"));
+        System.out.printf("%s\n", getIndex("7704"));
+        System.out.printf("%s\n", getName("7704"));
         System.out.printf("%s\n", getTotal());
-        System.out.printf("get name of id: %s\n", getInfo("KDEN").get("name"));
-        System.out.printf("get elevation of id: %s\n", getInfo("KDEN").get("elevation"));
+        System.out.printf("get name of id: %s\n", getInfo("7704").get("name"));
+        System.out.printf("get elevation of id: %s\n", getInfo("7704").get("wikipedia_link"));
 
 
         disconnect();
