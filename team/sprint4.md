@@ -41,6 +41,7 @@ Date | Tasks done this time | Tasks done next time | Impediments | Confidence
  10/25/17 | #211 | planing for sprint4 | schedule for sprint4 | Medium
  10/30/17 | Planning for Sprint 4 | Refine Sprint Plan, Switch Database Call to World, Inspection | None | High
  11/1/17 | Inspection 1  | #226 #223 #224 #225 | None | High
+ 11/3/17 | fixed the TestDataBase.java | #217, #214, #210 | none| Medium
  
 
 ## Review
