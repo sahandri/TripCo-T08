@@ -55,10 +55,12 @@ public class DataBase {
 
     public static ArrayList getID(String key) {
         list.clear();
-        String query = "SELECT id FROM airports WHERE id LIKE '%" + key + "%' OR name LIKE '%" + key + "%' OR" +
-                " type LIKE '%" + key + "%' OR latitude LIKE '%" + key + "%' OR longitude LIKE '%" + key + "%'" +
-                " OR elevation LIKE '%" + key + "%' OR municipality LIKE '%" + key + "%'" +
-                " OR home_link LIKE '%" + key + "%' OR wikipedia_link LIKE '%" + key + "%'";
+        String query = "SELECT airports.id FROM continents" +
+                " INNER JOIN countries ON continents.code = countries.continent" +
+                " INNER JOIN regions ON countries.code = regions.iso_country" +
+                " INNER JOIN airports ON regions.code = airports.iso_region" +
+                " WHERE countries.name LIKE '%" + key + "%' OR regions.name LIKE '%" + key + "%'" +
+                " OR airports.name LIKE '%" + key + "%' OR airports.municipality LIKE '%" + key + "%'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and return list of IDs
@@ -72,6 +74,45 @@ public class DataBase {
         return list;
     }
 
+
+    public static String getCountry(String id){
+        String country = "";
+        String query = "SELECT countries.name FROM continents" +
+                " INNER JOIN countries ON continents.code = countries.continent" +
+                " INNER JOIN regions ON countries.code = regions.iso_country" +
+                " INNER JOIN airports ON regions.code = airports.iso_region" +
+                " WHERE airports.id LIKE '" + id + "'";
+        try {
+            rs = st.executeQuery(query);
+            // iterate through the query results and print selected columns
+            rs.next();
+            country = rs.getString("countries.name");
+        } catch (Exception e) { // catches all exceptions in the nested try's
+            System.err.printf("Exception: ");
+            System.err.println(e.getMessage());
+        }
+        return country;
+    }
+
+
+    public static String getRegion(String id){
+        String region = "";
+        String query = "SELECT regions.name FROM continents" +
+                " INNER JOIN countries ON continents.code = countries.continent" +
+                " INNER JOIN regions ON countries.code = regions.iso_country" +
+                " INNER JOIN airports ON regions.code = airports.iso_region" +
+                " WHERE airports.id LIKE '" + id + "'";
+        try {
+            rs = st.executeQuery(query);
+            // iterate through the query results and print selected columns
+            rs.next();
+            region = rs.getString("regions.name");
+        } catch (Exception e) { // catches all exceptions in the nested try's
+            System.err.printf("Exception: ");
+            System.err.println(e.getMessage());
+        }
+        return region;
+    }
 
 
     public static int getIndex(String ID){
@@ -203,6 +244,8 @@ public class DataBase {
         System.out.printf("%s\n", getTotal());
         System.out.printf("get name of id: %s\n", getInfo("7704").get("name"));
         System.out.printf("get elevation of id: %s\n", getInfo("7704").get("wikipedia_link"));
+        System.out.printf("country name: %s\n", getCountry("7704"));
+        System.out.printf("region name: %s\n", getRegion("7704"));
 
 
         disconnect();
