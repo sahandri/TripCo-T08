@@ -1,0 +1,4538 @@
+[
+  {
+    "elevation": "7540",
+    "distance": 3,
+    "latitude": "39.64080047607422",
+    "name": "Greystone Heliport",
+    "municipality": "Evergreen",
+    "id": "70CO",
+    "longitude": "-105.39600372314453"
+  },
+  {
+    "elevation": "8198",
+    "distance": 6,
+    "latitude": "39.6875",
+    "name": "Ptarmigan Heliport",
+    "municipality": "Evergreen",
+    "id": "42CO",
+    "longitude": "-105.39600372314453"
+  },
+  {
+    "elevation": "10672",
+    "distance": 15,
+    "latitude": "39.690799713134766",
+    "name": "Arapahoe Heliport",
+    "municipality": "Idaho Springs",
+    "id": "CD19",
+    "longitude": "-105.50499725341797"
+  },
+  {
+    "elevation": "12442",
+    "distance": 5,
+    "latitude": "39.79389953613281",
+    "name": "Berthoud Pass Heliport",
+    "municipality": "Empire",
+    "id": "CD37",
+    "longitude": "-105.76399993896484"
+  },
+  {
+    "elevation": "10400",
+    "distance": 0,
+    "latitude": "39.7682991027832",
+    "name": "Henderson Heliport",
+    "municipality": "Empire",
+    "id": "CO51",
+    "longitude": "-105.8479995727539"
+  },
+  {
+    "elevation": "10340",
+    "distance": 12,
+    "latitude": "39.76940155029297",
+    "name": "Henderson Mine Heliport",
+    "municipality": "Berthoud Falls",
+    "id": "CD25",
+    "longitude": "-105.85099792480469"
+  },
+  {
+    "elevation": "9176",
+    "distance": 16,
+    "latitude": "39.83330154418945",
+    "name": "Amax Mill Heliport",
+    "municipality": "Dillon/Silverthorne",
+    "id": "CD18",
+    "longitude": "-106.06700134277344"
+  },
+  {
+    "elevation": "8110",
+    "distance": 3,
+    "latitude": "40.04859924316406",
+    "name": "Granby Sports Park Ultralightport",
+    "municipality": "Granby",
+    "id": "CO86",
+    "longitude": "-105.93800354003906"
+  },
+  {
+    "elevation": "8203",
+    "distance": 14,
+    "latitude": "40.089698791503906",
+    "name": "Granby Grand County Airport",
+    "municipality": "Granby",
+    "id": "KGNB",
+    "longitude": "-105.91699981689453"
+  },
+  {
+    "elevation": "9855",
+    "distance": 12,
+    "latitude": "40.13330078125",
+    "name": "Grouse Mountain Heliport",
+    "municipality": "Parshall",
+    "id": "CD57",
+    "longitude": "-106.16699981689453"
+  },
+  {
+    "elevation": "7411",
+    "distance": 6,
+    "latitude": "40.0536994934",
+    "name": "Mc Elroy Airfield",
+    "municipality": "Kremmling",
+    "id": "K20V",
+    "longitude": "-106.369003296"
+  },
+  {
+    "elevation": "9209",
+    "distance": 27,
+    "latitude": "40.002799987799996",
+    "name": "Mc Elroy Heliport",
+    "municipality": "Kremmling",
+    "id": "CO74",
+    "longitude": "-106.452003479"
+  },
+  {
+    "elevation": "10116",
+    "distance": 16,
+    "latitude": "39.61669921875",
+    "name": "Vail Junction Heliport",
+    "municipality": "Vail",
+    "id": "CD74",
+    "longitude": "-106.38400268554688"
+  },
+  {
+    "elevation": "9042",
+    "distance": 7,
+    "latitude": "39.58140182495117",
+    "name": "Summit Medical Center Heliport",
+    "municipality": "Frisco",
+    "id": "91CO",
+    "longitude": "-106.09200286865234"
+  },
+  {
+    "elevation": "9300",
+    "distance": 10,
+    "latitude": "39.60419845581055",
+    "name": "Snake River Health Services Inc Heliport",
+    "municipality": "Keystone",
+    "id": "83CO",
+    "longitude": "-105.95899963378906"
+  },
+  {
+    "elevation": "10085",
+    "distance": 11,
+    "latitude": "39.472999572753906",
+    "name": "Overlook Athletic Club Heliport",
+    "municipality": "Breckenridge",
+    "id": "CO75",
+    "longitude": "-106.03299713134766"
+  },
+  {
+    "elevation": "9869",
+    "distance": 8,
+    "latitude": "39.40829849",
+    "name": "Heckendorf Ranches-Georgia Pass Ranch Airport",
+    "municipality": "Jefferson",
+    "id": "US-0044",
+    "longitude": "-105.836998"
+  },
+  {
+    "elevation": "9600",
+    "distance": 12,
+    "latitude": "39.29169846",
+    "name": "Silver Heels Airport",
+    "municipality": "Como",
+    "id": "US-0075",
+    "longitude": "-105.875"
+  },
+  {
+    "elevation": "11104",
+    "distance": 9,
+    "latitude": "39.216400146484375",
+    "name": "Sacramento Heliport",
+    "municipality": "Fairplay",
+    "id": "CD38",
+    "longitude": "-106.08699798583984"
+  },
+  {
+    "elevation": "10175",
+    "distance": 4,
+    "latitude": "39.24530029296875",
+    "name": "St Vincent General Hospital Heliport",
+    "municipality": "Leadville",
+    "id": "01CO",
+    "longitude": "-106.24600219726562"
+  },
+  {
+    "elevation": "9927",
+    "distance": 10,
+    "latitude": "39.220298767100005",
+    "home_link": "http://www.lxvairport.com/home.html",
+    "name": "Lake County Airport",
+    "municipality": "Leadville",
+    "id": "KLXV",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Lake_County_Airport_(Colorado)",
+    "longitude": "-106.317001343"
+  },
+  {
+    "elevation": "10093",
+    "distance": 20,
+    "latitude": "39.08610153198242",
+    "name": "Granite Heliport",
+    "municipality": "Granite",
+    "id": "CD43",
+    "longitude": "-106.26799774169922"
+  },
+  {
+    "elevation": "7946",
+    "distance": 6,
+    "latitude": "38.81420135498047",
+    "name": "Central Colorado Regional Airport",
+    "municipality": "Buena Vista",
+    "id": "KAEJ",
+    "longitude": "-106.12100219726562"
+  },
+  {
+    "elevation": "10858",
+    "distance": 15,
+    "latitude": "38.74530029296875",
+    "name": "Mount Princeton Heliport",
+    "municipality": "Mount Princeton",
+    "id": "CD52",
+    "longitude": "-106.19999694824219"
+  },
+  {
+    "elevation": "7872",
+    "distance": 3,
+    "latitude": "38.540298461899994",
+    "name": "CMRS Airdrome Airport",
+    "municipality": "Poncha Springs",
+    "id": "2CO2",
+    "longitude": "-106.105003357"
+  },
+  {
+    "elevation": "7523",
+    "distance": 8,
+    "latitude": "38.538299560547",
+    "home_link": "http://cityofsalida.com/departments/harriet-alexander-field-airport/",
+    "name": "Harriet Alexander Field",
+    "municipality": "Salida",
+    "id": "KANK",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Harriet_Alexander_Field",
+    "longitude": "-106.04900360107"
+  },
+  {
+    "elevation": "9000",
+    "distance": 9,
+    "latitude": "38.416099548339844",
+    "name": "Granite Mountain Lodge Airport",
+    "municipality": "Salida",
+    "id": "CO11",
+    "longitude": "-106.05799865722656"
+  },
+  {
+    "elevation": "7050",
+    "distance": 1,
+    "latitude": "38.532798767089844",
+    "name": "Salida Hospital Heliport",
+    "municipality": "Salida",
+    "id": "6CO9",
+    "longitude": "-105.98999786376953"
+  },
+  {
+    "elevation": "7480",
+    "distance": 26,
+    "latitude": "38.55139923095703",
+    "name": "Dodsworth Airport",
+    "municipality": "Salida",
+    "id": "1CO7",
+    "longitude": "-105.99199676513672"
+  },
+  {
+    "elevation": "8250",
+    "distance": 14,
+    "latitude": "38.624567",
+    "name": "Hecox Heliport",
+    "municipality": "Guffey",
+    "id": "CD71",
+    "longitude": "-105.516017"
+  },
+  {
+    "elevation": "6300",
+    "distance": 3,
+    "latitude": "38.49639892578125",
+    "name": "Brown's Fort Heliport",
+    "municipality": "Canon City",
+    "id": "CO63",
+    "longitude": "-105.31099700927734"
+  },
+  {
+    "elevation": "7100",
+    "distance": 13,
+    "latitude": "38.45389938354492",
+    "name": "Fremont Peak Heliport",
+    "municipality": "Canon City",
+    "id": "8CO3",
+    "longitude": "-105.28600311279297"
+  },
+  {
+    "elevation": "8660",
+    "distance": 6,
+    "latitude": "38.47779846191406",
+    "name": "Prospect Peak Heliport",
+    "municipality": "Texas Creek",
+    "id": "8CO1",
+    "longitude": "-105.52100372314453"
+  },
+  {
+    "elevation": "6250",
+    "distance": 1,
+    "latitude": "38.409400939941406",
+    "name": "Texas Creek Heliport",
+    "municipality": "Texas Creek",
+    "id": "3CO5",
+    "longitude": "-105.58499908447266"
+  },
+  {
+    "elevation": "6280",
+    "distance": 1,
+    "latitude": "38.41080093383789",
+    "name": "Tezak Airport",
+    "municipality": "Canon City",
+    "id": "CO19",
+    "longitude": "-105.60399627685547"
+  },
+  {
+    "elevation": "6200",
+    "distance": 7,
+    "latitude": "38.39830017089844",
+    "name": "Lowe Airstrip",
+    "municipality": "Cotopaxi",
+    "id": "CD01",
+    "longitude": "-105.62000274658203"
+  },
+  {
+    "elevation": "7200",
+    "distance": 13,
+    "latitude": "38.29169845581055",
+    "name": "Lake Creek Ranch Airport",
+    "municipality": "Hillside",
+    "id": "92CO",
+    "longitude": "-105.61100006103516"
+  },
+  {
+    "elevation": "7880",
+    "distance": 7,
+    "latitude": "38.14780044555664",
+    "name": "Dan Riggs Memorial Heliport",
+    "municipality": "Westcliffe",
+    "id": "CO69",
+    "longitude": "-105.46700286865234"
+  },
+  {
+    "elevation": "8300",
+    "distance": 6,
+    "latitude": "38.045799255371094",
+    "name": "Geary Ranch Airport",
+    "municipality": "Westcliffe",
+    "id": "CO65",
+    "longitude": "-105.47100067138672"
+  },
+  {
+    "elevation": "8290",
+    "distance": 15,
+    "latitude": "38.01110076904297",
+    "name": "Silver West Airport",
+    "municipality": "Westcliffe",
+    "id": "KC08",
+    "longitude": "-105.37300109863281"
+  },
+  {
+    "elevation": "7710",
+    "distance": 26,
+    "latitude": "37.842201232910156",
+    "name": "Golden Field (Yellow Hat) Airport",
+    "municipality": "Gardner",
+    "id": "CO61",
+    "longitude": "-105.21399688720703"
+  },
+  {
+    "elevation": "6047",
+    "distance": 4,
+    "latitude": "37.69660187",
+    "name": "Spanish Peaks Airfield",
+    "municipality": "Walsenburg",
+    "id": "K4V1",
+    "longitude": "-104.7839966"
+  },
+  {
+    "elevation": "5950",
+    "distance": 9,
+    "latitude": "37.755556",
+    "name": "Cholla Airport",
+    "municipality": "Walsenburg",
+    "id": "64CO",
+    "longitude": "-104.756389"
+  },
+  {
+    "elevation": "5827",
+    "distance": 14,
+    "latitude": "37.786399841308594",
+    "name": "Cuchara Ranch Airport",
+    "municipality": "Walsenburg",
+    "id": "CD48",
+    "longitude": "-104.59400177001953"
+  },
+  {
+    "elevation": "6000",
+    "distance": 7,
+    "latitude": "37.868499755859375",
+    "name": "Mann Ranch Airport",
+    "municipality": "Rye",
+    "id": "95CO",
+    "longitude": "-104.83599853515625"
+  },
+  {
+    "elevation": "5796",
+    "distance": 12,
+    "latitude": "37.959701538100006",
+    "name": "Greenhorn Valley Airport",
+    "id": "US-CO22",
+    "longitude": "-104.783996582"
+  },
+  {
+    "elevation": "6000",
+    "distance": 25,
+    "latitude": "38.097198486328125",
+    "name": "Good Pasture Airport",
+    "municipality": "Beulah",
+    "id": "14CO",
+    "longitude": "-104.91000366210938"
+  },
+  {
+    "elevation": "5439",
+    "distance": 2,
+    "latitude": "38.428001403799996",
+    "home_link": "http://www.fremontco.com/airport/",
+    "name": "Fremont County Airport",
+    "municipality": "Cañon City",
+    "id": "K1V6",
+    "longitude": "-105.106002808"
+  },
+  {
+    "elevation": "5543",
+    "distance": 20,
+    "latitude": "38.455299377441406",
+    "name": "Braun Airport",
+    "municipality": "Penrose",
+    "id": "32CO",
+    "longitude": "-105.08399963378906"
+  },
+  {
+    "elevation": "5135",
+    "distance": 6,
+    "latitude": "38.36330032348633",
+    "name": "West Pueblo Airport",
+    "municipality": "Pueblo West",
+    "id": "7CO8",
+    "longitude": "-104.73799896240234"
+  },
+  {
+    "elevation": "4970",
+    "distance": 8,
+    "latitude": "38.347198486328125",
+    "name": "Edenway Airport",
+    "municipality": "Pueblo",
+    "id": "2CO5",
+    "longitude": "-104.63200378417969"
+  },
+  {
+    "elevation": "4726",
+    "distance": 6,
+    "latitude": "38.289100646972656",
+    "name": "Pueblo Memorial Airport",
+    "municipality": "Pueblo",
+    "id": "KPUB",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Pueblo_Memorial_Airport",
+    "longitude": "-104.49700164794922"
+  },
+  {
+    "elevation": "4766",
+    "distance": 3,
+    "latitude": "38.280799865722656",
+    "name": "Parkview Medical Center Heliport",
+    "municipality": "Pueblo",
+    "id": "CO71",
+    "longitude": "-104.61399841308594"
+  },
+  {
+    "elevation": "4817",
+    "distance": 7,
+    "latitude": "38.23360061645508",
+    "name": "St Mary-Corwin Hospital Heliport",
+    "municipality": "Pueblo",
+    "id": "2CO7",
+    "longitude": "-104.62300109863281"
+  },
+  {
+    "elevation": "5130",
+    "distance": 6,
+    "latitude": "38.15169906616211",
+    "name": "Simonson Field",
+    "municipality": "Pueblo",
+    "id": "80CO",
+    "longitude": "-104.70600128173828"
+  },
+  {
+    "elevation": "5660",
+    "distance": 21,
+    "latitude": "38.13639831542969",
+    "name": "Rock Creek Airport",
+    "municipality": "Pueblo",
+    "id": "99CO",
+    "longitude": "-104.81500244140625"
+  },
+  {
+    "elevation": "4790",
+    "distance": 14,
+    "latitude": "38.099998474121094",
+    "name": "Huerfano Agricultural Airport",
+    "municipality": "Pueblo",
+    "id": "46CO",
+    "longitude": "-104.4260025024414"
+  },
+  {
+    "elevation": "4500",
+    "distance": 19,
+    "latitude": "38.266700744628906",
+    "name": "Youtsey Airport",
+    "municipality": "Boone",
+    "id": "CO09",
+    "longitude": "-104.28399658203125"
+  },
+  {
+    "elevation": "4428",
+    "distance": 38,
+    "latitude": "38.0724983215332",
+    "name": "Fowler Airport",
+    "municipality": "Fowler",
+    "id": "CO80",
+    "longitude": "-104.0459976196289"
+  },
+  {
+    "elevation": "4570",
+    "distance": 33,
+    "latitude": "38.45280075",
+    "name": "Sand Arroya Airport",
+    "municipality": "Sugar City",
+    "id": "US-0077",
+    "longitude": "-103.5299988"
+  },
+  {
+    "elevation": "5525",
+    "distance": 10,
+    "latitude": "38.88199996948242",
+    "name": "Lone Tree Ranch Airport",
+    "municipality": "Punkin Center",
+    "id": "35CO",
+    "longitude": "-103.80899810791016"
+  },
+  {
+    "elevation": "6000",
+    "distance": 8,
+    "latitude": "38.84389877319336",
+    "name": "High Mesa Airport",
+    "municipality": "Rush",
+    "id": "23CO",
+    "longitude": "-103.98999786376953"
+  },
+  {
+    "elevation": "5600",
+    "distance": 4,
+    "latitude": "38.73249816894531",
+    "name": "Terra Firma Airport",
+    "municipality": "Rush",
+    "id": "08CO",
+    "longitude": "-104.04100036621094"
+  },
+  {
+    "elevation": "5780",
+    "distance": 6,
+    "latitude": "38.760278",
+    "name": "Vantage View Airport",
+    "municipality": "Rush",
+    "id": "7CO6",
+    "longitude": "-104.101389"
+  },
+  {
+    "elevation": "6365",
+    "distance": 6,
+    "latitude": "38.8357009888",
+    "name": "Cable's Corner Airport",
+    "municipality": "Rush",
+    "id": "US-0022",
+    "longitude": "-104.135002136"
+  },
+  {
+    "elevation": "6370",
+    "distance": 6,
+    "latitude": "38.92499923706055",
+    "name": "Peakview Airport",
+    "municipality": "Yoder",
+    "id": "97CO",
+    "longitude": "-104.15899658203125"
+  },
+  {
+    "elevation": "6320",
+    "distance": 9,
+    "latitude": "38.88610076904297",
+    "name": "Tranquila Airport",
+    "municipality": "Yoder",
+    "id": "88CO",
+    "longitude": "-104.2490005493164"
+  },
+  {
+    "elevation": "6036",
+    "distance": 8,
+    "latitude": "38.75830078125",
+    "name": "Usaf Academy Bullseye Aux Airstrip",
+    "municipality": "Ellicott",
+    "id": "CO90",
+    "longitude": "-104.30699920654297"
+  },
+  {
+    "elevation": "5800",
+    "distance": 16,
+    "latitude": "38.652500152600005",
+    "name": "Foxx Valley Airport",
+    "municipality": "Yoder",
+    "id": "0CD2",
+    "longitude": "-104.23400116"
+  },
+  {
+    "elevation": "6288",
+    "distance": 13,
+    "latitude": "38.70330047607422",
+    "name": "Falcon Air Force Base Helipad",
+    "municipality": "Colorado Springs",
+    "id": "CO79",
+    "longitude": "-104.52300262451172"
+  },
+  {
+    "elevation": "6145",
+    "distance": 10,
+    "latitude": "38.8744010925293",
+    "name": "Colorado Springs East Airport",
+    "municipality": "Ellicott",
+    "id": "KA50",
+    "longitude": "-104.41000366210938"
+  },
+  {
+    "elevation": "6874",
+    "distance": 4,
+    "latitude": "38.9458007812",
+    "home_link": "http://www.2mla.com/",
+    "name": "Meadow Lake Airport",
+    "municipality": "Colorado Springs",
+    "id": "K00V",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Meadow_Lake_Airport_(Colorado)",
+    "longitude": "-104.569999695"
+  },
+  {
+    "elevation": "7260",
+    "distance": 9,
+    "latitude": "38.983299255371094",
+    "name": "G W Flanders Ranch Strip",
+    "municipality": "Falcon",
+    "id": "CO54",
+    "longitude": "-104.63400268554688"
+  },
+  {
+    "elevation": "7500",
+    "distance": 4,
+    "latitude": "39.10969924926758",
+    "name": "Mountain View Ranch Airport",
+    "municipality": "Monument",
+    "id": "52CO",
+    "longitude": "-104.65399932861328"
+  },
+  {
+    "elevation": "7240",
+    "distance": 2,
+    "latitude": "39.11050033569336",
+    "name": "Cherokee Trail Ranch Airport",
+    "municipality": "Peyton",
+    "id": "2CO1",
+    "longitude": "-104.58399963378906"
+  },
+  {
+    "elevation": "7100",
+    "distance": 1,
+    "latitude": "39.10609817504883",
+    "name": "Fat Chance Airport",
+    "municipality": "Peyton",
+    "id": "36CO",
+    "longitude": "-104.54399871826172"
+  },
+  {
+    "elevation": "7260",
+    "distance": 5,
+    "latitude": "39.09080123901367",
+    "name": "Rotor Leasing Heliport",
+    "municipality": "Elbert",
+    "id": "66CO",
+    "longitude": "-104.54399871826172"
+  },
+  {
+    "elevation": "6910",
+    "distance": 6,
+    "latitude": "39.162498474121094",
+    "name": "Flying Lazy D Ranch Airport",
+    "municipality": "Elbert",
+    "id": "CO49",
+    "longitude": "-104.53500366210938"
+  },
+  {
+    "elevation": "6600",
+    "distance": 6,
+    "latitude": "39.119472",
+    "name": "Bijou Springs Ranch Airport",
+    "municipality": "Peyton",
+    "id": "2CD3",
+    "longitude": "-104.431806"
+  },
+  {
+    "elevation": "6821",
+    "distance": 4,
+    "latitude": "39.04249954223633",
+    "name": "Peyton Heliport",
+    "municipality": "Calhan",
+    "id": "CD26",
+    "longitude": "-104.36499786376953"
+  },
+  {
+    "elevation": "6450",
+    "distance": 11,
+    "latitude": "39.04779815673828",
+    "name": "Calhan Airport",
+    "municipality": "Calhan",
+    "id": "5V4",
+    "longitude": "-104.29199981689453"
+  },
+  {
+    "elevation": "6300",
+    "distance": 6,
+    "latitude": "39.198299407958984",
+    "name": "Aero Bear Field",
+    "municipality": "Calhan",
+    "id": "CD23",
+    "longitude": "-104.3290023803711"
+  },
+  {
+    "elevation": "6000",
+    "distance": 5,
+    "latitude": "39.2793",
+    "name": "Herrick Airport",
+    "municipality": "Kiowa",
+    "id": "9CO8",
+    "longitude": "-104.34315"
+  },
+  {
+    "elevation": "6620",
+    "distance": 6,
+    "latitude": "39.26359939575195",
+    "name": "Comanche Creek Airport",
+    "municipality": "Kiowa",
+    "id": "07CO",
+    "longitude": "-104.427001953125"
+  },
+  {
+    "elevation": "6380",
+    "distance": 4,
+    "latitude": "39.34389877319336",
+    "name": "Elbert County Heliport",
+    "municipality": "Kiowa",
+    "id": "CO36",
+    "longitude": "-104.46499633789062"
+  },
+  {
+    "elevation": "6650",
+    "distance": 1,
+    "latitude": "39.33470153808594",
+    "name": "Circle 8 Ranch Airport",
+    "municipality": "Elizabeth",
+    "id": "CO42",
+    "longitude": "-104.5459976196289"
+  },
+  {
+    "elevation": "6780",
+    "distance": 1,
+    "latitude": "39.33250045776367",
+    "name": "Dietrichs Airport",
+    "municipality": "Elizabeth",
+    "id": "3CO7",
+    "longitude": "-104.56600189208984"
+  },
+  {
+    "elevation": "6572",
+    "distance": 2,
+    "latitude": "39.344398498535",
+    "name": "Pine View Airport",
+    "municipality": "Elizabeth",
+    "id": "8CO9",
+    "longitude": "-104.58100128174"
+  },
+  {
+    "elevation": "6720",
+    "distance": 3,
+    "latitude": "39.323299407958984",
+    "name": "Flyin' B Ranch Airport",
+    "municipality": "Elizabeth",
+    "id": "CD45",
+    "longitude": "-104.572998046875"
+  },
+  {
+    "elevation": "6752",
+    "distance": 5,
+    "latitude": "39.28129959106445",
+    "name": "D Bar D Airport",
+    "municipality": "Elizabeth",
+    "id": "9CO6",
+    "longitude": "-104.572998046875"
+  },
+  {
+    "elevation": "7040",
+    "distance": 2,
+    "latitude": "39.2247009277",
+    "name": "Kelly Air Park",
+    "municipality": "Elbert",
+    "id": "CO15",
+    "longitude": "-104.63999939"
+  },
+  {
+    "elevation": "7028",
+    "distance": 11,
+    "latitude": "39.21780014038086",
+    "name": "Ambrosich Field",
+    "municipality": "Elbert",
+    "id": "4CO7",
+    "longitude": "-104.68000030517578"
+  },
+  {
+    "elevation": "6512",
+    "distance": 4,
+    "latitude": "39.36249923706055",
+    "name": "Elizabeth Emergency Heliport",
+    "municipality": "Elizabeth",
+    "id": "55CO",
+    "longitude": "-104.5999984741211"
+  },
+  {
+    "elevation": "6510",
+    "distance": 16,
+    "latitude": "39.39485",
+    "name": "Safer Airport",
+    "municipality": "Elizabeth",
+    "id": "2CD6",
+    "longitude": "-104.547033"
+  },
+  {
+    "elevation": "5930",
+    "distance": 14,
+    "latitude": "39.4640007019043",
+    "name": "Chaparral Airport",
+    "municipality": "Kiowa",
+    "id": "CO18",
+    "longitude": "-104.25800323486328"
+  },
+  {
+    "elevation": "5870",
+    "distance": 15,
+    "latitude": "39.2963981628418",
+    "name": "Schantz Airstrip",
+    "municipality": "Simla",
+    "id": "CD15",
+    "longitude": "-104.125"
+  },
+  {
+    "elevation": "5976",
+    "distance": 24,
+    "latitude": "39.17689895629883",
+    "name": "Matheson Heliport",
+    "municipality": "Matheson",
+    "id": "CD49",
+    "longitude": "-103.87999725341797"
+  },
+  {
+    "elevation": "5240",
+    "distance": 11,
+    "latitude": "39.49610137939453",
+    "name": "Metrogro Farm Airport",
+    "municipality": "Agate",
+    "id": "CO25",
+    "longitude": "-103.7239990234375"
+  },
+  {
+    "elevation": "5000",
+    "distance": 14,
+    "latitude": "39.641700744628906",
+    "name": "Frasier Ranch Airport",
+    "municipality": "Last Chance",
+    "id": "CO92",
+    "longitude": "-103.6449966430664"
+  },
+  {
+    "elevation": "4750",
+    "distance": 8,
+    "latitude": "39.83509826660156",
+    "name": "Morris Airport",
+    "municipality": "Deer Trail",
+    "id": "CD13",
+    "longitude": "-103.73600006103516"
+  },
+  {
+    "elevation": "4697",
+    "distance": 15,
+    "latitude": "39.8333015442",
+    "name": "Chenoweth Airport",
+    "municipality": "Last Chance",
+    "id": "0CO5",
+    "longitude": "-103.589996338"
+  },
+  {
+    "elevation": "5050",
+    "distance": 34,
+    "latitude": "39.70690155029297",
+    "name": "Decker Farms Airport",
+    "municipality": "Lindon",
+    "id": "CO94",
+    "longitude": "-103.35199737548828"
+  },
+  {
+    "elevation": "5374",
+    "distance": 14,
+    "latitude": "39.274799346900004",
+    "name": "Limon Municipal Airport",
+    "municipality": "Limon",
+    "id": "KLIC",
+    "longitude": "-103.666000366"
+  },
+  {
+    "elevation": "5034",
+    "distance": 24,
+    "latitude": "39.13330078125",
+    "name": "Lincoln Community Hospital Heliport",
+    "municipality": "Hugo",
+    "id": "CO78",
+    "longitude": "-103.46700286865234"
+  },
+  {
+    "elevation": "4945",
+    "distance": 29,
+    "latitude": "39.279998779296875",
+    "name": "Flagler Aerial Spraying Inc Airport",
+    "municipality": "Flagler",
+    "id": "CO00",
+    "longitude": "-103.06700134277344"
+  },
+  {
+    "elevation": "4345",
+    "distance": 9,
+    "latitude": "39.62080001831055",
+    "name": "Hill Airport",
+    "municipality": "Joes",
+    "id": "CO81",
+    "longitude": "-102.74400329589844"
+  },
+  {
+    "elevation": "4200",
+    "distance": 6,
+    "latitude": "39.67940139770508",
+    "name": "Idler Bro's Airport",
+    "municipality": "Kirk",
+    "id": "72CO",
+    "longitude": "-102.59100341796875"
+  },
+  {
+    "elevation": "4159",
+    "distance": 20,
+    "latitude": "39.608299255371094",
+    "name": "Idlers Field",
+    "municipality": "Kirk",
+    "id": "CO84",
+    "longitude": "-102.54100036621094"
+  },
+  {
+    "elevation": "4000",
+    "distance": 12,
+    "latitude": "39.45470047",
+    "name": "Silkman Farms Inc. Airport",
+    "municipality": "Burlington",
+    "id": "10CO",
+    "longitude": "-102.212997437"
+  },
+  {
+    "elevation": "4210",
+    "distance": 4,
+    "latitude": "39.29945",
+    "name": "Aviation Acres Airport",
+    "municipality": "Burlington",
+    "id": "23CD",
+    "longitude": "-102.321817"
+  },
+  {
+    "elevation": "4219",
+    "distance": 10,
+    "latitude": "39.24250030517578",
+    "name": "Kit Carson County Airport",
+    "municipality": "Burlington",
+    "id": "KITR",
+    "longitude": "-102.28500366210938"
+  },
+  {
+    "elevation": "4300",
+    "distance": 33,
+    "latitude": "39.27916717529297",
+    "name": "Hildebrandt Airport",
+    "municipality": "Bethune",
+    "id": "CO22",
+    "longitude": "-102.4749984741211"
+  },
+  {
+    "elevation": "4184",
+    "distance": 18,
+    "latitude": "38.81669998168945",
+    "name": "Cheyenne Wells Municipal Airport",
+    "municipality": "Cheyenne Wells",
+    "id": "5CO0",
+    "longitude": "-102.30599975585938"
+  },
+  {
+    "elevation": "4126",
+    "distance": 21,
+    "latitude": "38.576698303222656",
+    "name": "Scherler Private Airstrip",
+    "municipality": "Brandon",
+    "id": "9CO5",
+    "longitude": "-102.43699645996094"
+  },
+  {
+    "elevation": "4245",
+    "distance": 23,
+    "latitude": "38.475101470947266",
+    "name": "Eads Municipal Airport",
+    "municipality": "Eads",
+    "id": "K9V7",
+    "longitude": "-102.81099700927734"
+  },
+  {
+    "elevation": "3850",
+    "distance": 11,
+    "latitude": "38.19900131225586",
+    "name": "Tinnes Airport",
+    "municipality": "Lamar",
+    "id": "CD03",
+    "longitude": "-102.572998046875"
+  },
+  {
+    "elevation": "3706",
+    "distance": 4,
+    "latitude": "38.069698333699996",
+    "home_link": "http://www.ci.lamar.co.us/index.asp?Type=B_BASIC&SEC={C91FC3CC-5A83-4F9C-9AF7-A96F374C2EE5}&DE=",
+    "name": "Lamar Municipal Airport",
+    "municipality": "Lamar",
+    "id": "KLAA",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Lamar_Municipal_Airport",
+    "longitude": "-102.68800354"
+  },
+  {
+    "elevation": "3575",
+    "distance": 21,
+    "latitude": "38.0710983276",
+    "name": "Prowers Medical Center Heliport",
+    "municipality": "Lamar",
+    "id": "0CD8",
+    "longitude": "-102.60900116"
+  },
+  {
+    "elevation": "3610",
+    "distance": 7,
+    "latitude": "38.099998474121094",
+    "name": "Air-Sprayers Nr 2 Airport",
+    "municipality": "Hartman",
+    "id": "CO73",
+    "longitude": "-102.21700286865234"
+  },
+  {
+    "elevation": "3390",
+    "distance": 36,
+    "latitude": "38.03329849243164",
+    "name": "Holly Airport",
+    "municipality": "Holly",
+    "id": "K08",
+    "longitude": "-102.11699676513672"
+  },
+  {
+    "elevation": "4096",
+    "distance": 13,
+    "latitude": "37.5531005859375",
+    "name": "Rons Field",
+    "municipality": "Two Buttes",
+    "id": "53CO",
+    "longitude": "-102.39199829101562"
+  },
+  {
+    "elevation": "3964",
+    "distance": 19,
+    "latitude": "37.391700744628906",
+    "name": "Griffin Field",
+    "municipality": "Walsh",
+    "id": "4CO3",
+    "longitude": "-102.27999877929688"
+  },
+  {
+    "elevation": "4390",
+    "distance": 53,
+    "latitude": "37.45869827270508",
+    "name": "Springfield Municipal Airport",
+    "municipality": "Springfield",
+    "id": "K8V7",
+    "longitude": "-102.61799621582031"
+  },
+  {
+    "elevation": "3915",
+    "distance": 15,
+    "latitude": "38.052799224853516",
+    "name": "City of Las Animas Bent County Airport",
+    "municipality": "Las Animas",
+    "id": "K7V9",
+    "longitude": "-103.23699951171875"
+  },
+  {
+    "elevation": "4229",
+    "distance": 6,
+    "latitude": "38.04970169",
+    "name": "La Junta Municipal Airport",
+    "municipality": "La Junta",
+    "id": "KLHX",
+    "longitude": "-103.5090027"
+  },
+  {
+    "elevation": "4124",
+    "distance": 9,
+    "latitude": "37.96139907836914",
+    "name": "Arkansas Valley Regional Medical Center Heliport",
+    "municipality": "La Junta",
+    "id": "8CO6",
+    "longitude": "-103.55000305175781"
+  },
+  {
+    "elevation": "4180",
+    "distance": 4,
+    "latitude": "38.055599212646484",
+    "name": "Cottonwood Field",
+    "municipality": "Swink",
+    "id": "09CO",
+    "longitude": "-103.65299987792969"
+  },
+  {
+    "elevation": "4260",
+    "distance": 26,
+    "latitude": "38.01530075073242",
+    "name": "Melon Field",
+    "municipality": "Rocky Ford",
+    "id": "1CO5",
+    "longitude": "-103.6989974975586"
+  },
+  {
+    "elevation": "4708",
+    "distance": 17,
+    "latitude": "37.63639831542969",
+    "name": "Wine Glass International Airport",
+    "municipality": "La Junta",
+    "id": "6CO3",
+    "longitude": "-103.65799713134766"
+  },
+  {
+    "elevation": "5100",
+    "distance": 28,
+    "latitude": "37.38750076293945",
+    "name": "Jecan Airport",
+    "municipality": "Branson",
+    "id": "06CO",
+    "longitude": "-103.69100189208984"
+  },
+  {
+    "elevation": "6262",
+    "distance": 36,
+    "latitude": "37.01919937133789",
+    "name": "Branson Heliport",
+    "municipality": "Branson",
+    "id": "CD16",
+    "longitude": "-103.88600158691406"
+  },
+  {
+    "elevation": "5686",
+    "distance": 19,
+    "latitude": "37.490501403799996",
+    "name": "Pinon Canyon Airport",
+    "municipality": "Trinidad",
+    "id": "0CD5",
+    "longitude": "-104.143997192"
+  },
+  {
+    "elevation": "5762",
+    "distance": 9,
+    "latitude": "37.2593994141",
+    "name": "Perry Stokes Airport",
+    "municipality": "Trinidad",
+    "id": "KTAD",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Perry_Stokes_Airport",
+    "longitude": "-104.341003418"
+  },
+  {
+    "elevation": "6100",
+    "distance": 37,
+    "latitude": "37.1875",
+    "name": "Mount San Rafael Heliport",
+    "municipality": "Trinidad",
+    "id": "CO64",
+    "longitude": "-104.48799896240234"
+  },
+  {
+    "elevation": "7153",
+    "distance": 31,
+    "latitude": "37.523799896240234",
+    "name": "Cuchara Valley At La Veta Airport",
+    "municipality": "La Veta",
+    "id": "K07V",
+    "longitude": "-105.00900268554688"
+  },
+  {
+    "elevation": "7957",
+    "distance": 25,
+    "latitude": "37.070899963378906",
+    "name": "Tercio Ranch Airstrip",
+    "municipality": "Stonewall",
+    "id": "3CO4",
+    "longitude": "-105.01899719238281"
+  },
+  {
+    "elevation": "8820",
+    "distance": 24,
+    "latitude": "37.064998626708984",
+    "name": "Melby Ranch Airstrip",
+    "municipality": "San Luis",
+    "id": "33CO",
+    "longitude": "-105.46399688720703"
+  },
+  {
+    "elevation": "7720",
+    "distance": 17,
+    "latitude": "37.41109848022461",
+    "name": "Blanca Airport",
+    "municipality": "Blanca",
+    "id": "05V",
+    "longitude": "-105.552001953125"
+  },
+  {
+    "elevation": "7539",
+    "distance": 12,
+    "latitude": "37.434898",
+    "name": "San Luis Valley Regional Bergman Field",
+    "municipality": "Alamosa",
+    "id": "KALS",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/San_Luis_Valley_Regional_Airport",
+    "longitude": "-105.866997"
+  },
+  {
+    "elevation": "7611",
+    "distance": 8,
+    "latitude": "37.52730178833008",
+    "name": "Monte Vista Municipal Airport",
+    "municipality": "Monte Vista",
+    "id": "KMVI",
+    "longitude": "-106.0479965209961"
+  },
+  {
+    "elevation": "7615",
+    "distance": 1,
+    "latitude": "37.64329910279999",
+    "name": "Mc Cullough Airport",
+    "municipality": "Monte Vista",
+    "id": "02CO",
+    "longitude": "-106.04699707"
+  },
+  {
+    "elevation": "7613",
+    "distance": 18,
+    "latitude": "37.6582984924",
+    "name": "Van Treese Airport",
+    "municipality": "Monte Vista",
+    "id": "0CO9",
+    "longitude": "-106.033996582"
+  },
+  {
+    "elevation": "7190",
+    "distance": 11,
+    "latitude": "37.67499923706055",
+    "name": "Rio Grande Hospital Heliport",
+    "municipality": "Del Norte",
+    "id": "1CD5",
+    "longitude": "-106.36299896240234"
+  },
+  {
+    "elevation": "8100",
+    "distance": 5,
+    "latitude": "37.67499923706055",
+    "name": "Chapman Field",
+    "municipality": "South Fork",
+    "id": "CD10",
+    "longitude": "-106.55599975585938"
+  },
+  {
+    "elevation": "8300",
+    "distance": 10,
+    "latitude": "37.740299224853516",
+    "name": "Morning Shadows Ranch Airport",
+    "municipality": "South Fork",
+    "id": "CD69",
+    "longitude": "-106.5260009765625"
+  },
+  {
+    "elevation": "7949",
+    "distance": 18,
+    "latitude": "37.71360016",
+    "home_link": "https://www.codot.gov/programs/aeronautics/colorado-airport-system/general-aviation-airports/ga-airports-d/RCV",
+    "name": "Astronaut Kent Rominger Airport",
+    "municipality": "Del Norte",
+    "id": "K8V1",
+    "longitude": "-106.3539963"
+  },
+  {
+    "elevation": "7598",
+    "distance": 19,
+    "latitude": "37.784698486328125",
+    "name": "Leach Airport",
+    "municipality": "Center",
+    "id": "K1V8",
+    "longitude": "-106.03800201416016"
+  },
+  {
+    "elevation": "7620",
+    "distance": 24,
+    "latitude": "37.964777777799995",
+    "name": "Baca Grande Airfield",
+    "municipality": "Crestone",
+    "id": "BCJ",
+    "longitude": "-105.776666667"
+  },
+  {
+    "elevation": "7826",
+    "distance": 6,
+    "latitude": "38.0990833",
+    "name": "Saguache Municipal Airport",
+    "municipality": "Saguache",
+    "id": "04V",
+    "longitude": "-106.1743889"
+  },
+  {
+    "elevation": "7262",
+    "distance": 46,
+    "latitude": "38.099998474121094",
+    "name": "Norwood Junction Heliport",
+    "municipality": "Norwood",
+    "id": "CD55",
+    "longitude": "-106.28399658203125"
+  },
+  {
+    "elevation": "7680",
+    "distance": 1,
+    "latitude": "38.53390121",
+    "name": "Gunnison Crested Butte Regional Airport",
+    "municipality": "Gunnison",
+    "id": "KGUC",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Gunnison-Crested_Butte_Regional_Airport",
+    "longitude": "-106.9329987"
+  },
+  {
+    "elevation": "7715",
+    "distance": 21,
+    "latitude": "38.551700592041016",
+    "name": "Gunnison Valley Hospital Heliport",
+    "municipality": "Gunnison",
+    "id": "CD12",
+    "longitude": "-106.92500305175781"
+  },
+  {
+    "elevation": "8980",
+    "distance": 23,
+    "latitude": "38.8518981934",
+    "name": "Buckhorn Ranch Airport",
+    "municipality": "Crested Butte",
+    "id": "0CO2",
+    "longitude": "-106.93282"
+  },
+  {
+    "elevation": "8000",
+    "distance": 1,
+    "latitude": "39.17720031738281",
+    "name": "Pfister Ranch Heliport",
+    "municipality": "Aspen",
+    "id": "78CO",
+    "longitude": "-106.85600280761719"
+  },
+  {
+    "elevation": "8140",
+    "distance": 3,
+    "latitude": "39.190006808300005",
+    "name": "Aspen Valley Hospital Heliport",
+    "municipality": "Aspen",
+    "id": "CO50",
+    "longitude": "-106.839004755"
+  },
+  {
+    "elevation": "7820",
+    "distance": 3,
+    "latitude": "39.22320175",
+    "home_link": "http://aspenairport.com/",
+    "name": "Aspen-Pitkin Co/Sardy Field",
+    "municipality": "Aspen",
+    "id": "KASE",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Aspen%E2%80%93Pitkin_County_Airport",
+    "longitude": "-106.8690033"
+  },
+  {
+    "elevation": "8440",
+    "distance": 31,
+    "latitude": "39.2599983215332",
+    "name": "Aspen Gliderport",
+    "municipality": "Aspen",
+    "id": "CO03",
+    "longitude": "-106.91200256347656"
+  },
+  {
+    "elevation": "9212",
+    "distance": 6,
+    "latitude": "39.70000076293945",
+    "name": "Castle Peak Heliport",
+    "municipality": "Wolcott",
+    "id": "CD77",
+    "longitude": "-106.76699829101562"
+  },
+  {
+    "elevation": "7500",
+    "distance": 4,
+    "latitude": "39.64360046386719",
+    "name": "Beaver Creek Heliport",
+    "municipality": "Beaver Creek",
+    "id": "4CO9",
+    "longitude": "-106.8479995727539"
+  },
+  {
+    "elevation": "6548",
+    "distance": 4,
+    "latitude": "39.64260101",
+    "home_link": "http://www.eaglecounty.us/airport/",
+    "name": "Eagle County Regional Airport",
+    "municipality": "Eagle",
+    "id": "KEGE",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Eagle_County_Regional_Airport",
+    "longitude": "-106.9179993"
+  },
+  {
+    "elevation": "6720",
+    "distance": 12,
+    "latitude": "39.599998474121094",
+    "name": "Gypsum Creek Ranch Airport",
+    "municipality": "Gypsum",
+    "id": "CO47",
+    "longitude": "-106.9739990234375"
+  },
+  {
+    "elevation": "7100",
+    "distance": 6,
+    "latitude": "39.469083",
+    "name": "Turnberry Ranch Heliport",
+    "municipality": "Carbondale",
+    "id": "2CD7",
+    "longitude": "-107.135722"
+  },
+  {
+    "elevation": "6835",
+    "distance": 12,
+    "latitude": "39.38890075683594",
+    "name": "Glen-Aspen Airport",
+    "municipality": "Carbondale",
+    "id": "4CO0",
+    "longitude": "-107.16000366210938"
+  },
+  {
+    "elevation": "7985",
+    "distance": 2,
+    "latitude": "39.53329849243164",
+    "name": "Lookout Mountain Heliport",
+    "municipality": "Glenwood Springs",
+    "id": "CD42",
+    "longitude": "-107.28399658203125"
+  },
+  {
+    "elevation": "5916",
+    "distance": 6,
+    "latitude": "39.5083007812",
+    "home_link": "http://www.glenwoodspringsairport.com/",
+    "name": "Glenwood Springs Municipal Airport",
+    "municipality": "Glenwood Springs",
+    "id": "KGWS",
+    "longitude": "-107.310997009"
+  },
+  {
+    "elevation": "10603",
+    "distance": 13,
+    "latitude": "39.43330001831055",
+    "name": "Sunlite Heliport",
+    "municipality": "Glenwood Springs",
+    "id": "CD41",
+    "longitude": "-107.38400268554688"
+  },
+  {
+    "elevation": "6352",
+    "distance": 8,
+    "latitude": "39.430556",
+    "name": "West Divide Heliport",
+    "municipality": "Silt",
+    "id": "2CD4",
+    "longitude": "-107.623056"
+  },
+  {
+    "elevation": "5548",
+    "distance": 0,
+    "latitude": "39.527801513671875",
+    "name": "Dbs Air Heliport",
+    "municipality": "Rifle",
+    "id": "CO87",
+    "longitude": "-107.71900177001953"
+  },
+  {
+    "elevation": "5548",
+    "distance": 2,
+    "latitude": "39.52629852",
+    "home_link": "http://www.rifleairport.com/",
+    "name": "Garfield County Regional Airport",
+    "municipality": "Rifle",
+    "id": "KRIL",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Garfield_County_Regional_Airport",
+    "longitude": "-107.7269974"
+  },
+  {
+    "elevation": "5609",
+    "distance": 15,
+    "latitude": "39.53390121459961",
+    "name": "Rifle Junction Heliport",
+    "municipality": "Rifle",
+    "id": "CO85",
+    "longitude": "-107.77200317382812"
+  },
+  {
+    "elevation": "8416",
+    "distance": 21,
+    "latitude": "39.70000076293945",
+    "name": "Rio Blanco Heliport",
+    "municipality": "Rio Blanco",
+    "id": "CD66",
+    "longitude": "-107.95099639892578"
+  },
+  {
+    "elevation": "5331",
+    "distance": 1,
+    "latitude": "39.40995",
+    "name": "Dry Pen Airport",
+    "municipality": "Parachute",
+    "id": "16CO",
+    "longitude": "-108.085667"
+  },
+  {
+    "elevation": "6095",
+    "distance": 20,
+    "latitude": "39.41659927368164",
+    "name": "Grand Valley Heliport",
+    "municipality": "Parachute",
+    "id": "CD56",
+    "longitude": "-108.10099792480469"
+  },
+  {
+    "elevation": "6585",
+    "distance": 5,
+    "latitude": "39.12910079956055",
+    "name": "Phylcon Ranch Airport",
+    "municipality": "Mesa",
+    "id": "9CO9",
+    "longitude": "-108.14199829101562"
+  },
+  {
+    "elevation": "9940",
+    "distance": 17,
+    "latitude": "39.09049987792969",
+    "name": "Lands End Microwave Heliport",
+    "municipality": "Palisade",
+    "id": "1CO6",
+    "longitude": "-108.22100067138672"
+  },
+  {
+    "elevation": "7200",
+    "distance": 16,
+    "latitude": "38.96110153198242",
+    "name": "Mesawood Airpark",
+    "municipality": "Cedaredge",
+    "id": "6CO2",
+    "longitude": "-107.95800018310547"
+  },
+  {
+    "elevation": "6200",
+    "distance": 3,
+    "latitude": "38.79999923706055",
+    "name": "Point Creek Heliport",
+    "municipality": "Delta",
+    "id": "CD34",
+    "longitude": "-108.16699981689453"
+  },
+  {
+    "elevation": "5000",
+    "distance": 2,
+    "latitude": "38.75749969482422",
+    "name": "Westwinds Airport",
+    "municipality": "Delta",
+    "id": "KD17",
+    "longitude": "-108.14800262451172"
+  },
+  {
+    "elevation": "4900",
+    "distance": 4,
+    "latitude": "38.72600173950195",
+    "name": "Roubideau Airport",
+    "municipality": "Delta",
+    "id": "27CO",
+    "longitude": "-108.12899780273438"
+  },
+  {
+    "elevation": "5093",
+    "distance": 3,
+    "latitude": "38.703611",
+    "name": "Jim's Heliport",
+    "municipality": "Delta",
+    "id": "5CO3",
+    "longitude": "-108.063164"
+  },
+  {
+    "elevation": "5000",
+    "distance": 2,
+    "latitude": "38.7407989502",
+    "name": "Delta County Memorial Hospital Heliport",
+    "municipality": "Delta",
+    "id": "0CD0",
+    "longitude": "-108.052001953"
+  },
+  {
+    "elevation": "5300",
+    "distance": 3,
+    "latitude": "38.73749923706055",
+    "name": "Sky Island Ranch Airport",
+    "municipality": "Delta",
+    "id": "3CO0",
+    "longitude": "-108.00599670410156"
+  },
+  {
+    "elevation": "5050",
+    "distance": 1,
+    "latitude": "38.77280044555664",
+    "name": "Barber Field",
+    "municipality": "Delta",
+    "id": "CO89",
+    "longitude": "-108.04399871826172"
+  },
+  {
+    "elevation": "5193",
+    "distance": 5,
+    "latitude": "38.786399841308594",
+    "name": "Blake Field",
+    "municipality": "Delta",
+    "id": "KAJZ",
+    "longitude": "-108.06400299072266"
+  },
+  {
+    "elevation": "5680",
+    "distance": 7,
+    "latitude": "38.85279846191406",
+    "name": "Doctors Mesa Airport",
+    "municipality": "Eckert/Orchard City",
+    "id": "6CO0",
+    "longitude": "-108.01699829101562"
+  },
+  {
+    "elevation": "6020",
+    "distance": 1,
+    "latitude": "38.833900451660156",
+    "name": "Widner Airport",
+    "municipality": "Hotchkiss",
+    "id": "8CO5",
+    "longitude": "-107.89199829101562"
+  },
+  {
+    "elevation": "6150",
+    "distance": 0,
+    "latitude": "38.83639907836914",
+    "name": "Eden Ranch Airport",
+    "municipality": "Hotchkiss",
+    "id": "CO76",
+    "longitude": "-107.86599731445312"
+  },
+  {
+    "elevation": "6200",
+    "distance": 1,
+    "latitude": "38.83330154418945",
+    "name": "Shipman Ranch Airport",
+    "municipality": "Austin",
+    "id": "5CO1",
+    "longitude": "-107.85900115966797"
+  },
+  {
+    "elevation": "6200",
+    "distance": 2,
+    "latitude": "38.84159851074219",
+    "name": "Hawkins Ranch Airport",
+    "municipality": "Hotchkiss",
+    "id": "7CO2",
+    "longitude": "-107.8759994506836"
+  },
+  {
+    "elevation": "6460",
+    "distance": 1,
+    "latitude": "38.84830093383789",
+    "name": "Cridler Field",
+    "municipality": "Hotchkiss",
+    "id": "3CO1",
+    "longitude": "-107.83300018310547"
+  },
+  {
+    "elevation": "6409",
+    "distance": 2,
+    "latitude": "38.83549880981445",
+    "name": "Omega 1 STOLport",
+    "municipality": "Hotchkiss",
+    "id": "12CO",
+    "longitude": "-107.81500244140625"
+  },
+  {
+    "elevation": "6885",
+    "distance": 2,
+    "latitude": "38.86249923706055",
+    "name": "Flying W Ranch Airport",
+    "municipality": "Cedaredge",
+    "id": "CO20",
+    "longitude": "-107.82099914550781"
+  },
+  {
+    "elevation": "7105",
+    "distance": 3,
+    "latitude": "38.88560104370117",
+    "name": "Flying W No.2 Airport",
+    "municipality": "Hotchkiss",
+    "id": "51CO",
+    "longitude": "-107.80400085449219"
+  },
+  {
+    "elevation": "6100",
+    "distance": 2,
+    "latitude": "38.836700439453125",
+    "name": "Redlands Airport",
+    "municipality": "Hotchkiss",
+    "id": "44CO",
+    "longitude": "-107.79299926757812"
+  },
+  {
+    "elevation": "5750",
+    "distance": 7,
+    "latitude": "38.805599212646484",
+    "name": "Montemadeira Ii Airport",
+    "municipality": "Hotchkiss",
+    "id": "CD97",
+    "longitude": "-107.77400207519531"
+  },
+  {
+    "elevation": "5798",
+    "distance": 9,
+    "latitude": "38.8316993713",
+    "name": "North Fork Valley Airport",
+    "municipality": "Paonia",
+    "id": "K7V2",
+    "longitude": "-107.646003723"
+  },
+  {
+    "elevation": "6470",
+    "distance": 19,
+    "latitude": "38.704200744628906",
+    "name": "Crawford Airport",
+    "municipality": "Crawford",
+    "id": "K99V",
+    "longitude": "-107.64399719238281"
+  },
+  {
+    "elevation": "5560",
+    "distance": 2,
+    "latitude": "38.57500076293945",
+    "name": "Clifford Field",
+    "municipality": "Olathe",
+    "id": "1CO4",
+    "longitude": "-107.95899963378906"
+  },
+  {
+    "elevation": "5681",
+    "distance": 7,
+    "latitude": "38.56719970703125",
+    "name": "Ash Mesa Heliport",
+    "municipality": "Olathe",
+    "id": "37CO",
+    "longitude": "-107.99600219726562"
+  },
+  {
+    "elevation": "5759",
+    "distance": 2,
+    "latitude": "38.509799957300004",
+    "name": "Montrose Regional Airport",
+    "municipality": "Montrose",
+    "id": "KMTJ",
+    "longitude": "-107.893997192"
+  },
+  {
+    "elevation": "5888",
+    "distance": 0,
+    "latitude": "38.480098724365234",
+    "name": "Montrose Memorial Hospital Heliport",
+    "municipality": "Montrose",
+    "id": "CD47",
+    "longitude": "-107.86900329589844"
+  },
+  {
+    "elevation": "5812",
+    "distance": 1,
+    "latitude": "38.480499267578125",
+    "name": "Montrose Memorial Hospital Heliport",
+    "municipality": "Montrose",
+    "id": "31CO",
+    "longitude": "-107.86900329589844"
+  },
+  {
+    "elevation": "5825",
+    "distance": 1,
+    "latitude": "38.4660987854",
+    "name": "West Area Pwr Admin Ops Center Heliport",
+    "municipality": "Montrose",
+    "id": "6CO8",
+    "longitude": "-107.873001099"
+  },
+  {
+    "elevation": "5859",
+    "distance": 3,
+    "latitude": "38.45830154418945",
+    "name": "Montrose Blm Heliport",
+    "municipality": "Montrose",
+    "id": "6CO5",
+    "longitude": "-107.86799621582031"
+  },
+  {
+    "elevation": "6200",
+    "distance": 5,
+    "latitude": "38.416698455799995",
+    "name": "Happy Canyon Aero Ranch Airport",
+    "municipality": "Montrose",
+    "id": "US-0072",
+    "longitude": "-107.901000977"
+  },
+  {
+    "elevation": "6120",
+    "distance": 11,
+    "latitude": "38.38890075683594",
+    "name": "Woods STOLport",
+    "municipality": "Montrose",
+    "id": "73CO",
+    "longitude": "-107.822998046875"
+  },
+  {
+    "elevation": "7200",
+    "distance": 3,
+    "latitude": "38.487998962402344",
+    "name": "Flying M Ranch Airport",
+    "municipality": "Montrose",
+    "id": "39CO",
+    "longitude": "-107.67400360107422"
+  },
+  {
+    "elevation": "8208",
+    "distance": 13,
+    "latitude": "38.45000076293945",
+    "name": "Cerro Summit Heliport",
+    "municipality": "Cimarron",
+    "id": "CD29",
+    "longitude": "-107.6510009765625"
+  },
+  {
+    "elevation": "9316",
+    "distance": 26,
+    "latitude": "38.38330078125",
+    "name": "Fitzpatrick Heliport",
+    "municipality": "Cimarron",
+    "id": "CD30",
+    "longitude": "-107.41699981689453"
+  },
+  {
+    "elevation": "7250",
+    "distance": 19,
+    "latitude": "38.08470153808594",
+    "name": "Ponderosa Heliport",
+    "municipality": "Ouray",
+    "id": "94CO",
+    "longitude": "-107.70099639892578"
+  },
+  {
+    "elevation": "8965",
+    "distance": 12,
+    "latitude": "38.253333",
+    "name": "Elk Mountain Resort Heliport",
+    "municipality": "Montrose",
+    "id": "2CD5",
+    "longitude": "-107.972222"
+  },
+  {
+    "elevation": "9943",
+    "distance": 6,
+    "latitude": "38.29999923706055",
+    "name": "Raspberry Heliport",
+    "municipality": "Norwood",
+    "id": "CD54",
+    "longitude": "-108.18399810791016"
+  },
+  {
+    "elevation": "8000",
+    "distance": 3,
+    "latitude": "38.2193984985",
+    "name": "Flying M & M Ranch Airport",
+    "municipality": "Norwood",
+    "id": "0CO6",
+    "longitude": "-108.212997437"
+  },
+  {
+    "elevation": "5400",
+    "distance": 5,
+    "latitude": "38.21860122680664",
+    "name": "Basin Clinic Heliport",
+    "municipality": "Naturita",
+    "id": "38CO",
+    "longitude": "-108.2760009765625"
+  },
+  {
+    "elevation": "6842",
+    "distance": 19,
+    "latitude": "38.162498474121094",
+    "name": "Williams Ranch Airport",
+    "municipality": "Norwood",
+    "id": "1CO2",
+    "longitude": "-108.33999633789062"
+  },
+  {
+    "elevation": "7304",
+    "distance": 5,
+    "latitude": "38.016700744628906",
+    "name": "Placerville Heliport",
+    "municipality": "Placerville",
+    "id": "CD59",
+    "longitude": "-108.0510025024414"
+  },
+  {
+    "elevation": "9580",
+    "distance": 8,
+    "latitude": "38.052799224853516",
+    "name": "Wilson Ranch Airport",
+    "municipality": "Telluride",
+    "id": "CO95",
+    "longitude": "-107.9800033569336"
+  },
+  {
+    "elevation": "9070",
+    "distance": 3,
+    "latitude": "37.9538002",
+    "name": "Telluride Regional Airport",
+    "municipality": "Telluride",
+    "id": "KTEX",
+    "longitude": "-107.9079971"
+  },
+  {
+    "elevation": "9430",
+    "distance": 20,
+    "latitude": "37.939998626708984",
+    "name": "Doral/Telluride Heliport",
+    "municipality": "Telluride",
+    "id": "CO72",
+    "longitude": "-107.8489990234375"
+  },
+  {
+    "elevation": "8807",
+    "distance": 12,
+    "latitude": "37.68330001831055",
+    "name": "Rico Heliport",
+    "municipality": "Rico",
+    "id": "CD65",
+    "longitude": "-108.01699829101562"
+  },
+  {
+    "elevation": "8700",
+    "distance": 4,
+    "latitude": "37.627201080322266",
+    "name": "Purgatory Nr One Heliport",
+    "municipality": "Durango",
+    "id": "58CO",
+    "longitude": "-107.80400085449219"
+  },
+  {
+    "elevation": "10634",
+    "distance": 10,
+    "latitude": "37.68330001831055",
+    "name": "Coal Bank Pass Heliport",
+    "municipality": "Wolf Creek",
+    "id": "CD78",
+    "longitude": "-107.76699829101562"
+  },
+  {
+    "elevation": "9272",
+    "distance": 6,
+    "latitude": "37.79999923706055",
+    "name": "Silverton Junction Heliport",
+    "municipality": "Silverton",
+    "id": "CD68",
+    "longitude": "-107.66699981689453"
+  },
+  {
+    "elevation": "9500",
+    "distance": 13,
+    "latitude": "37.85279846191406",
+    "name": "K2 Heliport Nr 1a Heliport",
+    "municipality": "Silverton",
+    "id": "7CO9",
+    "longitude": "-107.57499694824219"
+  },
+  {
+    "elevation": "9300",
+    "distance": 24,
+    "latitude": "37.90919876098633",
+    "name": "Castle Lakes Airport",
+    "municipality": "Lake City",
+    "id": "CD32",
+    "longitude": "-107.3499984741211"
+  },
+  {
+    "elevation": "8680",
+    "distance": 38,
+    "latitude": "37.8208007812",
+    "home_link": "https://www.codot.gov/programs/aeronautics/colorado-airport-system/general-aviation-airports/ga-airports-c-d/C24",
+    "name": "Mineral County Memorial Airport",
+    "municipality": "Creede",
+    "id": "KC24",
+    "longitude": "-106.930999756"
+  },
+  {
+    "elevation": "7664",
+    "distance": 39,
+    "latitude": "37.28630066",
+    "home_link": "http://www.stevensfield.com/",
+    "name": "Stevens Field",
+    "municipality": "Pagosa Springs",
+    "id": "KPSO",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Stevens_Field",
+    "longitude": "-107.0559998"
+  },
+  {
+    "elevation": "9873",
+    "distance": 14,
+    "latitude": "37.349998474121094",
+    "name": "Missionary Ridge Heliport",
+    "municipality": "Trimble",
+    "id": "CD72",
+    "longitude": "-107.76699829101562"
+  },
+  {
+    "elevation": "6685",
+    "distance": 7,
+    "latitude": "37.1515007019",
+    "home_link": "http://www.durangogov.org/airport/index.cfm",
+    "name": "Durango La Plata County Airport",
+    "municipality": "Durango",
+    "id": "KDRO",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Durango-La_Plata_County_Airport",
+    "longitude": "-107.753997803"
+  },
+  {
+    "elevation": "6660",
+    "distance": 0,
+    "latitude": "37.20309829711914",
+    "name": "Animas Air Park",
+    "municipality": "Durango",
+    "id": "56CO",
+    "longitude": "-107.86799621582031"
+  },
+  {
+    "elevation": "6684",
+    "distance": 3,
+    "latitude": "37.203201293899994",
+    "home_link": "http://www.websmart66.net/cgi-bin/p/w66p-airportinfo.cgi?d=greggs-flying-service",
+    "name": "Animas Air Park",
+    "municipality": "Durango",
+    "id": "K00C",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Animas_Air_Park",
+    "longitude": "-107.869003296"
+  },
+  {
+    "elevation": "6534",
+    "distance": 3,
+    "latitude": "37.24169921875",
+    "name": "Mountain Bell/Durango Heliport",
+    "municipality": "Durango",
+    "id": "CD11",
+    "longitude": "-107.8759994506836"
+  },
+  {
+    "elevation": "6585",
+    "distance": 4,
+    "latitude": "37.2832984924",
+    "name": "Mercy Regional Medical Center Heliport",
+    "municipality": "Durango",
+    "id": "CO46",
+    "longitude": "-107.874000549"
+  },
+  {
+    "elevation": "6548",
+    "distance": 16,
+    "latitude": "37.337799072265625",
+    "name": "Val Air Airport",
+    "municipality": "Durango",
+    "id": "CD82",
+    "longitude": "-107.85199737548828"
+  },
+  {
+    "elevation": "10039",
+    "distance": 20,
+    "latitude": "37.349998474121094",
+    "name": "Madden Peak Heliport",
+    "municipality": "Hesperus",
+    "id": "CD44",
+    "longitude": "-108.1510009765625"
+  },
+  {
+    "elevation": "8074",
+    "distance": 8,
+    "latitude": "37.25",
+    "name": "Mesa Verde Heliport",
+    "municipality": "Cortez",
+    "id": "CD33",
+    "longitude": "-108.5009994506836"
+  },
+  {
+    "elevation": "5918",
+    "distance": 5,
+    "latitude": "37.3030014038",
+    "home_link": "http://www.cityofcortez.com/index.aspx?NID=113",
+    "name": "Cortez Municipal Airport",
+    "municipality": "Cortez",
+    "id": "KCEZ",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Cortez_Municipal_Airport",
+    "longitude": "-108.627998352"
+  },
+  {
+    "elevation": "6153",
+    "distance": 9,
+    "latitude": "37.362998962402344",
+    "name": "MCHD Heliport",
+    "municipality": "Cortez",
+    "id": "1CO9",
+    "longitude": "-108.57499694824219"
+  },
+  {
+    "elevation": "6640",
+    "distance": 9,
+    "latitude": "37.46780014038086",
+    "name": "Tanner Field",
+    "municipality": "Cortez",
+    "id": "CO27",
+    "longitude": "-108.66500091552734"
+  },
+  {
+    "elevation": "7723",
+    "distance": 18,
+    "latitude": "37.599998474121094",
+    "name": "Pleasant View Heliport",
+    "municipality": "Dove Creek",
+    "id": "CD35",
+    "longitude": "-108.63400268554688"
+  },
+  {
+    "elevation": "6975",
+    "distance": 9,
+    "latitude": "37.76390075683594",
+    "name": "Dove Creek Airport",
+    "municipality": "Dove Creek",
+    "id": "8V6",
+    "longitude": "-108.88899993896484"
+  },
+  {
+    "elevation": "8063",
+    "distance": 29,
+    "latitude": "37.88330078125",
+    "name": "Egnar Heliport",
+    "municipality": "Egnar",
+    "id": "CD36",
+    "longitude": "-108.83399963378906"
+  },
+  {
+    "elevation": "5940",
+    "distance": 38,
+    "latitude": "38.238800048828",
+    "home_link": "http://www.montrosecounty.net/195/Nucla-Hopkins-Field",
+    "name": "Hopkins Field",
+    "municipality": "Nucla",
+    "id": "KAIB",
+    "longitude": "-108.56300354004"
+  },
+  {
+    "elevation": "4670",
+    "distance": 3,
+    "latitude": "38.68330001831055",
+    "name": "Hubbard Airport",
+    "municipality": "Gateway",
+    "id": "9CO3",
+    "longitude": "-108.98400115966797"
+  },
+  {
+    "elevation": "4820",
+    "distance": 28,
+    "latitude": "38.705501556396484",
+    "name": "Hendricks Field At West Creek Ranch Airport",
+    "municipality": "Gateway",
+    "id": "63CO",
+    "longitude": "-108.93699645996094"
+  },
+  {
+    "elevation": "6208",
+    "distance": 12,
+    "latitude": "38.900001525878906",
+    "name": "Whitewater Heliport",
+    "municipality": "Whitewater",
+    "id": "CD75",
+    "longitude": "-108.48400115966797"
+  },
+  {
+    "elevation": "4630",
+    "distance": 3,
+    "latitude": "39.072167",
+    "name": "Lands End Heliport",
+    "municipality": "Grand Junction",
+    "id": "2CO9",
+    "longitude": "-108.511167"
+  },
+  {
+    "elevation": "4820",
+    "distance": 1,
+    "latitude": "39.117801666259766",
+    "name": "Blm Fire Center Heliport",
+    "municipality": "Grand Junction",
+    "id": "28CO",
+    "longitude": "-108.53900146484375"
+  },
+  {
+    "elevation": "4858",
+    "distance": 3,
+    "latitude": "39.1223983765",
+    "home_link": "http://www.gjairport.com/",
+    "name": "Grand Junction Regional Airport",
+    "municipality": "Grand Junction",
+    "id": "KGJT",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Grand_Junction_Regional_Airport",
+    "longitude": "-108.527000427"
+  },
+  {
+    "elevation": "4650",
+    "distance": 1,
+    "latitude": "39.089815",
+    "name": "St Mary's Hospital & Medical Center Heliport",
+    "municipality": "Grand Junction",
+    "id": "29CO",
+    "longitude": "-108.562855"
+  },
+  {
+    "elevation": "4580",
+    "distance": 1,
+    "latitude": "39.09749984741211",
+    "name": "Mountain Bell Heliport",
+    "municipality": "Grand Junction",
+    "id": "82CO",
+    "longitude": "-108.58399963378906"
+  },
+  {
+    "elevation": "4575",
+    "distance": 9,
+    "latitude": "39.096900939941406",
+    "name": "Monument Heliport",
+    "municipality": "Grand Junction",
+    "id": "6CO7",
+    "longitude": "-108.5999984741211"
+  },
+  {
+    "elevation": "6980",
+    "distance": 20,
+    "latitude": "39.00279998779297",
+    "name": "Pinyon Airport",
+    "municipality": "Glade Park",
+    "id": "CO43",
+    "longitude": "-108.70999908447266"
+  },
+  {
+    "elevation": "4724",
+    "distance": 22,
+    "latitude": "39.2672004699707",
+    "name": "Mack Mesa Airport",
+    "municipality": "Mack",
+    "id": "C07",
+    "longitude": "-108.86399841308594"
+  },
+  {
+    "elevation": "8718",
+    "distance": 37,
+    "latitude": "39.58330154418945",
+    "name": "Baxter Pass Heliport",
+    "municipality": "Rangely",
+    "id": "CD62",
+    "longitude": "-108.95099639892578"
+  },
+  {
+    "elevation": "6084",
+    "distance": 8,
+    "latitude": "40.116600036621094",
+    "name": "Raven Ridge Heliport",
+    "municipality": "Rangely",
+    "id": "CD63",
+    "longitude": "-108.95099639892578"
+  },
+  {
+    "elevation": "5224",
+    "distance": 2,
+    "latitude": "40.0807991027832",
+    "name": "Rangely District Hospital Heliport",
+    "municipality": "Rangely",
+    "id": "18CO",
+    "longitude": "-108.80400085449219"
+  },
+  {
+    "elevation": "5275",
+    "distance": 45,
+    "latitude": "40.09400177",
+    "name": "Rangely Airport",
+    "municipality": "Rangely",
+    "id": "K4V0",
+    "longitude": "-108.763000488"
+  },
+  {
+    "elevation": "6298",
+    "distance": 1,
+    "latitude": "40.04140090942383",
+    "name": "Pioneers Heliport",
+    "municipality": "Meeker",
+    "id": "4CO5",
+    "longitude": "-107.91100311279297"
+  },
+  {
+    "elevation": "6421",
+    "distance": 7,
+    "latitude": "40.04880142211914",
+    "name": "Meeker Airport",
+    "municipality": "Meeker",
+    "id": "KEEO",
+    "longitude": "-107.88600158691406"
+  },
+  {
+    "elevation": "8646",
+    "distance": 18,
+    "latitude": "40.150001525878906",
+    "name": "Teepee Park Heliport",
+    "municipality": "Meeker",
+    "id": "CD50",
+    "longitude": "-107.86699676513672"
+  },
+  {
+    "elevation": "7020",
+    "distance": 37,
+    "latitude": "39.971111",
+    "name": "Flying Dog Ranch Airstrip",
+    "municipality": "Meeker",
+    "id": "41CO",
+    "longitude": "-107.611111"
+  },
+  {
+    "elevation": "6193",
+    "distance": 2,
+    "latitude": "40.4952011108",
+    "home_link": "http://www.colorado.gov/cs/Satellite/CNTY-Moffat/CBON/1251574649681",
+    "name": "Craig Moffat Airport",
+    "municipality": "Craig",
+    "id": "KCAG",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Craig-Moffat_Airport",
+    "longitude": "-107.522003174"
+  },
+  {
+    "elevation": "6316",
+    "distance": 1,
+    "latitude": "40.51869965",
+    "name": "The Memorial Hospital Heliport",
+    "municipality": "Craig",
+    "id": "54CO",
+    "longitude": "-107.544998169"
+  },
+  {
+    "elevation": "6500",
+    "distance": 17,
+    "latitude": "40.524200439453125",
+    "name": "Craig Heliport",
+    "municipality": "Craig",
+    "id": "CO21",
+    "longitude": "-107.55599975585938"
+  },
+  {
+    "elevation": "6978",
+    "distance": 26,
+    "latitude": "40.775001525878906",
+    "name": "Mesa View Ranch Airport",
+    "municipality": "Craig",
+    "id": "5CO7",
+    "longitude": "-107.53399658203125"
+  },
+  {
+    "elevation": "6606",
+    "distance": 14,
+    "latitude": "40.48120117",
+    "name": "Yampa Valley Airport",
+    "municipality": "Hayden",
+    "id": "KHDN",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Yampa_Valley_Airport",
+    "longitude": "-107.2180023"
+  },
+  {
+    "elevation": "4935",
+    "distance": 6,
+    "latitude": "40.58359909057617",
+    "name": "Heli-Support Ii Heliport",
+    "municipality": "Fort Collins",
+    "id": "2CO0",
+    "longitude": "-106.98500061035156"
+  },
+  {
+    "elevation": "6600",
+    "distance": 4,
+    "latitude": "40.509300231933594",
+    "name": "Eagle Soaring Airport",
+    "municipality": "Steam Boat Springs",
+    "id": "1CD4",
+    "longitude": "-106.94300079345703"
+  },
+  {
+    "elevation": "6882",
+    "distance": 12,
+    "latitude": "40.5163002",
+    "name": "Steamboat Springs Bob Adams Field",
+    "municipality": "Steamboat Springs",
+    "id": "KSBS",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Steamboat_Springs_Airport",
+    "longitude": "-106.8659973"
+  },
+  {
+    "elevation": "7120",
+    "distance": 8,
+    "latitude": "40.341400146484375",
+    "name": "Pleasant Valley Airport",
+    "municipality": "Oak Creek",
+    "id": "5CO8",
+    "longitude": "-106.8489990234375"
+  },
+  {
+    "elevation": "8347",
+    "distance": 9,
+    "latitude": "40.233299255371094",
+    "name": "Phippsburg Heliport",
+    "municipality": "Oak Creek",
+    "id": "CD80",
+    "longitude": "-106.9010009765625"
+  },
+  {
+    "elevation": "7000",
+    "distance": 3,
+    "latitude": "40.358299255371094",
+    "name": "Lucky L Ranch Airport",
+    "municipality": "Steamboat Springs",
+    "id": "CD99",
+    "longitude": "-106.83000183105469"
+  },
+  {
+    "elevation": "7000",
+    "distance": 5,
+    "latitude": "40.40610122680664",
+    "name": "Mesa 1 Airport",
+    "municipality": "Steamboat Springs",
+    "id": "81CO",
+    "longitude": "-106.82099914550781"
+  },
+  {
+    "elevation": "10554",
+    "distance": 9,
+    "latitude": "40.45000076293945",
+    "name": "Mount Werner Heliport",
+    "municipality": "Steamboat Springs",
+    "id": "CD70",
+    "longitude": "-106.73400115966797"
+  },
+  {
+    "elevation": "7500",
+    "distance": 16,
+    "latitude": "40.555599212646484",
+    "name": "Mann Heliport",
+    "municipality": "Steamboat Springs",
+    "id": "13CO",
+    "longitude": "-106.84400177001953"
+  },
+  {
+    "elevation": "8200",
+    "distance": 37,
+    "latitude": "40.757999420166016",
+    "name": "Skyote Airport",
+    "municipality": "Steamboat Springs",
+    "id": "CD02",
+    "longitude": "-106.97200012207031"
+  },
+  {
+    "elevation": "8153",
+    "distance": 21,
+    "latitude": "40.75040054321289",
+    "name": "Walden Jackson County Airport",
+    "municipality": "Walden",
+    "id": "K33V",
+    "longitude": "-106.27100372314453"
+  },
+  {
+    "elevation": "8796",
+    "distance": 11,
+    "latitude": "40.45000076293945",
+    "name": "Owl Ridge Heliport",
+    "municipality": "Walden",
+    "id": "CD81",
+    "longitude": "-106.20099639892578"
+  },
+  {
+    "elevation": "8620",
+    "distance": 30,
+    "latitude": "40.567914",
+    "name": "Michigan River Ranch Heliport",
+    "municipality": "Walden",
+    "id": "24CD",
+    "longitude": "-106.060647"
+  },
+  {
+    "elevation": "8440",
+    "distance": 34,
+    "latitude": "40.851600646972656",
+    "name": "Crystal Lakes Airport",
+    "municipality": "Red Feather Lakes",
+    "id": "25CO",
+    "longitude": "-105.63300323486328"
+  },
+  {
+    "elevation": "7674",
+    "distance": 8,
+    "latitude": "40.371700286865234",
+    "name": "E.P.M.C. Heliport",
+    "municipality": "Estes Park",
+    "id": "3CO8",
+    "longitude": "-105.51599884033203"
+  },
+  {
+    "elevation": "7900",
+    "distance": 19,
+    "latitude": "40.262683",
+    "name": "Elk Park Ranch Airport",
+    "municipality": "Allenspark",
+    "id": "34CD",
+    "longitude": "-105.448011"
+  },
+  {
+    "elevation": "5603",
+    "distance": 9,
+    "latitude": "40.474998474121094",
+    "name": "Sprague Airport",
+    "municipality": "Loveland",
+    "id": "CD20",
+    "longitude": "-105.22000122070312"
+  },
+  {
+    "elevation": "5160",
+    "distance": 6,
+    "latitude": "40.597198486328125",
+    "name": "Christman Field",
+    "municipality": "Fort Collins",
+    "id": "CO55",
+    "longitude": "-105.14399719238281"
+  },
+  {
+    "elevation": "5180",
+    "distance": 12,
+    "latitude": "40.6814",
+    "name": "Kellogg Airstrip",
+    "municipality": "Laporte",
+    "id": "2CD9",
+    "longitude": "-105.13855"
+  },
+  {
+    "elevation": "5545",
+    "distance": 4,
+    "latitude": "40.8046989440918",
+    "name": "Owl Canyon Gliderport",
+    "municipality": "Wellington",
+    "id": "4CO2",
+    "longitude": "-104.98500061035156"
+  },
+  {
+    "elevation": "5600",
+    "distance": 1,
+    "latitude": "40.764462",
+    "name": "Big View Airport",
+    "municipality": "Carr",
+    "id": "US-0336",
+    "longitude": "-104.928654"
+  },
+  {
+    "elevation": "5615",
+    "distance": 9,
+    "latitude": "40.78139877319336",
+    "name": "Burnham Field",
+    "municipality": "Wellington",
+    "id": "6CO1",
+    "longitude": "-104.91699981689453"
+  },
+  {
+    "elevation": "5270",
+    "distance": 13,
+    "latitude": "40.900001525878906",
+    "name": "Mile Hi Airport",
+    "municipality": "New Raymer",
+    "id": "47CO",
+    "longitude": "-104.83399963378906"
+  },
+  {
+    "elevation": "5235",
+    "distance": 2,
+    "latitude": "40.72159957885742",
+    "name": "Shaull Farm Airstrip",
+    "municipality": "Nunn",
+    "id": "48CO",
+    "longitude": "-104.77799987792969"
+  },
+  {
+    "elevation": "5225",
+    "distance": 4,
+    "latitude": "40.7041015625",
+    "name": "Bellmore Farms Airport",
+    "municipality": "Nunn",
+    "id": "1CO3",
+    "longitude": "-104.7979965209961"
+  },
+  {
+    "elevation": "5350",
+    "distance": 3,
+    "latitude": "40.69029998779297",
+    "name": "Reed Airport",
+    "municipality": "Nunn",
+    "id": "1CD1",
+    "longitude": "-104.86699676513672"
+  },
+  {
+    "elevation": "5294",
+    "distance": 2,
+    "latitude": "40.673099517822266",
+    "name": "Black Hollow Heliport",
+    "municipality": "Carr",
+    "id": "5CO5",
+    "longitude": "-104.91999816894531"
+  },
+  {
+    "elevation": "5200",
+    "distance": 3,
+    "latitude": "40.65829849243164",
+    "name": "William T Browder Heliport",
+    "municipality": "Fort Collins",
+    "id": "50CO",
+    "longitude": "-104.95099639892578"
+  },
+  {
+    "elevation": "5050",
+    "distance": 4,
+    "latitude": "40.634700775146484",
+    "name": "Yankee Field",
+    "municipality": "Fort Collins",
+    "id": "CO53",
+    "longitude": "-104.99099731445312"
+  },
+  {
+    "elevation": "4939",
+    "distance": 0,
+    "latitude": "40.5882987976",
+    "name": "Fort Collins Downtown Airport",
+    "id": "K3V5",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Fort_Collins_Downtown_Airport",
+    "longitude": "-105.041999817"
+  },
+  {
+    "elevation": "4935",
+    "distance": 0,
+    "latitude": "40.583900451660156",
+    "name": "Heli-Support Heliport",
+    "municipality": "Fort Collins",
+    "id": "CO91",
+    "longitude": "-105.03500366210938"
+  },
+  {
+    "elevation": "4935",
+    "distance": 0,
+    "latitude": "40.5854988098",
+    "name": "Century Helicopters Heliport",
+    "municipality": "Fort Collins",
+    "id": "0CO7",
+    "longitude": "-105.040000916"
+  },
+  {
+    "elevation": "4935",
+    "distance": 0,
+    "latitude": "40.5899009705",
+    "name": "Geo-Seis Helicopters Heliport",
+    "municipality": "Fort Collins",
+    "id": "0CO4",
+    "longitude": "-105.04599762"
+  },
+  {
+    "elevation": "4935",
+    "distance": 1,
+    "latitude": "40.59109878540039",
+    "name": "North Arrow Heliport",
+    "municipality": "Fort Collins",
+    "id": "CD46",
+    "longitude": "-105.0479965209961"
+  },
+  {
+    "elevation": "4960",
+    "distance": 6,
+    "latitude": "40.57160186767578",
+    "name": "Poudre Valley Hospital Heliport",
+    "municipality": "Fort Collins",
+    "id": "CD07",
+    "longitude": "-105.05599975585938"
+  },
+  {
+    "elevation": "4840",
+    "distance": 2,
+    "latitude": "40.52080154418945",
+    "name": "Wkr Airport",
+    "municipality": "Fort Collins",
+    "id": "65CO",
+    "longitude": "-104.96700286865234"
+  },
+  {
+    "elevation": "4885",
+    "distance": 4,
+    "latitude": "40.51029968261719",
+    "name": "Hat-Field STOLport",
+    "municipality": "Fort Collins",
+    "id": "6CO4",
+    "longitude": "-105.0009994506836"
+  },
+  {
+    "elevation": "5016",
+    "distance": 2,
+    "latitude": "40.4518013",
+    "home_link": "http://fortloveair.com",
+    "name": "Fort Collins Loveland Municipal Airport",
+    "municipality": "Fort Collins/Loveland",
+    "id": "KFNL",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Fort_Collins-Loveland_Municipal_Airport",
+    "longitude": "-105.011001587"
+  },
+  {
+    "elevation": "5010",
+    "distance": 3,
+    "latitude": "40.418056",
+    "name": "Medical Center Of The Rockies Heliport",
+    "municipality": "Loveland",
+    "id": "2CD2",
+    "longitude": "-105"
+  },
+  {
+    "elevation": "4872",
+    "distance": 8,
+    "latitude": "40.4039001465",
+    "name": "Mc Kee Medical Center Heliport",
+    "municipality": "Loveland",
+    "id": "5CO2",
+    "longitude": "-105.051002502"
+  },
+  {
+    "elevation": "5200",
+    "distance": 0,
+    "latitude": "40.3135986328125",
+    "name": "Lazy W Airport",
+    "municipality": "Berthoud",
+    "id": "86CO",
+    "longitude": "-105.1449966430664"
+  },
+  {
+    "elevation": "5187",
+    "distance": 3,
+    "latitude": "40.311886",
+    "name": "Skywagon Ranch Airport",
+    "municipality": "Berthoud",
+    "id": "6CO6",
+    "longitude": "-105.145833"
+  },
+  {
+    "elevation": "5050",
+    "distance": 6,
+    "latitude": "40.26499938964844",
+    "name": "Pond's Field",
+    "municipality": "Berthoud",
+    "id": "CD39",
+    "longitude": "-105.13700103759766"
+  },
+  {
+    "elevation": "5000",
+    "distance": 6,
+    "latitude": "40.272258",
+    "name": "Skylane Ranch Airport",
+    "municipality": "Berthoud",
+    "id": "17CO",
+    "longitude": "-105.032625"
+  },
+  {
+    "elevation": "4965",
+    "distance": 2,
+    "latitude": "40.216598510699995",
+    "name": "Carrera Airpark",
+    "municipality": "Mead",
+    "id": "US-0029",
+    "longitude": "-104.950996399"
+  },
+  {
+    "elevation": "5025",
+    "distance": 1,
+    "latitude": "40.205501556396484",
+    "name": "Ag-Air Inc Heliport",
+    "municipality": "Mead",
+    "id": "45CO",
+    "longitude": "-104.97599792480469"
+  },
+  {
+    "elevation": "4978",
+    "distance": 0,
+    "latitude": "40.2149839",
+    "name": "Rancho De Aereo Airport",
+    "municipality": "Mead",
+    "id": "05CO",
+    "longitude": "-104.9844228"
+  },
+  {
+    "elevation": "4979",
+    "distance": 2,
+    "latitude": "40.21250153",
+    "name": "Frontier Airstrip",
+    "municipality": "Mead",
+    "id": "US-0076",
+    "longitude": "-104.9820023"
+  },
+  {
+    "elevation": "5010",
+    "distance": 5,
+    "latitude": "40.2083015442",
+    "name": "Cartwheel Airport",
+    "municipality": "Mead",
+    "id": "0CO8",
+    "longitude": "-105.013000488"
+  },
+  {
+    "elevation": "4870",
+    "distance": 2,
+    "latitude": "40.142799377441406",
+    "name": "Murphy Heliport",
+    "municipality": "Longmont",
+    "id": "1CD0",
+    "longitude": "-105.00299835205078"
+  },
+  {
+    "elevation": "4974",
+    "distance": 4,
+    "latitude": "40.121944",
+    "name": "Frederick-Firestone F.S. #2 Heliport",
+    "municipality": "Frederick",
+    "id": "CO68",
+    "longitude": "-104.980833"
+  },
+  {
+    "elevation": "5050",
+    "distance": 4,
+    "latitude": "40.07170104980469",
+    "name": "Parkland Airport",
+    "municipality": "Erie",
+    "id": "7CO0",
+    "longitude": "-105.03399658203125"
+  },
+  {
+    "elevation": "5050",
+    "distance": 0,
+    "latitude": "40.010799407958984",
+    "name": "Tri-County Heliport",
+    "municipality": "Erie",
+    "id": "90CO",
+    "longitude": "-105.052001953125"
+  },
+  {
+    "elevation": "5130",
+    "distance": 1,
+    "latitude": "40.010200500488",
+    "home_link": "https://www.erieco.gov/93/Airport",
+    "name": "Erie Municipal Airport",
+    "municipality": "Erie",
+    "id": "KEIK",
+    "wikipedia_link": "https://en.wikipedia.org/wiki/Erie_Municipal_Airport",
+    "longitude": "-105.047996521"
+  },
+  {
+    "elevation": "5135",
+    "distance": 2,
+    "latitude": "40.004699707",
+    "name": "Fox Hole Airport",
+    "municipality": "Lafayette",
+    "id": "0CD7",
+    "longitude": "-105.071998596"
+  },
+  {
+    "elevation": "5204",
+    "distance": 5,
+    "latitude": "39.971698761",
+    "name": "Exempla Good Samaritan Heliport",
+    "municipality": "Lafayette",
+    "id": "0CD6",
+    "longitude": "-105.084999084"
+  },
+  {
+    "elevation": "5673",
+    "distance": 2,
+    "latitude": "39.90879822",
+    "name": "Rocky Mountain Metropolitan Airport",
+    "municipality": "Denver",
+    "id": "KBJC",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Rocky_Mountain_Metropolitan_Airport",
+    "longitude": "-105.1169968"
+  },
+  {
+    "elevation": "5380",
+    "distance": 5,
+    "latitude": "39.89030075073242",
+    "name": "Cirino Heliport",
+    "municipality": "Broomfield",
+    "id": "CO26",
+    "longitude": "-105.08799743652344"
+  },
+  {
+    "elevation": "5510",
+    "distance": 5,
+    "latitude": "39.95280075073242",
+    "name": "Avista Hospital Heliport",
+    "municipality": "Louisville",
+    "id": "CO45",
+    "longitude": "-105.1520004272461"
+  },
+  {
+    "elevation": "5230",
+    "distance": 6,
+    "latitude": "39.99470138549805",
+    "name": "Lemons Private Strip",
+    "municipality": "Boulder",
+    "id": "CO10",
+    "longitude": "-105.2239990234375"
+  },
+  {
+    "elevation": "5170",
+    "distance": 10,
+    "latitude": "40.0332984924",
+    "name": "Dave's Airport",
+    "municipality": "Louisville",
+    "id": "0CO1",
+    "longitude": "-105.124000549"
+  },
+  {
+    "elevation": "5047",
+    "distance": 1,
+    "latitude": "40.178901672399995",
+    "name": "Longmont United Hospital Heliport",
+    "municipality": "Longmont",
+    "id": "0CO0",
+    "longitude": "-105.125999451"
+  },
+  {
+    "elevation": "5057",
+    "distance": 2,
+    "latitude": "40.187198638916016",
+    "name": "Denver Artcc Heliport",
+    "municipality": "Longmont",
+    "id": "CO99",
+    "longitude": "-105.12699890136719"
+  },
+  {
+    "elevation": "5055",
+    "distance": 3,
+    "latitude": "40.1637001",
+    "name": "Vance Brand Airport",
+    "municipality": "Longmont",
+    "id": "KLMO",
+    "longitude": "-105.163002"
+  },
+  {
+    "elevation": "5069",
+    "distance": 1,
+    "latitude": "40.122501373291016",
+    "name": "Colorado Antique Field",
+    "municipality": "Niwot",
+    "id": "8CO7",
+    "longitude": "-105.1719970703125"
+  },
+  {
+    "elevation": "5160",
+    "distance": 4,
+    "latitude": "40.11249923706055",
+    "name": "Anderson Heliport",
+    "municipality": "Niwot",
+    "id": "85CO",
+    "longitude": "-105.16200256347656"
+  },
+  {
+    "elevation": "5150",
+    "distance": 2,
+    "latitude": "40.06639862060547",
+    "name": "Ibm Building 910 Heliport",
+    "municipality": "Boulder",
+    "id": "24CO",
+    "longitude": "-105.20600128173828"
+  },
+  {
+    "elevation": "5288",
+    "distance": 3,
+    "latitude": "40.0393981934",
+    "home_link": "http://www.bouldercolorado.gov/index.php?option=com_content&view=article&id=201&Itemid=740",
+    "name": "Boulder Municipal Airport",
+    "municipality": "Boulder",
+    "id": "KBDU",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Boulder_Municipal_Airport",
+    "longitude": "-105.225997925"
+  },
+  {
+    "elevation": "5373",
+    "distance": 4,
+    "latitude": "40.027801513671875",
+    "name": "Boulder Community Hospital Heliport",
+    "municipality": "Boulder",
+    "id": "79CO",
+    "longitude": "-105.28399658203125"
+  },
+  {
+    "elevation": "7152",
+    "distance": 15,
+    "latitude": "40.0536003112793",
+    "name": "Emancipation Hill Heliport",
+    "municipality": "Boulder",
+    "id": "CD00",
+    "longitude": "-105.36000061035156"
+  },
+  {
+    "elevation": "8900",
+    "distance": 4,
+    "latitude": "39.85419845581055",
+    "name": "Athanasiou Valley Airport",
+    "municipality": "Blackhawk",
+    "id": "CO07",
+    "longitude": "-105.47100067138672"
+  },
+  {
+    "elevation": "8668",
+    "distance": 12,
+    "latitude": "39.79389953613281",
+    "name": "Miner's Mesa Heliport",
+    "municipality": "Black Hawk",
+    "id": "75CO",
+    "longitude": "-105.49400329589844"
+  },
+  {
+    "elevation": "6580",
+    "distance": 9,
+    "latitude": "39.847197",
+    "name": "Schwartzwalder Heliport",
+    "municipality": "Golden",
+    "id": "CO67",
+    "longitude": "-105.281998"
+  },
+  {
+    "elevation": "5918",
+    "distance": 0,
+    "latitude": "39.73550033569336",
+    "name": "Lookout Center Rooftop Heliport",
+    "municipality": "Golden",
+    "id": "20CO",
+    "longitude": "-105.20700073242188"
+  },
+  {
+    "elevation": "5898",
+    "distance": 3,
+    "latitude": "39.73440170288086",
+    "name": "Lookout Center Parking Lot Heliport",
+    "municipality": "Golden",
+    "id": "21CO",
+    "longitude": "-105.20600128173828"
+  },
+  {
+    "elevation": "7360",
+    "distance": 3,
+    "latitude": "39.71030044555664",
+    "name": "Morton Heliport",
+    "municipality": "Golden",
+    "id": "CO66",
+    "longitude": "-105.24500274658203"
+  },
+  {
+    "elevation": "7881",
+    "distance": 3,
+    "latitude": "39.6692008972168",
+    "name": "Mount Morrison Heliport",
+    "municipality": "Morrison",
+    "id": "1CO1",
+    "longitude": "-105.22000122070312"
+  },
+  {
+    "elevation": "7360",
+    "distance": 1,
+    "latitude": "39.64390182495117",
+    "name": "Tall Timber Airport",
+    "municipality": "Indian Hills",
+    "id": "CD28",
+    "longitude": "-105.26799774169922"
+  },
+  {
+    "elevation": "7310",
+    "distance": 4,
+    "latitude": "39.63669967651367",
+    "name": "Indian Hills/Fire Department Heliport",
+    "municipality": "Indian Hills",
+    "id": "9CO4",
+    "longitude": "-105.26699829101562"
+  },
+  {
+    "elevation": "7700",
+    "distance": 3,
+    "latitude": "39.58330154418945",
+    "name": "Marshdale STOLport",
+    "municipality": "Evergreen",
+    "id": "CO52",
+    "longitude": "-105.3030014038086"
+  },
+  {
+    "elevation": "8000",
+    "distance": 36,
+    "latitude": "39.54999923706055",
+    "name": "Meyer Ranch Airport",
+    "municipality": "Conifer",
+    "id": "5CO6",
+    "longitude": "-105.28399658203125"
+  },
+  {
+    "elevation": "9300",
+    "distance": 11,
+    "latitude": "39.152333",
+    "name": "Lux Field",
+    "municipality": "Hartsel",
+    "id": "25CD",
+    "longitude": "-105.720167"
+  },
+  {
+    "elevation": "8700",
+    "distance": 6,
+    "latitude": "39.0233192444",
+    "name": "Antelope Airpark",
+    "municipality": "Lake George",
+    "id": "93CO",
+    "longitude": "-105.614997864"
+  },
+  {
+    "elevation": "11294",
+    "distance": 21,
+    "latitude": "39.049400329589844",
+    "name": "Badger Mountain Heliport",
+    "municipality": "Tarryall",
+    "id": "CD21",
+    "longitude": "-105.51300048828125"
+  },
+  {
+    "elevation": "8400",
+    "distance": 7,
+    "latitude": "38.759700775146484",
+    "name": "Dave Nash Ranch Airport",
+    "municipality": "Guffey",
+    "id": "7CO1",
+    "longitude": "-105.38400268554688"
+  },
+  {
+    "elevation": "8030",
+    "distance": 11,
+    "latitude": "38.67250061035156",
+    "name": "Coyote Creek Ranch Airport",
+    "municipality": "Guffey",
+    "id": "30CO",
+    "longitude": "-105.33599853515625"
+  },
+  {
+    "elevation": "9710",
+    "distance": 17,
+    "latitude": "38.712501525878906",
+    "name": "D B Smith Memorial Heliport",
+    "municipality": "Victor",
+    "id": "3CO9",
+    "longitude": "-105.14199829101562"
+  },
+  {
+    "elevation": "9440",
+    "distance": 6,
+    "latitude": "38.74169921875",
+    "name": "Cheyenne Mountain Heliport",
+    "municipality": "Colorado Springs",
+    "id": "CO33",
+    "longitude": "-104.83399963378906"
+  },
+  {
+    "elevation": "5838",
+    "distance": 9,
+    "latitude": "38.67839813",
+    "name": "Butts AAF (Fort Carson) Air Field",
+    "municipality": "Fort Carson",
+    "id": "KFCS",
+    "longitude": "-104.7570038"
+  },
+  {
+    "elevation": "6187",
+    "distance": 6,
+    "latitude": "38.805801391602",
+    "home_link": "https://flycos.coloradosprings.gov/",
+    "name": "City of Colorado Springs Municipal Airport",
+    "municipality": "Colorado Springs",
+    "id": "KCOS",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Colorado_Springs_Airport",
+    "longitude": "-104.70099639893"
+  },
+  {
+    "elevation": "6061",
+    "distance": 1,
+    "latitude": "38.848899841308594",
+    "name": "St Francis Hospital Heliport",
+    "municipality": "Colorado Springs",
+    "id": "CO23",
+    "longitude": "-104.80799865722656"
+  },
+  {
+    "elevation": "6155",
+    "distance": 2,
+    "latitude": "38.84040069580078",
+    "name": "Memorial Hospital Heliport",
+    "municipality": "Colorado Springs",
+    "id": "19CO",
+    "longitude": "-104.79900360107422"
+  },
+  {
+    "elevation": "6132",
+    "distance": 8,
+    "latitude": "38.867801666259766",
+    "name": "Penrose Hospital Heliport",
+    "municipality": "Colorado Springs",
+    "id": "CO24",
+    "longitude": "-104.822998046875"
+  },
+  {
+    "elevation": "6901",
+    "distance": 3,
+    "latitude": "38.9663619995",
+    "name": "Memorial North Helipad",
+    "municipality": "Colorado Springs",
+    "id": "77CO",
+    "longitude": "-104.755996704"
+  },
+  {
+    "elevation": "6685",
+    "distance": 1,
+    "latitude": "38.9838981628",
+    "name": "Lockheed Martin Cmd & Cntrl Sys Heliport",
+    "municipality": "Colorado Springs",
+    "id": "26CO",
+    "longitude": "-104.801002502"
+  },
+  {
+    "elevation": "6572",
+    "distance": 6,
+    "latitude": "38.96969986",
+    "name": "USAF Academy Airfield",
+    "municipality": "Colorado Springs",
+    "id": "KAFF",
+    "longitude": "-104.8130035"
+  },
+  {
+    "elevation": "9200",
+    "distance": 7,
+    "latitude": "38.98529815673828",
+    "name": "Northfield Heliport",
+    "municipality": "Woodland Park",
+    "id": "CD79",
+    "longitude": "-104.91699981689453"
+  },
+  {
+    "elevation": "7120",
+    "distance": 11,
+    "latitude": "39.08580017089844",
+    "name": "Monument Helibase Heliport",
+    "municipality": "Monument",
+    "id": "61CO",
+    "longitude": "-104.90299987792969"
+  },
+  {
+    "elevation": "6700",
+    "distance": 9,
+    "latitude": "39.25",
+    "name": "Perry Park Airport",
+    "municipality": "Larkspur",
+    "id": "CO93",
+    "longitude": "-104.89099884033203"
+  },
+  {
+    "elevation": "6450",
+    "distance": 8,
+    "latitude": "39.352500915527344",
+    "name": "Red Canyon Ranch Heliport",
+    "municipality": "Castle Rock",
+    "id": "CD24",
+    "longitude": "-105.00700378417969"
+  },
+  {
+    "elevation": "6134",
+    "distance": 5,
+    "latitude": "39.4061489458",
+    "name": "Castle Rock Adventist Health Campus Heliport",
+    "id": "US-0185",
+    "longitude": "-104.884157181"
+  },
+  {
+    "elevation": "6480",
+    "distance": 3,
+    "latitude": "39.344239",
+    "name": "Rampart Heliport",
+    "municipality": "Castle Rock",
+    "id": "84CO",
+    "longitude": "-104.841906"
+  },
+  {
+    "elevation": "6800",
+    "distance": 6,
+    "latitude": "39.30690002441406",
+    "name": "Kelgun Airport",
+    "municipality": "Castle Rock",
+    "id": "4CO8",
+    "longitude": "-104.81600189208984"
+  },
+  {
+    "elevation": "6200",
+    "distance": 3,
+    "latitude": "39.371700286865234",
+    "name": "Reed Hollow Ranch Airport",
+    "municipality": "Franktown",
+    "id": "CO96",
+    "longitude": "-104.74299621582031"
+  },
+  {
+    "elevation": "6700",
+    "distance": 4,
+    "latitude": "39.36669921875",
+    "name": "Kostroski Airport",
+    "municipality": "Franktown",
+    "id": "43CO",
+    "longitude": "-104.6780014038086"
+  },
+  {
+    "elevation": "6737",
+    "distance": 10,
+    "latitude": "39.42940139770508",
+    "name": "Hilltop Heliport",
+    "municipality": "Franktown",
+    "id": "CD40",
+    "longitude": "-104.65899658203125"
+  },
+  {
+    "elevation": "5766",
+    "distance": 6,
+    "latitude": "39.54759979248047",
+    "name": "Parker Adventist Hospital Heliport",
+    "municipality": "Parker",
+    "id": "CD31",
+    "longitude": "-104.76699829101562"
+  },
+  {
+    "elevation": "6025",
+    "distance": 3,
+    "latitude": "39.528056",
+    "name": "Sky Ridge Medical Center Heliport",
+    "municipality": "Lone Tree",
+    "id": "CD53",
+    "longitude": "-104.869722"
+  },
+  {
+    "elevation": "5854",
+    "distance": 1,
+    "latitude": "39.57500076293945",
+    "name": "Yankee Port Heliport",
+    "municipality": "Greenwood Village",
+    "id": "CO44",
+    "longitude": "-104.8759994506836"
+  },
+  {
+    "elevation": "5885",
+    "distance": 2,
+    "latitude": "39.57009888",
+    "name": "Centennial Airport",
+    "municipality": "Denver",
+    "id": "KAPA",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Centennial_Airport",
+    "longitude": "-104.848999"
+  },
+  {
+    "elevation": "5680",
+    "distance": 5,
+    "latitude": "39.594398498535156",
+    "name": "Centennial Healthcare Plaza Heliport",
+    "municipality": "Englewood",
+    "id": "CD06",
+    "longitude": "-104.822998046875"
+  },
+  {
+    "elevation": "5585",
+    "distance": 5,
+    "latitude": "39.6349983215",
+    "name": "Dtc North Heliport",
+    "municipality": "Denver",
+    "id": "US-0073",
+    "longitude": "-104.898002625"
+  },
+  {
+    "elevation": "5604",
+    "distance": 3,
+    "latitude": "39.68830108642578",
+    "name": "Aurora Regional Medical Center Heliport",
+    "municipality": "Aurora",
+    "id": "1CO0",
+    "longitude": "-104.83200073242188"
+  },
+  {
+    "elevation": "5415",
+    "distance": 1,
+    "latitude": "39.72639846801758",
+    "name": "Aurora Presbyterian Hospital Heliport",
+    "municipality": "Aurora",
+    "id": "CO05",
+    "longitude": "-104.8270034790039"
+  },
+  {
+    "elevation": "5557",
+    "distance": 3,
+    "latitude": "39.742111",
+    "name": "Children'S Hospital Heliport",
+    "municipality": "Aurora",
+    "id": "2CD8",
+    "longitude": "-104.83575"
+  },
+  {
+    "elevation": "5333",
+    "distance": 2,
+    "latitude": "39.774200439453125",
+    "name": "Denver Stapleton International Airport",
+    "municipality": "Denver",
+    "id": "X-KDEN",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Stapleton_International_Airport",
+    "longitude": "-104.87899780273438"
+  },
+  {
+    "elevation": "5223",
+    "distance": 1,
+    "latitude": "39.79050064086914",
+    "name": "General Mail Facility Heliport",
+    "municipality": "Denver",
+    "id": "CO01",
+    "longitude": "-104.9020004272461"
+  },
+  {
+    "elevation": "5290",
+    "distance": 10,
+    "latitude": "39.80030059814453",
+    "name": "Bulk Mail Center Heliport",
+    "municipality": "Commerce City",
+    "id": "CO83",
+    "longitude": "-104.9010009765625"
+  },
+  {
+    "elevation": "5662",
+    "distance": 1,
+    "latitude": "39.701698303200004",
+    "name": "Buckley Air Force Base",
+    "municipality": "Aurora",
+    "id": "KBKF",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Buckley_Air_Force_Base",
+    "longitude": "-104.751998901"
+  },
+  {
+    "elevation": "5525",
+    "distance": 4,
+    "latitude": "39.716400146484375",
+    "name": "Simons Airport",
+    "municipality": "Aurora",
+    "id": "34CO",
+    "longitude": "-104.73200225830078"
+  },
+  {
+    "elevation": "5665",
+    "distance": 14,
+    "latitude": "39.7325",
+    "name": "Aurora Airpark",
+    "municipality": "Aurora",
+    "id": "US-0174",
+    "longitude": "-104.654722222"
+  },
+  {
+    "elevation": "6295",
+    "distance": 8,
+    "latitude": "39.52920150756836",
+    "name": "Everitt Airport",
+    "municipality": "Parker",
+    "id": "1CO8",
+    "longitude": "-104.65799713134766"
+  },
+  {
+    "elevation": "6039",
+    "distance": 5,
+    "latitude": "39.550899505615234",
+    "name": "Houston Heliport",
+    "municipality": "Elizabeth",
+    "id": "71CO",
+    "longitude": "-104.50599670410156"
+  },
+  {
+    "elevation": "5975",
+    "distance": 7,
+    "latitude": "39.62969970703125",
+    "name": "Harrington Ranch Airport",
+    "municipality": "Bennet",
+    "id": "CO02",
+    "longitude": "-104.51899719238281"
+  },
+  {
+    "elevation": "5650",
+    "distance": 3,
+    "latitude": "39.69110107421875",
+    "name": "Young's Strip",
+    "municipality": "Bennett",
+    "id": "87CO",
+    "longitude": "-104.41600036621094"
+  },
+  {
+    "elevation": "5400",
+    "distance": 7,
+    "latitude": "39.69609833",
+    "name": "Van Slyke Field",
+    "municipality": "Watkins",
+    "id": "9CO2",
+    "longitude": "-104.4759979"
+  },
+  {
+    "elevation": "5512",
+    "distance": 6,
+    "latitude": "39.785301208496094",
+    "name": "Front Range Airport",
+    "municipality": "Denver",
+    "id": "KFTG",
+    "longitude": "-104.54299926757812"
+  },
+  {
+    "elevation": "5320",
+    "distance": 1,
+    "latitude": "39.82889938354492",
+    "name": "J & S Airport",
+    "municipality": "Bennett",
+    "id": "CD14",
+    "longitude": "-104.43699645996094"
+  },
+  {
+    "elevation": "5310",
+    "distance": 1,
+    "latitude": "39.83580017089844",
+    "name": "Hoy Airstrip",
+    "municipality": "Bennett",
+    "id": "76CO",
+    "longitude": "-104.4219970703125"
+  },
+  {
+    "elevation": "5345",
+    "distance": 3,
+    "latitude": "39.819698333740234",
+    "name": "Yoder Airstrip",
+    "municipality": "Bennett",
+    "id": "CD09",
+    "longitude": "-104.40899658203125"
+  },
+  {
+    "elevation": "5300",
+    "distance": 4,
+    "latitude": "39.85639953613281",
+    "name": "Logan Airport",
+    "municipality": "Bennet",
+    "id": "96CO",
+    "longitude": "-104.39600372314453"
+  },
+  {
+    "elevation": "5230",
+    "distance": 6,
+    "latitude": "39.83330154418945",
+    "name": "Comanche Livestock Airport",
+    "municipality": "Strasburg",
+    "id": "59CO",
+    "longitude": "-104.31700134277344"
+  },
+  {
+    "elevation": "5350",
+    "distance": 2,
+    "latitude": "39.74720001220703",
+    "name": "Comanche Airfield Llc Airport",
+    "municipality": "Strasburg",
+    "id": "CO38",
+    "longitude": "-104.31300354003906"
+  },
+  {
+    "elevation": "5435",
+    "distance": 4,
+    "latitude": "39.72079849243164",
+    "name": "Comanche Springs Ranch Airport",
+    "municipality": "Strasburg",
+    "id": "CO97",
+    "longitude": "-104.322998046875"
+  },
+  {
+    "elevation": "5320",
+    "distance": 3,
+    "latitude": "39.70000076293945",
+    "name": "Spickard Farm Airport",
+    "municipality": "Byers",
+    "id": "5CO4",
+    "longitude": "-104.2509994506836"
+  },
+  {
+    "elevation": "5215",
+    "distance": 4,
+    "latitude": "39.713600158691406",
+    "name": "Sky Haven Airport",
+    "municipality": "Byers",
+    "id": "CO17",
+    "longitude": "-104.19400024414062"
+  },
+  {
+    "elevation": "5250",
+    "distance": 14,
+    "latitude": "39.670501708984375",
+    "name": "East Moore Field",
+    "municipality": "Byers",
+    "id": "8CO4",
+    "longitude": "-104.13600158691406"
+  },
+  {
+    "elevation": "4940",
+    "distance": 3,
+    "latitude": "39.87220001220703",
+    "name": "Singleton Ranch Airport",
+    "municipality": "Byers",
+    "id": "68CO",
+    "longitude": "-104.15299987792969"
+  },
+  {
+    "elevation": "4885",
+    "distance": 11,
+    "latitude": "39.90829849243164",
+    "name": "Bijou Basin Airport",
+    "municipality": "Byers",
+    "id": "CD17",
+    "longitude": "-104.1259994506836"
+  },
+  {
+    "elevation": "4857",
+    "distance": 18,
+    "latitude": "40.04719924926758",
+    "name": "Westberg-Rosling Farms Airport",
+    "municipality": "Roggen",
+    "id": "74CO",
+    "longitude": "-104.20899963378906"
+  },
+  {
+    "elevation": "4461",
+    "distance": 12,
+    "latitude": "40.29999923706055",
+    "name": "Yocam Ranch Airport",
+    "municipality": "Orchard",
+    "id": "7CO5",
+    "longitude": "-104.2300033569336"
+  },
+  {
+    "elevation": "4480",
+    "distance": 1,
+    "latitude": "40.25279998779297",
+    "name": "Kent Airport",
+    "municipality": "Wiggins",
+    "id": "8CO0",
+    "longitude": "-104.00299835205078"
+  },
+  {
+    "elevation": "4480",
+    "distance": 10,
+    "latitude": "40.23889923095703",
+    "name": "Vallery Airport",
+    "municipality": "Wiggins",
+    "id": "89CO",
+    "longitude": "-103.99199676513672"
+  },
+  {
+    "elevation": "4356",
+    "distance": 5,
+    "latitude": "40.2610917",
+    "name": "Colorado Plains Medical Center Heliport",
+    "municipality": "Fort Morgan",
+    "id": "0CD1",
+    "longitude": "-103.7963389"
+  },
+  {
+    "elevation": "4569",
+    "distance": 10,
+    "latitude": "40.33359909057617",
+    "name": "Fort Morgan Municipal Airport",
+    "municipality": "Fort Morgan",
+    "id": "KFMM",
+    "longitude": "-103.80400085449219"
+  },
+  {
+    "elevation": "4280",
+    "distance": 4,
+    "latitude": "40.25830078125",
+    "name": "East Morgan County Hospital Heliport",
+    "municipality": "Brush",
+    "id": "2CO8",
+    "longitude": "-103.64900207519531"
+  },
+  {
+    "elevation": "4280",
+    "distance": 20,
+    "latitude": "40.2639007568",
+    "name": "Brush Municipal Airport",
+    "municipality": "Brush",
+    "id": "K7V5",
+    "longitude": "-103.581001282"
+  },
+  {
+    "elevation": "4714",
+    "distance": 8,
+    "latitude": "40.1755981445",
+    "home_link": "http://www.co.washington.co.us/airport.htm",
+    "name": "Colorado Plains Regional Airport",
+    "municipality": "Akron",
+    "id": "KAKO",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Colorado_Plains_Regional_Airport",
+    "longitude": "-103.222000122"
+  },
+  {
+    "elevation": "4509",
+    "distance": 21,
+    "latitude": "40.24440002441406",
+    "name": "Gebauer Airport",
+    "municipality": "Akron",
+    "id": "5V6",
+    "longitude": "-103.09400177001953"
+  },
+  {
+    "elevation": "4150",
+    "distance": 1,
+    "latitude": "40.108299255371094",
+    "name": "Koenig Airport",
+    "municipality": "Yuma",
+    "id": "8CO8",
+    "longitude": "-102.72799682617188"
+  },
+  {
+    "elevation": "4136",
+    "distance": 6,
+    "latitude": "40.104198455799995",
+    "name": "Yuma Municipal Airport",
+    "municipality": "Yuma",
+    "id": "K2V6",
+    "longitude": "-102.712997437"
+  },
+  {
+    "elevation": "4075",
+    "distance": 25,
+    "latitude": "40.1944007874",
+    "name": "Jackson Airfield",
+    "municipality": "Yuma",
+    "id": "CD05",
+    "longitude": "-102.697998047"
+  },
+  {
+    "elevation": "3667",
+    "distance": 1,
+    "latitude": "40.10029984",
+    "name": "Wray Municipal Airport",
+    "municipality": "Wray",
+    "id": "K2V5",
+    "longitude": "-102.2409973"
+  },
+  {
+    "elevation": "3640",
+    "distance": 33,
+    "latitude": "40.08570098876953",
+    "name": "Wcdh Heliport",
+    "municipality": "Wray",
+    "id": "5CO9",
+    "longitude": "-102.23500061035156"
+  },
+  {
+    "elevation": "3730",
+    "distance": 28,
+    "latitude": "40.569400787353516",
+    "name": "Holyoke Airport",
+    "municipality": "Holyoke",
+    "id": "KHEQ",
+    "longitude": "-102.27300262451172"
+  },
+  {
+    "elevation": "3495",
+    "distance": 28,
+    "latitude": "40.97079849",
+    "name": "Julesburg Municipal Airport",
+    "municipality": "Julesburg",
+    "id": "K7V8",
+    "longitude": "-102.3150024"
+  },
+  {
+    "elevation": "4035",
+    "distance": 32,
+    "latitude": "40.625",
+    "name": "Haxtun Municipal Airport",
+    "municipality": "Haxtun",
+    "id": "K17V",
+    "longitude": "-102.60299682617188"
+  },
+  {
+    "elevation": "3946",
+    "distance": 2,
+    "latitude": "40.61249923706055",
+    "name": "Sterling Regional Medical Center Heliport",
+    "municipality": "Sterling",
+    "id": "3CO3",
+    "longitude": "-103.22000122070312"
+  },
+  {
+    "elevation": "4040",
+    "distance": 4,
+    "latitude": "40.61529922",
+    "home_link": "https://www.codot.gov/programs/aeronautics/colorado-airport-system/general-aviation-airports/ga-airports-r-y/STK",
+    "name": "Sterling Municipal Airport",
+    "municipality": "Sterling",
+    "id": "KSTK",
+    "longitude": "-103.2649994"
+  },
+  {
+    "elevation": "4192",
+    "distance": 31,
+    "latitude": "40.61750030517578",
+    "name": "Mertens Airport",
+    "municipality": "Sterling",
+    "id": "3CO2",
+    "longitude": "-103.33300018310547"
+  },
+  {
+    "elevation": "4881",
+    "distance": 6,
+    "latitude": "40.51359939575195",
+    "name": "Wirth Field",
+    "municipality": "New Raymer",
+    "id": "CO06",
+    "longitude": "-103.91200256347656"
+  },
+  {
+    "elevation": "4860",
+    "distance": 15,
+    "latitude": "40.60419845581055",
+    "name": "Williams Ranch Airport",
+    "municipality": "New Raymer",
+    "id": "7CO4",
+    "longitude": "-103.93900299072266"
+  },
+  {
+    "elevation": "4950",
+    "distance": 8,
+    "latitude": "40.670799255371094",
+    "name": "William Leon Schawo Airport",
+    "municipality": "Briggsdale",
+    "id": "8CO2",
+    "longitude": "-104.20800018310547"
+  },
+  {
+    "elevation": "4830",
+    "distance": 13,
+    "latitude": "40.62220001220703",
+    "name": "Cass Field",
+    "municipality": "Briggsdale",
+    "id": "00CO",
+    "longitude": "-104.34400177001953"
+  },
+  {
+    "elevation": "4840",
+    "distance": 5,
+    "latitude": "40.545799255371094",
+    "name": "Hay Fever Farm Airport",
+    "municipality": "Galeton",
+    "id": "CO59",
+    "longitude": "-104.56400299072266"
+  },
+  {
+    "elevation": "4800",
+    "distance": 4,
+    "latitude": "40.51250076293945",
+    "name": "Crop Air Inc Airport",
+    "municipality": "Eaton",
+    "id": "CO48",
+    "longitude": "-104.6520004272461"
+  },
+  {
+    "elevation": "4715",
+    "distance": 2,
+    "latitude": "40.460499",
+    "name": "Uhrich Airport",
+    "municipality": "Greeley",
+    "id": "CO70",
+    "longitude": "-104.646003"
+  },
+  {
+    "elevation": "4697",
+    "distance": 4,
+    "latitude": "40.4374008179",
+    "home_link": "http://www.gxy.net/",
+    "name": "Greeley\u2013Weld County Airport",
+    "municipality": "Greeley",
+    "id": "KGXY",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Greeley-Weld_County_Airport",
+    "longitude": "-104.633003235"
+  },
+  {
+    "elevation": "4882",
+    "distance": 7,
+    "latitude": "40.415000915527344",
+    "name": "Ncmc Heliport",
+    "municipality": "Greeley",
+    "id": "98CO",
+    "longitude": "-104.70800018310547"
+  },
+  {
+    "elevation": "4745",
+    "distance": 7,
+    "latitude": "40.471500396728516",
+    "name": "Highline Farm Airstrip",
+    "municipality": "Bracewell",
+    "id": "67CO",
+    "longitude": "-104.81300354003906"
+  },
+  {
+    "elevation": "5000",
+    "distance": 4,
+    "latitude": "40.375",
+    "name": "Jackrabbit Strip",
+    "municipality": "Milliken",
+    "id": "2CO3",
+    "longitude": "-104.87300109863281"
+  },
+  {
+    "elevation": "4900",
+    "distance": 11,
+    "latitude": "40.34080123901367",
+    "name": "Frontier Helicopters Heliport",
+    "municipality": "Johnstown",
+    "id": "7CO7",
+    "longitude": "-104.822998046875"
+  },
+  {
+    "elevation": "4820",
+    "distance": 2,
+    "latitude": "40.330501556399994",
+    "name": "Easton/Valley View Airport",
+    "municipality": "Greeley",
+    "id": "K11V",
+    "longitude": "-104.60900116"
+  },
+  {
+    "elevation": "4770",
+    "distance": 2,
+    "latitude": "40.340599060058594",
+    "name": "Beaugh Airport",
+    "municipality": "Kersey",
+    "id": "9CO7",
+    "longitude": "-104.572998046875"
+  },
+  {
+    "elevation": "4635",
+    "distance": 19,
+    "latitude": "40.3479995728",
+    "name": "Branch's Heliport",
+    "municipality": "Kersey",
+    "id": "0CD3",
+    "longitude": "-104.527999878"
+  },
+  {
+    "elevation": "4820",
+    "distance": 3,
+    "latitude": "40.11660004",
+    "name": "Reid Ranches Airport",
+    "municipality": "Roggen",
+    "id": "US-0078",
+    "longitude": "-104.3170013"
+  },
+  {
+    "elevation": "4780",
+    "distance": 3,
+    "latitude": "40.093299865722656",
+    "name": "Air Dusters Inc Airport",
+    "municipality": "Roggen",
+    "id": "49CO",
+    "longitude": "-104.375"
+  },
+  {
+    "elevation": "4800",
+    "distance": 1,
+    "latitude": "40.108299255371094",
+    "name": "Horseshoe Landings Airport",
+    "municipality": "Keenesburg",
+    "id": "CO60",
+    "longitude": "-104.43099975585938"
+  },
+  {
+    "elevation": "4820",
+    "distance": 9,
+    "latitude": "40.09830093383789",
+    "name": "The Farm Airport",
+    "municipality": "Keenesburg",
+    "id": "62CO",
+    "longitude": "-104.42500305175781"
+  },
+  {
+    "elevation": "5075",
+    "distance": 1,
+    "latitude": "39.9640998840332",
+    "name": "Jjs Airport",
+    "municipality": "Keenesburg",
+    "id": "CO56",
+    "longitude": "-104.46299743652344"
+  },
+  {
+    "elevation": "5100",
+    "distance": 6,
+    "latitude": "39.958057403599994",
+    "name": "Flying E Airport",
+    "municipality": "Brighton",
+    "id": "22CO",
+    "longitude": "-104.485557556"
+  },
+  {
+    "elevation": "5373",
+    "distance": 7,
+    "latitude": "39.8894004822",
+    "name": "Greggs Nr 1 Airport",
+    "municipality": "Bennett",
+    "id": "0CO3",
+    "longitude": "-104.544998169"
+  },
+  {
+    "elevation": "5431",
+    "distance": 7,
+    "latitude": "39.861698150635",
+    "home_link": "http://www.flydenver.com/",
+    "name": "Denver International Airport",
+    "municipality": "Denver",
+    "id": "KDEN",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Denver_International_Airport",
+    "longitude": "-104.672996521"
+  },
+  {
+    "elevation": "5180",
+    "distance": 3,
+    "latitude": "39.96670150756836",
+    "name": "Stevens Airport",
+    "municipality": "Hudson",
+    "id": "60CO",
+    "longitude": "-104.6510009765625"
+  },
+  {
+    "elevation": "5128",
+    "distance": 4,
+    "latitude": "39.978599548339844",
+    "name": "Horth Strip",
+    "municipality": "Hudson",
+    "id": "CO77",
+    "longitude": "-104.59400177001953"
+  },
+  {
+    "elevation": "5040",
+    "distance": 4,
+    "latitude": "40.03889846801758",
+    "name": "Lindys Airpark",
+    "municipality": "Hudson",
+    "id": "7CO3",
+    "longitude": "-104.6240005493164"
+  },
+  {
+    "elevation": "5000",
+    "distance": 6,
+    "latitude": "40.09579849243164",
+    "name": "Land Airport",
+    "municipality": "Keenesburg",
+    "id": "CO82",
+    "longitude": "-104.58899688720703"
+  },
+  {
+    "elevation": "4965",
+    "distance": 8,
+    "latitude": "40.0999984741",
+    "name": "Platte Valley Airpark",
+    "municipality": "Hudson",
+    "id": "K18V",
+    "wikipedia_link": "http://en.wikipedia.org/wiki/Platte_Valley_Airpark",
+    "longitude": "-104.700996399"
+  },
+  {
+    "elevation": "4950",
+    "distance": 4,
+    "latitude": "40.2125015259",
+    "name": "Kugel-Strong Airport",
+    "municipality": "Platteville",
+    "id": "03CO",
+    "longitude": "-104.744003296"
+  },
+  {
+    "elevation": "4925",
+    "distance": 5,
+    "latitude": "40.167198181152344",
+    "name": "Tonga Airport",
+    "municipality": "Platteville",
+    "id": "1CD2",
+    "longitude": "-104.79299926757812"
+  },
+  {
+    "elevation": "5120",
+    "distance": 4,
+    "latitude": "40.1463012695",
+    "name": "Kauffman Heliport",
+    "municipality": "Denver",
+    "id": "0CD4",
+    "longitude": "-104.887001038"
+  },
+  {
+    "elevation": "5000",
+    "distance": 1,
+    "latitude": "40.112701416015625",
+    "name": "Rhoads Heliport",
+    "municipality": "Firestone",
+    "id": "CO57",
+    "longitude": "-104.9520034790039"
+  },
+  {
+    "elevation": "5000",
+    "distance": 5,
+    "latitude": "40.10580062866211",
+    "name": "Wings N Things Airpark & Museum Airport",
+    "municipality": "Firestone",
+    "id": "CO58",
+    "longitude": "-104.95500183105469"
+  },
+  {
+    "elevation": "5050",
+    "distance": 11,
+    "latitude": "40.05830001831055",
+    "name": "Suckla Farms Balloonport",
+    "municipality": "Dacono",
+    "id": "CO28",
+    "longitude": "-104.89199829101562"
+  },
+  {
+    "elevation": "5055",
+    "distance": 3,
+    "latitude": "39.983001709",
+    "name": "Brighton Van-Aire Estates Airport",
+    "municipality": "Brighton",
+    "id": "CO12",
+    "longitude": "-104.705001831"
+  },
+  {
+    "elevation": "5060",
+    "distance": 1,
+    "latitude": "39.96329879760742",
+    "name": "Heckendorf Ranches Airport",
+    "municipality": "Brighton",
+    "id": "CO13",
+    "longitude": "-104.7490005493164"
+  },
+  {
+    "elevation": "5115",
+    "distance": 4,
+    "latitude": "39.9625",
+    "name": "Platte Valley Medical Center Heliport",
+    "municipality": "Brighton",
+    "id": "22CD",
+    "longitude": "-104.766667"
+  },
+  {
+    "elevation": "5100",
+    "distance": 3,
+    "latitude": "39.91669845581055",
+    "name": "Reasoner Airport",
+    "municipality": "Brighton",
+    "id": "CO14",
+    "longitude": "-104.80500030517578"
+  },
+  {
+    "elevation": "5015",
+    "distance": 4,
+    "latitude": "39.91669846",
+    "name": "Henderson Airport",
+    "municipality": "Henderson",
+    "id": "US-0074",
+    "longitude": "-104.8669968"
+  },
+  {
+    "elevation": "5110",
+    "distance": 4,
+    "latitude": "39.86669921875",
+    "name": "Public Service Company/Mdc Heliport",
+    "municipality": "Irondale",
+    "id": "CD08",
+    "longitude": "-104.9010009765625"
+  },
+  {
+    "elevation": "5255",
+    "distance": 1,
+    "latitude": "39.85279846191406",
+    "name": "Capri Heliport",
+    "municipality": "Denver",
+    "id": "CO32",
+    "longitude": "-104.97699737548828"
+  },
+  {
+    "elevation": "5333",
+    "distance": 2,
+    "latitude": "39.86360168457031",
+    "name": "North Suburban Medical Center Heliport",
+    "municipality": "Thornton",
+    "id": "CD22",
+    "longitude": "-104.98500061035156"
+  },
+  {
+    "elevation": "5506",
+    "distance": 3,
+    "latitude": "39.84920120239258",
+    "name": "St Anthony North Heliport",
+    "municipality": "Westminster",
+    "id": "4CO4",
+    "longitude": "-105.01799774169922"
+  },
+  {
+    "elevation": "5290",
+    "distance": 1,
+    "latitude": "39.809200286865234",
+    "name": "Public Service of Colorado Arvada Heliport",
+    "municipality": "Arvada",
+    "id": "CO08",
+    "longitude": "-105.0479965209961"
+  },
+  {
+    "elevation": "5500",
+    "distance": 4,
+    "latitude": "39.82080078125",
+    "name": "S F Heliport",
+    "municipality": "Westminster",
+    "id": "CD04",
+    "longitude": "-105.05400085449219"
+  },
+  {
+    "elevation": "5500",
+    "distance": 3,
+    "latitude": "39.766700744628906",
+    "name": "Lutheran Medical Center Heliport",
+    "municipality": "Wheat Ridge",
+    "id": "4CO6",
+    "longitude": "-105.08999633789062"
+  },
+  {
+    "elevation": "5550",
+    "distance": 1,
+    "latitude": "39.72330093383789",
+    "name": "Denver Federal Center Helistop",
+    "municipality": "Denver",
+    "id": "CO39",
+    "longitude": "-105.11100006103516"
+  },
+  {
+    "elevation": "5681",
+    "distance": 5,
+    "latitude": "39.7158867527",
+    "name": "Lakewood / St. Anthony's Hospital Heliport",
+    "id": "US-0184",
+    "longitude": "-105.127919018"
+  },
+  {
+    "elevation": "5275",
+    "distance": 3,
+    "latitude": "39.74250030517578",
+    "name": "St Anthony Hospital Central Heliport",
+    "municipality": "Denver",
+    "id": "CO04",
+    "longitude": "-105.0469970703125"
+  },
+  {
+    "elevation": "5212",
+    "distance": 1,
+    "latitude": "39.727500915527344",
+    "name": "Denver Health Heliport",
+    "municipality": "Denver",
+    "id": "CO35",
+    "longitude": "-104.99099731445312"
+  },
+  {
+    "elevation": "5330",
+    "distance": 1,
+    "latitude": "39.74720001220703",
+    "name": "St Lukes Hospital Heliport",
+    "municipality": "Denver",
+    "id": "CO34",
+    "longitude": "-104.98100280761719"
+  },
+  {
+    "elevation": "5354",
+    "distance": 0,
+    "latitude": "39.742801666259766",
+    "name": "Vtol Heliport",
+    "municipality": "Denver",
+    "id": "CO40",
+    "longitude": "-104.99400329589844"
+  },
+  {
+    "elevation": "5350",
+    "distance": 1,
+    "latitude": "39.73749923706055",
+    "name": "Police Headquarters Heliport",
+    "municipality": "Denver",
+    "id": "9CO0",
+    "longitude": "-104.99199676513672"
+  },
+  {
+    "elevation": "5463",
+    "distance": 0,
+    "latitude": "39.74580001831055",
+    "name": "St Joseph Hospital Heliport",
+    "municipality": "Denver",
+    "id": "CO37",
+    "longitude": "-104.96900177001953"
+  },
+  {
+    "elevation": "5291",
+    "distance": 1,
+    "latitude": "39.7494010925293",
+    "name": "Presbyterian/St Luke's Medical Center Heliport",
+    "municipality": "Denver",
+    "id": "2CO4",
+    "longitude": "-104.96900177001953"
+  },
+  {
+    "elevation": "5436",
+    "distance": 1,
+    "latitude": "39.733299255371094",
+    "name": "The Children's Hospital Heliport",
+    "municipality": "Denver",
+    "id": "57CO",
+    "longitude": "-104.96700286865234"
+  },
+  {
+    "elevation": "5383",
+    "distance": 0,
+    "latitude": "39.733299255371094",
+    "name": "Rose Medical Center Heliport",
+    "municipality": "Denver",
+    "id": "CO31",
+    "longitude": "-104.94000244140625"
+  },
+  {
+    "elevation": "5418",
+    "distance": 2,
+    "latitude": "39.73189926147461",
+    "name": "University Hospital Heliport",
+    "municipality": "Denver",
+    "id": "CO29",
+    "longitude": "-104.93800354003906"
+  },
+  {
+    "elevation": "5340",
+    "distance": 3,
+    "latitude": "39.705501556396484",
+    "name": "Cherry Creek Townhouse Heliport",
+    "municipality": "Glendale",
+    "id": "CO62",
+    "longitude": "-104.93900299072266"
+  },
+  {
+    "elevation": "5260",
+    "distance": 0,
+    "latitude": "39.721099853515625",
+    "name": "Kusa Helistop",
+    "municipality": "Denver",
+    "id": "CO88",
+    "longitude": "-104.98300170898438"
+  },
+  {
+    "elevation": "5300",
+    "distance": 2,
+    "latitude": "39.72529983520508",
+    "name": "Channel 7 Heliport",
+    "municipality": "Denver",
+    "id": "11CO",
+    "longitude": "-104.98400115966797"
+  },
+  {
+    "elevation": "5289",
+    "distance": 2,
+    "latitude": "39.698001861572266",
+    "name": "Gates Rubber County Heliport",
+    "municipality": "Denver",
+    "id": "CO30",
+    "longitude": "-104.98699951171875"
+  },
+  {
+    "elevation": "5340",
+    "distance": 1,
+    "latitude": "39.6875",
+    "name": "Denver Police Department-District 3 Heliport",
+    "municipality": "Denver",
+    "id": "CO41",
+    "longitude": "-104.95999908447266"
+  },
+  {
+    "elevation": "5349",
+    "distance": 1,
+    "latitude": "39.670799255371094",
+    "name": "Porter Memorial Hospital Heliport",
+    "municipality": "Denver",
+    "id": "69CO",
+    "longitude": "-104.97599792480469"
+  },
+  {
+    "elevation": "5374",
+    "distance": 5,
+    "latitude": "39.654701232910156",
+    "name": "Swedish Medical Center Heliport",
+    "municipality": "Englewood",
+    "id": "15CO",
+    "longitude": "-104.97100067138672"
+  },
+  {
+    "elevation": "5581",
+    "distance": 3,
+    "latitude": "39.57640075683594",
+    "name": "Arapahoe Medical Park/Littleton Hospital Heliport",
+    "municipality": "Littleton",
+    "id": "CO16",
+    "longitude": "-104.98699951171875"
+  },
+  {
+    "elevation": "5450",
+    "distance": 5,
+    "latitude": "39.54999923706055",
+    "name": "Bowen Farms Nr 1 Airport",
+    "municipality": "Littleton",
+    "id": "CO98",
+    "longitude": "-105.03399658203125"
+  },
+  {
+    "elevation": "5563",
+    "distance": 4,
+    "latitude": "39.603099823",
+    "name": "Swedish S.W. Medical Heliport",
+    "municipality": "Littleton",
+    "id": "0CD9",
+    "longitude": "-105.091003418"
+  },
+  {
+    "elevation": "6220",
+    "distance": 2,
+    "latitude": "39.58689880371094",
+    "name": "Manor House Heliport",
+    "municipality": "Littleton",
+    "id": "2CO6",
+    "longitude": "-105.16899871826172"
+  },
+  {
+    "elevation": "6228",
+    "distance": 5,
+    "latitude": "39.55609893798828",
+    "name": "Deer Creek Building Heliport",
+    "municipality": "Littleton",
+    "id": "9CO1",
+    "longitude": "-105.16200256347656"
+  },
+  {
+    "elevation": "5718",
+    "distance": 18,
+    "latitude": "39.499698638916016",
+    "name": "Martin Heliport",
+    "municipality": "Waterton",
+    "id": "4CO1",
+    "longitude": "-105.10600280761719"
+  }
+]
