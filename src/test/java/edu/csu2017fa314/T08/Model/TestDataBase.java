@@ -27,46 +27,46 @@ public class TestDataBase {
 
     @Test
     public void testGetID() {
-        assertEquals(d.getID(1),"KDEN" );
+        assertEquals(d.getID(1),"7704" );
     }
 
     @Test
     public void testGetInfo() {
-        assertEquals(d.getInfo("KDEN").get("id"),"KDEN" );
-        assertEquals(d.getInfo("KDEN").get("name"),"Denver International Airport" );
-        assertEquals(d.getInfo("KDEN").get("latitude"),"39.861698150635" );
-        assertEquals(d.getInfo("KDEN").get("longitude"),"-104.672996521" );
-        assertEquals(d.getInfo("KDEN").get("elevation"),"5431" );
-        assertEquals(d.getInfo("KDEN").get("municipality"),"Denver" );
-        assertEquals(d.getInfo("KDEN").get("home_link"),"http://www.flydenver.com/" );
-        assertEquals(d.getInfo("KDEN").get("wikipedia_link"),"http://en.wikipedia.org/wiki/Denver_International_Airport" );
+        assertEquals(d.getInfo("7704").get("id"),"7704" );
+        assertEquals(d.getInfo("7704").get("name"),"Channel 7 Heliport" );
+        assertEquals(d.getInfo("7704").get("latitude"),"39.72529983520508" );
+        assertEquals(d.getInfo("7704").get("longitude"),"-104.98400115966797" );
+        assertEquals(d.getInfo("7704").get("elevation"),"5300" );
+        assertEquals(d.getInfo("7704").get("municipality"),"Denver" );
+        assertEquals(d.getInfo("7704").get("home_link"),null );
+        assertEquals(d.getInfo("7704").get("wikipedia_link"),null );
 
     }
 
 
     @Test
     public void testGetLongit() {
-        assertEquals(d.getLongit("KDEN"),"-104.672996521" );
+        assertEquals(d.getLongit("7704"),"-104.98400115966797" );
     }
 
     @Test
     public void testGetName() {
-        assertEquals(d.getName("KDEN"),"Denver International Airport" );
+        assertEquals(d.getName("7704"),"Channel 7 Heliport" );
     }
 
     @Test
     public void testGetLatit() {
-        assertEquals(d.getLatit("KDEN"),"39.861698150635" );
+        assertEquals(d.getLatit("7704"),"39.72529983520508" );
     }
 
 
     @Test
     public void testGetTotal() {
-        assertEquals(d.getTotal(),26 );
+        assertEquals(d.getTotal(),30 );
     }
 
     @Test
     public void testGetIndex() {
-        assertEquals(d.getIndex("KDEN"),1 );
+        assertEquals(d.getIndex("7704"),1 );
     }
 }
