@@ -5,21 +5,16 @@ import java.util.HashMap;
 
 public class Model {
     public static ArrayList<String> shortestTrip() {
-        if(TripManager.size() == 0) {
-            TripManager.buildTripList("");
-        }
-        return TripManager.shortest().stops();
+        return TripManager.shortest("denver");
     }
 
     public static ArrayList<String> shortestTrip(String key) {
-        TripManager.buildTripList(key);
-        return TripManager.shortest().stops();
+        return TripManager.shortest(key);
     }
 
     public static ArrayList<String> shortestTrip(String key, int optLevel) {
         TripManager.setOptLevel(optLevel);
-        TripManager.buildTripList(key);
-        return TripManager.shortest().stops();
+        return TripManager.shortest(key);
     }
 
     public static HashMap getInfo(String id) {

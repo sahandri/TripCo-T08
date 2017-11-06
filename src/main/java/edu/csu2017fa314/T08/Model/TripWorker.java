@@ -87,7 +87,7 @@ public class TripWorker implements Callable<Trip> {
                             +TripManager.getDist(order[i],order[k])+TripManager.getDist(order[i+1],order[k+1]);
 
                     if (delta < 0) {
-                        optSwap(i+1, k);
+                        twoOptSwap(i+1, k);
                         _tripLength += delta;
                         improved = true;
                     }
@@ -100,13 +100,17 @@ public class TripWorker implements Callable<Trip> {
 
     }
 
-    private void optSwap(int i, int k) {
+    // Swap the order of trip for destination i..j
+    private void twoOptSwap(int i, int k) {
         while(i<k) {
             int tmp = order[i];
             order[i] = order[k];
             order[k] = tmp;
             i++; k--;
         }
+    }
+
+    private void threeOptSwap(int i, int j, int k) {
     }
 
 }

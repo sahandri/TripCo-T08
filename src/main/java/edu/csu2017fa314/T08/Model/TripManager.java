@@ -7,34 +7,57 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class TripManager {
-    private static int[][] distLookUp;
-    private static int _optLevel = 1;
-    private static String _key = "";
-    public static ArrayList<String> ids = new ArrayList<>();
-    public static ArrayList<Trip> trips = new ArrayList<>();
-    public static AtomicInteger total;
-    static Trip shortest() {
-        return trips.get(0);
+    private static int[][] distLookUp; // Lookup table of distances between every location in the search.
+    private static int _optLevel = 1; // Optimization level
+    private static String _key = ""; // Key used in most recent search.
+    static ArrayList<String> ids = new ArrayList<>();
+    static ArrayList<Trip> trips = new ArrayList<>();
+    static AtomicInteger total;
+
+    // Returns the shortest trip based on the current key. Calculates if necessary.
+    static ArrayList<String> shortest() {
+        if(trips.isEmpty()) { buildTripList(_key);}
+        return trips.get(0).stops();
     }
 
-    public static int size() { return trips.size(); }
+    // Returns the shortest trip to all destinations with the key. Calculates if necessary.
+    static ArrayList<String> shortest(String key) {
+        if(_key.equals(key) || trips.isEmpty()) { buildTripList(key);}
+        return trips.get(0).stops();
+    }
 
-    public static Trip get(String id) {
+    // XXX: Web endpoint not implementeed yet.
+    /*
+    String id: id of starting location for desired shortest trip.
+    Returns the shortest trip starting at id.
+     */
+    static Trip get(String id) {
+        if(trips.isEmpty()) { buildTripList(id); }
         for(Trip t: trips) {
             if(t.get(0).equals(id)) {
                 return t;
             }
         }
-
         return trips.get(0);
     }
 
-    public static void setOptLevel(int level) {
+    /*
+    int level: Desired optimization level.
+    Levels:
+        0 - Raw data
+        1 - Nearest neighbor
+        2 - 2-opt
+        3 - 3-opt
+    */
+    static void setOptLevel(int level) {
         _optLevel = level;
     }
 
-    public static void buildTripList(String key) {
-        if(key.equals(_key) && trips.size() > 0) { return; }
+    /*
+    Calculates the shortest trips using all destinations found using key.
+    Stores the shortest trip from every starting location in ArrayList trips ordered by Trip length.
+     */
+    private static void buildTripList(String key) {
         _key = key;
         ids = DataBase.getID(key);
         if(ids.size() == 0){ System.err.println("ERROR: no destinations for search " + key); return; }
@@ -43,19 +66,21 @@ public class TripManager {
 
         buildDistLookUp();
 
+        // Runtime.getRuntime().availableProcessors()
         ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
         ArrayList<Future<Trip>> results = new ArrayList<>();
 
-
+        // Generate the trip creation tasks and store their futures
         for(int i = 0; i < total.get(); i++) {
-            TripWorker tw = new TripWorker(i, _optLevel);
-            Future<Trip> res = pool.submit(tw);
-            results.add(res);
-
+            TripWorker tripWorker = new TripWorker(i, _optLevel);
+            Future<Trip> tripResult = pool.submit(tripWorker);
+            results.add(tripResult);
         }
+
         pool.shutdown();
         while(!pool.isTerminated()) { }
 
+        // Get the results from each task's future
         try {
             for(Future<Trip> ft : results) {
                     trips.add(ft.get());
@@ -69,6 +94,7 @@ public class TripManager {
         Collections.sort(trips);
     }
 
+    // Calculates all the distances between destinations.
     private static void buildDistLookUp() {
         int destTtl = ids.size();
         distLookUp = new int[destTtl][];
@@ -76,6 +102,7 @@ public class TripManager {
         ArrayList<String> lats = new ArrayList<>(destTtl);
         ArrayList<String> longs = new ArrayList<>(destTtl);
 
+        // Collect the coordinates of all locations
         for (String id : ids) {
             lats.add(DataBase.getLatit(id));
             longs.add(DataBase.getLongit(id));
@@ -97,6 +124,7 @@ public class TripManager {
      * because the distance from i to destinations 0..i-1 is already stored in the previous rows.
      */
     static int getDist(int i, int j) {
+        if(i < trips.size() || j < trips.size()) { return -1; } // TODO: Properly handle error
         if(i < j) { return distLookUp[i][j-i-1]; }
         else if(j < i) { return distLookUp[j][i-j-1]; }
         else { return distLookUp[i][0]; }
