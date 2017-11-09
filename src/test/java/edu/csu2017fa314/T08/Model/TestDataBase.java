@@ -6,6 +6,8 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.util.HashMap;
+
 public class TestDataBase {
 
     private DataBase d;
@@ -27,46 +29,47 @@ public class TestDataBase {
 
     @Test
     public void testGetID() {
-        assertEquals(d.getID(2),"7704" );
+        assertEquals("11CO",d.getID(2));
     }
 
     @Test
     public void testGetInfo() {
-        assertEquals(d.getInfo("7704").get("id"),"7704" );
-        assertEquals(d.getInfo("7704").get("name"),"Channel 7 Heliport" );
-        assertEquals(d.getInfo("7704").get("latitude"),"39.72529983520508" );
-        assertEquals(d.getInfo("7704").get("longitude"),"-104.98400115966797" );
-        assertEquals(d.getInfo("7704").get("elevation"),"5300" );
-        assertEquals(d.getInfo("7704").get("municipality"),"Denver" );
-        assertEquals(d.getInfo("7704").get("home_link"),null );
-        assertEquals(d.getInfo("7704").get("wikipedia_link"),null );
+        HashMap info = d.getInfo("11CO");
+        assertEquals("11CO", info.get("id"));
+        assertEquals("Channel 7 Heliport", info.get("name"));
+        assertEquals("39.72529983520508", info.get("latitude"));
+        assertEquals("-104.98400115966797", info.get("longitude"));
+        assertEquals("5300", info.get("elevation"));
+        assertEquals("Denver", info.get("municipality"));
+        assertEquals(null, info.get("home_link"));
+        assertEquals(null, info.get("wikipedia_link"));
 
     }
 
 
     @Test
     public void testGetLongit() {
-        assertEquals(d.getLongit("7704"),"-104.98400115966797" );
+        assertEquals("-104.98400115966797", d.getLongit("11CO"));
     }
 
     @Test
     public void testGetName() {
-        assertEquals(d.getName("7704"),"Channel 7 Heliport" );
+        assertEquals("Channel 7 Heliport", d.getName("11CO"));
     }
 
     @Test
     public void testGetLatit() {
-        assertEquals(d.getLatit("7704"),"39.72529983520508" );
+        assertEquals("39.72529983520508", d.getLatit("11CO"));
     }
 
 
     @Test
     public void testGetTotal() {
-        assertEquals(d.getTotal(),30 );
+        assertEquals(30, d.getTotal());
     }
 
     @Test
     public void testGetIndex() {
-        assertEquals(d.getIndex("7704"),2 );
+        assertEquals(2, d.getIndex("11CO"));
     }
 }

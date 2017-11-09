@@ -55,17 +55,17 @@ public class DataBase {
 
     public static ArrayList getID(String key) {
         list.clear();
-        String query = "SELECT airports.id FROM continents" +
+        String query = "SELECT airports.code FROM continents" +
                 " INNER JOIN countries ON continents.code = countries.continent" +
                 " INNER JOIN regions ON countries.code = regions.iso_country" +
                 " INNER JOIN airports ON regions.code = airports.iso_region" +
-                " WHERE countries.name LIKE '%" + key + "%' OR regions.name LIKE '%" + key + "%'" +
+                " WHERE countries.name LIKE '%" + key + "%' OR continents.name LIKE '%" + key + "%' OR regions.name LIKE '%" + key + "%'" +
                 " OR airports.name LIKE '%" + key + "%' OR airports.municipality LIKE '%" + key + "%'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and return list of IDs
             while (rs.next()) {
-                list.add(rs.getString("id"));
+                list.add(rs.getString("code"));
             }
         } catch (Exception e) { // catches all exceptions in the nested try's
             System.err.printf("Exception: ");
@@ -81,7 +81,7 @@ public class DataBase {
                 " INNER JOIN countries ON continents.code = countries.continent" +
                 " INNER JOIN regions ON countries.code = regions.iso_country" +
                 " INNER JOIN airports ON regions.code = airports.iso_region" +
-                " WHERE airports.id LIKE '" + id + "'";
+                " WHERE airports.code LIKE '" + id + "'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and print selected columns
@@ -101,7 +101,7 @@ public class DataBase {
                 " INNER JOIN countries ON continents.code = countries.continent" +
                 " INNER JOIN regions ON countries.code = regions.iso_country" +
                 " INNER JOIN airports ON regions.code = airports.iso_region" +
-                " WHERE airports.id LIKE '" + id + "'";
+                " WHERE airports.code LIKE '" + id + "'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and print selected columns
@@ -116,15 +116,7 @@ public class DataBase {
 
 
     public static int getIndex(String ID){
-        int index = 0;
-        for(int i=0; i<list.size();i++) {
-            String tgt = getID(i);
-            if(ID.equalsIgnoreCase(tgt)) {
-                index = i;
-                return index;
-            }
-        }
-        throw new EmptyStackException();
+        return list.indexOf(ID);
     }
 
 
@@ -136,7 +128,7 @@ public class DataBase {
 
     public static String getLatit(String id) {
         String lotit = "";
-        String query = "SELECT latitude FROM airports WHERE id LIKE '" + id + "'";
+        String query = "SELECT latitude FROM airports WHERE code LIKE '" + id + "'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and print selected columns
@@ -152,7 +144,7 @@ public class DataBase {
 
     public static String getName(String id){
         String name = "";
-        String query = "SELECT name FROM airports WHERE id LIKE '" + id+ "'";
+        String query = "SELECT name FROM airports WHERE code LIKE '" + id+ "'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and get name
@@ -168,7 +160,7 @@ public class DataBase {
 
     public static String getLongit(String id) {
         String longit = "";
-        String query = "SELECT longitude FROM airports WHERE id LIKE '" + id + "'";
+        String query = "SELECT longitude FROM airports WHERE code LIKE '" + id + "'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and get longitude
@@ -184,12 +176,12 @@ public class DataBase {
 //returns a pair of all data in a row
     public static  HashMap<String,String> getInfo(String id) {
         HashMap<String,String> info = new HashMap<String, String>();
-        String query = "SELECT * FROM airports WHERE id LIKE '" + id + "'";
+        String query = "SELECT * FROM airports WHERE code LIKE '" + id + "'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and return selected columns
             rs.next();
-            info.put("id",rs.getString("id"));
+            info.put("id",rs.getString("code"));
             info.put("name",rs.getString("name"));
             info.put("latitude",rs.getString("latitude"));
             info.put("longitude",rs.getString("longitude"));
@@ -213,7 +205,7 @@ public class DataBase {
             rs = st.executeQuery(query);
             // iterate through the query results and print selected columns
             while (rs.next()) {
-                String id = rs.getString("id");
+                String id = rs.getString("code");
                 String name = rs.getString("name");
                 System.out.printf("%s,%s\n", id, name);
             }
