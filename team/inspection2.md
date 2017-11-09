@@ -17,6 +17,8 @@ Adam | Developer | 1hr
 file:line | defect | h/m/l | github# | who
 --- | --- |:---:|:---:| ---
 Server.java: 20 | Class doesn't have constructor | l |  | Sahand
+Server.java: 1 | Class doesn't have header comment | l |  | Sahand
+
 
 
 
