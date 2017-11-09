@@ -131,10 +131,11 @@ public class Server {
 		// if the user types a search, this returns an initial list of destinations
         if (sRec.getRequest().equals("search")) {
             // Set the return headers
+            System.out.println("Performing search for " + sRec.getDescription());
             return serveInitialDests(sRec.getDescription());
 		// if the user selects destinations and selects "plan1", this returns unordered trip
         } else if (sRec.getRequest().equals("plan")) {
-            return serveResponse(sRec.getDescription(), 0);        
+            return serveResponse(sRec.getDescription(), 0);
 		// if the user selects destinations and selects "plan1", this searches NN
         } else if (sRec.getRequest().equals("plan1")) {
             return serveResponse(sRec.getDescription(), 1);

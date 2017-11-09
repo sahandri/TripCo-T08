@@ -152,7 +152,7 @@ class Home extends React.Component {
 	
 	handleSubmit(event) {
 		let input = this.state.input;
-		this.fetch(input,"query");
+		this.fetch(input,"search");
 		event.preventDefault();
 	}
 	plan1(event) {
@@ -206,7 +206,7 @@ class Home extends React.Component {
     async fetch(input, name) {
 		let clientRequest;
         clientRequest = {
-			method: name,
+			request: name,
             description: input,
         };
 
