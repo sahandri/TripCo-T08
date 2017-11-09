@@ -16,13 +16,38 @@ public class TripManager {
 
     // Returns the shortest trip based on the current key. Calculates if necessary.
     static ArrayList<String> shortest() {
-        if(trips.isEmpty()) { buildTripList(_key);}
+        if(trips.isEmpty()) {
+            if (ids.isEmpty()) {
+                return new ArrayList<>();
+            } else {
+                buildTripList();
+            }
+        }
         return trips.get(0).stops();
     }
 
     // Returns the shortest trip to all destinations with the key. Calculates if necessary.
     static ArrayList<String> shortest(String key) {
-        if(_key.equals(key) || trips.isEmpty()) { buildTripList(key);}
+        if(trips.isEmpty()) { buildTripList();}
+        return trips.get(0).stops();
+    }
+
+    /*
+    1. Generate index list from stops
+    2. Pass list to TripWorker instead of generating list in TripWorker
+    3. Change buildTripList to call shortest
+     */
+
+    static void addStops(ArrayList<String> stops) {
+        for(String s : stops) {
+            if(!ids.contains(s)) { ids.add(s); }
+        }
+
+    }
+
+    static ArrayList<String> shortest(ArrayList<String> stops) {
+        addStops(stops);
+        buildTripList();
         return trips.get(0).stops();
     }
 
@@ -32,7 +57,7 @@ public class TripManager {
     Returns the shortest trip starting at id.
      */
     static Trip get(String id) {
-        if(trips.isEmpty()) { buildTripList(id); }
+        if(trips.isEmpty()) { buildTripList(); }
         for(Trip t: trips) {
             if(t.get(0).equals(id)) {
                 return t;
@@ -57,15 +82,12 @@ public class TripManager {
     Calculates the shortest trips using all destinations found using key.
     Stores the shortest trip from every starting location in ArrayList trips ordered by Trip length.
      */
-    private static void buildTripList(String key) {
-        _key = key;
-        ids = DataBase.getID(key);
-        if(ids.size() == 0){ System.err.println("ERROR: no destinations for search " + key); return; }
-        total = new AtomicInteger(DataBase.getTotal());
+    private static void buildTripList() {
+        if(ids.size() == 0){ System.err.println("ERROR: no destinations to make trip from."); return; }
+        total = new AtomicInteger(ids.size());
         trips = new ArrayList<>();
 
         buildDistLookUp();
-
         // Runtime.getRuntime().availableProcessors()
         ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
         ArrayList<Future<Trip>> results = new ArrayList<>();
@@ -83,7 +105,7 @@ public class TripManager {
         // Get the results from each task's future
         try {
             for(Future<Trip> ft : results) {
-                    trips.add(ft.get());
+                trips.add(ft.get());
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
