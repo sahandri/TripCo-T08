@@ -59,7 +59,7 @@ public class DataBase {
                 " INNER JOIN countries ON continents.code = countries.continent" +
                 " INNER JOIN regions ON countries.code = regions.iso_country" +
                 " INNER JOIN airports ON regions.code = airports.iso_region" +
-                " WHERE countries.name LIKE '%" + key + "%' OR regions.name LIKE '%" + key + "%'" +
+                " WHERE countries.name LIKE '%" + key + "%' OR continents.name LIKE '%" + key + "%' OR regions.name LIKE '%" + key + "%'" +
                 " OR airports.name LIKE '%" + key + "%' OR airports.municipality LIKE '%" + key + "%'";
         try {
             rs = st.executeQuery(query);
