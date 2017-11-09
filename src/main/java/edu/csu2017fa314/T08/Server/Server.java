@@ -43,6 +43,7 @@ public class Server {
                 " </svg>";
         ServerSvgResponse ssres = new ServerSvgResponse(120, 100, sampleSvg);*/
 	ServerSvgResponse ssres = new ServerSvgResponse(1067, 784, makeSvg.getSvg(searched));
+	//System.out.println("========"+ssres);
 
         return gson.toJson(ssres, ServerSvgResponse.class);
 	//JSONObject map = new JSONObject();	
