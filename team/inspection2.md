@@ -2,7 +2,7 @@
  
 Inspection | Details
 ----- | -----
-Subject | Server.java
+Subject | Server.java & DataBase.java
 Meeting | 11/8/17 at 10:00 in class
 Checklist | Java Inspection Checklist
 
