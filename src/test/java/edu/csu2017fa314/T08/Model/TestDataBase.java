@@ -27,7 +27,7 @@ public class TestDataBase {
 
     @Test
     public void testGetID() {
-        assertEquals(d.getID(1),"7704" );
+        assertEquals(d.getID(2),"7704" );
     }
 
     @Test
@@ -67,6 +67,6 @@ public class TestDataBase {
 
     @Test
     public void testGetIndex() {
-        assertEquals(d.getIndex("7704"),1 );
+        assertEquals(d.getIndex("7704"),2 );
     }
 }
