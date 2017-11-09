@@ -16,12 +16,12 @@ Adam | Developer | 1hr
 ### Log
 file:line | defect | h/m/l | github# | who
 --- | --- |:---:|:---:| ---
-Server.java: 20 | Class doesn't have constructor | l |  | Sahand
-Server.java: 1 | Class doesn't have header comment | l |  | Sahand
-Server.java: 39 | Delete Old examples and tests | l | | Ryan
-DataBase.java: all | Comments on each method | m | | Ryan
-DataBase.java: 122 | Check if ID is null | l | | Ryan
-DataBase.java: 239-248 | Delete old example code | l | | Ryan
+Server.java: 20 | Class doesn't have constructor | l | #239 | Sahand
+Server.java: 1 | Class doesn't have header comment | l | #240 | Sahand
+Server.java: 39 | Delete Old examples and tests | l | #241 | Ryan
+DataBase.java: all | Comments on each method | m | #242 | Ryan
+DataBase.java: 122 | Check if ID is null | l | #243 | Ryan
+DataBase.java: 239-248 | Delete old example code | l | #244 | Ryan
 
 
 
