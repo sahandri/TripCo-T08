@@ -10,6 +10,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import java.net.URL;
+import java.util.ArrayList;
 
 public class TestTripManager {
 
@@ -20,8 +21,8 @@ public class TestTripManager {
     @Test
     public void testShortest() {
         DataBase.connect();
-        TripManager.buildTripList("denver");
-        Trip t = TripManager.shortest();
+        ArrayList arr = TripManager.shortest("denver");
+        Trip t = TripManager.trips.get(0);
 
         System.out.printf("Distance is: %d\n", t.length());
         System.out.printf("Stops: %d\n", t.size());
@@ -30,8 +31,6 @@ public class TestTripManager {
         //assertTrue(t.length() > 3000);
         assertEquals(t.get(0),t.get(t.size()-1));
         //assertEquals(DataBase.getTotal()+1,t.size());
-        makeSvg.getSvg("denver");
-        Itinerary.createJSON("denver");
     }
 
 }

@@ -22,7 +22,7 @@ public class TestItinerary {
         DataBase.connect();
         System.out.println("Connected to DB");
         System.out.println("Setup Model");
-        TripManager.buildTripList("denver");
+        Model.shortestTrip("denver");
     }
 
 
