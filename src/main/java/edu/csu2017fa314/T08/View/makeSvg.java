@@ -222,11 +222,12 @@ public class makeSvg {
 		String svg = "";		
 		try{
 		//Create and open a writer for current .svg file
-			br = new BufferedReader(new FileReader("data/World_location_map.svg"));
+			br = new BufferedReader(new FileReader("../data/World_location_map.svg"));
 			bw = new BufferedWriter(new FileWriter("test.svg"));
 			//Copying File...
 			String line = null;
 			while((line = br.readLine()) != null) {
+				//system.out.println(line);
 				svg += line + "\n";
 			}
 			//Writing to file...
