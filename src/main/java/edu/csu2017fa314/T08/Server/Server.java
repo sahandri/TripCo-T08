@@ -63,7 +63,12 @@ public class Server {
         JSONArray itinerary = Itinerary.createJSON(search);
 
         JSONObject response = new JSONObject();
+        JSONObject svg = new JSONObject();
+        svg.put("width", 1067);
+        svg.put("height", 784);
+        svg.put("contents", makeSvg.getSvg(search, 0));
         response.put("itinerary", itinerary);
+        response.put("svg", svg);
         return response;
     }
 

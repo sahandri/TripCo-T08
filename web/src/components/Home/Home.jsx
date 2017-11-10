@@ -28,19 +28,20 @@ class Home extends React.Component {
 		if (this.state.results) {
 		
 			information = this.state.results.itinerary;
+            console.log(information);
 			output = information.map(info => {
 			total += info.distance;
 			keys = Object.keys(info);
-			values = Object.values(info);
+			//values = Object.values(info);
 			let out = "";
-			values.forEach( val => {
-				out += val + " , ";
+			keys.forEach( key => {
+				out += info[key] + " , ";
 			});
 		 	return (
 		 	<tr>
-		 	<td><h5>{values[0]}</h5>
+		 	<td><h5>{info.code}</h5>
 		 	<p>{out}</p></td>
-		 	<button onClick={handleCode.bind(this,info.code)}>Select</button>
+		 	<button onClick={this.handleCode.bind(this,info.code)}>Select</button>
 		 	
 		 	{/*<td>{info.distance}</td>
 		 	<td>{total}</td>*/}
