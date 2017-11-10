@@ -1,19 +1,38 @@
 package edu.csu2017fa314.T08.Model;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Model {
     public static ArrayList<String> shortestTrip() {
-        if(TripManager.size() == 0) {
-            TripManager.buildTripList("");
-        }
-        return TripManager.shortest().stops();
+        return TripManager.shortest("denver");
     }
 
+    // Deprecate
     public static ArrayList<String> shortestTrip(String key) {
-        TripManager.buildTripList(key);
-        return TripManager.shortest().stops();
+        return search(key);
+    }
+
+    // Deprecate
+    public static ArrayList<String> shortestTrip(String key, int optLevel) {
+        TripManager.setOptLevel(optLevel);
+        return search(key);
+    }
+
+    public static ArrayList<String> addStops(ArrayList<String> stops) {
+        TripManager.addStops(stops);
+        return TripManager.shortest();
+    }
+
+    public static ArrayList<String> search(String key) {
+        TripManager.addStops(DataBase.getID(key));
+        return TripManager.shortest();
+    }
+
+    public static ArrayList<String> setOptLevel(int optLevel) {
+        TripManager.setOptLevel(optLevel);
+        return TripManager.shortest();
     }
 
     public static HashMap getInfo(String id) {
