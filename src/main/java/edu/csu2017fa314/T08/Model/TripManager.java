@@ -45,6 +45,12 @@ public class TripManager {
 
     }
 
+	static void addArrayStops(String[] destList) {
+        for(String s : destList) {
+            if(!ids.contains(s)) { ids.add(s); }
+        }
+    }
+
     static ArrayList<String> shortest(ArrayList<String> stops) {
         addStops(stops);
         buildTripList();

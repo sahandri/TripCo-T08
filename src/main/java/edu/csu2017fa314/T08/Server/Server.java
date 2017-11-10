@@ -72,15 +72,15 @@ public class Server {
         return response;
     }
 
-    private JSONObject serveResponse(String search, int optLevel) {
+    private JSONObject serveResponse(String[] destList, int optLevel) {
 		//int opt level is used for selection of optimization        
 	
-		JSONArray itinerary = Itinerary.createJSON(search/*, optLevel*/);
+		JSONArray itinerary = Itinerary.createJSON(destList/*, optLevel*/);
 
         JSONObject svg = new JSONObject();
         svg.put("width", 1067);
         svg.put("height", 784);
-        svg.put("contents", makeSvg.getSvg(search, optLevel));
+        svg.put("contents", makeSvg.getArraySvg(destList, optLevel));
 
         JSONObject response = new JSONObject();
         response.put("itinerary", itinerary);
@@ -140,16 +140,16 @@ public class Server {
             return serveInitialDests(sRec.getDescription());
 		// if the user selects destinations and selects "plan1", this returns unordered trip
         } else if (sRec.getRequest().equals("plan")) {
-            return serveResponse(sRec.getDescription(), 0);
+            return serveResponse(sRec.getArrayDescription(), 0);
 		// if the user selects destinations and selects "plan1", this searches NN
         } else if (sRec.getRequest().equals("plan1")) {
-            return serveResponse(sRec.getDescription(), 1);
+            return serveResponse(sRec.getArrayDescription(), 1);
 		// if the user selects destinations and selects "plan2", this searches 2-Opt
 		} else if (sRec.getRequest().equals("plan2")) {
-            return serveResponse(sRec.getDescription(), 2);
+            return serveResponse(sRec.getArrayDescription(), 2);
 		// if the user selects destinations and selects "plan2", this searches 3-Opt
 		} else if (sRec.getRequest().equals("plan3")) {
-            return serveResponse(sRec.getDescription(), 3);
+            return serveResponse(sRec.getArrayDescription(), 3);
         // if "clear is chosen, blank world svg is sent and diplayed with empty list
         } else {
             return serveBlank(sRec.getDescription());

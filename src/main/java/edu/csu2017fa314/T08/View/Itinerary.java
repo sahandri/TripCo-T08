@@ -28,11 +28,38 @@ public class Itinerary {
         return arr;
     }
 
+	public static JSONArray createJSON(String[] destList) {
+        JSONArray arr = createItinerary(destList);
+        return arr;
+    }
+
     // Creates a JSONArray of trip legs, i.e. the itinerary
     public static JSONArray createItinerary(String search) {
         JSONArray arr = new JSONArray();
 
         ArrayList<String> stops = Model.shortestTrip(search);
+
+        // Iterate through destinations, calculating the distance of each leg.
+
+        // Iterate through destinations, calculating the distance of each leg.
+        for(int i = 0; i < stops.size()-1; i++)
+        {
+            // Creates a JSON object with start, end, and the distance between them
+            // and appends it to the end of the itinerary JSON array.
+            int dist = Model.getDistance(stops.get(i), stops.get(i+1), false);
+            arr.put(createLeg(stops.get(i), dist));
+        }
+
+        return arr;
+
+
+    }
+	
+	// Creates a JSONArray of trip legs, i.e. the itinerary
+    public static JSONArray createItinerary(String[] destList) {
+        JSONArray arr = new JSONArray();
+
+        ArrayList<String> stops = Model.shortestTrip(destList);
 
         // Iterate through destinations, calculating the distance of each leg.
 

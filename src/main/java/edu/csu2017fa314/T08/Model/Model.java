@@ -14,6 +14,10 @@ public class Model {
         return search(key);
     }
 
+	public static ArrayList<String> shortestTrip(String[] destList) {
+        return arraySearch(destList);
+    }
+
     // Deprecate
     public static ArrayList<String> shortestTrip(String key, int optLevel) {
         TripManager.setOptLevel(optLevel);
@@ -27,6 +31,11 @@ public class Model {
 
     public static ArrayList<String> search(String key) {
         TripManager.addStops(DataBase.getID(key));
+        return TripManager.shortest();
+    }
+
+	public static ArrayList<String> arraySearch(String[] destList) {
+        TripManager.addArrayStops(destList);
         return TripManager.shortest();
     }
 
