@@ -48,27 +48,30 @@ Date | Tasks done this time | Tasks done next time | Impediments | Confidence
 
 #### Completed user stories (epics) in Sprint Backlog 
 * *user story*:  *comments*
-* 
+* Transition from Local to webpage: Complete
+* 3-opt: Complete
+* World transition: Complete
 
-Completed *number of issues completed* issues associated with these user stories.
+Completed *4* issues associated with these user stories.
 
 #### Incomplete user stories / epics in Sprint Backlog 
-* *user story*: *Explanation...*
-*
+* Web interface: Ryan failed at understanding React interface
+* Loading and Saving: Currently broken due to not being able to accept arrays as paramters server side
 
 #### What went well
-* *something*
-*
+* Transition from local to webpage went extremely well
+* Transition from CO to World 
+* Inespecting code server side helped find alot of edge bugs and added multiple tests
 
 #### Problems encountered and resolutions
-* *something*
-*
+* Failure to complete interface with webpage.
+* Failure to start early enough for bugs to show through and forced to try and fix them the night of turn in.
 
 ## Retrospective
 
 Topic | Teamwork | Process | Tools
 :--- | :--- | :--- | :---
-What we will change this time |  |  | 
-What we did well |  |  | 
-What we need to work on |  |  |
-What we will change next time |  |  | 
+What we will change this time | Start sooner and complete plan earlier | complete critial issues first instead of background issues | React was a pain
+What we did well | Communication during the sprint was good except near the end | Extremely good transitions | Understanding testing and transfers
+What we need to work on | Being at a physical location the last few days of the assignment | Complete Critical issues and webpage earlier | Didn't understand react interface
+What we will change next time | Complete Sprint 4's stories and create a through plan | Fix the website first and then start backend | Learn react's interfacing
