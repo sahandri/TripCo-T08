@@ -31,7 +31,7 @@ public class TripCo
             System.err.println(e.toString());
             return;
         }
-        String svg = makeSvg.getSvg("");
+        String svg = makeSvg.getSvg("",0);
 
     }
 

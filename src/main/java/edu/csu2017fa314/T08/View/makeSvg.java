@@ -216,7 +216,7 @@ public class makeSvg {
 		}
 	}
 	//Method to modify premade SVG of Colorado 
-	public static String getSvg(String searched) {
+	public static String getSvg(String searched, int optLevel) {
 		BufferedReader br = null;
 		BufferedWriter bw = null;		
 		String svg = "";		
@@ -254,7 +254,7 @@ public class makeSvg {
 			double startY = 0;
 			double finishX = 0;
 			double finishY = 0;
-			ArrayList<String> order = Model.shortestTrip(searched);
+			ArrayList<String> order = Model.shortestTrip(searched /*, optLevel*/);
 			for(int i = 0; i < order.size(); i++) {
 				if(i == 0) {
 					//Sets first destination in trip to the destination at i = 0
@@ -281,6 +281,25 @@ public class makeSvg {
 		   // do something
 		}
 	return svg;
+	}
+	
+	public static String getBlankSvg() {
+		BufferedReader br = null;	
+		String svg = "";		
+		try{
+		//Create and open a writer for current .svg file
+			br = new BufferedReader(new FileReader("../data/BlankWorldExample.svg"));
+			//Copying File...
+			String line = null;
+			while((line = br.readLine()) != null) {
+				//system.out.println(line);
+				svg += line + "\n";
+			}
+			br.close();
+		} catch (IOException e) {
+		   // do something
+		}
+		return svg;
 	}
 }
 

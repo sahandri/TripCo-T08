@@ -74,7 +74,7 @@ Date | Tasks done this time | Tasks done next time | Impediments | Confidence
 
 Topic | Teamwork | Process | Tools
 :--- | :--- | :--- | :---
-What we will change this time |  |  | 
-What we did well |  |  | 
-What we need to work on |  |  |
-What we will change next time |  |  | 
+What we will change this time | Even work distribution | more meetings, earlier start | everyone could run program, switched to IntelliJ
+What we did well | work split | communication/no procrastination | correcting mistakes, keeping code cleaner
+What we need to work on | swarming on incomplete portions | starting sooner, no last minute changes | more testing, better use of Travis
+What we will change next time | early communication of blockers | completing tests with features | taking full advantage of travis for testing.
