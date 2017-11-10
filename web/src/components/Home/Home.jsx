@@ -8,6 +8,7 @@ class Home extends React.Component {
         this.state = {
             results: null,
             itinerary: [],
+            all: [],
 			svgResults: null,
 			input : ""
 		}
@@ -26,32 +27,28 @@ class Home extends React.Component {
 		let itinerary;
 		
 		if (this.state.results) {
-		
-			information = this.state.results.itinerary;
-            console.log(information);
-			output = information.map(info => {
-			total += info.distance;
-			keys = Object.keys(info);
-			//values = Object.values(info);
-			let out = "";
-			keys.forEach( key => {
-				out += info[key] + " , ";
-			});
-		 	return (
-		 	<tr>
-		 	<td><h5>{info.code}</h5>
-		 	<p>{out}</p></td>
-		 	<button onClick={this.handleCode.bind(this,info.code)}>Select</button>
-		 	
-		 	{/*<td>{info.distance}</td>
-		 	<td>{total}</td>*/}
-		 	</tr>
-		 	
-		 	);
-		 	})
-			
-			svg = this.state.results.svg;
-			renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
+				
+				information = this.state.results.itinerary;
+				this.state.all = [];
+				output = information.map(info => {
+				total += info.distance;
+				this.state.all.push(info.id);
+				keys = Object.keys(info);
+			 	return (
+			 	<tr>
+			 	<td><h5>{info.name}</h5>
+			 	<p>{info.id}</p></td>
+			 	<button onClick={this.handleCode.bind(this,info.id)}>Select</button>
+			 
+			 	</tr>
+			 	
+			 	);
+			 	})
+			 	console.log(this.state.all);
+				if(this.state.results.svg){
+				svg = this.state.results.svg;
+				renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
+				}
 		}
 		
 
@@ -73,10 +70,6 @@ class Home extends React.Component {
 				<table className="pair-table"> {/*For CSS*/}
                     <tbody>
                     {output}
-                    <tr>
-                        <td colSpan="3">Total:</td>
-                        <td>{total}</td> {/*Displays Total*/}
-                    </tr>
                     </tbody>
                 </table>
 				
@@ -84,6 +77,7 @@ class Home extends React.Component {
 				<table className="pair-table">
 				<tbody>
 				{itinerary}
+				<button onClick={this.all.bind(this)}>Select All</button>
 				</tbody>
 				</table>
 				<button onClick={this.plan1.bind(this)}>Plan 1</button>
@@ -133,8 +127,9 @@ class Home extends React.Component {
 		}
     }
     
-    handleCode(event, code){
-    
+ 
+       handleCode(code){
+    		
 		let bool = true;
 		let sel = this.state.itinerary;
 		for(let i = 0; i < sel.length; ++i){
@@ -149,12 +144,14 @@ class Home extends React.Component {
 			})
 		}
     }
-    
 	
 	handleSubmit(event) {
 		let input = this.state.input;
 		this.fetch(input,"search");
 		event.preventDefault();
+	}
+	all(event) {
+		this.state.itinerary = this.state.all;
 	}
 	plan1(event) {
 		let input = this.state.itinerary;
@@ -176,6 +173,7 @@ class Home extends React.Component {
 		this.state.svgResults = null;
 		this.state.itinerary = [];
 		this.state.input = "";
+		this.forceUpdate();
 		event.preventDefault();
 	}
 	save(event) {
@@ -193,9 +191,9 @@ class Home extends React.Component {
                 return function (e) {
                     let JsonObj = JSON.parse(e.target.result);
                     
-                    console.log(JsonObj);
+                    console.log(JsonObj.destinations);
                     
-                    this.fetch(JsonObj,"load");
+                    this.fetch(JsonObj.destinations,"load");
                 };
             })(file).bind(this);
 
