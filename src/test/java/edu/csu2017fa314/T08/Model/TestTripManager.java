@@ -21,7 +21,8 @@ public class TestTripManager {
     @Test
     public void testShortest() {
         DataBase.connect();
-        ArrayList arr = TripManager.shortest("denver");
+        Model.search("denver");
+        ArrayList arr = TripManager.shortest();
         Trip t = TripManager.trips.get(0);
 
         System.out.printf("Distance is: %d\n", t.length());
