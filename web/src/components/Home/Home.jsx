@@ -7,7 +7,7 @@ class Home extends React.Component {
         super(props);
         this.state = {
             results: null,
-            selected: [],
+            itinerary: [],
 			svgResults: null,
 			input : ""
 		}
@@ -23,24 +23,25 @@ class Home extends React.Component {
 		let keys;
 		let output;
 		let total = 0;
-		let selected;
+		let itinerary;
 		
 		if (this.state.results) {
 		
 			information = this.state.results.itinerary;
+            console.log(information);
 			output = information.map(info => {
 			total += info.distance;
 			keys = Object.keys(info);
-			values = Object.values(info);
+			//values = Object.values(info);
 			let out = "";
-			values.forEach( val => {
-				out += val + " , ";
+			keys.forEach( key => {
+				out += info[key] + " , ";
 			});
 		 	return (
 		 	<tr>
-		 	<td><h5>{values[0]}</h5>
+		 	<td><h5>{info.code}</h5>
 		 	<p>{out}</p></td>
-		 	<button onClick={handleCode.bind(this,info.code)}>Select</button>
+		 	<button onClick={this.handleCode.bind(this,info.code)}>Select</button>
 		 	
 		 	{/*<td>{info.distance}</td>
 		 	<td>{total}</td>*/}
@@ -82,18 +83,18 @@ class Home extends React.Component {
 				<h2> Selected Destinations</h2>
 				<table className="pair-table">
 				<tbody>
-				{selected}
+				{itinerary}
 				</tbody>
 				</table>
-				<button onlClick={this.plan1.bind(this)}>Plan 1</button>
-				<button onlClick={this.plan2.bind(this)}>Plan 2</button>
-				<button onlClick={this.plan3.bind(this)}>Plan 3</button><p></p>
+				<button onClick={this.plan1.bind(this)}>Plan 1</button>
+				<button onClick={this.plan2.bind(this)}>Plan 2</button>
+				<button onClick={this.plan3.bind(this)}>Plan 3</button><p></p>
 				
-				<button onlClick={this.save.bind(this)}>Save</button>
+				<button onClick={this.save.bind(this)}>Save</button>
 				<Dropzone className="dropzone-style" onDrop={this.drop.bind(this)}>
                     <button>Load</button>
                 </Dropzone>
-				<button onlClick={this.clear.bind(this)}>Clear</button><p></p>
+				<button onClick={this.clear.bind(this)}>Clear</button><p></p>
 				<h2>Map</h2>
 				<h1> 
 					{renderedSvg}
@@ -135,7 +136,7 @@ class Home extends React.Component {
     handleCode(event, code){
     
 		let bool = true;
-		let sel = this.state.selected;
+		let sel = this.state.itinerary;
 		for(let i = 0; i < sel.length; ++i){
 			if( sel[i] === code){
 				bool = false;
@@ -144,7 +145,7 @@ class Home extends React.Component {
 		if(sel && bool){
 			sel.push(code);
 			this.setState({
-				selected: sel,
+				itinerary: sel,
 			})
 		}
     }
@@ -152,33 +153,33 @@ class Home extends React.Component {
 	
 	handleSubmit(event) {
 		let input = this.state.input;
-		this.fetch(input,"query");
+		this.fetch(input,"search");
 		event.preventDefault();
 	}
 	plan1(event) {
-		let input = this.state.selected;
+		let input = this.state.itinerary;
 		this.fetch(input,"plan1");
 		event.preventDefault();
 	}
 	plan2(event) {
-		let input = this.state.selected;
+		let input = this.state.itinerary;
 		this.fetch(input,"plan2");
 		event.preventDefault();
 	}
 	plan3(event) {
-		let input = this.state.selected;
+		let input = this.state.itinerary;
 		this.fetch(input,"plan3");
 		event.preventDefault();
 	}
 	clear(event) {
 		this.state.results = null;
 		this.state.svgResults = null;
-		this.state.selected = [];
+		this.state.itinerary = [];
 		this.state.input = "";
 		event.preventDefault();
 	}
 	save(event) {
-		let input = this.state.selected;
+		let input = this.state.itinerary;
 		this.fetch(input,"save");
 		event.preventDefault();
 	}
@@ -206,7 +207,7 @@ class Home extends React.Component {
     async fetch(input, name) {
 		let clientRequest;
         clientRequest = {
-			method: name,
+			request: name,
             description: input,
         };
 

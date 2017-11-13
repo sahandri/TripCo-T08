@@ -6,12 +6,17 @@ import java.util.HashMap;
 
 public class Model {
     public static ArrayList<String> shortestTrip() {
+        TripManager.clear();
         return TripManager.shortest("denver");
     }
 
     // Deprecate
     public static ArrayList<String> shortestTrip(String key) {
         return search(key);
+    }
+
+	public static ArrayList<String> shortestTrip(String[] destList) {
+        return arraySearch(destList);
     }
 
     // Deprecate
@@ -26,11 +31,19 @@ public class Model {
     }
 
     public static ArrayList<String> search(String key) {
+        TripManager.clear();
         TripManager.addStops(DataBase.getID(key));
         return TripManager.shortest();
     }
 
+	public static ArrayList<String> arraySearch(String[] destList) {
+        TripManager.clear();
+        TripManager.addArrayStops(destList);
+        return TripManager.shortest();
+    }
+
     public static ArrayList<String> setOptLevel(int optLevel) {
+        TripManager.clear();
         TripManager.setOptLevel(optLevel);
         return TripManager.shortest();
     }

@@ -14,6 +14,12 @@ public class TripManager {
     static ArrayList<Trip> trips = new ArrayList<>();
     static AtomicInteger total;
 
+    static void clear() {
+        ids = new ArrayList<>();
+        trips = new ArrayList<>();
+        _optLevel = 0;
+    }
+
     // Returns the shortest trip based on the current key. Calculates if necessary.
     static ArrayList<String> shortest() {
         if(trips.isEmpty()) {
@@ -43,6 +49,12 @@ public class TripManager {
             if(!ids.contains(s)) { ids.add(s); }
         }
 
+    }
+
+	static void addArrayStops(String[] destList) {
+        for(String s : destList) {
+            if(!ids.contains(s)) { ids.add(s); }
+        }
     }
 
     static ArrayList<String> shortest(ArrayList<String> stops) {
@@ -88,13 +100,10 @@ public class TripManager {
         trips = new ArrayList<>();
 
         buildDistLookUp();
-
-        if(_optLevel != 0) {
+        if(_optLevel>0) {
             // Runtime.getRuntime().availableProcessors()
             ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
             ArrayList<Future<Trip>> results = new ArrayList<>();
-
-            System.out.println("Building " + total.toString() + "trips");
 
             // Generate the trip creation tasks and store their futures
             for (int i = 0; i < total.get(); i++) {
@@ -119,6 +128,10 @@ public class TripManager {
             }
 
             Collections.sort(trips);
+        }
+        else {
+            TripWorker tripWorker = new TripWorker(0, _optLevel);
+            trips.add(tripWorker.call());
         }
     }
 
