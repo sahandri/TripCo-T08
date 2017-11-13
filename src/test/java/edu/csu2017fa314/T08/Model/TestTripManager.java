@@ -21,9 +21,10 @@ public class TestTripManager {
     @Test
     public void testShortest() {
         DataBase.connect();
-        TripManager.setOptLevel(3);
-        Model.search("denver");
-        ArrayList arr = TripManager.shortest();
+
+        ArrayList<String> arr = Model.search("denver");
+
+        Model.shortestTrip(arr, 1);
         Trip t = TripManager.trips.get(0);
 
         System.out.printf("Distance is: %d\n", t.length());
@@ -33,6 +34,11 @@ public class TestTripManager {
         //assertTrue(t.length() > 3000);
         assertEquals(t.get(0),t.get(t.size()-1));
         //assertEquals(DataBase.getTotal()+1,t.size());
+        Model.shortestTrip(new ArrayList<>(arr.subList(0,10)),2);
+        Trip t2 = TripManager.trips.get(0);
+        System.out.printf("Shorter distance is: %d\n", t2.length());
+        System.out.printf("Less stops: %d\n", t2.size());
+        assertTrue(t.size() > t2.size());
     }
 
 }

@@ -9,7 +9,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TripManager {
     private static int[][] distLookUp; // Lookup table of distances between every location in the search.
     private static int _optLevel = 1; // Optimization level
-    private static String _key = ""; // Key used in most recent search.
     static ArrayList<String> ids = new ArrayList<>();
     static ArrayList<Trip> trips = new ArrayList<>();
     static AtomicInteger total;
@@ -32,12 +31,6 @@ public class TripManager {
         return trips.get(0).stops();
     }
 
-    // Returns the shortest trip to all destinations with the key. Calculates if necessary.
-    static ArrayList<String> shortest(String key) {
-        if(trips.isEmpty()) { buildTripList();}
-        return trips.get(0).stops();
-    }
-
     /*
     1. Generate index list from stops
     2. Pass list to TripWorker instead of generating list in TripWorker
@@ -51,31 +44,10 @@ public class TripManager {
 
     }
 
-	static void addArrayStops(String[] destList) {
-        for(String s : destList) {
-            if(!ids.contains(s)) { ids.add(s); }
-        }
-    }
-
     static ArrayList<String> shortest(ArrayList<String> stops) {
         addStops(stops);
         buildTripList();
         return trips.get(0).stops();
-    }
-
-    // XXX: Web endpoint not implementeed yet.
-    /*
-    String id: id of starting location for desired shortest trip.
-    Returns the shortest trip starting at id.
-     */
-    static Trip get(String id) {
-        if(trips.isEmpty()) { buildTripList(); }
-        for(Trip t: trips) {
-            if(t.get(0).equals(id)) {
-                return t;
-            }
-        }
-        return trips.get(0);
     }
 
     /*
@@ -130,6 +102,7 @@ public class TripManager {
             Collections.sort(trips);
         }
         else {
+
             TripWorker tripWorker = new TripWorker(0, _optLevel);
             trips.add(tripWorker.call());
         }

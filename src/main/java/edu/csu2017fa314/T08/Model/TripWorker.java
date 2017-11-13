@@ -31,6 +31,7 @@ public class TripWorker implements Callable<Trip> {
         _order[_idx] = 0;
 
         switch(_optLevel) {
+            case 0: calcLength(); break;
             case 1: doNN(); break;
             case 2: doNN(); do2Opt(); break;
             case 3: {
@@ -52,6 +53,12 @@ public class TripWorker implements Callable<Trip> {
         System.out.println("Completed trip " + Integer.toString(_idx) + " of length " + Integer.toString(_tripLength));
 
         return t;
+    }
+
+    private void calcLength() {
+        for(int i = 0; i < _numStops; i++) {
+            _tripLength+=TripManager.getDist(_order[i],_order[i+1]);
+        }
     }
 
 

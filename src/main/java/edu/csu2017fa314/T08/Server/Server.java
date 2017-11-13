@@ -15,6 +15,7 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static spark.Spark.post;
 
@@ -178,10 +179,10 @@ public class Server {
         res.raw().setContentType("application/force-download");
         res.raw().addHeader("Content-Disposition", "attachment; filename=\"selection.json\"");
     }
-	private String[] parseIDString(String destList) {
+	private ArrayList<String> parseIDString(String destList) {
 		//int opt level is used for selection of optimization        		
 		String[] dests = destList.split(",");
 		
-        return dests;
+        return new ArrayList<String>(Arrays.asList(dests));
     }
 }
