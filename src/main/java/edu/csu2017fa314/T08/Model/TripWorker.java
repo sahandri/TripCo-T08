@@ -36,9 +36,6 @@ public class TripWorker implements Callable<Trip> {
             case 2: doNN(); do2Opt(); break;
             case 3: {
                 doNN();
-                System.out.println("Trip " + Integer.toString(_idx) + "nn length: " + Integer.toString(_tripLength));
-                do2Opt();
-                System.out.println("Trip " + Integer.toString(_idx) + "2-opt length: " + Integer.toString(_tripLength));
                 do3Opt();
                 break;
             }
@@ -50,7 +47,6 @@ public class TripWorker implements Callable<Trip> {
             t.add(DataBase.getID(_order[i]));
         }
         t.setLength(_tripLength);
-        System.out.println("Completed trip " + Integer.toString(_idx) + " of length " + Integer.toString(_tripLength));
 
         return t;
     }
@@ -117,11 +113,9 @@ public class TripWorker implements Callable<Trip> {
         boolean improved = true;
         // Preallocating to avoid allocations in the loop
         int cDiff=0;
-        int minPattern=0; //
-        int delta=0;
-        int tmp=0;
+        int minPattern=0;
+        int[] deltas = new int[7];
         while(improved) {
-//            System.out.println("Trip " + Integer.toString(_idx) + " length: " + Integer.toString(_tripLength));
             improved = false;
             for(int i = 0; i <= _numStops-5; i++) {
                 for(int k =i+2; k < _numStops-3; k++) {
@@ -132,68 +126,90 @@ public class TripWorker implements Callable<Trip> {
                                     - TripManager.getDist(_order[k], _order[k + 1])
                                     - TripManager.getDist(_order[j], _order[j + 1]);
 
-                        delta = cDiff
+                        // 2-opt cases
+                        deltas[0] = -TripManager.getDist(_order[i],_order[i+1])-TripManager.getDist(_order[k],_order[k+1])
+                                +TripManager.getDist(_order[i],_order[k])+TripManager.getDist(_order[i+1],_order[k+1]);
+
+                        deltas[1] = -TripManager.getDist(_order[i],_order[i+1])-TripManager.getDist(_order[j],_order[j+1])
+                                +TripManager.getDist(_order[i],_order[j])+TripManager.getDist(_order[i+1],_order[j+1]);
+
+                        deltas[2] = -TripManager.getDist(_order[j],_order[j+1])-TripManager.getDist(_order[k],_order[k+1])
+                                +TripManager.getDist(_order[j],_order[k])+TripManager.getDist(_order[j+1],_order[k+1]);
+
+                        // 3-opt cases
+                        deltas[3] = cDiff
                                 + TripManager.getDist(_order[i], _order[j])
                                 + TripManager.getDist(_order[i + 1], _order[k])
                                 + TripManager.getDist(_order[i + 1], _order[k + 1]);
 
-                        tmp = cDiff
+                        deltas[4] = cDiff
                             + TripManager.getDist(_order[i], _order[k])
                             + TripManager.getDist(_order[j + 1], _order[i + 1])
                             + TripManager.getDist(_order[j], _order[k + 1]);
 
-                        if(tmp < delta) {
-                            delta = tmp;
-                            minPattern = 1;
-                        }
-
-                        tmp = cDiff
+                        deltas[5] = cDiff
                                 + TripManager.getDist(_order[i], _order[j+1])
                                 + TripManager.getDist(_order[k], _order[j])
                                 + TripManager.getDist(_order[i+1], _order[k + 1]);
 
-                        if(tmp < delta) {
-                            delta = tmp;
-                            minPattern = 2;
-                        }
-
-                        tmp = cDiff
+                        deltas[6] = cDiff
                                 + TripManager.getDist(_order[i], _order[j+1])
                                 + TripManager.getDist(_order[k], _order[i+1])
                                 + TripManager.getDist(_order[j], _order[k + 1]);
 
-                        if(tmp < delta) {
-                            delta = tmp;
-                            minPattern = 3;
+                        int delta = 0;
+                        for(int index = 0; i < 7; i++) {
+                            if(deltas[index] < delta) {
+                                delta = deltas[index];
+                                minPattern = index;
+                            }
                         }
 
                         if(delta < 0) {
                             switch (minPattern) {
                                 case 0: {
-                                    twoOptSwap(i + 1, j);
-                                    twoOptSwap(j + 1, k);
-                                    _tripLength += delta;
-                                    improved = true;
-                                    break;
-                                }
-
-                                case 1: {
-                                    twoOptSwap(i + 1, j);
                                     twoOptSwap(i + 1, k);
                                     _tripLength += delta;
                                     improved = true;
                                     break;
                                 }
-
+                                case 1: {
+                                    twoOptSwap(i+ 1, j);
+                                    _tripLength += delta;
+                                    improved = true;
+                                    break;
+                                }
                                 case 2: {
                                     twoOptSwap(j + 1, k);
+                                    _tripLength += delta;
+                                    improved = true;
+                                    break;
+                                }
+                                case 3: {
+                                    twoOptSwap(i + 1, j);
+                                    twoOptSwap(j + 1, k);
+                                    _tripLength += delta;
+                                    improved = true;
+                                    break;
+                                }
+
+                                case 4: {
+                                    twoOptSwap(i + 1, j);
                                     twoOptSwap(i + 1, k);
                                     _tripLength += delta;
                                     improved = true;
                                     break;
                                 }
 
-                                case 3: {
+                                case 5: {
+                                    twoOptSwap(j + 1, k);
+                                    twoOptSwap(i + 1, k);
+                                    _tripLength += delta;
+                                    improved = true;
+                                    break;
+                                }
+
+                                case 6: {
                                     twoOptSwap(i + 1, j);
                                     twoOptSwap(j + 1, k);
                                     twoOptSwap(i + 1, k);
