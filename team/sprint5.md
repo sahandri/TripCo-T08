@@ -53,7 +53,7 @@ Epics planned for this release.
 Date | Tasks done now | Tasks done next | Impediments | Coverage | Smells | Duplication | Technical Debt Ratio
 :--- | :--- | :--- | :--- | ---: | ---: | ---: | ---:
 *date* | *issue numbers only* | *issue numbers only* | *High* | *50* | *10* | *20* | *15*
-11/13/17 | - | - | - | - | - | - | - |
+11/13/17 | Setting up times for meeting this week | Complete Sprint Planning | - | - | - | - | - |
  
 
 ## Review
