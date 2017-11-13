@@ -72,15 +72,16 @@ public class Server {
         return response;
     }
 
-    private JSONObject serveResponse(String search, int optLevel) {
+    private JSONObject serveResponse(String destList, int optLevel) {
 		//int opt level is used for selection of optimization        
 	
-		JSONArray itinerary = Itinerary.createJSON(search/*, optLevel*/);
+		
+		JSONArray itinerary = Itinerary.createJSON(parseIDString(destList) , optLevel);
 
         JSONObject svg = new JSONObject();
         svg.put("width", 1067);
         svg.put("height", 784);
-        svg.put("contents", makeSvg.getSvg(search, optLevel));
+        svg.put("contents", makeSvg.getArraySvg(parseIDString(destList), optLevel));
 
         JSONObject response = new JSONObject();
         response.put("itinerary", itinerary);
@@ -89,7 +90,7 @@ public class Server {
     }
 
 	private JSONObject serveBlank(String search) {
-        JSONArray itinerary = Itinerary.createJSON(search/*, optLevel*/);
+        JSONArray itinerary = new JSONArray();
 		
 		JSONObject svg = new JSONObject();
         svg.put("width", 1067);
@@ -111,7 +112,6 @@ public class Server {
 
         // Grab the json body from POST
         JsonElement elm = parser.parse(rec.body());
-
         // Create new Gson (a Google library for creating a JSON representation of a java class)
         Gson gson = new Gson();
 
@@ -177,5 +177,11 @@ public class Server {
         // an unknown file type to make it download the file instead of opening it.
         res.raw().setContentType("application/force-download");
         res.raw().addHeader("Content-Disposition", "attachment; filename=\"selection.json\"");
+    }
+	private String[] parseIDString(String destList) {
+		//int opt level is used for selection of optimization        		
+		String[] dests = destList.split(",");
+		
+        return dests;
     }
 }
