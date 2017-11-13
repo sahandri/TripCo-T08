@@ -14,6 +14,12 @@ public class TripManager {
     static ArrayList<Trip> trips = new ArrayList<>();
     static AtomicInteger total;
 
+    static void clear() {
+        ids = new ArrayList<>();
+        trips = new ArrayList<>();
+        _optLevel = 0;
+    }
+
     // Returns the shortest trip based on the current key. Calculates if necessary.
     static ArrayList<String> shortest() {
         if(trips.isEmpty()) {
