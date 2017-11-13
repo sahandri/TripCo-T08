@@ -10,7 +10,7 @@ public class ServerRequest {
         this.description = description;
     }
 
-	public void ServerArrayRequest(String request, String[] description) {
+	public ServerRequest(String request, String[] description) {
         this.request = request;
         this.arrayDescription = description;
     }
