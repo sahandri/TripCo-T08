@@ -28,8 +28,9 @@ public class Itinerary {
         return arr;
     }
 
-	public static JSONArray createJSON(String[] destList) {
-        JSONArray arr = createItinerary(destList);
+	public static JSONArray createJSON(String[] destList, int optLevel) {
+		Model.setOptLevel(optLevel);    
+	    JSONArray arr = createItinerary(destList);
         return arr;
     }
 

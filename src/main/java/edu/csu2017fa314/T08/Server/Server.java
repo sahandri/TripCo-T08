@@ -76,7 +76,7 @@ public class Server {
 		//int opt level is used for selection of optimization        
 	
 		
-		JSONArray itinerary = Itinerary.createJSON(parseIDString(destList)/*, optLevel*/);
+		JSONArray itinerary = Itinerary.createJSON(parseIDString(destList) , optLevel);
 
         JSONObject svg = new JSONObject();
         svg.put("width", 1067);
@@ -90,7 +90,7 @@ public class Server {
     }
 
 	private JSONObject serveBlank(String search) {
-        JSONArray itinerary = Itinerary.createJSON(search/*, optLevel*/);
+        JSONArray itinerary = new JSONArray();
 		
 		JSONObject svg = new JSONObject();
         svg.put("width", 1067);
