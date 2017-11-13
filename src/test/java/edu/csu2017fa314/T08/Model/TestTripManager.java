@@ -21,6 +21,7 @@ public class TestTripManager {
     @Test
     public void testShortest() {
         DataBase.connect();
+        TripManager.setOptLevel(3);
         Model.search("denver");
         ArrayList arr = TripManager.shortest();
         Trip t = TripManager.trips.get(0);

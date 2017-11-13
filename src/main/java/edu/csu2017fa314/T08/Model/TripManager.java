@@ -88,32 +88,38 @@ public class TripManager {
         trips = new ArrayList<>();
 
         buildDistLookUp();
-        // Runtime.getRuntime().availableProcessors()
-        ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
-        ArrayList<Future<Trip>> results = new ArrayList<>();
 
-        // Generate the trip creation tasks and store their futures
-        for(int i = 0; i < total.get(); i++) {
-            TripWorker tripWorker = new TripWorker(i, _optLevel);
-            Future<Trip> tripResult = pool.submit(tripWorker);
-            results.add(tripResult);
-        }
+        if(_optLevel != 0) {
+            // Runtime.getRuntime().availableProcessors()
+            ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
+            ArrayList<Future<Trip>> results = new ArrayList<>();
 
-        pool.shutdown();
-        while(!pool.isTerminated()) { }
+            System.out.println("Building " + total.toString() + "trips");
 
-        // Get the results from each task's future
-        try {
-            for(Future<Trip> ft : results) {
-                trips.add(ft.get());
+            // Generate the trip creation tasks and store their futures
+            for (int i = 0; i < total.get(); i++) {
+                TripWorker tripWorker = new TripWorker(i, _optLevel);
+                Future<Trip> tripResult = pool.submit(tripWorker);
+                results.add(tripResult);
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
 
-        Collections.sort(trips);
+            pool.shutdown();
+            while (!pool.isTerminated()) {
+            }
+
+            // Get the results from each task's future
+            try {
+                for (Future<Trip> ft : results) {
+                    trips.add(ft.get());
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+
+            Collections.sort(trips);
+        }
     }
 
     // Calculates all the distances between destinations.
