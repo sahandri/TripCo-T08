@@ -28,9 +28,9 @@ public class Itinerary {
         return arr;
     }
 
-	public static JSONArray createJSON(String[] destList, int optLevel) {
-		Model.setOptLevel(optLevel);    
-	    JSONArray arr = createItinerary(destList);
+	public static JSONArray createJSON(ArrayList<String> destList, int optLevel) {
+        ArrayList<String> stops = Model.shortestTrip(destList, optLevel);
+	    JSONArray arr = createItinerary(stops);
         return arr;
     }
 
@@ -38,7 +38,7 @@ public class Itinerary {
     public static JSONArray createItinerary(String search) {
         JSONArray arr = new JSONArray();
 
-        ArrayList<String> stops = Model.shortestTrip(search);
+        ArrayList<String> stops = Model.search(search);
 
         // Iterate through destinations, calculating the distance of each leg.
 
@@ -57,10 +57,9 @@ public class Itinerary {
     }
 	
 	// Creates a JSONArray of trip legs, i.e. the itinerary
-    public static JSONArray createItinerary(String[] destList) {
+    public static JSONArray createItinerary(ArrayList<String> stops) {
         JSONArray arr = new JSONArray();
 
-        ArrayList<String> stops = Model.shortestTrip(destList);
 
         // Iterate through destinations, calculating the distance of each leg.
 

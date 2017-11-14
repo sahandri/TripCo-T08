@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -254,7 +255,7 @@ public class makeSvg {
 			double startY = 0;
 			double finishX = 0;
 			double finishY = 0;
-			ArrayList<String> order = Model.shortestTrip(searched /*, optLevel*/);
+			ArrayList<String> order = Model.search(searched);
 			for(int i = 0; i < order.size(); i++) {
 				if(i == 0) {
 					//Sets first destination in trip to the destination at i = 0
@@ -283,7 +284,7 @@ public class makeSvg {
 	return svg;
 	}
 	
-	public static String getArraySvg(String[] destList, int optLevel) {
+	public static String getArraySvg(ArrayList<String> destList, int optLevel) {
 		BufferedReader br = null;
 		BufferedWriter bw = null;		
 		String svg = "";		
@@ -321,7 +322,7 @@ public class makeSvg {
 			double startY = 0;
 			double finishX = 0;
 			double finishY = 0;
-			ArrayList<String> order = Model.shortestTrip(destList /*, optLevel*/);
+			ArrayList<String> order = Model.shortestTrip();
 			for(int i = 0; i < order.size(); i++) {
 				if(i == 0) {
 					//Sets first destination in trip to the destination at i = 0
