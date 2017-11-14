@@ -7,7 +7,9 @@ class Home extends React.Component {
         super(props);
         this.state = {
             results: null,
+            plan: null,
             itinerary: [],
+            all: [],
 			svgResults: null,
 			input : ""
 		}
@@ -24,34 +26,49 @@ class Home extends React.Component {
 		let output;
 		let total = 0;
 		let itinerary;
+		let planout;
 		
 		if (this.state.results) {
-		
-			information = this.state.results.itinerary;
-            console.log(information);
-			output = information.map(info => {
-			total += info.distance;
-			keys = Object.keys(info);
-			//values = Object.values(info);
-			let out = "";
-			keys.forEach( key => {
-				out += info[key] + " , ";
-			});
-		 	return (
-		 	<tr>
-		 	<td><h5>{info.code}</h5>
-		 	<p>{out}</p></td>
-		 	<button onClick={this.handleCode.bind(this,info.code)}>Select</button>
-		 	
-		 	{/*<td>{info.distance}</td>
-		 	<td>{total}</td>*/}
-		 	</tr>
-		 	
-		 	);
-		 	})
-			
-			svg = this.state.results.svg;
-			renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
+				
+				information = this.state.results.itinerary;
+				console.log(information);
+				this.state.all = [];
+				output = information.map(info => {
+				total += info.distance;
+				this.state.all.push(info.id);
+				keys = Object.keys(info);
+			 	return (
+			 	<tr>
+			 	<td><h5>{info.name}</h5>
+			 	<p>{info.id}</p></td>
+			 	<button onClick={this.handleCode.bind(this,info.id)}>Select</button>
+			 
+			 	</tr>
+			 	
+			 	);
+			 	})
+				if(this.state.results.svg){
+				svg = this.state.results.svg;
+				renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
+				}
+				if(this.state.plan){
+				total = 0;
+					planout = information.map(info => {
+					total += info.distance;
+						return (
+						<tr>
+						<td><h5>{info.name}</h5>
+						<p>{info.id},{info.elevation},{info.region},{info.country},{info.continent}</p></td>
+						<td>{info.distance}</td>
+						<td>{total}</td>
+						</tr>
+				
+						);
+				
+					})
+				
+				}
+				
 		}
 		
 
@@ -73,10 +90,6 @@ class Home extends React.Component {
 				<table className="pair-table"> {/*For CSS*/}
                     <tbody>
                     {output}
-                    <tr>
-                        <td colSpan="3">Total:</td>
-                        <td>{total}</td> {/*Displays Total*/}
-                    </tr>
                     </tbody>
                 </table>
 				
@@ -84,8 +97,10 @@ class Home extends React.Component {
 				<table className="pair-table">
 				<tbody>
 				{itinerary}
+				<button onClick={this.all.bind(this)}>Select All</button>
 				</tbody>
 				</table>
+				<button onClick={this.plan.bind(this)}>Plan</button>
 				<button onClick={this.plan1.bind(this)}>Plan 1</button>
 				<button onClick={this.plan2.bind(this)}>Plan 2</button>
 				<button onClick={this.plan3.bind(this)}>Plan 3</button><p></p>
@@ -110,7 +125,7 @@ class Home extends React.Component {
                 <table className="pair-table"> {/*For CSS*/}
                 <h3>Itinerary</h3>
                     <tbody>
-                    {output}
+                    {planout}
                     <tr>
                         <td colSpan="3">Total:</td>
                         <td>{total}</td> {/*Displays Total*/}
@@ -133,8 +148,9 @@ class Home extends React.Component {
 		}
     }
     
-    handleCode(event, code){
-    
+ 
+       handleCode(code){
+    		
 		let bool = true;
 		let sel = this.state.itinerary;
 		for(let i = 0; i < sel.length; ++i){
@@ -149,26 +165,41 @@ class Home extends React.Component {
 			})
 		}
     }
-    
 	
 	handleSubmit(event) {
 		let input = this.state.input;
 		this.fetch(input,"search");
 		event.preventDefault();
 	}
+	all(event) {
+		this.state.itinerary = this.state.all;
+	}
+	plan(event) {
+		let input = this.state.itinerary;
+		let str = this.arrToString(input);
+		this.fetch(str, "plan");
+		event.preventDefault();
+	}
 	plan1(event) {
 		let input = this.state.itinerary;
-		this.fetch(input,"plan1");
+		let str = this.arrToString(input);
+		this.fetch(str,"plan1");
+		this.state.plan = "plan1";
 		event.preventDefault();
 	}
 	plan2(event) {
 		let input = this.state.itinerary;
-		this.fetch(input,"plan2");
+		console.log(input);
+		let str = this.arrToString(input);
+		this.fetch(str,"plan2");
+		this.state.plan = "plan2";
 		event.preventDefault();
 	}
 	plan3(event) {
 		let input = this.state.itinerary;
-		this.fetch(input,"plan3");
+		let str = this.arrToString(input);
+		this.fetch(str,"plan3");
+		this.state.plan = "plan3";
 		event.preventDefault();
 	}
 	clear(event) {
@@ -176,8 +207,16 @@ class Home extends React.Component {
 		this.state.svgResults = null;
 		this.state.itinerary = [];
 		this.state.input = "";
+		this.forceUpdate();
 		event.preventDefault();
 	}
+	
+	arrToString(arr){
+		let str = arr.join();
+		return str;
+	
+	}
+	
 	save(event) {
 		let input = this.state.itinerary;
 		this.fetch(input,"save");
@@ -193,9 +232,9 @@ class Home extends React.Component {
                 return function (e) {
                     let JsonObj = JSON.parse(e.target.result);
                     
-                    console.log(JsonObj);
-                    
-                    this.fetch(JsonObj,"load");
+                    console.log(JsonObj.destinations);
+                    this.arrToString(JsonObj.destinations);
+                    this.fetch(JsonObj.destinations,"plan");
                 };
             })(file).bind(this);
 
@@ -207,9 +246,10 @@ class Home extends React.Component {
     async fetch(input, name) {
 		let clientRequest;
         clientRequest = {
-			request: name,
-            description: input,
+		request: name,
+            	description: input,
         };
+        console.log(clientRequest);
 
 		try {
             let serverUrl = window.location.href.substring(0, window.location.href.length - 6) + ":4567/testing";
