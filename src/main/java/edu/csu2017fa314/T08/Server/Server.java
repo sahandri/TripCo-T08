@@ -75,8 +75,7 @@ public class Server {
 
     private JSONObject serveResponse(String destList, int optLevel) {
 		//int opt level is used for selection of optimization        
-	
-		
+
 		JSONArray itinerary = Itinerary.createJSON(parseIDString(destList) , optLevel);
 
         JSONObject svg = new JSONObject();
@@ -87,6 +86,7 @@ public class Server {
         JSONObject response = new JSONObject();
         response.put("itinerary", itinerary);
         response.put("svg",svg);
+        System.out.println("Sending response: " + response.toString(4));
         return response;
     }
 

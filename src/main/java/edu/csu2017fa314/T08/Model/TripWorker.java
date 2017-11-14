@@ -18,7 +18,6 @@ public class TripWorker implements Callable<Trip> {
 
     @Override
     public Trip call() {
-        System.out.println("Starting trip " + Integer.toString(_idx));
         _order = new int[_numStops+1];
 
         _order[0] = _idx;

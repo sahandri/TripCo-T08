@@ -347,6 +347,8 @@ public class makeSvg {
 			bw.close();
 		} catch (IOException e) {
 		   // do something
+			System.err.println("Creation of SVG returned an error.");
+			e.printStackTrace();
 		}
 	return svg;
 	}
