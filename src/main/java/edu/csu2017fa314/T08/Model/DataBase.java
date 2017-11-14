@@ -5,6 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.HashMap;
+import java.util.Map;
 
 public class DataBase {
     private static String myDriver = "com.mysql.jdbc.Driver";
@@ -74,7 +75,7 @@ public class DataBase {
         return list;
     }
 
-
+/*
     public static String getCountry(String id){
         String country = "";
         String query = "SELECT countries.name FROM continents" +
@@ -113,7 +114,7 @@ public class DataBase {
         }
         return region;
     }
-
+*/
 
     public static int getIndex(String ID){
         return list.indexOf(ID);
@@ -176,19 +177,27 @@ public class DataBase {
 //returns a pair of all data in a row
     public static  HashMap<String,String> getInfo(String id) {
         HashMap<String,String> info = new HashMap<String, String>();
-        String query = "SELECT * FROM airports WHERE code LIKE '" + id + "'";
+        //String query = "SELECT * FROM airports WHERE code LIKE '" + id + "'";
+        String query = "SELECT * FROM continents" +
+                " INNER JOIN countries ON continents.code = countries.continent" +
+                " INNER JOIN regions ON countries.code = regions.iso_country" +
+                " INNER JOIN airports ON regions.code = airports.iso_region" +
+                " WHERE airports.code LIKE '%" + id + "%'";
         try {
             rs = st.executeQuery(query);
             // iterate through the query results and return selected columns
             rs.next();
-            info.put("id",rs.getString("code"));
-            info.put("name",rs.getString("name"));
-            info.put("latitude",rs.getString("latitude"));
-            info.put("longitude",rs.getString("longitude"));
-            info.put("elevation",rs.getString("elevation"));
-            info.put("municipality",rs.getString("municipality"));
-            info.put("home_link",rs.getString("home_link"));
-            info.put("wikipedia_link",rs.getString("wikipedia_link"));
+            info.put("id",rs.getString("airports.code"));
+            info.put("name",rs.getString("airports.name"));
+            info.put("latitude",rs.getString("airports.latitude"));
+            info.put("longitude",rs.getString("airports.longitude"));
+            info.put("elevation",rs.getString("airports.elevation"));
+            info.put("municipality",rs.getString("airports.municipality"));
+            info.put("region",rs.getString("regions.name"));
+            info.put("country",rs.getString("countries.name"));
+            info.put("continent",rs.getString("continents.name"));
+            info.put("home_link",rs.getString("airports.home_link"));
+            info.put("wikipedia_link",rs.getString("airports.wikipedia_link"));
         } catch (Exception e) { // catches all exceptions in the nested try's
             System.err.printf("Exception: ");
             System.err.println(e.getMessage());
@@ -228,16 +237,21 @@ public class DataBase {
             System.out.printf("%s\n", list.get(i));
         }
 
-        System.out.printf("%s\n", getLatit("7704"));
-        System.out.printf("%s\n", getLongit("7704"));
+        System.out.printf("%s\n", getLatit("CND7"));
+        System.out.printf("%s\n", getLongit("CND7"));
         System.out.printf("%s\n", getID(1));
-        System.out.printf("%s\n", getIndex("7704"));
-        System.out.printf("%s\n", getName("7704"));
+        System.out.printf("%s\n", getIndex("CND7"));
+        System.out.printf("%s\n", getName("CND7"));
         System.out.printf("%s\n", getTotal());
-        System.out.printf("get name of id: %s\n", getInfo("7704").get("name"));
-        System.out.printf("get elevation of id: %s\n", getInfo("7704").get("wikipedia_link"));
-        System.out.printf("country name: %s\n", getCountry("7704"));
-        System.out.printf("region name: %s\n", getRegion("7704"));
+        System.out.printf("get name of id: %s\n", getInfo("CND7").get("name"));
+        System.out.printf("get country name of id: %s\n", getInfo("CND7").get("country"));
+        //System.out.printf("country name: %s\n", getCountry("CND7"));
+        //System.out.printf("region name: %s\n", getRegion("CND7"));
+
+        HashMap<String,String> info = getInfo("CND7");
+        for(Map.Entry<String,String> kv: info.entrySet()) {
+            System.out.println(kv.getKey()+" "+ kv.getValue());
+        }
 
 
         disconnect();

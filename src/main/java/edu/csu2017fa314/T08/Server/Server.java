@@ -15,6 +15,7 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static spark.Spark.post;
 
@@ -36,18 +37,9 @@ public class Server {
     private Object serveSvg(String searched) {
         Gson gson = new Gson();
         // Instead of writing the SVG to a file, we send it in plaintext back to the client to be rendered inline
-        /*String sampleSvg =
-                "<svg width=\"120\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\">" +
-                "  <line id=\"north\" y2=\"100\" x2=\"120\" y1=\"0\" x1=\"0\" stroke-width=\"5\" stroke=\"red\"/>" +
-                "  <line id=\"west\" y2=\"100\" x2=\"0\" y1=\"0\" x1=\"120\" stroke-width=\"5\" stroke=\"blue\"/>" +
-                " </svg>";
-        ServerSvgResponse ssres = new ServerSvgResponse(120, 100, sampleSvg);*/
-	ServerSvgResponse ssres = new ServerSvgResponse(1067, 784, makeSvg.getSvg(searched));
-	//System.out.println("========"+ssres);
+		ServerSvgResponse ssres = new ServerSvgResponse(1067, 784, makeSvg.getSvg(searched,0));
 
         return gson.toJson(ssres, ServerSvgResponse.class);
-	//JSONObject map = new JSONObject();	
-	//return map;
     }
 
     // called by testing method if client requests a search
@@ -68,17 +60,47 @@ public class Server {
         return itinerary;
     }
 
-    private JSONObject serveResponse(String search) {
+	private JSONObject serveInitialDests(String search) {
         JSONArray itinerary = Itinerary.createJSON(search);
+
+        JSONObject response = new JSONObject();
+        JSONObject svg = new JSONObject();
+        svg.put("width", 1067);
+        svg.put("height", 784);
+        svg.put("contents", makeSvg.getSvg(search, 0));
+        response.put("itinerary", itinerary);
+        response.put("svg", svg);
+        return response;
+    }
+
+    private JSONObject serveResponse(String destList, int optLevel) {
+		//int opt level is used for selection of optimization        
+	
+		
+		JSONArray itinerary = Itinerary.createJSON(parseIDString(destList) , optLevel);
 
         JSONObject svg = new JSONObject();
         svg.put("width", 1067);
         svg.put("height", 784);
-        svg.put("contents", makeSvg.getSvg(search));
+        svg.put("contents", makeSvg.getArraySvg(parseIDString(destList), optLevel));
 
         JSONObject response = new JSONObject();
         response.put("itinerary", itinerary);
         response.put("svg",svg);
+        return response;
+    }
+
+	private JSONObject serveBlank(String search) {
+        JSONArray itinerary = new JSONArray();
+		
+		JSONObject svg = new JSONObject();
+        svg.put("width", 1067);
+        svg.put("height", 784);
+        svg.put("contents", makeSvg.getBlankSvg());
+
+        JSONObject response = new JSONObject();
+        response.put("itinerary", itinerary);
+		response.put("svg",svg);
         return response;
     }
 
@@ -91,7 +113,6 @@ public class Server {
 
         // Grab the json body from POST
         JsonElement elm = parser.parse(rec.body());
-
         // Create new Gson (a Google library for creating a JSON representation of a java class)
         Gson gson = new Gson();
 
@@ -111,9 +132,30 @@ public class Server {
 //        } else {
 //            return serveSvg(sRec.getDescription());
 //        }
-
-        return serveResponse(sRec.getDescription());
-    }
+		// Because both possible requests from the client have the same format, 
+        // we can check the "type" of request we've received: either "search" , "plan" , or "clear"
+		// if the user types a search, this returns an initial list of destinations
+        if (sRec.getRequest().equals("search")) {
+            // Set the return headers
+            System.out.println("Performing search for " + sRec.getDescription());
+            return serveInitialDests(sRec.getDescription());
+		// if the user selects destinations and selects "plan1", this returns unordered trip
+        } else if (sRec.getRequest().equals("plan")) {
+            return serveResponse(sRec.getDescription(), 0);
+		// if the user selects destinations and selects "plan1", this searches NN
+        } else if (sRec.getRequest().equals("plan1")) {
+            return serveResponse(sRec.getDescription(), 1);
+		// if the user selects destinations and selects "plan2", this searches 2-Opt
+		} else if (sRec.getRequest().equals("plan2")) {
+            return serveResponse(sRec.getDescription(), 2);
+		// if the user selects destinations and selects "plan2", this searches 3-Opt
+		} else if (sRec.getRequest().equals("plan3")) {
+            return serveResponse(sRec.getDescription(), 3);
+        // if "clear is chosen, blank world svg is sent and diplayed with empty list
+        } else {
+            return serveBlank(sRec.getDescription());
+        }
+}
 
     private void setHeaders(Response res) {
         // Declares returning type json
@@ -122,5 +164,25 @@ public class Server {
         // Ok for browser to call even if different host host
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "*");
+    }
+
+	private void setHeadersFile(Response res) {
+        /* Unlike the other responses, the file request sends back an actual file. This means
+        that we have to work with the raw HttpServletRequest that Spark's Response class is built
+        on.
+         */
+        // First, add the same Access Control headers as before
+        res.raw().addHeader("Access-Control-Allow-Origin", "*");
+        res.raw().addHeader("Access-Control-Allow-Headers", "*");
+        // Set the content type to "force-download." Basically, we "trick" the browser with
+        // an unknown file type to make it download the file instead of opening it.
+        res.raw().setContentType("application/force-download");
+        res.raw().addHeader("Content-Disposition", "attachment; filename=\"selection.json\"");
+    }
+	private ArrayList<String> parseIDString(String destList) {
+		//int opt level is used for selection of optimization        		
+		String[] dests = destList.split(",");
+		
+        return new ArrayList<String>(Arrays.asList(dests));
     }
 }

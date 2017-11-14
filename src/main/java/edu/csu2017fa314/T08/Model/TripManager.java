@@ -9,10 +9,15 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TripManager {
     private static int[][] distLookUp; // Lookup table of distances between every location in the search.
     private static int _optLevel = 1; // Optimization level
-    private static String _key = ""; // Key used in most recent search.
     static ArrayList<String> ids = new ArrayList<>();
     static ArrayList<Trip> trips = new ArrayList<>();
     static AtomicInteger total;
+
+    static void clear() {
+        ids = new ArrayList<>();
+        trips = new ArrayList<>();
+        _optLevel = 0;
+    }
 
     // Returns the shortest trip based on the current key. Calculates if necessary.
     static ArrayList<String> shortest() {
@@ -23,12 +28,6 @@ public class TripManager {
                 buildTripList();
             }
         }
-        return trips.get(0).stops();
-    }
-
-    // Returns the shortest trip to all destinations with the key. Calculates if necessary.
-    static ArrayList<String> shortest(String key) {
-        if(trips.isEmpty()) { buildTripList();}
         return trips.get(0).stops();
     }
 
@@ -49,21 +48,6 @@ public class TripManager {
         addStops(stops);
         buildTripList();
         return trips.get(0).stops();
-    }
-
-    // XXX: Web endpoint not implementeed yet.
-    /*
-    String id: id of starting location for desired shortest trip.
-    Returns the shortest trip starting at id.
-     */
-    static Trip get(String id) {
-        if(trips.isEmpty()) { buildTripList(); }
-        for(Trip t: trips) {
-            if(t.get(0).equals(id)) {
-                return t;
-            }
-        }
-        return trips.get(0);
     }
 
     /*
@@ -88,32 +72,40 @@ public class TripManager {
         trips = new ArrayList<>();
 
         buildDistLookUp();
-        // Runtime.getRuntime().availableProcessors()
-        ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
-        ArrayList<Future<Trip>> results = new ArrayList<>();
+        if(_optLevel>0) {
+            // Runtime.getRuntime().availableProcessors()
+            ThreadPoolExecutor pool = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
+            ArrayList<Future<Trip>> results = new ArrayList<>();
 
-        // Generate the trip creation tasks and store their futures
-        for(int i = 0; i < total.get(); i++) {
-            TripWorker tripWorker = new TripWorker(i, _optLevel);
-            Future<Trip> tripResult = pool.submit(tripWorker);
-            results.add(tripResult);
-        }
-
-        pool.shutdown();
-        while(!pool.isTerminated()) { }
-
-        // Get the results from each task's future
-        try {
-            for(Future<Trip> ft : results) {
-                trips.add(ft.get());
+            // Generate the trip creation tasks and store their futures
+            for (int i = 0; i < total.get(); i++) {
+                TripWorker tripWorker = new TripWorker(i, _optLevel);
+                Future<Trip> tripResult = pool.submit(tripWorker);
+                results.add(tripResult);
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
 
-        Collections.sort(trips);
+            pool.shutdown();
+            while (!pool.isTerminated()) {
+            }
+
+            // Get the results from each task's future
+            try {
+                for (Future<Trip> ft : results) {
+                    trips.add(ft.get());
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+
+            Collections.sort(trips);
+        }
+        else {
+
+            TripWorker tripWorker = new TripWorker(0, _optLevel);
+            trips.add(tripWorker.call());
+        }
     }
 
     // Calculates all the distances between destinations.

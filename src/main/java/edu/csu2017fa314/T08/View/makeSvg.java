@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -216,7 +217,74 @@ public class makeSvg {
 		}
 	}
 	//Method to modify premade SVG of Colorado 
-	public static String getSvg(String searched) {
+	public static String getSvg(String searched, int optLevel) {
+		BufferedReader br = null;
+		BufferedWriter bw = null;		
+		String svg = "";		
+		try{
+		//Create and open a writer for current .svg file
+			br = new BufferedReader(new FileReader("data/World_location_map.svg"));
+			bw = new BufferedWriter(new FileWriter("test.svg"));
+			//Copying File...
+			String line = null;
+			while((line = br.readLine()) != null) {
+				//system.out.println(line);
+				svg += line + "\n";
+			}
+			//Writing to file...
+			svg += "\n" + (commentTag("\nEditing the File!"));
+			/*bw.write("\n" + drawStartPoint(-146.5, 177.5, 1, "red", "red", 1));
+			bw.write("\n" + drawStartPoint(-146.5, 886, 1, "red", "red", 1));
+			bw.write("\n" + drawStartPoint(845, 177.5, 1, "red", "red", 1));
+			bw.write("\n" + drawStartPoint(845, 886, 1, "red", "red", 1));*/
+			//Create Border Reference Points (specific to .svg)
+			double x1 = 0;
+			double x2 = 800;
+			double y1 = 0;
+			double y2 = 400;
+			//Create Key
+			svg += ("\n" + drawStartPoint(80, 380, 5, "red", "red", 8));
+			svg += ("\n"  + drawStartPoint(265, 382, 5, "blue", "blue", 1));
+			svg += ("\n" + addText(90, 390, "sans-serif", "20px", "red", " = Start/End"));
+			svg += ("\n" + addText(270, 390, "sans-serif", "20px", "blue", " = Other Destinations Along The Way"));
+			//Draw Title
+			svg += ("\n" + addText(180, 360, "sans-serif", "30px", "black", "Showing Your World Trip!"));
+	        	//Draw trip
+			svg += (commentTag("\nDrawing the trip path!"));
+			double startX = 0;
+			double startY = 0;
+			double finishX = 0;
+			double finishY = 0;
+			ArrayList<String> order = Model.search(searched);
+			for(int i = 0; i < order.size(); i++) {
+				if(i == 0) {
+					//Sets first destination in trip to the destination at i = 0
+					startX = newConvertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(DataBase.getLongit(order.get(i)))),x1,x2);
+					startY = newConvertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(DataBase.getLatit(order.get(i))),y1,y2);				
+					//Draws the starting point given start data					
+					svg += ("\n" + drawStartPoint(startX, startY, 5, "red", "red", 8));					
+				}
+				else {
+					finishX = startX;
+					finishY = startY;
+					startX = newConvertLongitude((edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(DataBase.getLongit(order.get(i)))),x1,x2);
+					startY = newConvertLatitude(edu.csu2017fa314.T08.Model.Distance.degreesToDecimal(DataBase.getLatit(order.get(i))),y1,y2);
+					svg += ("\n" + drawStartPoint(startX, startY, 1, "blue", "blue", 1));
+					svg += ("\n" + drawLine("path", startX, startY, finishX, finishY, 1, "#000000"));
+				}
+			}
+			svg += ("\n" + gTag2());
+			svg += ("\n" + svgTag());
+			bw.write(svg);
+			br.close();
+			bw.close();
+		} catch (IOException e) {
+		   // do something
+		}
+	return svg;
+	}
+	
+	public static String getArraySvg(ArrayList<String> destList, int optLevel) {
 		BufferedReader br = null;
 		BufferedWriter bw = null;		
 		String svg = "";		
@@ -254,7 +322,7 @@ public class makeSvg {
 			double startY = 0;
 			double finishX = 0;
 			double finishY = 0;
-			ArrayList<String> order = Model.shortestTrip(searched);
+			ArrayList<String> order = Model.shortestTrip();
 			for(int i = 0; i < order.size(); i++) {
 				if(i == 0) {
 					//Sets first destination in trip to the destination at i = 0
@@ -281,6 +349,25 @@ public class makeSvg {
 		   // do something
 		}
 	return svg;
+	}
+	
+	public static String getBlankSvg() {
+		BufferedReader br = null;	
+		String svg = "";		
+		try{
+		//Create and open a writer for current .svg file
+			br = new BufferedReader(new FileReader("../data/BlankWorldExample.svg"));
+			//Copying File...
+			String line = null;
+			while((line = br.readLine()) != null) {
+				//system.out.println(line);
+				svg += line + "\n";
+			}
+			br.close();
+		} catch (IOException e) {
+		   // do something
+		}
+		return svg;
 	}
 }
 
