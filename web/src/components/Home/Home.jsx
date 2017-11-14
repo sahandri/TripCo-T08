@@ -7,11 +7,12 @@ class Home extends React.Component {
         super(props);
         this.state = {
             results: null,
+            answer: null,
             plan: null,
             itinerary: [],
             all: [],
-			svgResults: null,
-			input : ""
+		svgResults: null,
+		input : ""
 		}
     };
 
@@ -25,51 +26,84 @@ class Home extends React.Component {
 		let keys;
 		let output;
 		let total = 0;
-		let itinerary;
 		let planout;
+		let amount;
+		let plans = null;
 		
 		if (this.state.results) {
 				
 				information = this.state.results.itinerary;
-				console.log(information);
 				this.state.all = [];
+				amount = "Number of Results: ";
+				amount += information.length;
 				output = information.map(info => {
-				total += info.distance;
-				this.state.all.push(info.id);
-				keys = Object.keys(info);
-			 	return (
-			 	<tr>
-			 	<td><h5>{info.name}</h5>
-			 	<p>{info.id}</p></td>
-			 	<button onClick={this.handleCode.bind(this,info.id)}>Select</button>
-			 
-			 	</tr>
-			 	
-			 	);
+					this.state.all.push(info.id);
+					keys = Object.keys(info);
+				 	return (
+				 	<tr>
+				 	<td><h5>{info.name}</h5>
+				 	<p>{info.id}</p></td>
+				 	<button onClick={this.handleCode.bind(this,info.id)}>Select</button>
+				 
+				 	</tr>
+				 	
+				 	);
 			 	})
-				if(this.state.results.svg){
-				svg = this.state.results.svg;
-				renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
-				}
-				if(this.state.plan){
-				total = 0;
-					planout = information.map(info => {
-					total += info.distance;
-						return (
-						<tr>
-						<td><h5>{info.name}</h5>
-						<p>{info.id},{info.elevation},{info.region},{info.country},{info.continent}</p></td>
-						<td>{info.distance}</td>
-						<td>{total}</td>
-						</tr>
 				
-						);
-				
-					})
-				
-				}
 				
 		}
+		
+			if(this.state.plan){
+			let number = -1;
+			if(plans){
+				information = this.state.itinerary;
+						} else{
+			information = this.state.plan.itinerary;
+			}
+				plans = information.map(info => {
+					number++;
+					return (
+					<tr>
+					<td><h5>{info.name}</h5>
+					<p>{info.id}</p></td>
+					<button onClick={this.up.bind(this,number)}>Up</button>
+					<button onClick={this.down.bind(this,number)}>Down</button>
+					<button onClick={this.remove.bind(this,number)}>Remove</button>
+					</tr>
+			
+					);
+			
+				})
+				
+				if(this.state.plan.svg){
+					svg = this.state.plan.svg;
+					renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
+				
+				
+				}
+				}
+				if(this.state.answer){
+					information = this.state.answer.itinerary;
+				
+					planout = information.map(info => {
+					total += info.distance;
+					return (
+					<tr>
+					<td><h5>{info.name}</h5>
+					<p>{info.id}</p></td><td>{info.distance}</td> <td>{total}</td>
+					</tr>
+			
+					);
+			
+				})
+				
+				if(this.state.answer.svg){
+					svg = this.state.answer.svg;
+					renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
+				
+				
+				}
+				}
 		
 
 
@@ -87,6 +121,7 @@ class Home extends React.Component {
 				<input type="submit" value="Submit" />
 				</form>
 				<h2> Search Results</h2>
+				<h3> {amount} </h3>
 				<table className="pair-table"> {/*For CSS*/}
                     <tbody>
                     {output}
@@ -96,7 +131,7 @@ class Home extends React.Component {
 				<h2> Selected Destinations</h2>
 				<table className="pair-table">
 				<tbody>
-				{itinerary}
+				{plans}
 				<button onClick={this.all.bind(this)}>Select All</button>
 				</tbody>
 				</table>
@@ -136,6 +171,7 @@ class Home extends React.Component {
         </div>
         )
     }
+    
 
                     
     keyUp(event){
@@ -174,6 +210,34 @@ class Home extends React.Component {
 	all(event) {
 		this.state.itinerary = this.state.all;
 	}
+	up(num){
+		let arr = this.state.itinerary;
+		if(num > 0){
+			let temp = arr[num-1];
+			arr[num-1] = arr[num];
+			arr[num] = temp;
+		}
+		this.setState({itinerary: arr });
+		console.log(this.state.itinerary);
+	}
+	down(num){
+	let arr = this.state.itinerary;
+
+		if(num < (arr.length - 1)){
+			let temp = arr[num+1];
+			arr[num+1] = arr[num];
+			arr[num] = temp;
+		}
+		this.setState({itinerary: arr });
+		console.log(this.state.itinerary);
+	
+	}
+	remove(num){
+		let arr = this.state.itinerary;
+		arr.splice(num, 1);
+		this.setState({itinerary: arr });
+		console.log(this.state.itinerary);
+	}
 	plan(event) {
 		let input = this.state.itinerary;
 		let str = this.arrToString(input);
@@ -184,29 +248,31 @@ class Home extends React.Component {
 		let input = this.state.itinerary;
 		let str = this.arrToString(input);
 		this.fetch(str,"plan1");
-		this.state.plan = "plan1";
 		event.preventDefault();
 	}
 	plan2(event) {
 		let input = this.state.itinerary;
-		console.log(input);
 		let str = this.arrToString(input);
 		this.fetch(str,"plan2");
-		this.state.plan = "plan2";
 		event.preventDefault();
 	}
 	plan3(event) {
 		let input = this.state.itinerary;
 		let str = this.arrToString(input);
 		this.fetch(str,"plan3");
-		this.state.plan = "plan3";
 		event.preventDefault();
 	}
 	clear(event) {
+
+
 		this.state.results = null;
+		this.state.answer = null;
+		this.state.plan = null;
 		this.state.svgResults = null;
 		this.state.itinerary = [];
+		this.state.all = [];
 		this.state.input = "";
+		this.state.svgResults = null;
 		this.forceUpdate();
 		event.preventDefault();
 	}
@@ -261,11 +327,24 @@ class Home extends React.Component {
 			});
 			
 			let ret = await jsonReturned.json();
-			
 			console.log("Got back ",ret);
-			this.setState({
-			    results: ret
-			});
+			if(name == "search"){
+				
+				this.setState({
+				    results: ret
+				});
+			}
+			if(name == "plan1" || name == "plan2" || name == "plan3"){
+				this.setState({
+					answer: ret
+				});
+			}
+			if(name == "plan"){
+				this.setState({
+					plan: ret
+				});
+			
+			}
 
 		} catch (e){
 			console.error("Error talking to server");
