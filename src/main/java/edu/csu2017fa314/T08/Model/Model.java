@@ -6,33 +6,17 @@ import java.util.HashMap;
 
 public class Model {
     public static ArrayList<String> shortestTrip() {
-        return TripManager.shortest("denver");
-    }
-
-    // Deprecate
-    public static ArrayList<String> shortestTrip(String key) {
-        return search(key);
-    }
-
-    // Deprecate
-    public static ArrayList<String> shortestTrip(String key, int optLevel) {
-        TripManager.setOptLevel(optLevel);
-        return search(key);
-    }
-
-    public static ArrayList<String> addStops(ArrayList<String> stops) {
-        TripManager.addStops(stops);
         return TripManager.shortest();
     }
 
     public static ArrayList<String> search(String key) {
-        TripManager.addStops(DataBase.getID(key));
-        return TripManager.shortest();
+        return DataBase.getID(key);
     }
 
-    public static ArrayList<String> setOptLevel(int optLevel) {
+	public static ArrayList<String> shortestTrip(ArrayList<String> destList, int optLevel) {
+        TripManager.clear();
         TripManager.setOptLevel(optLevel);
-        return TripManager.shortest();
+        return TripManager.shortest(destList);
     }
 
     public static HashMap getInfo(String id) {

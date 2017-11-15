@@ -22,13 +22,12 @@ public class TestItinerary {
         DataBase.connect();
         System.out.println("Connected to DB");
         System.out.println("Setup Model");
-        Model.shortestTrip("denver");
     }
 
 
     @Test
     public void testItinerary() {
-        JSONArray arr = Itinerary.createJSON("");
+        JSONArray arr = Itinerary.createJSON("denver");
         System.out.println(arr.toString());
     }
 
