@@ -30,8 +30,8 @@
 
 Statistic | Planned | Completed
 --- | ---: | ---:
-Tasks |  *value*   | *value* 
-Story Points |  *value*  | *value* 
+Tasks |  36   | *value* 
+Story Points |  49  | *value* 
 
 
 Statistic | Start | End
