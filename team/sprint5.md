@@ -54,6 +54,7 @@ Date | Tasks done now | Tasks done next | Impediments | Coverage | Smells | Dupl
 :--- | :--- | :--- | :--- | ---: | ---: | ---: | ---:
 *date* | *issue numbers only* | *issue numbers only* | *High* | *50* | *10* | *20* | *15*
 11/13/17 | Setting up times for meeting this week | Complete Sprint Planning | - | - | - | - | - |
+12/1/17 | #242 #243 #244 #261 #263 | #281 #208 #188 | Medium | Medium | Low | Medium
  
 
 ## Review
