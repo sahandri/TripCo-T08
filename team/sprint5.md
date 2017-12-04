@@ -37,8 +37,8 @@ Story Points |  *value*  | *value*
 Statistic | Start | End
 --- | ---: | ---:
 Overall Test Coverage | *value* | *value* 
-Smells | *value* | *value* 
-Duplication | *value* | *value* 
+Smells | 22 | *value* 
+Duplication | 7 | *value* 
 Technical Debt Ratio | *value* | *value* 
 
 ## Plan
