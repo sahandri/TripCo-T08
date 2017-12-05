@@ -4,3 +4,8 @@ jdk:
   - oraclejdk8
 addons:
   mariadb: '10.0'
+services:
+  - mysql
+before_script:
+  -mysql -u root -e 'CREATE DATABASE IF NOT EXISTS testDB'
+  -mysql -u root -e "GRANT ALL PRIVILEGES ON testDB.* TO 'travis'@'%
