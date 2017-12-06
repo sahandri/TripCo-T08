@@ -26,7 +26,7 @@
 * All Java dependencies in pom.xml.
 
 
-## Metrics
+# Metrics
 
 Statistic | Planned | Completed
 --- | ---: | ---:
@@ -37,9 +37,34 @@ Story Points |  49  | *value*
 Statistic | Start | End
 --- | ---: | ---:
 Overall Test Coverage | *value* | *value* 
-Smells | *value* | *value* 
-Duplication | *value* | *value* 
-Technical Debt Ratio | *value* | *value* 
+Smells | 34 | *value* 
+Duplication | 32 | *value* 
+Technical Debt Ratio | %21.2 | *value* 
+
+* Begining of sprint:
+![alt text](https://github.com/csu2017fa314/T08/blob/master/images/Capture.PNG)
+
+# Code coverage:
+Class | Method Coverage(START) | Line Coverage(START) | Method Coverage(END) | Line Coverage(END)
+:--- | :--- | :--- |---: | ---:
+Tripco | 0% | 0%
+TripCoServer | 0% | 0%
+DataBase | 73.3% | 50.9%
+Destination | 0% | 0%
+Distance  | 100% | 100%
+Model | 28.6% | 28.6%
+Trip | 72.7% | 66.7%
+TripManager | 80% | 80.3%
+TripWorker | 85.7% | 70.8%
+Location | 0% | 0%
+Server | 0% | 0%
+ServerQueryResponse | 0% | 0%
+ServerRequest | 0% | 0%
+ServerSvgResponse | 0% | 0%
+Itinerary | 0% | 0%
+makeSvg | 0% | 0%
+
+
 
 ## Plan
 
@@ -53,10 +78,10 @@ Epics planned for this release.
 Date | Tasks done now | Tasks done next | Impediments | Coverage | Smells | Duplication | Technical Debt Ratio
 :--- | :--- | :--- | :--- | ---: | ---: | ---: | ---:
 *date* | *issue numbers only* | *issue numbers only* | *High* | *50* | *10* | *20* | *15*
-11/13/17 | Setting up times for meeting this week | Complete Sprint Planning | Medium | 40 | 70 | 30 | 40 |
-12/1/17 | #242 #243 #244 #261 #263 | #281 #208 #188 | Medium | 60 | 60 | 30 | 30 |
-12/4/17 | #281 #208 | #277 #278 #279 #258| High | 60 | 40 | 20 | 30 |
-12/6/17 | #267 #268 #269 #270 #271 #272 | All | High | 60 | 40 | 20 | 25 |
+11/13/17 | Setting up times for meeting this week | Complete Sprint Planning | Medium | 40 | 34 | 32 | 21.2 |
+12/1/17 | #242 #243 #244 #261 #263 | #281 #208 #188 | Medium | 60 | 34 | 32 | 21.2 |
+12/4/17 | #281 #208 | #277 #278 #279 #258| High | 60 | 32 | 30 | 21.2 |
+12/6/17 | #267 #268 #269 #270 #271 #272 | All | High | 60 | 30 | 28 | 18 |
  
 
 ## Review
