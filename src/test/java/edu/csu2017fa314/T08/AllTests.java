@@ -1,6 +1,7 @@
 package edu.csu2017fa314.T08;
 import edu.csu2017fa314.T08.Model.*;
 import edu.csu2017fa314.T08.Server.TestLocation;
+import edu.csu2017fa314.T08.Server.TestServerRequest;
 import edu.csu2017fa314.T08.View.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -16,6 +17,7 @@ import junit.framework.JUnit4TestAdapter;
         TestTrip.class,
         TestTripManager.class,
         TestLocation.class,
+        TestServerRequest.class,
         TestItinerary.class
 })
 
