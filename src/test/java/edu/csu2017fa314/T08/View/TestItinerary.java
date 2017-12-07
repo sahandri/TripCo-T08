@@ -13,7 +13,7 @@ import org.junit.Test;
 import org.junit.Ignore;
 
 
-@Ignore
+
 public class TestItinerary {
 
     @Before
@@ -28,7 +28,7 @@ public class TestItinerary {
     @Test
     public void testItinerary() {
         JSONArray arr = Itinerary.createJSON("denver");
-        System.out.println(arr.toString());
+        //System.out.println(arr.toString());
     }
 
 }
