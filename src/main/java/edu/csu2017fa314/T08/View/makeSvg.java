@@ -151,7 +151,7 @@ public class makeSvg {
 	
 	//Method to modify premade SVG of the world 
 	public static String getSvg(String searched, int optLevel) {
-		System.out.println("Old svg method is being called");
+		System.out.println("Getting unordered svg based on search term");
 		ArrayList<String> order = Model.search(searched);
 		return getArraySvg(order, optLevel);			
 	}
@@ -159,12 +159,10 @@ public class makeSvg {
 	public static String getArraySvg(ArrayList<String> destList, int optLevel) {
 		System.out.println("Got a request for an svg given an array of strings");		
 		BufferedReader br = null;
-		BufferedWriter bw = null;		
 		String svg = "";		
 		try{
 		//Create and open a writer for current .svg file
 			br = new BufferedReader(new FileReader("data/World_location_map.svg"));
-			bw = new BufferedWriter(new FileWriter("ArrayTest.svg"));
 			//Copying File...
 			String line = null;
 			while((line = br.readLine()) != null) {
@@ -176,9 +174,7 @@ public class makeSvg {
 	        	//Draw trip
 			ArrayList<String> order = Model.shortestTrip();
 			svg += completeSvg(order);
-			bw.write(svg);
 			br.close();
-			bw.close();
 		} catch (IOException e) {
 		   // do something
 		}
@@ -186,23 +182,19 @@ public class makeSvg {
 	}
 	
 	public static String getBlankSvg() {
-		System.out.println("Getting a blank svg");
-		BufferedWriter bw = null;		
+		System.out.println("Getting a blank svg");	
 		BufferedReader br = null;	
 		String svg = "";	
 		try{
 		//Create and open a writer for current .svg file
-			br = new BufferedReader(new FileReader("data/BlankWorldExample.svg"));
-			bw = new BufferedWriter(new FileWriter("BlankTest.svg"));			
+			br = new BufferedReader(new FileReader("data/BlankWorldExample.svg"));			
 			//Copying File...
 			String line = null;
 			while((line = br.readLine()) != null) {
 				//system.out.println(line);
 				svg += line + "\n";
-			}			
-			bw.write(svg);			
+			}						
 			br.close();
-			bw.close();
 		} catch (IOException e) {
 		   // do something
 		}
