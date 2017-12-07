@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Dropzone from 'react-dropzone'
+import Select from 'react-select';
+import Dropzone from 'react-dropzone';
 import InlineSVG from 'svg-inline-react';
 
 class Home extends React.Component {
@@ -10,9 +11,11 @@ class Home extends React.Component {
             answer: null,
             plan: null,
             itinerary: [],
+            columns: [],
             all: [],
 		svgResults: null,
-		input : ""
+		input : "",
+        value: []
 		}
     };
 
@@ -23,7 +26,6 @@ class Home extends React.Component {
         let svg;
 		let renderedSvg;
 		let information;
-		let keys;
 		let output;
 		let total = 0;
 		let planout;
@@ -36,9 +38,16 @@ class Home extends React.Component {
 				this.state.all = [];
 				amount = "Number of Results: ";
 				amount += information.length;
+                var arrKeys = [];
+                arrKeys = Object.keys(this.state.results.itinerary[0]);
+                
+                
+                for(var i=0;i<arrKeys.length;i++){
+                        this.state.columns[i]={ label: arrKeys[i], value: arrKeys[i] };
+                }
+
 				output = information.map(info => {
 					this.state.all.push(info.id);
-					keys = Object.keys(info);
 				 	return (
 				 	<tr>
 				 	<td><h5>{info.name}</h5>
@@ -108,6 +117,7 @@ class Home extends React.Component {
 
 
         //let keys;
+
         
         return (<div className="home-container">
             <div className="inner">
@@ -120,6 +130,20 @@ class Home extends React.Component {
 					onKeyUp={this.keyUp.bind(this)} placeholder="Enter Keyword" autoFocus/>
 				<input type="submit" value="Submit" />
 				</form>
+                <Select
+                    closeOnSelect={true}
+                    disabled={false}
+                    multi
+                    onChange={this.handleColumnChange.bind(this)}
+                    options={this.state.columns}
+                    placeholder="Select data columns"
+                    removeSelected={true}
+                    rtl={false}
+                    simpleValue
+                    value={this.state.value}
+                />
+                    
+                
 				<h2> Search Results</h2>
 				<h3> {amount} </h3>
 				<table className="pair-table"> {/*For CSS*/}
@@ -172,8 +196,13 @@ class Home extends React.Component {
         )
     }
     
+    handleColumnChange(value){
+        console.log("Value: ", value);
+        console.log("this.state: ", this.state);
+        console.log("this.state.value: ", this.state.value);
+        this.setState({value});
+    }
 
-                    
     keyUp(event){
 		if (event.which === 13) {
 			this.fetch(this.state.value);
