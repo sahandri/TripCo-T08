@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
-import Dropzone from 'react-dropzone'
+import Select from 'react-select';
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
+import Dropzone from 'react-dropzone';
 import InlineSVG from 'svg-inline-react';
 
 class Home extends React.Component {
@@ -10,9 +13,11 @@ class Home extends React.Component {
             answer: null,
             plan: null,
             itinerary: [],
+            columns: [],
             all: [],
 		svgResults: null,
-		input : ""
+		input : "",
+        value: ["id", "name"]
 		}
     };
 
@@ -23,110 +28,142 @@ class Home extends React.Component {
         let svg;
 		let renderedSvg;
 		let information;
-		let keys;
-		let output;
 		let total = 0;
 		let planout;
 		let amount;
 		let plans = null;
+        let rows;
+        let tripRows = [];
 		
 		if (this.state.results) {
+                rows = this.state.results.itinerary;
 				
 				information = this.state.results.itinerary;
-				this.state.all = [];
+				this.state.all = information.map(info => {
+                    return info.id;
+                });
 				amount = "Number of Results: ";
 				amount += information.length;
-				output = information.map(info => {
-					this.state.all.push(info.id);
-					keys = Object.keys(info);
-				 	return (
-				 	<tr>
-				 	<td><h5>{info.name}</h5>
-				 	<p>{info.id}</p></td>
-				 	<button onClick={this.handleCode.bind(this,info.id)}>Select</button>
-				 
-				 	</tr>
-				 	
-				 	);
-			 	})
-				
-				
+                var arrKeys = [];
+                arrKeys = Object.keys(this.state.results.itinerary[0]);
+                
+                for(var i=0;i<arrKeys.length;i++){
+                        this.state.columns[i]={ label: arrKeys[i], value: arrKeys[i] };
+                }
+
 		}
 		
-			if(this.state.plan){
-			let number = -1;
-			if(plans){
-				information = this.state.itinerary;
-						} else{
-			information = this.state.plan.itinerary;
-			}
-				plans = information.map(info => {
-					number++;
-					return (
-					<tr>
-					<td><h5>{info.name}</h5>
-					<p>{info.id}</p></td>
-					<button onClick={this.up.bind(this,number)}>Up</button>
-					<button onClick={this.down.bind(this,number)}>Down</button>
-					<button onClick={this.remove.bind(this,number)}>Remove</button>
-					</tr>
-			
-					);
-			
-				})
-				
-				if(this.state.plan.svg){
-					svg = this.state.plan.svg;
-					renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
-				
-				
-				}
-				}
-				if(this.state.answer){
-					information = this.state.answer.itinerary;
-				
-					planout = information.map(info => {
-					total += info.distance;
-					return (
-					<tr>
-					<td><h5>{info.name}</h5>
-					<p>{info.id}</p></td><td>{info.distance}</td> <td>{total}</td>
-					</tr>
-			
-					);
-			
-				})
-				
-				if(this.state.answer.svg){
-					svg = this.state.answer.svg;
-					renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
-				
-				
-				}
-				}
-		
+        if(this.state.plan){
+            information = this.state.plan.itinerary;
+            this.state.itinerary = information.map(info => {
+                return info.id;
+            });
 
-
-        //let keys;
+            let number = -1;
+            plans = information.map(info => {
+                number++;
+                return (
+                <tr>
+                <td><h5>{info.name}</h5>
+                <p>{info.id}</p></td>
+                <button onClick={this.up.bind(this,number)}>Up</button>
+                <button onClick={this.down.bind(this,number)}>Down</button>
+                <button onClick={this.remove.bind(this,number)}>Remove</button>
+                </tr>
         
+                );
+        
+            })
+                
+                if(this.state.plan.svg){
+                    svg = this.state.plan.svg;
+                    renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
+                
+                
+                }
+            }
+            if(this.state.answer){
+                information = this.state.answer.itinerary;
+                information.map((info) => {
+                    total += info.distance;
+                    info.cumulativeDistance = total;
+                    return info;
+                });
+                tripRows = information;
+            
+                planout = information.map(info => {
+                    return (
+                        <tr>
+                        <td><h5>{info.name}</h5>
+                        <p>{info.id}</p></td><td>{info.distance}</td> <td>{total}</td>
+                        </tr>
+                    );
+        
+                })
+                
+                if(this.state.answer.svg){
+                    svg = this.state.answer.svg;
+                    renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
+                }
+            }
+
+        const columns = [{
+            Header: 'Select',
+            accessor: 'id',
+            Cell: row => (
+                <button onClick={this.handleCode.bind(this,row.value)}>
+                    Select
+                </button>
+            )}].concat( 
+            this.state.value.map(d => {
+                return {
+                    Header: d,
+                    accessor: d
+                }
+            }))
+
+        const tripColumns = [{
+            Header: 'Cumulative Distance',
+            accessor: 'cumulativeDistance',
+            Footer: 'Total: ' + total
+            }].concat( 
+            this.state.value.map(d => {
+                return {
+                    Header: d,
+                    accessor: d
+                }
+            }))
+
         return (<div className="home-container">
             <div className="inner">
                 <h2>T08 - The Absentees</h2>
-                
-
 				<h2> Search Phrase</h2>
 				<form onSubmit={this.handleSubmit.bind(this)}>
 				<input size="35" className="search-button" type="text"
 					onKeyUp={this.keyUp.bind(this)} placeholder="Enter Keyword" autoFocus/>
 				<input type="submit" value="Submit" />
 				</form>
+                <Select
+                    closeOnSelect={true}
+                    disabled={false}
+                    multi
+                    onChange={this.handleColumnChange.bind(this)}
+                    options={this.state.columns}
+                    placeholder="Select data columns"
+                    removeSelected={true}
+                    rtl={false}
+                    simpleValue
+                    value={this.state.value}
+                />
+                    
+                
 				<h2> Search Results</h2>
 				<h3> {amount} </h3>
-				<table className="pair-table"> {/*For CSS*/}
-                    <tbody>
-                    {output}
-                    </tbody>
-                </table>
+                <ReactTable
+                    data={rows}
+                    columns={columns}
+                    className="-striped -highlight"
+                />
 				
 				<h2> Selected Destinations</h2>
 				<table className="pair-table">
@@ -149,31 +186,24 @@ class Home extends React.Component {
 				<h1> 
 					{renderedSvg}
 				</h1>
-				<div>
-				
-				</div>
 
-				
-
-
-
-                <table className="pair-table"> {/*For CSS*/}
                 <h3>Itinerary</h3>
-                    <tbody>
-                    {planout}
-                    <tr>
-                        <td colSpan="3">Total:</td>
-                        <td>{total}</td> {/*Displays Total*/}
-                    </tr>
-                    </tbody>
-                </table>
+                <ReactTable
+                    data={tripRows}
+                    columns={tripColumns}
+                    defaultPageSize={100}
+                    className="-striped -highlight"
+                />
             </div>
         </div>
         )
     }
     
+    handleColumnChange(vals){
+        this.setState({value: vals.split(',')});
+        console.log("this.state.value: ", this.state.vals);
+    }
 
-                    
     keyUp(event){
 			this.setState({
 				input: event.target.value
@@ -182,6 +212,7 @@ class Home extends React.Component {
     
  
        handleCode(code){
+        console.log("Handling code: ", code);
     		
 		let bool = true;
 		let sel = this.state.itinerary;
@@ -205,6 +236,7 @@ class Home extends React.Component {
 	}
 	all(event) {
 		this.state.itinerary = this.state.all;
+        console.log(this.state.itinerary);
 	}
 	up(num){
 		let arr = this.state.itinerary;
