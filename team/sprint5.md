@@ -36,33 +36,32 @@ Story Points |  49  | *value*
 
 Statistic | Start | End
 --- | ---: | ---:
-Overall Test Coverage | *value* | *value* 
-Smells | 34 | *value* 
-Duplication | 32 | *value* 
-Technical Debt Ratio | %21.2 | *value* 
+Overall Test Coverage | 37 | 69 
+Smells | 34 | 24 
+Duplication | 32 | 30 
+Technical Debt Ratio | %21.2 | %18 
 
 * Begining of sprint:
 ![alt text](https://github.com/csu2017fa314/T08/blob/master/images/Capture.PNG)
+* End of sprint:
+![alt text](https://github.com/csu2017fa314/T08/blob/master/images/Capture2.PNG)
 
 # Code coverage:
 Class | Method Coverage(START) | Line Coverage(START) | Method Coverage(END) | Line Coverage(END)
 :--- | :--- | :--- |---: | ---:
-Tripco | 0% | 0%
-TripCoServer | 0% | 0%
-DataBase | 73.3% | 50.9%
-Destination | 0% | 0%
-Distance  | 100% | 100%
-Model | 28.6% | 28.6%
-Trip | 72.7% | 66.7%
-TripManager | 80% | 80.3%
-TripWorker | 85.7% | 70.8%
-Location | 0% | 0%
-Server | 0% | 0%
-ServerQueryResponse | 0% | 0%
-ServerRequest | 0% | 0%
-ServerSvgResponse | 0% | 0%
-Itinerary | 0% | 0%
-makeSvg | 0% | 0%
+Tripco | 0% | 0% | 0% | 0%
+TripCoServer | 0% | 0% | )% | 0%
+DataBase | 73.3% | 50.9% | 83% | 67%
+Distance  | 100% | 100% | 100% | 100%
+Model | 28.6% | 28.6% | 83% | 88%
+Trip | 72.7% | 66.7% | 72% | 66%
+TripManager | 80% | 80.3% | 90% | 78%
+TripWorker | 85.7% | 70.8% |85% | 71%
+Location | 0% | 0% | 100% | 100%
+Server | 0% | 0% | 0% | 0%
+ServerRequest | 0% | 0% |100% | 100%
+Itinerary | 0% | 0% | 66% | 64%
+makeSvg | 0% | 0% | 0% | 0%
 
 ## Plan
 
