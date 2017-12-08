@@ -85,25 +85,29 @@ Date | Tasks done now | Tasks done next | Impediments | Coverage | Smells | Dupl
 
 #### Completed user stories (epics) in Sprint Backlog 
 * *user story*:  *comments*
-* 
+* Website: Completed Website
+* Added map coverage: Completed the across map svg
 
 #### Incomplete user stories / epics in Sprint Backlog 
 * *user story*: *Explanation...*
-*
+* Google Map: Couldn't get KML working
+* Zoom and Pan: not enough time to enable
 
 #### What went well
 * *something*
-*
+* Website turned into something that someone can understand
+* SVG works correctly and goes across sides correctly
 
 #### Problems encountered and resolutions
 * *something*
-*
+* Issue with react's radio buttons, so switched back to normal buttons
+* Finished selection method with correct selection instead of broken selection.
 
 ## Retrospective
 
 Topic | Teamwork | Process | Tools
 :--- | :--- | :--- | :---
-What we will change this time |  |  | 
-What we did well |  |  | 
-What we need to work on |  |  |
-What we will change next time |  |  | 
+What we will change this time | Have a team meeting earlier in the project | Complete work in an order that builds rather than subtracts | Learn React better 
+What we did well | End game communication | Polished website to complete working | Added server side fixes 
+What we need to work on | Working sooner than the last weekend | Having a correct list of issues to complete | Use the Zen boards the way they are actually supposed to be used
+What we will change next time | Physical meetings rather than virtual | Finish coding 2 days before release | Work on zen hub faster and sooner
