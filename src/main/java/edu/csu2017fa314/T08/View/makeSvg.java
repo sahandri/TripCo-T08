@@ -1,15 +1,10 @@
 package edu.csu2017fa314.T08.View;
 
 import edu.csu2017fa314.T08.Model.Model;
-import edu.csu2017fa314.T08.Model.Distance;
-import edu.csu2017fa314.T08.Model.Destination;
 import edu.csu2017fa314.T08.Model.DataBase;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -145,10 +140,8 @@ public class makeSvg {
 		allDestLines += ("\n" + gTag2());
 		allDestLines += ("\n" + svgTag());
 		return allDestLines;
-
 	}
-	
-	
+
 	//Method to modify premade SVG of the world 
 	public static String getSvg(String searched, int optLevel) {
 		System.out.println("Getting unordered svg based on search term");
@@ -201,4 +194,3 @@ public class makeSvg {
 		return svg;
 	}
 }
-

@@ -27,9 +27,6 @@ public class ServerRequest {
         return description;
     }
 
-	public String[] getArrayDescription() {
-        return arrayDescription;
-    }
 
     public void setDescription(String description) {
         this.description = description;
