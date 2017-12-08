@@ -145,6 +145,7 @@ class Home extends React.Component {
 					onKeyUp={this.keyUp.bind(this)} placeholder="Enter Keyword" autoFocus/>
 				<input type="submit" value="Submit" />
 				</form>
+				<p>Select what info you want to show</p>
                 <Select
                     closeOnSelect={true}
                     disabled={false}
@@ -161,22 +162,29 @@ class Home extends React.Component {
                 
 				<h2> Search Results</h2>
 				<h3> {amount} </h3>
+				<p> Select which you want to add to the plan, or press the select all button under this table</p>
                 <ReactTable
                     data={rows}
                     columns={columns}
                     className="-striped -highlight"
                 />
+          <p></p>
+                <button onClick={this.all.bind(this)}>Select All</button>
 				
 				<h2> Selected Destinations</h2>
+				<p>*Note - Selected Destinations don't re-render on up,down or remove.  However, the changes are saved for when you press plan*</p>
 				<table className="pair-table">
 				<tbody>
 				{plans}
-				<button onClick={this.all.bind(this)}>Select All</button>
+				
 				</tbody>
 				</table>
+				<p>Click plan to create a selected destination table</p>
+				<button onClick={this.plan.bind(this)}>Plan</button>
+				<p>*Mile is default*</p>
 				<button onClick={this.mile.bind(this)}>Miles</button>
 				<button onClick={this.km.bind(this)}>KM</button><p></p>
-				<button onClick={this.plan.bind(this)}>Plan</button>
+				
 				<button onClick={this.plan1.bind(this)}>Nearest Neighbor</button>
 				<button onClick={this.plan2.bind(this)}>2 Opt</button>
 				<button onClick={this.plan3.bind(this)}>3 Opt</button><p></p>
