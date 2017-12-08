@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Select from 'react-select';
 import ReactTable from 'react-table';
+import 'react-table/react-table.css';
 import Dropzone from 'react-dropzone';
 import InlineSVG from 'svg-inline-react';
 
@@ -16,7 +17,7 @@ class Home extends React.Component {
             all: [],
 		svgResults: null,
 		input : "",
-        value: ["ID", "Name"]
+        value: ["id", "name"]
 		}
     };
 
@@ -31,8 +32,10 @@ class Home extends React.Component {
 		let planout;
 		let amount;
 		let plans = null;
+        let rows;
 		
 		if (this.state.results) {
+                rows = this.state.results.itinerary;
 				
 				information = this.state.results.itinerary;
 				this.state.all = [];
@@ -91,6 +94,23 @@ class Home extends React.Component {
                 }
             }
 
+        console.log("@column this.state.value: ", this.state.value);
+        const columns = [{
+            Header: 'Select',
+            accessor: 'selectButton',
+            Cell: (value) => (
+                <button onClick={this.handleCode.bind(this,value)}>
+                    Select
+                </button>
+            )}].concat( 
+            this.state.value.map(d => {
+                return {
+                    Header: d,
+                    accessor: d
+                }
+            }))
+        console.log(columns)
+
         return (<div className="home-container">
             <div className="inner">
                 <h2>T08 - The Absentees</h2>
@@ -117,7 +137,7 @@ class Home extends React.Component {
 				<h2> Search Results</h2>
 				<h3> {amount} </h3>
                 <ReactTable
-                    data={information}
+                    data={rows}
                     columns={columns}
                 />
 				
@@ -158,11 +178,9 @@ class Home extends React.Component {
         )
     }
     
-    handleColumnChange(value){
-        console.log("Value: ", value);
-        console.log("this.state: ", this.state);
-        console.log("this.state.value: ", this.state.value);
-        this.setState({value});
+    handleColumnChange(vals){
+        this.setState({value: vals.split(',')});
+        console.log("this.state.value: ", this.state.vals);
     }
 
     keyUp(event){
