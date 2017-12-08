@@ -33,12 +33,15 @@ class Home extends React.Component {
 		let amount;
 		let plans = null;
         let rows;
+        let tripRows = [];
 		
 		if (this.state.results) {
                 rows = this.state.results.itinerary;
 				
 				information = this.state.results.itinerary;
-				this.state.all = [];
+				this.state.all = information.map(info => {
+                    return info.id;
+                });
 				amount = "Number of Results: ";
 				amount += information.length;
                 var arrKeys = [];
@@ -76,9 +79,14 @@ class Home extends React.Component {
             }
             if(this.state.answer){
                 information = this.state.answer.itinerary;
+                information.map((info) => {
+                    total += info.distance;
+                    info.cumulativeDistance = total;
+                    return info;
+                });
+                tripRows = information;
             
                 planout = information.map(info => {
-                    total += info.distance;
                     return (
                         <tr>
                         <td><h5>{info.name}</h5>
@@ -94,12 +102,11 @@ class Home extends React.Component {
                 }
             }
 
-        console.log("@column this.state.value: ", this.state.value);
         const columns = [{
             Header: 'Select',
-            accessor: 'selectButton',
-            Cell: (value) => (
-                <button onClick={this.handleCode.bind(this,value)}>
+            accessor: 'id',
+            Cell: row => (
+                <button onClick={this.handleCode.bind(this,row.value)}>
                     Select
                 </button>
             )}].concat( 
@@ -109,7 +116,18 @@ class Home extends React.Component {
                     accessor: d
                 }
             }))
-        console.log(columns)
+
+        const tripColumns = [{
+            Header: 'Cumulative Distance',
+            accessor: 'cumulativeDistance',
+            Footer: 'Total: ' + total
+            }].concat( 
+            this.state.value.map(d => {
+                return {
+                    Header: d,
+                    accessor: d
+                }
+            }))
 
         return (<div className="home-container">
             <div className="inner">
@@ -139,6 +157,7 @@ class Home extends React.Component {
                 <ReactTable
                     data={rows}
                     columns={columns}
+                    className="-striped -highlight"
                 />
 				
 				<h2> Selected Destinations</h2>
@@ -164,15 +183,12 @@ class Home extends React.Component {
 				</h1>
 
                 <h3>Itinerary</h3>
-                <table className="pair-table"> {/*For CSS*/}
-                    <tbody>
-                    {planout}
-                    <tr>
-                        <td colSpan="3">Total:</td>
-                        <td>{total}</td> {/*Displays Total*/}
-                    </tr>
-                    </tbody>
-                </table>
+                <ReactTable
+                    data={tripRows}
+                    columns={tripColumns}
+                    defaultPageSize={100}
+                    className="-striped -highlight"
+                />
             </div>
         </div>
         )
@@ -191,6 +207,7 @@ class Home extends React.Component {
     
  
        handleCode(code){
+        console.log("Handling code: ", code);
     		
 		let bool = true;
 		let sel = this.state.itinerary;
@@ -214,6 +231,7 @@ class Home extends React.Component {
 	}
 	all(event) {
 		this.state.itinerary = this.state.all;
+        console.log(this.state.itinerary);
 	}
 	up(num){
 		let arr = this.state.itinerary;
