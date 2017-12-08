@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Select from 'react-select';
+import ReactTable from 'react-table';
 import Dropzone from 'react-dropzone';
 import InlineSVG from 'svg-inline-react';
 
@@ -15,7 +16,7 @@ class Home extends React.Component {
             all: [],
 		svgResults: null,
 		input : "",
-        value: []
+        value: ["ID", "Name"]
 		}
     };
 
@@ -26,7 +27,6 @@ class Home extends React.Component {
         let svg;
 		let renderedSvg;
 		let information;
-		let output;
 		let total = 0;
 		let planout;
 		let amount;
@@ -41,89 +41,59 @@ class Home extends React.Component {
                 var arrKeys = [];
                 arrKeys = Object.keys(this.state.results.itinerary[0]);
                 
-                
                 for(var i=0;i<arrKeys.length;i++){
                         this.state.columns[i]={ label: arrKeys[i], value: arrKeys[i] };
                 }
 
-				output = information.map(info => {
-					this.state.all.push(info.id);
-				 	return (
-				 	<tr>
-				 	<td><h5>{info.name}</h5>
-				 	<p>{info.id}</p></td>
-				 	<button onClick={this.handleCode.bind(this,info.id)}>Select</button>
-				 
-				 	</tr>
-				 	
-				 	);
-			 	})
-				
-				
 		}
 		
 			if(this.state.plan){
 			let number = -1;
-			if(plans){
-				information = this.state.itinerary;
-						} else{
-			information = this.state.plan.itinerary;
-			}
-				plans = information.map(info => {
-					number++;
-					return (
-					<tr>
-					<td><h5>{info.name}</h5>
-					<p>{info.id}</p></td>
-					<button onClick={this.up.bind(this,number)}>Up</button>
-					<button onClick={this.down.bind(this,number)}>Down</button>
-					<button onClick={this.remove.bind(this,number)}>Remove</button>
-					</tr>
-			
-					);
-			
-				})
-				
-				if(this.state.plan.svg){
-					svg = this.state.plan.svg;
-					renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
-				
-				
-				}
-				}
-				if(this.state.answer){
-					information = this.state.answer.itinerary;
-				
-					planout = information.map(info => {
-					total += info.distance;
-					return (
-					<tr>
-					<td><h5>{info.name}</h5>
-					<p>{info.id}</p></td><td>{info.distance}</td> <td>{total}</td>
-					</tr>
-			
-					);
-			
-				})
-				
-				if(this.state.answer.svg){
-					svg = this.state.answer.svg;
-					renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
-				
-				
-				}
-				}
-		
-
-
-        //let keys;
-
+            plans = information.map(info => {
+                number++;
+                return (
+                <tr>
+                <td><h5>{info.name}</h5>
+                <p>{info.id}</p></td>
+                <button onClick={this.up.bind(this,number)}>Up</button>
+                <button onClick={this.down.bind(this,number)}>Down</button>
+                <button onClick={this.remove.bind(this,number)}>Remove</button>
+                </tr>
         
+                );
+        
+            })
+            
+            if(this.state.plan.svg){
+                svg = this.state.plan.svg;
+                renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
+            
+            
+            }
+            }
+            if(this.state.answer){
+                information = this.state.answer.itinerary;
+            
+                planout = information.map(info => {
+                    total += info.distance;
+                    return (
+                        <tr>
+                        <td><h5>{info.name}</h5>
+                        <p>{info.id}</p></td><td>{info.distance}</td> <td>{total}</td>
+                        </tr>
+                    );
+        
+                })
+                
+                if(this.state.answer.svg){
+                    svg = this.state.answer.svg;
+                    renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
+                }
+            }
+
         return (<div className="home-container">
             <div className="inner">
                 <h2>T08 - The Absentees</h2>
-                
-
 				<h2> Search Phrase</h2>
 				<form onSubmit={this.handleSubmit.bind(this)}>
 				<input size="35" className="search-button" type="text"
@@ -146,11 +116,10 @@ class Home extends React.Component {
                 
 				<h2> Search Results</h2>
 				<h3> {amount} </h3>
-				<table className="pair-table"> {/*For CSS*/}
-                    <tbody>
-                    {output}
-                    </tbody>
-                </table>
+                <ReactTable
+                    data={information}
+                    columns={columns}
+                />
 				
 				<h2> Selected Destinations</h2>
 				<table className="pair-table">
@@ -173,16 +142,9 @@ class Home extends React.Component {
 				<h1> 
 					{renderedSvg}
 				</h1>
-				<div>
-				
-				</div>
 
-				
-
-
-
-                <table className="pair-table"> {/*For CSS*/}
                 <h3>Itinerary</h3>
+                <table className="pair-table"> {/*For CSS*/}
                     <tbody>
                     {planout}
                     <tr>
