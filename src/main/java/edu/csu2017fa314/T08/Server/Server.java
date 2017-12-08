@@ -39,9 +39,9 @@ public class Server {
         return response;
     }
 
-    private JSONObject serveResponse(String destList, int optLevel) {
+    private JSONObject serveResponse(String destList, int optLevel, int units) {
 		//int opt level is used for selection of optimization
-	JSONArray itinerary = Itinerary.createJSON(parseIDString(destList) , optLevel);	
+	JSONArray itinerary = Itinerary.createJSON(parseIDString(destList) , optLevel, units);	
 	for(String dest : parseIDString(destList)){
 		System.out.println(dest);
 	}
@@ -93,16 +93,16 @@ public class Server {
                 return serveInitialDests(sRec.getDescription());
             // if the user selects destinations and selects "plan1", this returns unordered trip
             case "plan":
-                return serveResponse(sRec.getDescription(), 0);
+                return serveResponse(sRec.getDescription(), 0, sRec.getUnits());
             // if the user selects destinations and selects "plan1", this searches NN
             case "plan1":
-                return serveResponse(sRec.getDescription(), 1);
+                return serveResponse(sRec.getDescription(), 1, sRec.getUnits());
             // if the user selects destinations and selects "plan2", this searches 2-Opt
             case "plan2":
-                return serveResponse(sRec.getDescription(), 2);
+                return serveResponse(sRec.getDescription(), 2, sRec.getUnits());
             // if the user selects destinations and selects "plan2", this searches 3-Opt
             case "plan3":
-                return serveResponse(sRec.getDescription(), 3);
+                return serveResponse(sRec.getDescription(), 3, sRec.getUnits());
             // if "clear is chosen, blank world svg is sent and diplayed with empty list
             default:
                 return serveBlank(sRec.getDescription());

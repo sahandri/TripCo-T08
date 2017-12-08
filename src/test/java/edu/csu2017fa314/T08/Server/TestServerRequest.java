@@ -7,13 +7,12 @@ import org.junit.Test;
 public class TestServerRequest {
     ServerRequest s;
     ServerRequest as;
-    String[] array = new String[] {"a", "b"};
     @Before
     public void setup(){
-        as = new ServerRequest("x" , array);
-        s = new ServerRequest("x", "y");
+        s = new ServerRequest("x", "y" , 0);
         s.setQuery("a");
         s.setDescription("b");
+	s.setUnits(0);
     }
 
     @Test
@@ -25,6 +24,11 @@ public class TestServerRequest {
     public void testGetDescription(){
         assertEquals("b",s.getDescription());
     }
+
+    @Test
+    public void testGetUnits(){
+        assertEquals(0,s.getUnits());
+    }	
 
     @Test
     public void testToString(){

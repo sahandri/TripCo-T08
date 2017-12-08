@@ -45,7 +45,7 @@ public class TestTrip {
         t.add("rcox");
         t.add("mjgaffne");
 
-        assertEquals(Model.getDistance("rcox", "mjgaffne",false), t.length());
+        assertEquals(Model.getDistance("rcox", "mjgaffne",1), t.length());
         assertEquals(2, t.size());
     }
 
@@ -55,7 +55,7 @@ public class TestTrip {
         t.add("mjgaffne");
         t.add("rcox");
 
-        assertEquals(Model.getDistance("rcox", "mjgaffne",false)*2, t.length());
+        assertEquals(Model.getDistance("rcox", "mjgaffne",1)*2, t.length());
         assertEquals(3, t.size());
         assertEquals("rcox", t.get(0));
         assertEquals("mjgaffne", t.get(1));

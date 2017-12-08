@@ -2,17 +2,12 @@ package edu.csu2017fa314.T08.Server;
 
 public class ServerRequest {
     private String request = "";
+    private int units = 0; 
     private String description = "";
-	private String[] arrayDescription;
 
-    public ServerRequest(String request, String description) {
+    public ServerRequest(String request, String description, int units) {
         this.request = request;
         this.description = description;
-    }
-
-	public ServerRequest(String request, String[] description) {
-        this.request = request;
-        this.arrayDescription = description;
     }
 
     public String getRequest() {
@@ -32,11 +27,20 @@ public class ServerRequest {
         this.description = description;
     }
 
+    public int getUnits() {
+        return units;
+    }
+
+    public void setUnits(int units) {
+        this.units = units;
+    }
+
     @Override
     public String toString() {
         return "Request{" +
                 "request='" + request + '\'' +
-                ", description='" + description + '\'' +
+                ", description='" + description + '\'' + 
+		", units='" + units + '\'' +
                 '}';
     }
 }
