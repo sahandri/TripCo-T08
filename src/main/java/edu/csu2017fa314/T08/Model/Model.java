@@ -13,9 +13,10 @@ public class Model {
         return DataBase.getID(key);
     }
 
-	public static ArrayList<String> shortestTrip(ArrayList<String> destList, int optLevel) {
+	public static ArrayList<String> shortestTrip(ArrayList<String> destList, int optLevel, int units) {
         TripManager.clear();
         TripManager.setOptLevel(optLevel);
+	TripManager.setUnits(units);
         return TripManager.shortest(destList);
     }
 
@@ -23,15 +24,19 @@ public class Model {
         return DataBase.getInfo(id);
     }
 
-    public static int getDistance(String id1, String id2, boolean useKm) {
+    public static int getDistance(String id1, String id2, int useKm) {
         int distance;
         String lat1 = DataBase.getLatit(id1);
         String lon1 = DataBase.getLongit(id1);
         String lat2 = DataBase.getLatit(id2);
         String lon2 = DataBase.getLongit(id2);
 
-        distance = Distance.distanceMi(lat1,lon1,lat2,lon2);
-
+        if(useKm == 0){
+	    distance = Distance.distanceMi(lat1,lon1,lat2,lon2);
+	}
+	else{
+            distance = Distance.distanceKm(lat1,lon1,lat2,lon2);
+	}
         return distance;
     }
 

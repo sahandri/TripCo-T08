@@ -34,7 +34,7 @@ public class TestModel
 
     @Test
     public void testGetDistance() {
-        assertEquals(182, m.getDistance("FZCP", "FZCR", false));
+        assertEquals(182, m.getDistance("FZCP", "FZCR", 0));
     }
 
     @Test

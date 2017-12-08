@@ -24,7 +24,7 @@ public class TestTripManager {
     @Test
     public void testShortest() {
 
-        Model.shortestTrip(arr, 1);
+        Model.shortestTrip(arr, 1, 1);
         Trip t = TripManager.trips.get(0);
 
         System.out.printf("Distance is: %d\n", t.length());
@@ -34,7 +34,7 @@ public class TestTripManager {
         //assertTrue(t.length() > 3000);
         assertEquals(t.get(0),t.get(t.size()-1));
         //assertEquals(DataBase.getTotal()+1,t.size());
-        Model.shortestTrip(new ArrayList<>(arr.subList(0,10)),2);
+        Model.shortestTrip(new ArrayList<>(arr.subList(0,10)),2,1);
         Trip t2 = TripManager.trips.get(0);
         System.out.printf("Shorter distance is: %d\n", t2.length());
         System.out.printf("Less stops: %d\n", t2.size());
@@ -43,11 +43,11 @@ public class TestTripManager {
 
     @Test
     public void test3Opt() {
-        Model.shortestTrip(arr, 2);
+        Model.shortestTrip(arr, 2, 1);
         Trip t2 = TripManager.trips.get(0);
         System.out.printf("2-opt distance: %d\n", t2.length());
 
-        Model.shortestTrip(arr, 3);
+        Model.shortestTrip(arr, 3, 1);
         Trip t3 = TripManager.trips.get(0);
         System.out.printf("3-opt distance is: %d\n", t3.length());
         assertTrue(t2.size() == t3.size());
