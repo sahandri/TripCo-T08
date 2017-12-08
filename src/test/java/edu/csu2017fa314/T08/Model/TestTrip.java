@@ -13,14 +13,13 @@ import java.util.ArrayList;
 @Ignore
 public class TestTrip {
     private Trip t;
-    private static Destination d;
-    private static URL url = TestTrip.class.getResource("/brews.csv");
+    private static DataBase d;
 
     @BeforeClass
     public static void setUp() throws Exception {
-        d = new Destination();
+        d = new DataBase();
 
-        d.readFile(url.getPath());
+        d.connect();
     }
 
     @Before
@@ -46,7 +45,7 @@ public class TestTrip {
         t.add("rcox");
         t.add("mjgaffne");
 
-        assertEquals(Model.getDistance("rcox", "mjgaffne",false), t.length());
+        assertEquals(Model.getDistance("rcox", "mjgaffne",1), t.length());
         assertEquals(2, t.size());
     }
 
@@ -56,7 +55,7 @@ public class TestTrip {
         t.add("mjgaffne");
         t.add("rcox");
 
-        assertEquals(Model.getDistance("rcox", "mjgaffne",false)*2, t.length());
+        assertEquals(Model.getDistance("rcox", "mjgaffne",1)*2, t.length());
         assertEquals(3, t.size());
         assertEquals("rcox", t.get(0));
         assertEquals("mjgaffne", t.get(1));

@@ -3,20 +3,14 @@ package edu.csu2017fa314.T08.Server;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import edu.csu2017fa314.T08.Model.DataBase;
-import edu.csu2017fa314.T08.Model.Model;
-import edu.csu2017fa314.T08.Model.QueryBuilder;
 import edu.csu2017fa314.T08.View.Itinerary;
 import edu.csu2017fa314.T08.View.makeSvg;
 import spark.Request;
 import spark.Response;
-import java.io.IOException;
 import org.json.JSONObject;
 import org.json.JSONArray;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import static spark.Spark.post;
 
 public class Server {
@@ -26,59 +20,28 @@ public class Server {
     }
 
     public void serve() {
-        Gson g = new Gson();
-
         post("/testing", (rec, res) -> {
             return testing(rec, res).toString();
         }); // Create new listener
     }
 
-    // called by testing method if the client requests an svg
-    private Object serveSvg(String searched) {
-        Gson gson = new Gson();
-        // Instead of writing the SVG to a file, we send it in plaintext back to the client to be rendered inline
-		ServerSvgResponse ssres = new ServerSvgResponse(1067, 784, makeSvg.getSvg(searched,0));
-
-        return gson.toJson(ssres, ServerSvgResponse.class);
-    }
-
-    // called by testing method if client requests a search
-    private JSONArray serveQuery(String searched) {
-        //Gson gson = new Gson();
-        //QueryBuilder q = new QueryBuilder("user", "pass"); // Create new QueryBuilder instance and pass in credentials //TODO update credentials
-        //String queryString = String.format("SELECT * FROM airports WHERE municipality LIKE '%%%s%%' OR name LIKE '%%%s%%' OR type LIKE '%%%s%%' LIMIT 10", searched, searched, searched);
-        //ArrayList<Location> queryResults = q.query(queryString);
-        JSONArray itinerary = Itinerary.createJSON(searched);
-
-        // Create object with svg file path and array of matching database entries to return to server
-        //ServerQueryResponse sRes = new ServerQueryResponse(queryResults); //TODO update file path to your svg, change to "./testing.png" for a sample image
-
-        //System.out.println("Sending \"" + sRes.toString() + "\" to server.");
-
-        //Convert response to json
-        //return gson.toJson(sRes, ServerQueryResponse.class);
-        return itinerary;
-    }
 
 	private JSONObject serveInitialDests(String search) {
         JSONArray itinerary = Itinerary.createJSON(search);
-
         JSONObject response = new JSONObject();
         JSONObject svg = new JSONObject();
         svg.put("width", 1067);
         svg.put("height", 784);
         //svg.put("contents", makeSvg.getSvg(search, 0));
-	svg.put("contents", makeSvg.getBlankSvg());		//This will load dest list faster
+	    svg.put("contents", makeSvg.getBlankSvg());		//This will load dest list faster
         response.put("itinerary", itinerary);
         response.put("svg", svg);
         return response;
     }
 
-    private JSONObject serveResponse(String destList, int optLevel) {
-		//int opt level is used for selection of optimization        
-	
-		
-	JSONArray itinerary = Itinerary.createJSON(parseIDString(destList) , optLevel);	
+    private JSONObject serveResponse(String destList, int optLevel, int units) {
+		//int opt level is used for selection of optimization
+	JSONArray itinerary = Itinerary.createJSON(parseIDString(destList) , optLevel, units);	
 	for(String dest : parseIDString(destList)){
 		System.out.println(dest);
 	}
@@ -86,7 +49,6 @@ public class Server {
         svg.put("width", 800);
         svg.put("height", 400);
         svg.put("contents", makeSvg.getArraySvg(parseIDString(destList), optLevel));
-
         JSONObject response = new JSONObject();
         response.put("itinerary", itinerary);
         response.put("svg",svg);
@@ -95,12 +57,10 @@ public class Server {
 
 	private JSONObject serveBlank(String search) {
         JSONArray itinerary = new JSONArray();
-		
 		JSONObject svg = new JSONObject();
         svg.put("width", 1067);
         svg.put("height", 784);
         svg.put("contents", makeSvg.getBlankSvg());
-
         JSONObject response = new JSONObject();
         response.put("itinerary", itinerary);
 		response.put("svg",svg);
@@ -110,82 +70,57 @@ public class Server {
     private Object testing(Request rec, Response res) {
         // Set the return headers
         setHeaders(res);
-
         // Init json parser
         JsonParser parser = new JsonParser();
-
         // Grab the json body from POST
         JsonElement elm = parser.parse(rec.body());
         // Create new Gson (a Google library for creating a JSON representation of a java class)
         Gson gson = new Gson();
-
         // Create new Object from received JsonElement elm
         // Note that both possible requests have the same format (see app.js)
         ServerRequest sRec = gson.fromJson(elm, ServerRequest.class);
-
         // The object generated by the frontend should match whatever class you are reading into.
         // Notice how DataClass has name and ID and how the frontend is generating an object with name and ID.
         System.out.println("Got \"" + sRec.toString() + "\" from server.");
-
-        // Because both possible requests from the client have the same format, 
-        // we can check the "type" of request we've received: either "query" or "svg"
-//        if (sRec.getRequest().equals("query")) {
-//            return serveQuery(sRec.getDescription());
-//        // assume if the request is not "query" it is "svg":
-//        } else {
-//            return serveSvg(sRec.getDescription());
-//        }
 		// Because both possible requests from the client have the same format, 
         // we can check the "type" of request we've received: either "search" , "plan" , or "clear"
 		// if the user types a search, this returns an initial list of destinations
-        if (sRec.getRequest().equals("search")) {
-            // Set the return headers
-            System.out.println("Performing search for " + sRec.getDescription());
-            return serveInitialDests(sRec.getDescription());
-		// if the user selects destinations and selects "plan1", this returns unordered trip
-        } else if (sRec.getRequest().equals("plan")) {
-            return serveResponse(sRec.getDescription(), 0);
-		// if the user selects destinations and selects "plan1", this searches NN
-        } else if (sRec.getRequest().equals("plan1")) {
-            return serveResponse(sRec.getDescription(), 1);
-		// if the user selects destinations and selects "plan2", this searches 2-Opt
-		} else if (sRec.getRequest().equals("plan2")) {
-            return serveResponse(sRec.getDescription(), 2);
-		// if the user selects destinations and selects "plan2", this searches 3-Opt
-		} else if (sRec.getRequest().equals("plan3")) {
-            return serveResponse(sRec.getDescription(), 3);
-        // if "clear is chosen, blank world svg is sent and diplayed with empty list
-        } else {
-            return serveBlank(sRec.getDescription());
+        String request = sRec.getRequest();
+        switch (request){
+            case "search":
+                // Set the return headers
+                System.out.println("Performing search for " + sRec.getDescription());
+                return serveInitialDests(sRec.getDescription());
+            // if the user selects destinations and selects "plan1", this returns unordered trip
+            case "plan":
+                return serveResponse(sRec.getDescription(), 0, sRec.getUnits());
+            // if the user selects destinations and selects "plan1", this searches NN
+            case "plan1":
+                return serveResponse(sRec.getDescription(), 1, sRec.getUnits());
+            // if the user selects destinations and selects "plan2", this searches 2-Opt
+            case "plan2":
+                return serveResponse(sRec.getDescription(), 2, sRec.getUnits());
+            // if the user selects destinations and selects "plan2", this searches 3-Opt
+            case "plan3":
+                return serveResponse(sRec.getDescription(), 3, sRec.getUnits());
+            // if "clear is chosen, blank world svg is sent and diplayed with empty list
+            default:
+                return serveBlank(sRec.getDescription());
         }
 }
 
     private void setHeaders(Response res) {
         // Declares returning type json
         res.header("Content-Type", "application/json");
-
         // Ok for browser to call even if different host host
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "*");
     }
 
-	private void setHeadersFile(Response res) {
-        /* Unlike the other responses, the file request sends back an actual file. This means
-        that we have to work with the raw HttpServletRequest that Spark's Response class is built
-        on.
-         */
-        // First, add the same Access Control headers as before
-        res.raw().addHeader("Access-Control-Allow-Origin", "*");
-        res.raw().addHeader("Access-Control-Allow-Headers", "*");
-        // Set the content type to "force-download." Basically, we "trick" the browser with
-        // an unknown file type to make it download the file instead of opening it.
-        res.raw().setContentType("application/force-download");
-        res.raw().addHeader("Content-Disposition", "attachment; filename=\"selection.json\"");
-    }
-	private ArrayList<String> parseIDString(String destList) {
+
+    private ArrayList<String> parseIDString(String destList) {
 		//int opt level is used for selection of optimization        		
 		String[] dests = destList.split(",");
-		
-        return new ArrayList<String>(Arrays.asList(dests));
+        return new ArrayList<>(Arrays.asList(dests));
     }
 }

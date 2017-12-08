@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TripManager {
     private static int[][] distLookUp; // Lookup table of distances between every location in the search.
     private static int _optLevel = 1; // Optimization level
+    private static int _units = 0; // Optimization level
     static ArrayList<String> ids = new ArrayList<>();
     static ArrayList<Trip> trips = new ArrayList<>();
     static AtomicInteger total;
@@ -62,6 +63,10 @@ public class TripManager {
         _optLevel = level;
     }
 
+    static void setUnits(int units) {
+        _units = units;
+    }
+
     /*
     Calculates the shortest trips using all destinations found using key.
     Stores the shortest trip from every starting location in ArrayList trips ordered by Trip length.
@@ -79,7 +84,7 @@ public class TripManager {
 
             // Generate the trip creation tasks and store their futures
             for (int i = 0; i < total.get(); i++) {
-                TripWorker tripWorker = new TripWorker(i, _optLevel);
+                TripWorker tripWorker = new TripWorker(i, _optLevel, _units);
                 Future<Trip> tripResult = pool.submit(tripWorker);
                 results.add(tripResult);
             }
@@ -103,7 +108,7 @@ public class TripManager {
         }
         else {
 
-            TripWorker tripWorker = new TripWorker(0, _optLevel);
+            TripWorker tripWorker = new TripWorker(0, _optLevel, _units);
             trips.add(tripWorker.call());
         }
     }
@@ -125,8 +130,14 @@ public class TripManager {
         for (int i = 0; i < destTtl; i++) {
             distLookUp[i] = new int[destTtl - i];
             for(int j = 0; j < destTtl-i-1; j++) {
-                distLookUp[i][j] = Distance.distanceMi( lats.get(i), longs.get(i),
+		if(_units == 0){	                
+       		    distLookUp[i][j] = Distance.distanceMi( lats.get(i), longs.get(i),
                                                     lats.get(j+i+1), longs.get(j+i+1));
+		}
+	        else{
+		    distLookUp[i][j] = Distance.distanceMi( lats.get(i), longs.get(i),
+                                                    lats.get(j+i+1), longs.get(j+i+1));	
+		}	    	
             }
         }
     }
