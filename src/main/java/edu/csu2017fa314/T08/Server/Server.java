@@ -67,7 +67,8 @@ public class Server {
         JSONObject svg = new JSONObject();
         svg.put("width", 1067);
         svg.put("height", 784);
-        svg.put("contents", makeSvg.getSvg(search, 0));
+        //svg.put("contents", makeSvg.getSvg(search, 0));
+	svg.put("contents", makeSvg.getBlankSvg());		//This will load dest list faster
         response.put("itinerary", itinerary);
         response.put("svg", svg);
         return response;
@@ -77,11 +78,13 @@ public class Server {
 		//int opt level is used for selection of optimization        
 	
 		
-		JSONArray itinerary = Itinerary.createJSON(parseIDString(destList) , optLevel);
-
+	JSONArray itinerary = Itinerary.createJSON(parseIDString(destList) , optLevel);	
+	for(String dest : parseIDString(destList)){
+		System.out.println(dest);
+	}
         JSONObject svg = new JSONObject();
-        svg.put("width", 1067);
-        svg.put("height", 784);
+        svg.put("width", 800);
+        svg.put("height", 400);
         svg.put("contents", makeSvg.getArraySvg(parseIDString(destList), optLevel));
 
         JSONObject response = new JSONObject();

@@ -64,8 +64,6 @@ ServerSvgResponse | 0% | 0%
 Itinerary | 0% | 0%
 makeSvg | 0% | 0%
 
-
-
 ## Plan
 
 Epics planned for this release.
