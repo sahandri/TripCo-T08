@@ -9,6 +9,7 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+        	option: 0,
             results: null,
             answer: null,
             plan: null,
@@ -20,6 +21,7 @@ class Home extends React.Component {
         value: ["id", "name"]
 		}
     };
+
 
 
 
@@ -172,10 +174,12 @@ class Home extends React.Component {
 				<button onClick={this.all.bind(this)}>Select All</button>
 				</tbody>
 				</table>
+				<button onClick={this.mile.bind(this)}>Miles</button>
+				<button onClick={this.km.bind(this)}>KM</button><p></p>
 				<button onClick={this.plan.bind(this)}>Plan</button>
-				<button onClick={this.plan1.bind(this)}>Plan 1</button>
-				<button onClick={this.plan2.bind(this)}>Plan 2</button>
-				<button onClick={this.plan3.bind(this)}>Plan 3</button><p></p>
+				<button onClick={this.plan1.bind(this)}>Nearest Neighbor</button>
+				<button onClick={this.plan2.bind(this)}>2 Opt</button>
+				<button onClick={this.plan3.bind(this)}>3 Opt</button><p></p>
 				
 				<button onClick={this.save.bind(this)}>Save</button>
 				<Dropzone className="dropzone-style" onDrop={this.drop.bind(this)}>
@@ -209,6 +213,7 @@ class Home extends React.Component {
 				input: event.target.value
 			});
     }
+   
     
  
        handleCode(code){
@@ -266,6 +271,19 @@ class Home extends React.Component {
 		this.setState({itinerary: arr });
 		console.log(this.state.itinerary);
 	}
+	
+	mile(event){
+		this.setState({option: 0});
+		console.log(this.state.option);
+	}
+	
+	km(event){
+		this.setState({option: 1});
+		console.log(this.state.option);
+	
+	}
+	
+	
 	plan(event) {
 		let input = this.state.itinerary;
 		let str = this.arrToString(input);
@@ -368,10 +386,12 @@ class Home extends React.Component {
 	
 	
     async fetch(input, name) {
+    		let uni = this.state.option;
 		let clientRequest;
         clientRequest = {
 		request: name,
             	description: input,
+            	units: uni
         };
         console.log(clientRequest);
 
