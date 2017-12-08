@@ -1,6 +1,5 @@
 package edu.csu2017fa314.T08.View;
 
-import edu.csu2017fa314.T08.Model.Destination;
 import edu.csu2017fa314.T08.Model.Model;
 import edu.csu2017fa314.T08.Model.Distance;
 
@@ -28,9 +27,9 @@ public class Itinerary {
         return arr;
     }
 
-	public static JSONArray createJSON(ArrayList<String> destList, int optLevel) {
-        ArrayList<String> stops = Model.shortestTrip(destList, optLevel);
-	    JSONArray arr = createItinerary(stops);
+	public static JSONArray createJSON(ArrayList<String> destList, int optLevel, int units) {
+        ArrayList<String> stops = Model.shortestTrip(destList, optLevel, units);
+	    JSONArray arr = createItinerary(stops, units);
         return arr;
     }
 
@@ -47,7 +46,7 @@ public class Itinerary {
         {
             // Creates a JSON object with start, end, and the distance between them
             // and appends it to the end of the itinerary JSON array.
-            int dist = Model.getDistance(stops.get(i), stops.get(i+1), false);
+            int dist = Model.getDistance(stops.get(i), stops.get(i+1), 0);
             arr.put(createLeg(stops.get(i), dist));
         }
 
@@ -57,7 +56,7 @@ public class Itinerary {
     }
 	
 	// Creates a JSONArray of trip legs, i.e. the itinerary
-    public static JSONArray createItinerary(ArrayList<String> stops) {
+    public static JSONArray createItinerary(ArrayList<String> stops, int units) {
         JSONArray arr = new JSONArray();
 
 
@@ -68,7 +67,7 @@ public class Itinerary {
         {
             // Creates a JSON object with start, end, and the distance between them
             // and appends it to the end of the itinerary JSON array.
-            int dist = Model.getDistance(stops.get(i), stops.get(i+1), false);
+            int dist = Model.getDistance(stops.get(i), stops.get(i+1), units);
             arr.put(createLeg(stops.get(i), dist));
         }
 

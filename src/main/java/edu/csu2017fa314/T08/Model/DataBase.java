@@ -17,6 +17,7 @@ public class DataBase {
     private static Connection conn;
     private static ArrayList<String> list = new ArrayList<String>();
 
+    //A method to connect to the database
     public static void connect() { // command line args contain username and password
         try { // connect to the database
             Class.forName(myDriver);
@@ -29,6 +30,7 @@ public class DataBase {
         }
     }
 
+    //checking if database is connected
     public static boolean isConnected() {
         try {
             return conn.isValid(5);
@@ -37,6 +39,7 @@ public class DataBase {
         }
     }
 
+    //Disconnect from database after we're done
     public static void disconnect() {
         try {
             rs.close();
@@ -48,12 +51,13 @@ public class DataBase {
         }
     }
 
+    //returns id of the desired index in the saved list
     public static String getID(int index) {
-        return list.get(index);
+            return list.get(index);
     }
 
 
-
+    //Querrey the the database and search a key in it, save possible IDs in list, and return the list
     public static ArrayList getID(String key) {
         list.clear();
         String query = "SELECT airports.code FROM continents" +
@@ -75,58 +79,19 @@ public class DataBase {
         return list;
     }
 
-/*
-    public static String getCountry(String id){
-        String country = "";
-        String query = "SELECT countries.name FROM continents" +
-                " INNER JOIN countries ON continents.code = countries.continent" +
-                " INNER JOIN regions ON countries.code = regions.iso_country" +
-                " INNER JOIN airports ON regions.code = airports.iso_region" +
-                " WHERE airports.code LIKE '" + id + "'";
-        try {
-            rs = st.executeQuery(query);
-            // iterate through the query results and print selected columns
-            rs.next();
-            country = rs.getString("countries.name");
-        } catch (Exception e) { // catches all exceptions in the nested try's
-            System.err.printf("Exception: ");
-            System.err.println(e.getMessage());
-        }
-        return country;
-    }
 
-
-    public static String getRegion(String id){
-        String region = "";
-        String query = "SELECT regions.name FROM continents" +
-                " INNER JOIN countries ON continents.code = countries.continent" +
-                " INNER JOIN regions ON countries.code = regions.iso_country" +
-                " INNER JOIN airports ON regions.code = airports.iso_region" +
-                " WHERE airports.code LIKE '" + id + "'";
-        try {
-            rs = st.executeQuery(query);
-            // iterate through the query results and print selected columns
-            rs.next();
-            region = rs.getString("regions.name");
-        } catch (Exception e) { // catches all exceptions in the nested try's
-            System.err.printf("Exception: ");
-            System.err.println(e.getMessage());
-        }
-        return region;
-    }
-*/
-
+    //return index of ID in list
     public static int getIndex(String ID){
         return list.indexOf(ID);
     }
 
-
+    //return total number of IDs in list
     public static int getTotal() {
         return list.size();
     }
 
 
-
+    //Returns Latitude of an ID
     public static String getLatit(String id) {
         String lotit = "";
         String query = "SELECT latitude FROM airports WHERE code LIKE '" + id + "'";
@@ -142,7 +107,7 @@ public class DataBase {
         return lotit;
     }
 
-
+    //Returns name of an ID
     public static String getName(String id){
         String name = "";
         String query = "SELECT name FROM airports WHERE code LIKE '" + id+ "'";
@@ -158,7 +123,7 @@ public class DataBase {
         return name;
     }
 
-
+    //Returns Longitude of an ID
     public static String getLongit(String id) {
         String longit = "";
         String query = "SELECT longitude FROM airports WHERE code LIKE '" + id + "'";
@@ -174,7 +139,7 @@ public class DataBase {
         return longit;
     }
 
-//returns a pair of all data in a row
+    //returns a pair of all data of an ID
     public static  HashMap<String,String> getInfo(String id) {
         HashMap<String,String> info = new HashMap<String, String>();
         //String query = "SELECT * FROM airports WHERE code LIKE '" + id + "'";
@@ -203,57 +168,5 @@ public class DataBase {
             System.err.println(e.getMessage());
         }
         return info;
-    }
-
-
-
-
-    public static void print() {
-        String query = "SELECT * FROM airports";
-        try {
-            rs = st.executeQuery(query);
-            // iterate through the query results and print selected columns
-            while (rs.next()) {
-                String id = rs.getString("code");
-                String name = rs.getString("name");
-                System.out.printf("%s,%s\n", id, name);
-            }
-        } catch (Exception e) { // catches all exceptions in the nested try's
-            System.err.printf("Exception: ");
-            System.err.println(e.getMessage());
-        }
-    }
-
-    public static void main(String[] args) {
-        ArrayList<String> list;
-
-
-        connect();
-
-        //print();
-
-        list = getID("denver");
-        for (int i = 0; i < list.size(); i++) {
-            System.out.printf("%s\n", list.get(i));
-        }
-
-        System.out.printf("%s\n", getLatit("CND7"));
-        System.out.printf("%s\n", getLongit("CND7"));
-        System.out.printf("%s\n", getID(1));
-        System.out.printf("%s\n", getIndex("CND7"));
-        System.out.printf("%s\n", getName("CND7"));
-        System.out.printf("%s\n", getTotal());
-        System.out.printf("get name of id: %s\n", getInfo("CND7").get("name"));
-        System.out.printf("get country name of id: %s\n", getInfo("CND7").get("country"));
-        //System.out.printf("country name: %s\n", getCountry("CND7"));
-        //System.out.printf("region name: %s\n", getRegion("CND7"));
-
-        HashMap<String,String> info = getInfo("CND7");
-        for(Map.Entry<String,String> kv: info.entrySet()) {
-            System.out.println(kv.getKey()+" "+ kv.getValue());
-        }
-
-
-        disconnect();
     }
 }

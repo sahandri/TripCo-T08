@@ -8,12 +8,15 @@ public class TripWorker implements Callable<Trip> {
     private int _idx;
     private int[] _order;
     private int _optLevel = 0;
+    private int _units = 0;
     private int _tripLength = 0;
     private int _numStops = TripManager.total.get();
 
-    public TripWorker(int idx, int optLevel) {
+    public TripWorker(int idx, int optLevel, int units) {
         this._idx = idx;
         this._optLevel = optLevel;
+	this._units = units;
+	
     }
 
     @Override
@@ -44,7 +47,7 @@ public class TripWorker implements Callable<Trip> {
         // Turn the _ordering into a trip
         Trip t = new Trip();
         for(int i = 0; i < _numStops+1; i++) {
-            t.add(DataBase.getID(_order[i]));
+            t.add(TripManager.ids.get(_order[i]));
         }
         t.setLength(_tripLength);
 

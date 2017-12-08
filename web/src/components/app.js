@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './Home/Home.jsx';
 import Pair from './Home/Pair/Pair.jsx';
+require('react-select/dist/react-select.css');
 
 
 
