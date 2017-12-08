@@ -1,6 +1,5 @@
 package edu.csu2017fa314.T08.View;
 
-import edu.csu2017fa314.T08.Model.Destination;
 import edu.csu2017fa314.T08.Model.Model;
 import edu.csu2017fa314.T08.Model.Distance;
 

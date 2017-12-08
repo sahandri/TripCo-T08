@@ -13,14 +13,13 @@ import java.util.ArrayList;
 @Ignore
 public class TestTrip {
     private Trip t;
-    private static Destination d;
-    private static URL url = TestTrip.class.getResource("/brews.csv");
+    private static DataBase d;
 
     @BeforeClass
     public static void setUp() throws Exception {
-        d = new Destination();
+        d = new DataBase();
 
-        d.readFile(url.getPath());
+        d.connect();
     }
 
     @Before
