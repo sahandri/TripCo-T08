@@ -53,8 +53,13 @@ class Home extends React.Component {
 
 		}
 		
-			if(this.state.plan){
-			let number = -1;
+        if(this.state.plan){
+            information = this.state.plan.itinerary;
+            this.state.itinerary = information.map(info => {
+                return info.id;
+            });
+
+            let number = -1;
             plans = information.map(info => {
                 number++;
                 return (
@@ -69,13 +74,13 @@ class Home extends React.Component {
                 );
         
             })
-            
-            if(this.state.plan.svg){
-                svg = this.state.plan.svg;
-                renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
-            
-            
-            }
+                
+                if(this.state.plan.svg){
+                    svg = this.state.plan.svg;
+                    renderedSvg = <InlineSVG src={svg.contents}></InlineSVG>;
+                
+                
+                }
             }
             if(this.state.answer){
                 information = this.state.answer.itinerary;
