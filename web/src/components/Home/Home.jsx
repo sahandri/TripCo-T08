@@ -175,13 +175,9 @@ class Home extends React.Component {
 
                     
     keyUp(event){
-		if (event.which === 13) {
-			this.fetch(this.state.value);
-        } else {
 			this.setState({
 				input: event.target.value
 			});
-		}
     }
     
  
@@ -284,9 +280,7 @@ class Home extends React.Component {
 	}
 	
 	save(event) {
-		let input = this.state.itinerary;
-		this.fetch(input,"save");
-		event.preventDefault();
+		this.getFile();
 	}
 	drop(acceptedFiles) {
         console.log("Accepting drop");
@@ -299,14 +293,46 @@ class Home extends React.Component {
                     let JsonObj = JSON.parse(e.target.result);
                     
                     console.log(JsonObj.destinations);
-                    this.arrToString(JsonObj.destinations);
-                    this.fetch(JsonObj.destinations,"plan");
+                    var hold = this.arrToString(JsonObj.destinations);
+                    this.fetch(hold,"plan");
                 };
             })(file).bind(this);
 
             fr.readAsText(file);
         });
     }
+    
+        async getFile() {
+         // assign all the airport codes of the displayed locations to an array
+         let locs = this.state.itinerary
+
+        // create an object in the format of the download file:
+        let locationFile = {
+            title : "selection",
+            destinations: locs
+        };
+
+        // stringify the object
+        let asJSONString = JSON.stringify(locationFile);
+        
+        // Javascript code to create an <a> element with a link to the file
+        let pom = document.createElement('a');
+        pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(asJSONString));
+        // Download the file instead of opening it:
+        pom.setAttribute('download', "download.json");
+        
+        // Javascript to click the hidden link we created, causing the file to download
+        if (document.createEvent) {
+            let event = document.createEvent('MouseEvents');
+            event.initEvent('click', true, true);
+            pom.dispatchEvent(event);
+        } else {
+            pom.click();
+        }
+        
+        // remove hidden link from page
+        pom.parentNode.removeChild(pom);
+        }
 	
 	
     async fetch(input, name) {
